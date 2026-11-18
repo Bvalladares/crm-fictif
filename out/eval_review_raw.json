@@ -1,0 +1,15 @@
+{
+  "file": "review_raw.md",
+  "recall": 1.0,
+  "recall_covered": 38,
+  "recall_total": 38,
+  "false_leurres": 0,
+  "invented_numbers": 0,
+  "length_words": 1642,
+  "pass": true,
+  "details": {
+    "missed_deals": [],
+    "false_leurre_deals": [],
+    "invented_number_tokens": []
+  }
+}
