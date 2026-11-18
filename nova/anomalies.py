@@ -346,11 +346,16 @@ def plant_anomalies(rng, deals, contacts_by_company, as_of):
         if a9_d1["stage_history"]:
             a9_d1["stage_entered_at"] = a9_d1["stage_history"][-1]["entered_at"]
 
-    # Names: same product, formatted differently (casse, abréviation, ordre des mots).
-    # "pilotage" and "terrain" are NOT in the standard deal-name themes, ensuring
-    # no clean deal can accidentally share 3+ stems with these names.
-    a9_d1["name"] = "Nova Pilotage Terrain – Licence annuelle"   # ae1, formel
-    a9_d2["name"] = "PILOTAGE TERRAIN licence annuelle nova"      # ae3, variante
+    # Names: same product, different casing/abbreviation — both use
+    # "Déploiement multi-sites" which contributes 3 stems on its own
+    # ("deplo", "multi", "sites"), ensuring the A9 rule fires regardless
+    # of what the company name happens to contribute.
+    # Extract the company fragment from d1's existing name (already formatted
+    # as "[short_co] – [theme]" by make_deal_name).
+    _sep = " – " if " – " in a9_d1["name"] else " - "
+    _co_frag = a9_d1["name"].split(_sep, 1)[0].strip()
+    a9_d1["name"] = f"{_co_frag} – Déploiement multi-sites"
+    a9_d2["name"] = f"{_co_frag.upper()} - deploy multi-sites"
 
     for d in [a9_d1, a9_d2]:
         truth_rows.append({

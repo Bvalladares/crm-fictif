@@ -53,6 +53,7 @@ def postprocess_activities(activities_by_deal, deals, anomaly_flags, as_of):
     6. Clean negociation deals: add meeting in demo period (A8 prevention)
     7. Clean open deals with big amounts: add recent activity (A4 prevention)
     8. Clean open deals: ensure at least 1 future next step (A2 prevention)
+    9. Won/lost deals: enforce Rule 2 (delete after close_date, ensure closing note)
     """
     deals_by_id = {d["id"]: d for d in deals}
     flagged_deals = set(anomaly_flags.keys())
@@ -139,8 +140,20 @@ def postprocess_activities(activities_by_deal, deals, anomaly_flags, as_of):
                 and datetime.datetime.fromisoformat(a["at"]).date() > as_of
                 for a in deal_acts
             )
+            # Determine future_date for the reunion (and note body)
+            future_date = as_of + datetime.timedelta(days=14)
+            # If a future reunion already exists, extract its date for note coherence
+            existing_reunion_dates = [
+                datetime.datetime.fromisoformat(a["at"]).date()
+                for a in deal_acts
+                if a["type"] == "reunion"
+                and datetime.datetime.fromisoformat(a["at"]).date() > as_of
+            ]
+            if existing_reunion_dates:
+                future_date = min(existing_reunion_dates)
             if not has_recent_note:
                 note_date = as_of - datetime.timedelta(days=3)
+                rdv_str = future_date.strftime("%-d/%m")
                 deal_acts.append({
                     "deal_id": did,
                     "contact_id": deal["contact_ids"][0] if deal["contact_ids"] else None,
@@ -148,10 +161,9 @@ def postprocess_activities(activities_by_deal, deals, anomaly_flags, as_of):
                     "type": "note",
                     "at": datetime.datetime(note_date.year, note_date.month, note_date.day, 10, 0, 0).isoformat(),
                     "subject": "Note de suivi",
-                    "body": "Client en congés jusqu'au 5/01, RDV calé. Pas d'inquiétude.",
+                    "body": f"client ok, RDV dc le {rdv_str} – relance ok",
                 })
             if not has_future_reunion:
-                future_date = as_of + datetime.timedelta(days=14)
                 deal_acts.append({
                     "deal_id": did,
                     "contact_id": deal["contact_ids"][0] if deal["contact_ids"] else None,
@@ -256,6 +268,59 @@ def postprocess_activities(activities_by_deal, deals, anomaly_flags, as_of):
                 "body": "Relance à faire avant fin de semaine.",
             })
             activities_by_deal[did] = deal_acts
+
+    # === Rule 2: enforce won/lost closing discipline ===
+    from nova.activities import LOST_REASON_BODIES as _LOST_REASON_BODIES
+    for deal in deals:
+        if deal["status"] not in ("won", "lost"):
+            continue
+        did = deal["id"]
+        close_date_str = deal.get("close_date")
+        if not close_date_str:
+            continue
+        close_date = datetime.date.fromisoformat(close_date_str)
+        owner_id = deal["owner_id"]
+        contact_id = deal["contact_ids"][0] if deal["contact_ids"] else None
+        close_dt = datetime.datetime(close_date.year, close_date.month, close_date.day, 18, 0, 0)
+
+        deal_acts = activities_by_deal.get(did, [])
+
+        # Delete all activities whose at date > close_date
+        deal_acts = [
+            a for a in deal_acts
+            if datetime.datetime.fromisoformat(a["at"]).date() <= close_date
+        ]
+
+        # Check if closing note already exists (type=note, date=close_date, special subject)
+        closing_subjects = {"Deal gagné", "Deal perdu"}
+        has_closing_note = any(
+            a["type"] == "note"
+            and datetime.datetime.fromisoformat(a["at"]).date() == close_date
+            and a.get("subject") in closing_subjects
+            for a in deal_acts
+        )
+
+        if not has_closing_note:
+            if deal["status"] == "won":
+                closing_subject = "Deal gagné"
+                closing_body = "Contrat signé. Bon deal."
+            else:
+                lost_reason = deal.get("lost_reason", "")
+                closing_subject = "Deal perdu"
+                closing_body = _LOST_REASON_BODIES.get(
+                    lost_reason, f"Perdu – {lost_reason}."
+                )
+            deal_acts.append({
+                "deal_id": did,
+                "contact_id": contact_id,
+                "owner_id": owner_id,
+                "type": "note",
+                "at": close_dt.isoformat(),
+                "subject": closing_subject,
+                "body": closing_body,
+            })
+
+        activities_by_deal[did] = deal_acts
 
     return activities_by_deal
 
@@ -448,8 +513,113 @@ def cleanup_accidental_anomalies(deals, activities_by_deal, anomaly_flags, as_of
             for j in range(i + 1, len(cdeals)):
                 d1, d2 = cdeals[i], cdeals[j]
                 if _ns(d1["name"].lower(), d2["name"].lower()):
-                    # Rename d2 so it no longer matches
-                    d2["name"] = f"Renouvellement contrat {d2['company_id']}"
+                    # Rename d2 to a theme that shares <3 stems with d1.
+                    # Extract the company fragment already embedded in the name.
+                    _sep = " – " if " – " in d2["name"] else " - "
+                    _co_frag = d2["name"].split(_sep, 1)[0].strip()
+                    _PROP_OR_LATER = {"proposition", "negociation", "gagne", "perdu"}
+                    if d2.get("stage") in _PROP_OR_LATER:
+                        d2["name"] = f"{_co_frag} – Extension utilisateurs"
+                    else:
+                        d2["name"] = f"{_co_frag} – Pilote agence"
+
+
+def _fix_stage_coherence(activities_by_deal, deals, rng):
+    """
+    After all stage history modifications, ensure no activity body violates
+    its stage's content rules.
+    Rules:
+      - decouverte, qualification, demo, proposition: no 'contrat' or 'signature'
+      - decouverte, qualification, demo: no 'devis' or 'proposition commerciale'
+    When a violation is found, replace the body (and subject) with a valid template
+    for that stage and activity type.
+    """
+    from nova.texts import pick_template, get_stage_at_date, STAGE_TEMPLATES
+
+    deals_by_id = {d["id"]: d for d in deals}
+
+    # Forbidden words per stage group
+    NO_CONTRACT_STAGES = {"decouverte", "qualification", "demo", "proposition"}
+    NO_DEVIS_STAGES = {"decouverte", "qualification", "demo"}
+
+    for did, acts in activities_by_deal.items():
+        deal = deals_by_id.get(did)
+        if not deal:
+            continue
+        stage_history = deal.get("stage_history", [])
+
+        for a in acts:
+            # Skip future activities (tache/reunion) and closing notes
+            if a.get("subject") in ("Deal gagné", "Deal perdu"):
+                continue
+            at_date = datetime.datetime.fromisoformat(a["at"]).date()
+            act_stage = get_stage_at_date(stage_history, at_date)
+            if act_stage is None:
+                continue
+
+            body_lower = (a.get("body") or "").lower()
+            has_contract_violation = (
+                act_stage in NO_CONTRACT_STAGES
+                and ("contrat" in body_lower or "signature" in body_lower)
+            )
+            has_devis_violation = (
+                act_stage in NO_DEVIS_STAGES
+                and ("devis" in body_lower or "proposition commerciale" in body_lower)
+            )
+
+            if has_contract_violation or has_devis_violation:
+                act_type = a.get("type", "note")
+                # Replace with a clean template for this stage
+                # Use the used bodies from this deal to avoid creating duplicates
+                current_bodies = {x.get("body") for x in acts if x is not a}
+                new_subject, new_body = pick_template(rng, act_type, stage=act_stage,
+                                                        exclude_bodies=current_bodies)
+                # If the new template still violates (all templates exhausted),
+                # use a generic safe fallback
+                new_body_lower = new_body.lower()
+                if (act_stage in NO_CONTRACT_STAGES and
+                        ("contrat" in new_body_lower or "signature" in new_body_lower)):
+                    new_subject, new_body = _safe_fallback_template(act_stage, act_type)
+                elif (act_stage in NO_DEVIS_STAGES and
+                        ("devis" in new_body_lower or "proposition commerciale" in new_body_lower)):
+                    new_subject, new_body = _safe_fallback_template(act_stage, act_type)
+                a["subject"] = new_subject
+                a["body"] = new_body
+
+
+def _safe_fallback_template(stage, act_type):
+    """Return a guaranteed-safe subject/body for stages before negociation."""
+    safe = {
+        "appel": ("Point rapide", "échange de suivi ok. client toujours engagé."),
+        "email": ("Suivi demande", "Je reviens vers vous pour faire le point. Bonne journée."),
+        "reunion": ("Point projet", "réunion de suivi réalisée. prochaine étape à définir."),
+        "note": ("Note de suivi", "suivi en cours. rien de bloquant à ce stade."),
+        "tache": ("Rappeler le contact", "Rappeler le contact cette semaine."),
+    }
+    return safe.get(act_type, ("Note de suivi", "suivi en cours."))
+
+
+def _deduplicate_activity_bodies(activities_by_deal, rng):
+    """
+    For each deal, ensure no two activities share the same body text.
+    Duplicates are resolved by appending a small unique suffix.
+    This preserves stage-awareness already applied during generation.
+    """
+    for did, acts in activities_by_deal.items():
+        seen_bodies = {}  # body -> first activity index
+        for idx, a in enumerate(acts):
+            body = a.get("body", "")
+            if body in seen_bodies:
+                # Create a unique variant by appending a brief note
+                counter = 1
+                new_body = body
+                while new_body in seen_bodies:
+                    new_body = body + f" (cf. suivi {counter})"
+                    counter += 1
+                a["body"] = new_body
+                seen_bodies[new_body] = idx
+            else:
+                seen_bodies[body] = idx
 
 
 def main():
@@ -590,6 +760,12 @@ def main():
     cleanup_accidental_anomalies(
         deals, activities_by_deal, anomaly_flags, as_of, rng, contacts_by_company
     )
+
+    # Stage coherence pass: fix any activity whose body violates its stage's rules
+    _fix_stage_coherence(activities_by_deal, deals, rng)
+
+    # Deduplication pass: ensure no two activities on the same deal share the same body
+    _deduplicate_activity_bodies(activities_by_deal, rng)
 
     # Flatten and assign IDs
     all_activities = []

@@ -145,6 +145,26 @@ class TestPlausibility(unittest.TestCase):
                     )
         self.assertEqual(errors, [], "\n".join(errors[:10]))
 
+    def test_deal_name_format(self):
+        """
+        Deal names must:
+        - contain no internal ID pattern (C-NNNN, D-NNNN, P-NNNN)
+        - not start with 'Mission '
+        - contain a separator (' – ' or ' - ') separating company fragment from object
+        """
+        import re
+        id_pattern = re.compile(r'\b[CDP]-\d{4}\b')
+        errors = []
+        for d in self.crm["deals"]:
+            name = d["name"]
+            if id_pattern.search(name):
+                errors.append(f"Deal {d['id']} name contains internal ID: '{name}'")
+            if name.startswith("Mission "):
+                errors.append(f"Deal {d['id']} name starts with 'Mission': '{name}'")
+            if " – " not in name and " - " not in name:
+                errors.append(f"Deal {d['id']} name has no separator: '{name}'")
+        self.assertEqual(errors, [], "\n".join(errors[:10]))
+
     def test_contact_emails_format(self):
         """Contact emails must end with .exemple.invalid."""
         errors = []

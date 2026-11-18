@@ -115,16 +115,60 @@ def gen_deals(rng, companies, contacts_by_company, as_of,
         n = min(rng.randint(min_c, max_c), len(pool))
         return [c["id"] for c in rng.sample(pool, n)]
 
-    def make_deal_name(company_name):
-        prefixes = ["Projet", "Mission", "Contrat", "Dossier", "Opportunité"]
-        themes = ["Nova Planification", "Nova Intervention", "Nova Mobile",
-                  "Nova Reporting", "Nova Connect", "Nova ERP Link",
-                  "Formation", "Déploiement", "Licence annuelle", "Renouvellement"]
-        prefix = rng.choice(prefixes)
-        theme = rng.choice(themes)
-        words = company_name.split()[:2]
-        short_name = " ".join(words)
-        return f"{prefix} {short_name} – {theme}"
+    # Legal-form tokens to strip from company names
+    _LEGAL = {"SAS", "SARL", "SA", "SNC", "SCI", "EURL", "SASU", "GIE",
+              "SE", "SCOP", "SCP", "SELARL", "LTD", "GMBH", "NV", "BV",
+              "&", "ET", "AND"}
+
+    def _co_short(company_name):
+        """Return 1-2 significant words from company_name, stripped of legal forms."""
+        words = []
+        for w in company_name.split():
+            if w.startswith("("):
+                break
+            if w.upper() not in _LEGAL:
+                words.append(w)
+        return words[:2] if words else company_name.split()[:1]
+
+    def make_deal_name(company_name, stage=None, status=None):
+        """
+        Format: [Nom court entreprise] – [objet]
+        Objects: Planification terrain, Licence Nova, Déploiement multi-sites,
+                 Pilote agence, Extension utilisateurs (won only).
+        Casing and abbreviations vary as a salesperson would type them.
+        No "Mission" prefix, no internal IDs.
+        """
+        # --- Company fragment ---
+        sig = _co_short(company_name)
+        n_words = rng.choice([1, 1, 2, 2])
+        sig = sig[:min(n_words, len(sig))]
+
+        style = rng.choice(["orig", "orig", "title", "abbrev"])
+        if style == "title":
+            short_co = " ".join(w.capitalize() for w in sig)
+        elif style == "abbrev" and len(sig) > 1:
+            short_co = "".join(w[0].upper() for w in sig)
+        else:
+            short_co = " ".join(sig)   # keep original casing (usually caps for real data)
+
+        # --- Object theme ---
+        OBJECTS = [
+            # each tuple: (formal, abbrev, upper, lower)
+            ("Planification terrain", "Planif terrain",    "PLANIF TERRAIN",        "planif. terrain"),
+            ("Licence Nova",          "Licence nova",       "LIC. NOVA",             "licence nova"),
+            ("Déploiement multi-sites","Déploiement MS",   "DEPLOY MULTI-SITES",    "deploy multi-sites"),
+            ("Pilote agence",         "Pilote agences",     "PILOTE AGENCE",         "pilote agence"),
+        ]
+        if status == "won":
+            OBJECTS = OBJECTS + [
+                ("Extension utilisateurs", "Ext. utilisateurs", "EXTENSION USERS", "extension utilisateurs"),
+            ]
+
+        variants = rng.choice(OBJECTS)
+        obj = rng.choice(variants)
+
+        sep = rng.choice([" – ", " – ", " - "])
+        return f"{short_co}{sep}{obj}"
 
     # --- Open deals ---
     # Clean open deals must NOT trigger:
@@ -210,7 +254,7 @@ def gen_deals(rng, companies, contacts_by_company, as_of,
             "company_id": cid,
             "contact_ids": contact_ids,
             "owner_id": ae,
-            "name": make_deal_name(company["name"]),
+            "name": make_deal_name(company["name"], stage=stage, status="open"),
             "amount": amount,
             "stage": stage,
             "stage_entered_at": stage_history[-1]["entered_at"],
@@ -268,7 +312,7 @@ def gen_deals(rng, companies, contacts_by_company, as_of,
             "company_id": cid,
             "contact_ids": contact_ids,
             "owner_id": ae,
-            "name": make_deal_name(company["name"]),
+            "name": make_deal_name(company["name"], stage="gagne", status="won"),
             "amount": amount,
             "stage": "gagne",
             "stage_entered_at": history[-1]["entered_at"],
@@ -329,7 +373,7 @@ def gen_deals(rng, companies, contacts_by_company, as_of,
             "company_id": cid,
             "contact_ids": contact_ids,
             "owner_id": ae,
-            "name": make_deal_name(company["name"]),
+            "name": make_deal_name(company["name"], stage=lost_at_stage, status="lost"),
             "amount": amount,
             "stage": "perdu",
             "stage_entered_at": history[-1]["entered_at"],
