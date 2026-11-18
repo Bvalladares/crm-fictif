@@ -1,0 +1,45 @@
+deal_id,code,attendu,preuve,owner
+D-0003,A9,signaler,"Doublon : même entreprise C-0045, noms quasi identiques",ae1
+D-0004,L4,ignorer,Deal 30000€ mais dernière activité il y a 20 j (seuil 21 j),ae5
+D-0005,A8,signaler,En Négociation sans réunion de démo dans l'historique,ae1
+D-0007,A1,signaler,En Proposition envoyée depuis 61 j (normale 21 j),ae3
+D-0007,A2,signaler,Aucune tâche ni réunion à venir,ae3
+D-0008,A3,signaler,Date de clôture dépassée : 2026-11-07 (il y a 11 j),ae4
+D-0009,A1,signaler,En Qualification depuis 55 j (normale 14 j),ae1
+D-0009,A2,signaler,Aucune tâche ni réunion à venir,ae1
+D-0010,L2,ignorer,Long en Découverte mais RDV calé le 2026-11-29,ae5
+D-0011,A6,signaler,Clôture en 2026-11 mais étape Découverte,ae5
+D-0012,L3,ignorer,Deal 30000€ mais dernière activité il y a 20 j (seuil 21 j),ae2
+D-0013,A1,signaler,En Démo depuis 66 j (normale 21 j),ae1
+D-0013,A2,signaler,Aucune tâche ni réunion à venir,ae1
+D-0015,A1,signaler,En Négociation depuis 83 j (normale 30 j),ae2
+D-0015,A2,signaler,Aucune tâche ni réunion à venir,ae2
+D-0019,A7,signaler,Deal 25000€ en Négociation avec 1 seul interlocuteur,ae2
+D-0020,A6,signaler,Clôture en 2026-11 mais étape Qualification,ae2
+D-0021,A1,signaler,En Démo depuis 67 j (normale 21 j),ae3
+D-0022,A7,signaler,Deal 30000€ en Négociation avec 1 seul interlocuteur,ae1
+D-0023,A9,signaler,"Doublon : même entreprise C-0045, noms quasi identiques",ae3
+D-0024,A1,signaler,En Qualification depuis 48 j (normale 14 j),ae1
+D-0024,A2,signaler,Aucune tâche ni réunion à venir,ae1
+D-0025,A4,signaler,Deal de 50000€ sans activité depuis 42 j,ae1
+D-0028,A8,signaler,En Négociation sans réunion de démo dans l'historique,ae5
+D-0034,A5,signaler,Montant manquant en Négociation,ae2
+D-0037,L1,ignorer,Long en Démo mais RDV calé le 2026-11-23,ae2
+D-0041,A3,signaler,Date de clôture dépassée : 2026-10-08 (il y a 41 j),ae4
+D-0042,L6,ignorer,"Date de clôture = as_of (2026-11-18), pas encore dépassée",ae2
+D-0044,A3,signaler,Date de clôture dépassée : 2026-09-30 (il y a 49 j),ae4
+D-0045,A3,signaler,Date de clôture dépassée : 2026-11-10 (il y a 8 j),ae1
+D-0047,A4,signaler,Deal de 40000€ sans activité depuis 45 j,ae5
+D-0048,A5,signaler,Montant manquant en Négociation,ae1
+D-0049,A4,signaler,Deal de 45000€ sans activité depuis 24 j,ae2
+D-0050,A2,signaler,Aucune tâche ni réunion à venir,ae3
+D-0051,A2,signaler,Aucune tâche ni réunion à venir,ae5
+D-0053,A4,signaler,Deal de 50000€ sans activité depuis 41 j,ae4
+D-0054,L5,ignorer,Négociation 1 contact mais montant 15 000€ (seuil A7 = 20 000€),ae2
+D-0056,A5,signaler,Montant manquant en Négociation,ae4
+D-0060,A6,signaler,Clôture en 2026-11 mais étape Découverte,ae2
+D-0064,A3,signaler,Date de clôture dépassée : 2026-10-31 (il y a 18 j),ae4
+D-0065,A7,signaler,Deal 25000€ en Négociation avec 1 seul interlocuteur,ae4
+D-0066,A1,signaler,En Négociation depuis 93 j (normale 30 j),ae1
+D-0068,A1,signaler,En Découverte depuis 46 j (normale 14 j),ae3
+D-0069,A3,signaler,Date de clôture dépassée : 2026-10-05 (il y a 44 j),ae1
