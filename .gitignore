@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Slack credentials — keep outside the repo
+*.env
+.config/
+
+# Publication records (contain channel IDs and timestamps)
+out/published_*.json
+
+# Virtual environments
+.venv/
+venv/
+env/
