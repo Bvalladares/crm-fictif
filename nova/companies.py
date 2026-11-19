@@ -6,6 +6,7 @@ Phase 1: cache only (no API calls needed as cache is pre-populated).
 import json
 import os
 import random
+import re as _re
 
 CACHE_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "companies_cache.json")
 
@@ -15,6 +16,35 @@ CACHE_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "companies_ca
 # Code 54 n'existe pas dans la nomenclature INSEE.
 TRANCHES_PME = {"12", "21", "22", "31", "32"}
 TRANCHES_STRAT = {"41", "42", "51", "52", "53"}
+
+
+_LOWER_CONN = {"et", "de", "du", "des", "le", "la", "les", "en", "au",
+               "aux", "sur", "par", "pour", "&", "d'", "l'"}
+
+
+def _make_display_name(name: str) -> str:
+    """
+    Convert an uppercase registry name to readable mixed-case.
+    Rules:
+    - Drop parenthetical aliases like "(ORANO DEM)".
+    - Words where w.isupper() and len(w) <= 4  → keep uppercase (acronyms: EDF, SNCF, T&S).
+    - Words containing digits                  → keep as-is (ERA 94, A2, 3M).
+    - Connector words (de, du, et, …)          → lowercase, except if first word.
+    - Everything else                          → capitalize().
+    """
+    name = _re.sub(r'\s*\([^)]*\)', '', name).strip()
+    words = name.split()
+    result = []
+    for i, w in enumerate(words):
+        if _re.search(r'\d', w):
+            result.append(w)
+        elif w.isupper() and len(w) <= 4:
+            result.append(w)
+        elif w.lower() in _LOWER_CONN and i > 0:
+            result.append(w.lower())
+        else:
+            result.append(w.capitalize())
+    return " ".join(result)
 
 
 def load_cache():
@@ -94,9 +124,11 @@ def select_companies(rng, target=220):
     for c in sorted(selected_strat + selected_pme, key=lambda x: x["siren"]):
         segment = classify_company(c)
         size_band = get_size_band(c)
+        nom = c["nom"]
         result.append({
             "siren": c["siren"],
-            "name": c["nom"],
+            "name": nom,
+            "display_name": _make_display_name(nom),
             "naf": c["naf"],
             "size_band": size_band,
             "city": c["ville"],
@@ -141,6 +173,7 @@ def make_public_companies(rng, companies):
         result.append({
             "siren": siren,
             "name": name,
+            "display_name": name,   # already invented, no transformation needed
             "naf": c["naf"],
             "size_band": c["size_band"],
             "city": city,

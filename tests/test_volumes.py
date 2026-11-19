@@ -59,7 +59,7 @@ class TestVolumes(unittest.TestCase):
 
     def test_open_deals_count(self):
         n = sum(1 for d in self.crm["deals"] if d["status"] == "open")
-        self._assert_in_range(n, 70, label="open deals")
+        self._assert_in_range(n, 110, label="open deals")
 
     def test_won_deals_count(self):
         n = sum(1 for d in self.crm["deals"] if d["status"] == "won")
@@ -71,7 +71,7 @@ class TestVolumes(unittest.TestCase):
 
     def test_activities_count(self):
         n = len(self.crm["activities"])
-        self._assert_in_range(n, 4000, label="activities")
+        self._assert_in_range(n, 5500, label="activities")
 
     def test_exactly_38_signaler(self):
         n = sum(1 for r in self.truth if r["attendu"] == "signaler")

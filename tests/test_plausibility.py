@@ -145,6 +145,22 @@ class TestPlausibility(unittest.TestCase):
                     )
         self.assertEqual(errors, [], "\n".join(errors[:10]))
 
+    def test_no_open_deal_without_past_activity(self):
+        """Every open deal must have at least one activity with at <= as_of."""
+        as_of = self.crm["meta"]["as_of"]
+        acts_by_deal = {}
+        for a in self.crm["activities"]:
+            acts_by_deal.setdefault(a["deal_id"], []).append(a)
+        errors = []
+        for d in self.crm["deals"]:
+            if d["status"] != "open":
+                continue
+            past = [a for a in acts_by_deal.get(d["id"], [])
+                    if a["at"][:10] <= as_of]
+            if not past:
+                errors.append(f"Deal {d['id']} ({d['stage']}) has no past activity")
+        self.assertEqual(errors, [], "\n".join(errors[:10]))
+
     def test_deal_name_format(self):
         """
         Deal names must:

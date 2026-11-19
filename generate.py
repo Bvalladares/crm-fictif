@@ -65,6 +65,8 @@ def postprocess_activities(activities_by_deal, deals, anomaly_flags, as_of):
         owner_id = deal["owner_id"]
 
         # --- A4 anomaly: enforce silence ---
+        # Shift activities inside the silence window backward to cutoff (or before),
+        # so the deal keeps a full history but nothing recent.
         if "A4" in flags:
             days_silent = 22
             for flag in flags:
@@ -73,12 +75,27 @@ def postprocess_activities(activities_by_deal, deals, anomaly_flags, as_of):
                     break
             cutoff = as_of - datetime.timedelta(days=days_silent)
             deal_acts = activities_by_deal.get(did, [])
-            new_acts = []
-            for a in deal_acts:
-                at_date = datetime.datetime.fromisoformat(a["at"]).date()
-                if at_date > as_of or at_date <= cutoff:
-                    new_acts.append(a)
-            activities_by_deal[did] = new_acts
+            # Identify past activities that fall in the silence window
+            in_window = sorted(
+                [a for a in deal_acts
+                 if cutoff < datetime.datetime.fromisoformat(a["at"]).date() <= as_of],
+                key=lambda a: a["at"]
+            )
+            outside = [a for a in deal_acts
+                       if not (cutoff < datetime.datetime.fromisoformat(a["at"]).date() <= as_of)]
+            # Push window activities back so the last one lands on cutoff
+            shifted = []
+            n = len(in_window)
+            for rank, a in enumerate(in_window):
+                days_back = n - 1 - rank          # last one → 0 days back from cutoff
+                new_date = cutoff - datetime.timedelta(days=days_back)
+                at_dt = datetime.datetime.fromisoformat(a["at"])
+                new_a = dict(a)
+                new_a["at"] = at_dt.replace(
+                    year=new_date.year, month=new_date.month, day=new_date.day
+                ).isoformat()
+                shifted.append(new_a)
+            activities_by_deal[did] = outside + shifted
 
         # --- L3/L4: last activity = exactly 20 days ago ---
         if "L3" in flags or "L4" in flags:
@@ -691,7 +708,7 @@ def main():
     print("Generating deals...")
     deals_raw = gen_deals(
         rng, companies, contacts_by_company, as_of,
-        n_open=70, n_won=70, n_lost=120
+        n_open=110, n_won=70, n_lost=120
     )
 
     deals = []

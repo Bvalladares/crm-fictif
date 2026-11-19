@@ -181,18 +181,20 @@ def build_facts(crm_data):
     # Build A4 silent days per deal (needed for fact phrase)
     def a4_phrase(deal):
         did = deal["id"]
-        amount = deal.get("amount") or 0
         deal_acts = acts_by_deal.get(did, [])
-        last_past = None
+        last_best = None
         for a in deal_acts:
             at_dt = _parse_datetime(a.get("at"))
             if at_dt and at_dt.date() <= as_of_date:
-                if last_past is None or at_dt.date() > last_past:
-                    last_past = at_dt.date()
-        if last_past is None:
-            return f"Deal de {amount} € sans aucune activité passée", None
-        days_silent = (as_of_date - last_past).days
-        return f"Deal de {amount} € sans activité depuis {days_silent} jours", days_silent
+                if last_best is None or at_dt > _parse_datetime(last_best["at"]):
+                    last_best = a
+        if last_best is None:
+            return "Aucune activité passée", None, None, None
+        last_date = last_best["at"][:10]
+        last_type = last_best.get("type", "")
+        days_silent = (as_of_date - _parse_date(last_date)).days
+        phrase = f"Aucune activité depuis {days_silent} jours (dernière : {last_date}, {last_type})"
+        return phrase, days_silent, last_date, last_type
 
     # Last activity per deal (past activities only)
     def last_activity(deal_id):
@@ -245,9 +247,11 @@ def build_facts(crm_data):
         facts_phrases = []
         for code in codes:
             if code == "A4":
-                phrase, days_silent = a4_phrase(deal)
+                phrase, days_silent, last_date, last_type = a4_phrase(deal)
                 if days_silent is not None:
                     all_days.add(days_silent)
+                if last_date:
+                    all_dates.add(_parse_date(last_date))
                 facts_phrases.append(phrase)
             else:
                 phrase = _build_fact_phrase(code, deal, as_of_date)
@@ -276,7 +280,7 @@ def build_facts(crm_data):
         entry = {
             "deal_id": did,
             "deal_name": deal["name"],
-            "company": company.get("name", ""),
+            "company": company.get("display_name") or company.get("name", ""),
             "stage": STAGE_LABEL.get(deal.get("stage", ""), deal.get("stage", "")),
             "amount": amount,
             "codes": codes,
@@ -375,7 +379,7 @@ def build_facts(crm_data):
         excused.append({
             "deal_id": did,
             "deal_name": deal["name"],
-            "company": company.get("name", ""),
+            "company": company.get("display_name") or company.get("name", ""),
             "owner_id": deal.get("owner_id"),
             "owner_name": owner_info.get("name", deal.get("owner_id", "")),
             "codes": ["A1"],
@@ -444,22 +448,29 @@ def build_facts(crm_data):
         for v in _variants_for_int(amt):
             allowed.add(v)
 
-    # Add numbers from deal names and company names (numbers in proper names are ok)
+    # Add numbers from deal names, company names, and last_activity summaries.
+    # Summaries are verbatim snippets of activity bodies; any number in them
+    # is a known fact and must appear in allowed_numbers.
     import re as _re
     all_text_sources = []
     for did, entry in deal_entries.items():
         all_text_sources.append(entry["deal_name"])
         all_text_sources.append(entry["company"])
+        la = entry.get("last_activity")
+        if la:
+            all_text_sources.append(la.get("summary", ""))
     for exc in excused:
         all_text_sources.append(exc["deal_name"])
         all_text_sources.append(exc["company"])
     for src in all_text_sources:
         for tok in _re.findall(r'\b\d+\b', src):
             allowed.add(tok)
-            # Also day variants in case they appear standalone
             n = int(tok)
             for v in _variants_for_days(n):
                 allowed.add(v)
+            if n >= 1000:
+                for v in _variants_for_int(n):
+                    allowed.add(v)
 
     allowed_numbers = sorted(allowed)
 
