@@ -220,14 +220,41 @@ def score_review(review_text, facts, truth_rows, review_file=None):
 
     anticopy_pass = anticopy_score is None or anticopy_score <= 0.30
 
+    # 7. 1:1 section present
+    one_on_one_present = "1:1" in main_text
+
+    # 8. No invented numbers in 1:1 section
+    # Extract the 1:1 section from main text
+    one_on_one_numbers_ok = True
+    one_on_one_section = ""
+    idx_1on1 = main_text.find("## Questions pour vos 1:1")
+    if idx_1on1 >= 0:
+        # Find the next ## heading after the 1:1 section
+        rest = main_text[idx_1on1:]
+        next_heading = re.search(r'\n## ', rest[3:])  # skip the heading itself
+        if next_heading:
+            one_on_one_section = rest[:next_heading.start() + 3]
+        else:
+            one_on_one_section = rest
+        section_numbers = extract_numbers(one_on_one_section)
+        invented_1on1 = [
+            tok for tok in section_numbers
+            if tok not in allowed_normalised and tok.replace(' ', '') not in allowed_normalised
+            and tok != '0'
+        ]
+        if invented_1on1:
+            one_on_one_numbers_ok = False
+
     passed = (
         recall >= 0.90 and
         false_leurres_count <= 1 and
         invented_count == 0 and
-        length_words <= 250 and
+        length_words <= 300 and
         priorities_present and
         patterns_cited and
-        anticopy_pass
+        anticopy_pass and
+        one_on_one_present and
+        one_on_one_numbers_ok
     )
 
     return {
@@ -240,6 +267,8 @@ def score_review(review_text, facts, truth_rows, review_file=None):
         "priorities_present": priorities_present,
         "patterns_cited": patterns_cited,
         "anticopy_score": anticopy_score,
+        "one_on_one_present": one_on_one_present,
+        "one_on_one_numbers_ok": one_on_one_numbers_ok,
         "pass": passed,
         "details": {
             "missed_deals": missed_deals,

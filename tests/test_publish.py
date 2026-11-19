@@ -189,6 +189,21 @@ class TestChunkText(unittest.TestCase):
         for para in paras:
             self.assertIn(para.strip()[:20], combined)
 
+    def test_heading_stays_with_next_paragraph(self):
+        """An AE heading (*Name*) must not be isolated at chunk boundary."""
+        # Build a text where without keep_headings_with_next, the heading
+        # would end up alone at the end of a chunk
+        big_intro = "A" * 60 + "\n\nB" * 60
+        ae_heading = "*Alice Moreau*"
+        ae_content = "**Deal X** (Acme) — Alice Moreau — Négociation — 51\u202f500\u202f€\n- Fait important"
+        text = big_intro + "\n\n" + ae_heading + "\n\n" + ae_content
+        chunks = chunk_text(text, max_chars=130, keep_headings_with_next=True)
+        # The heading must not appear alone in any chunk
+        for chunk in chunks:
+            stripped = chunk.strip()
+            if stripped == ae_heading:
+                self.fail(f"AE heading was isolated in a chunk: {repr(chunk)}")
+
 
 # ── publish: thread structure ─────────────────────────────────────────────────
 

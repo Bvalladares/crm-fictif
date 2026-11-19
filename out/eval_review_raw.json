@@ -5,10 +5,12 @@
   "recall_total": 38,
   "false_leurres": 0,
   "invented_numbers": 0,
-  "length_words": 190,
+  "length_words": 279,
   "priorities_present": true,
   "patterns_cited": true,
   "anticopy_score": null,
+  "one_on_one_present": true,
+  "one_on_one_numbers_ok": true,
   "pass": true,
   "details": {
     "missed_deals": [],

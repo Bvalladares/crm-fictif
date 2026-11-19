@@ -39,6 +39,11 @@ Dans cet ordre :
 5. **## Résumé par AE** : Une ligne par AE ayant des deals signalés, montants avec espace des milliers :
    `- {owner_name} : {n} deal(s) signalé(s) ({flagged_amount formatted} €)`
 
+6. **## Questions pour vos 1:1** : 2 à 4 questions factuelles, une par AE concerné, construites uniquement à partir des données de `facts.json`. Si un AE porte plusieurs priorités, le signaler en tête de section. Format :
+   `- {owner_name} — {deal_name} ({company}, {stage}) : {fait factuel}. {question ouverte} ?`
+   Questions autorisées uniquement sur : jours d'inactivité, montants, stades, dates de clôture, nombre d'interlocuteurs.
+   Aucune critique de la personne, aucune supposition sur le client.
+
 ### Partie 2 — Détail (après `---DETAIL---`, sans limite de mots)
 
 1. **## Détail par AE** — un sous-titre `### {Nom AE}` par AE ayant des deals signalés. Pour chaque deal signalé : nom, entreprise, AE, étape, montant (avec espace des milliers), tous les faits, dernière activité. Pas de codes.
@@ -58,5 +63,5 @@ Dans cet ordre :
 - Reproduire fidèlement les `facts` tels quels dans les bullets (ce sont des phrases déjà rédigées).
 - Ne pas inventer de faits, de dates ou de montants.
 - Les noms de deals, d'entreprises et d'AE doivent être copiés exactement depuis `facts.json`.
-- Le message principal doit faire **≤250 mots** (compter les mots avant `---DETAIL---`).
+- Le message principal doit faire **≤300 mots** (compter les mots avant `---DETAIL---`).
 - Citer **au moins 2 valeurs numériques** de `facts.patterns` dans le message principal.

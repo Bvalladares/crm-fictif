@@ -74,7 +74,8 @@ def _build_fact_phrase(code, deal, as_of_date):
     if code == "A3":
         close_date = _parse_date(deal.get("close_date"))
         days = (as_of_date - close_date).days if close_date else 0
-        return f"Date de clôture dépassée : {close_date.isoformat()} (il y a {days} j)"
+        short_cd = _short_date_fr(close_date.isoformat()) if close_date else ""
+        return f"Date de clôture dépassée : {short_cd} (il y a {days} j)"
 
     if code == "A4":
         # Need last activity days — will be computed later; return placeholder
@@ -86,8 +87,9 @@ def _build_fact_phrase(code, deal, as_of_date):
 
     if code == "A6":
         close_date = _parse_date(deal.get("close_date"))
-        yyyy_mm = close_date.strftime("%Y-%m") if close_date else ""
-        return f"Clôture en {yyyy_mm} mais étape {stage_label}"
+        yyyy_mm = (f"{MONTH_ABBR[close_date.month]} {close_date.year}"
+                   if close_date else "")
+        return f"Clôture prévue en {yyyy_mm} mais étape {stage_label}"
 
     if code == "A7":
         amt_str = f"{amount:,}".replace(",", " ")
@@ -110,6 +112,12 @@ MONTH_NAMES = {
     9: "septembre", 10: "octobre", 11: "novembre", 12: "décembre",
 }
 
+MONTH_ABBR = {
+    1: "janv.", 2: "févr.", 3: "mars", 4: "avr.",
+    5: "mai", 6: "juin", 7: "juil.", 8: "août",
+    9: "sept.", 10: "oct.", 11: "nov.", 12: "déc.",
+}
+
 def _variants_for_int(n):
     """All written forms for integer n (amount, day count, deal count)."""
     variants = [str(n)]
@@ -117,6 +125,9 @@ def _variants_for_int(n):
     if n >= 1000:
         s = f"{n:,}".replace(",", "\u202f")  # narrow non-break space
         variants.append(f"{n:,}".replace(",", " "))  # regular space
+        # Add leading digit as standalone (e.g. "9" from "9 500")
+        leading = str(n)[0]
+        variants.append(leading)
     # Euro variants for amounts
     if n >= 1000:
         variants.append(f"{n:,}".replace(",", " ") + " €")
@@ -136,8 +147,19 @@ def _variants_for_date(d):
         f"{d.day}/{d.month}",                 # 2/10
         f"{d.day} {MONTH_NAMES[d.month]}",    # 2 octobre
         f"{d.day:02d}/{d.month:02d}/{d.year}", # 02/10/2026
+        f"{d.day} {MONTH_ABBR[d.month]}",     # 2 oct.
+        str(d.day),                            # standalone day number
     ]
     return variants
+
+
+def _short_date_fr(date_str):
+    """Return '6 oct.' style short French date from ISO string."""
+    d = _parse_date(date_str)
+    if d is None:
+        return date_str
+    return f"{d.day} {MONTH_ABBR[d.month]}"
+
 
 def _variants_for_days(n):
     """All written forms for a day count."""
@@ -194,7 +216,8 @@ def build_facts(crm_data):
         last_date = last_best["at"][:10]
         last_type = last_best.get("type", "")
         days_silent = (as_of_date - _parse_date(last_date)).days
-        phrase = f"Aucune activité depuis {days_silent} jours (dernière : {last_date}, {last_type})"
+        short_last = _short_date_fr(last_date)
+        phrase = f"Aucune activité depuis {days_silent} jours (dernière : {short_last}, {last_type})"
         return phrase, days_silent, last_date, last_type
 
     # Last activity per deal (past activities only)
@@ -371,8 +394,8 @@ def build_facts(crm_data):
         company = companies_by_id.get(deal.get("company_id"), {})
         owner_info = owners_by_id.get(deal.get("owner_id"), {})
         why = (f"En {stage_label} depuis {days_in_stage} jours, "
-               f"mais note du {recent_note_date.isoformat()} "
-               f"et RDV prévu le {future_meeting_date.isoformat()}")
+               f"mais note du {_short_date_fr(recent_note_date.isoformat())} "
+               f"et RDV prévu le {_short_date_fr(future_meeting_date.isoformat())}")
         # Collect numbers from excused deals
         all_days.add(days_in_stage)
         all_dates.add(recent_note_date)
@@ -546,6 +569,68 @@ def build_facts(crm_data):
                     "amount": amt,
                 })
 
+    # ── 1:1 questions ───────────────────────────────────────────────────────
+    # Build factual questions for each AE, one per unique owner, in priority order.
+    # Questions use only facts already in allowed_numbers.
+    one_on_one = []
+    seen_1on1_owners = set()
+    for did in all_flagged_sorted:
+        if len(one_on_one) >= 3:
+            break
+        deal = deals_by_id[did]
+        oid = deal.get("owner_id")
+        if oid in seen_1on1_owners:
+            continue
+        owner_name = owners_by_id.get(oid, {}).get("name", oid)
+        codes = flags_by_deal[did]
+        entry = deal_entries[did]
+        amount = deal.get("amount") or 0
+        stage_label = STAGE_LABEL.get(deal.get("stage", ""), deal.get("stage", ""))
+        amt_str = f"{amount:,}".replace(",", "\u202f") + "\u202f€" if amount else "montant manquant"
+
+        q = None
+        if "A4" in codes:
+            _, days_silent, _, _ = a4_phrase(deal)
+            if days_silent:
+                q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
+                     f"aucune activité depuis {days_silent} j. Quel est l'état d'avancement ?")
+        elif "A7" in codes:
+            q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
+                 f"{amt_str} avec un seul interlocuteur. D'autres contacts ont-ils été approchés ?")
+        elif "A3" in codes:
+            close_date = _parse_date(deal.get("close_date"))
+            if close_date:
+                days_over = (as_of_date - close_date).days
+                q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
+                     f"date de clôture dépassée depuis {days_over} j. La date est-elle encore réaliste ?")
+        elif "A2" in codes:
+            q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
+                 f"aucune tâche planifiée. Quelle est la prochaine étape prévue ?")
+        elif "A1" in codes:
+            stage_entered = _parse_date(deal.get("stage_entered_at"))
+            days_in = (as_of_date - stage_entered).days if stage_entered else 0
+            normal = STAGE_NORMAL_DAYS.get(deal.get("stage"), 0)
+            q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
+                 f"en {stage_label} depuis {days_in} j (norme : {normal} j). Ce dossier avance-t-il ?")
+        else:
+            q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
+                 f"signalement à {amt_str}. Quel est le statut actuel ?")
+
+        if q:
+            one_on_one.append({"owner_name": owner_name, "question": q, "deal_id": did})
+            seen_1on1_owners.add(oid)
+
+    # concentrations_ae: AEs with more than one of the top-3 priority deals
+    priority_owner_counts = {}
+    for did in priorities:
+        oid = deals_by_id[did].get("owner_id")
+        priority_owner_counts[oid] = priority_owner_counts.get(oid, 0) + 1
+    concentrations_ae = {
+        owners_by_id.get(oid, {}).get("name", oid): cnt
+        for oid, cnt in priority_owner_counts.items()
+        if cnt > 1
+    }
+
     patterns = {
         "by_code": by_code,
         "by_owner": patterns_by_owner,
@@ -554,6 +639,7 @@ def build_facts(crm_data):
         "a3_overdue_days_avg": a3_overdue_days_avg,
         "a5_a7_combined": a5_a7_combined,
         "contract_mention_no_amount": contract_mention_no_amount,
+        "concentrations_ae": concentrations_ae,
     }
 
     # Add pattern numbers to allowed_numbers
@@ -569,6 +655,19 @@ def build_facts(crm_data):
         for v in _variants_for_int(stats["flagged_amount"]):
             allowed.add(v)
 
+    # Scan 1:1 questions for any numbers they introduce
+    import re as _re2
+    for item in one_on_one:
+        q = item["question"]
+        for tok in _re2.findall(r'\b\d+\b', q):
+            allowed.add(tok)
+            n = int(tok)
+            for v in _variants_for_days(n):
+                allowed.add(v)
+            if n >= 1000:
+                for v in _variants_for_int(n):
+                    allowed.add(v)
+
     allowed_numbers = sorted(allowed)
 
     result = {
@@ -581,6 +680,7 @@ def build_facts(crm_data):
             "flagged_amount": flagged_amount_total,
         },
         "priorities": priorities,
+        "one_on_one": one_on_one,
         "by_owner": by_owner,
         "excused": excused,
         "patterns": patterns,

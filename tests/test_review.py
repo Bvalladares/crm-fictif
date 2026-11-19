@@ -195,6 +195,8 @@ class TestRenderRawScoresPerfect(unittest.TestCase):
         self.assertEqual(ev["recall"], 1.0, f"recall={ev['recall']} != 1.0")
         self.assertEqual(ev["false_leurres"], 0, f"false_leurres={ev['false_leurres']} != 0")
         self.assertEqual(ev["invented_numbers"], 0, f"invented_numbers={ev['invented_numbers']} != 0")
+        self.assertTrue(ev.get("one_on_one_present", False), "one_on_one_present should be True")
+        self.assertTrue(ev.get("one_on_one_numbers_ok", True), "one_on_one_numbers_ok should be True")
         self.assertTrue(ev["pass"], f"pass={ev['pass']} != True")
 
 

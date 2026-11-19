@@ -145,6 +145,18 @@ def gen_deals(rng, companies, contacts_by_company, as_of,
         n_words = rng.choice([1, 1, 2, 2])
         sig = all_sig[:min(n_words, len(all_sig))]
 
+        # Never use a single generic word as the company fragment
+        _GENERIC_CO = {
+            "société", "electricite", "électricité", "ets", "entreprise",
+            "compagnie", "etablissements", "établissements", "industrie",
+            "industries", "services", "groupe", "holding", "construction",
+            "constructions", "transport", "transports", "batiment", "bâtiment",
+            "energie", "énergie", "distribution", "commerce", "general",
+            "générale", "nationale", "regionale", "régionale",
+        }
+        if len(sig) == 1 and sig[0].lower() in _GENERIC_CO:
+            sig = all_sig[:min(2, len(all_sig))]
+
         style = rng.choice(["orig", "orig", "title", "abbrev"])
         if style == "title":
             short_co = " ".join(w.capitalize() for w in sig)

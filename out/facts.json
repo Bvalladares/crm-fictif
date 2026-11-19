@@ -12,6 +12,23 @@
     "D-0046",
     "D-0028"
   ],
+  "one_on_one": [
+    {
+      "owner_name": "Claire Durand",
+      "question": "Claire Durand — EE – Déploiement multi-sites (Eiffage Energie Systemes - Île de France, Négociation) : 51 500 € avec un seul interlocuteur. D'autres contacts ont-ils été approchés ?",
+      "deal_id": "D-0064"
+    },
+    {
+      "owner_name": "Alice Moreau",
+      "question": "Alice Moreau — Fluidexpert – PILOTE AGENCE (Fluidexpert, Démo) : aucune activité depuis 43 j. Quel est l'état d'avancement ?",
+      "deal_id": "D-0046"
+    },
+    {
+      "owner_name": "David Leroy",
+      "question": "David Leroy — Tecsol – PLANIF TERRAIN (Tecsol, Négociation) : 35 000 € avec un seul interlocuteur. D'autres contacts ont-ils été approchés ?",
+      "deal_id": "D-0029"
+    }
+  ],
   "by_owner": [
     {
       "owner_id": "ae1",
@@ -29,7 +46,7 @@
             "A4"
           ],
           "facts": [
-            "Aucune activité depuis 43 jours (dernière : 2026-10-06, reunion)"
+            "Aucune activité depuis 43 jours (dernière : 6 oct., reunion)"
           ],
           "last_activity": {
             "date": "2026-10-06",
@@ -47,7 +64,7 @@
             "A4"
           ],
           "facts": [
-            "Aucune activité depuis 26 jours (dernière : 2026-10-23, reunion)"
+            "Aucune activité depuis 26 jours (dernière : 23 oct., reunion)"
           ],
           "last_activity": {
             "date": "2026-10-23",
@@ -103,7 +120,7 @@
             "A3"
           ],
           "facts": [
-            "Date de clôture dépassée : 2026-10-27 (il y a 22 j)"
+            "Date de clôture dépassée : 27 oct. (il y a 22 j)"
           ],
           "last_activity": {
             "date": "2026-11-02",
@@ -179,7 +196,7 @@
             "A3"
           ],
           "facts": [
-            "Date de clôture dépassée : 2026-09-24 (il y a 55 j)"
+            "Date de clôture dépassée : 24 sept. (il y a 55 j)"
           ],
           "last_activity": {
             "date": "2026-11-13",
@@ -197,7 +214,7 @@
             "A3"
           ],
           "facts": [
-            "Date de clôture dépassée : 2026-11-04 (il y a 14 j)"
+            "Date de clôture dépassée : 4 nov. (il y a 14 j)"
           ],
           "last_activity": {
             "date": "2026-11-15",
@@ -277,7 +294,7 @@
             "A4"
           ],
           "facts": [
-            "Aucune activité depuis 42 jours (dernière : 2026-10-07, appel)"
+            "Aucune activité depuis 42 jours (dernière : 7 oct., appel)"
           ],
           "last_activity": {
             "date": "2026-10-07",
@@ -333,7 +350,7 @@
             "A6"
           ],
           "facts": [
-            "Clôture en 2026-11 mais étape Découverte"
+            "Clôture prévue en nov. 2026 mais étape Découverte"
           ],
           "last_activity": {
             "date": "2026-11-17",
@@ -351,7 +368,7 @@
             "A6"
           ],
           "facts": [
-            "Clôture en 2026-11 mais étape Qualification"
+            "Clôture prévue en nov. 2026 mais étape Qualification"
           ],
           "last_activity": {
             "date": "2026-11-15",
@@ -529,7 +546,7 @@
             "A6"
           ],
           "facts": [
-            "Clôture en 2026-11 mais étape Qualification"
+            "Clôture prévue en nov. 2026 mais étape Qualification"
           ],
           "last_activity": {
             "date": "2026-11-18",
@@ -547,7 +564,7 @@
             "A3"
           ],
           "facts": [
-            "Date de clôture dépassée : 2026-10-21 (il y a 28 j)"
+            "Date de clôture dépassée : 21 oct. (il y a 28 j)"
           ],
           "last_activity": {
             "date": "2026-11-04",
@@ -573,7 +590,7 @@
             "A4"
           ],
           "facts": [
-            "Aucune activité depuis 31 jours (dernière : 2026-10-18, appel)"
+            "Aucune activité depuis 31 jours (dernière : 18 oct., appel)"
           ],
           "last_activity": {
             "date": "2026-10-18",
@@ -591,7 +608,7 @@
             "A3"
           ],
           "facts": [
-            "Date de clôture dépassée : 2026-10-14 (il y a 35 j)"
+            "Date de clôture dépassée : 14 oct. (il y a 35 j)"
           ],
           "last_activity": {
             "date": "2026-11-13",
@@ -609,7 +626,7 @@
             "A3"
           ],
           "facts": [
-            "Date de clôture dépassée : 2026-09-29 (il y a 50 j)"
+            "Date de clôture dépassée : 29 sept. (il y a 50 j)"
           ],
           "last_activity": {
             "date": "2026-11-18",
@@ -668,7 +685,7 @@
       "codes": [
         "A1"
       ],
-      "why": "En Qualification depuis 40 jours, mais note du 2026-11-15 et RDV prévu le 2026-11-23"
+      "why": "En Qualification depuis 40 jours, mais note du 15 nov. et RDV prévu le 23 nov."
     },
     {
       "deal_id": "D-0095",
@@ -679,7 +696,7 @@
       "codes": [
         "A1"
       ],
-      "why": "En Qualification depuis 50 jours, mais note du 2026-11-17 et RDV prévu le 2026-12-07"
+      "why": "En Qualification depuis 50 jours, mais note du 17 nov. et RDV prévu le 7 déc."
     }
   ],
   "patterns": {
@@ -732,7 +749,10 @@
         "stage": "Négociation",
         "amount": 0
       }
-    ]
+    ],
+    "concentrations_ae": {
+      "Alice Moreau": 2
+    }
   },
   "allowed_numbers": [
     "0",
@@ -740,28 +760,20 @@
     "0 jours",
     "000",
     "02/11/2026",
-    "04",
     "04/11/2026",
     "05/11/2026",
-    "06",
     "06/10/2026",
-    "07",
     "07/10/2026",
     "07/12/2026",
     "08/11/2026",
-    "09",
     "1",
     "1 j",
     "1 jours",
-    "10",
-    "10 j",
-    "10 jours",
     "11",
     "11 000",
     "11 000 €",
-    "11 j",
-    "11 jours",
     "11 k€",
+    "11 nov.",
     "11 novembre",
     "11/11",
     "11/11/2026",
@@ -790,6 +802,7 @@
     "13 j",
     "13 jours",
     "13 k€",
+    "13 nov.",
     "13 novembre",
     "13/11",
     "13/11/2026",
@@ -802,6 +815,7 @@
     "14",
     "14 j",
     "14 jours",
+    "14 oct.",
     "14 octobre",
     "14/10",
     "14/10/2026",
@@ -814,6 +828,7 @@
     "15 j",
     "15 jours",
     "15 k€",
+    "15 nov.",
     "15 novembre",
     "15/11",
     "15/11/2026",
@@ -824,13 +839,16 @@
     "16 j",
     "16 jours",
     "16 k€",
+    "16 nov.",
     "16 novembre",
     "16/11",
     "16/11/2026",
     "16000",
+    "17",
     "17 000",
     "17 000 €",
     "17 k€",
+    "17 nov.",
     "17 novembre",
     "17/11",
     "17/11/2026",
@@ -841,7 +859,9 @@
     "18 j",
     "18 jours",
     "18 k€",
+    "18 nov.",
     "18 novembre",
+    "18 oct.",
     "18 octobre",
     "18/10",
     "18/10/2026",
@@ -862,6 +882,7 @@
     "2 484 500 €",
     "2 j",
     "2 jours",
+    "2 nov.",
     "2 novembre",
     "2/11",
     "20",
@@ -898,6 +919,7 @@
     "21 500 €",
     "21 j",
     "21 jours",
+    "21 oct.",
     "21 octobre",
     "21/10",
     "21/10/2026",
@@ -908,7 +930,9 @@
     "23",
     "23 j",
     "23 jours",
+    "23 nov.",
     "23 novembre",
+    "23 oct.",
     "23 octobre",
     "23/10",
     "23/10/2026",
@@ -921,6 +945,7 @@
     "24",
     "24 j",
     "24 jours",
+    "24 sept.",
     "24 septembre",
     "24/09/2026",
     "24/9",
@@ -935,6 +960,7 @@
     "27",
     "27 j",
     "27 jours",
+    "27 oct.",
     "27 octobre",
     "27/10",
     "27/10/2026",
@@ -944,18 +970,22 @@
     "29",
     "29 j",
     "29 jours",
+    "29 sept.",
     "29 septembre",
     "29/09/2026",
     "29/9",
     "3",
     "3 j",
     "3 jours",
+    "30",
+    "30 sept.",
     "30 septembre",
     "30/09/2026",
     "30/9",
     "31",
     "31 j",
     "31 jours",
+    "31 oct.",
     "31 octobre",
     "31/10",
     "31/10/2026",
@@ -996,6 +1026,7 @@
     "4",
     "4 j",
     "4 jours",
+    "4 nov.",
     "4 novembre",
     "4/11",
     "40",
@@ -1021,6 +1052,7 @@
     "5",
     "5 j",
     "5 jours",
+    "5 nov.",
     "5 novembre",
     "5/11",
     "50",
@@ -1055,6 +1087,7 @@
     "6 500 €",
     "6 j",
     "6 jours",
+    "6 oct.",
     "6 octobre",
     "6/10",
     "60",
@@ -1065,9 +1098,11 @@
     "64 jours",
     "6500",
     "7",
+    "7 déc.",
     "7 décembre",
     "7 j",
     "7 jours",
+    "7 oct.",
     "7 octobre",
     "7/10",
     "7/12",
@@ -1080,6 +1115,7 @@
     "8",
     "8 j",
     "8 jours",
+    "8 nov.",
     "8 novembre",
     "8/11",
     "9",
@@ -1087,8 +1123,6 @@
     "9 000 €",
     "9 500",
     "9 500 €",
-    "9 j",
-    "9 jours",
     "9 k€",
     "9000",
     "92 500",

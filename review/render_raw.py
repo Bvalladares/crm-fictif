@@ -2,21 +2,29 @@
 review/render_raw.py — Render facts.json to Markdown. No LLM.
 
 CLI: python3 -m review.render_raw [--facts out/facts.json] [--out out/review_raw.md]
-
-Output format:
-  [main message — ≤250 words]
-
-  ---DETAIL---
-
-  [detail section — full listing, no word limit]
 """
 
 import argparse
+import datetime
 import json
 import os
 
-
 SEPARATOR = "---DETAIL---"
+
+MONTH_ABBR_FR = {
+    1: "janv.", 2: "févr.", 3: "mars", 4: "avr.",
+    5: "mai", 6: "juin", 7: "juil.", 8: "août",
+    9: "sept.", 10: "oct.", 11: "nov.", 12: "déc.",
+}
+
+
+def _short_date_fr(date_str):
+    """Return '6 oct.' style short French date from ISO date string."""
+    try:
+        d = datetime.date.fromisoformat(date_str[:10])
+        return f"{d.day} {MONTH_ABBR_FR[d.month]}"
+    except (ValueError, KeyError):
+        return date_str
 
 
 def fmt_amount(n):
@@ -27,10 +35,16 @@ def fmt_amount(n):
 
 
 def _plur(n, singular, plural=None):
-    """Return singular or plural form based on n."""
     if plural is None:
         plural = singular + "s"
     return singular if n == 1 else plural
+
+
+def _truncate(text, max_len=72):
+    """Truncate text to max_len characters, appending '…' if cut."""
+    if len(text) <= max_len:
+        return text
+    return text[:max_len].rstrip() + "…"
 
 
 def render(facts):
@@ -38,6 +52,7 @@ def render(facts):
     team = facts["team"]
     totals = facts["totals"]
     patterns = facts.get("patterns", {})
+    one_on_one = facts.get("one_on_one", [])
 
     # Build a lookup: deal_id -> (owner_name, entry)
     deal_lookup = {}
@@ -45,8 +60,20 @@ def render(facts):
         for entry in owner["flagged"]:
             deal_lookup[entry["deal_id"]] = (owner["owner_name"], entry)
 
+    def render_last_activity(entry):
+        """Return the last-activity line or None. Suppressed when A4 is in codes
+        (A4 fact phrase already names the last activity)."""
+        if "A4" in entry.get("codes", []):
+            return None
+        la = entry.get("last_activity")
+        if not la:
+            return None
+        short_date = _short_date_fr(la["date"])
+        summary = _truncate(la.get("summary", ""), 72)
+        return f"  _{short_date} ({la['type']}) — {summary}_"
+
     def render_deal_entry(entry, owner_name):
-        """Render a single flagged deal block (no anomaly codes)."""
+        """Render a single flagged deal block."""
         blk = []
         blk.append(
             f"**{entry['deal_name']}** ({entry['company']}) — {owner_name} — "
@@ -54,11 +81,9 @@ def render(facts):
         )
         for fact in entry["facts"]:
             blk.append(f"- {fact}")
-        la = entry.get("last_activity")
-        if la:
-            blk.append(
-                f"  _Dernière activité : {la['date']} ({la['type']}) — {la['summary']}_"
-            )
+        la_line = render_last_activity(entry)
+        if la_line:
+            blk.append(la_line)
         return blk
 
     # ── MAIN MESSAGE ──────────────────────────────────────────────────────────
@@ -79,7 +104,7 @@ def render(facts):
     )
     main_lines.append("")
 
-    # 3. Priorités — 3 priority deals, one key fact each (no anomaly codes)
+    # 3. Priorités — no anomaly codes
     main_lines.append("## Priorités")
     main_lines.append("")
     for did in facts["priorities"]:
@@ -94,7 +119,7 @@ def render(facts):
                 main_lines.append(f"- {key_fact}")
             main_lines.append("")
 
-    # 4. Tendances — natural French, no anomaly codes
+    # 4. Tendances
     main_lines.append("## Tendances")
     main_lines.append("")
     by_code = patterns.get("by_code", {})
@@ -105,20 +130,16 @@ def render(facts):
     contract_cases = patterns.get("contract_mention_no_amount", [])
     n_contract = len(contract_cases) if isinstance(contract_cases, list) else 0
 
-    # Cross-type patterns first (richer insight), then simple counts
     trend_bullets = []
-
     if n_contract > 0:
         trend_bullets.append(
             f"• {n_contract} {_plur(n_contract, 'deal')} en phase avancée : "
-            f"activité mentionnant un contrat ou devis, montant absent"
+            "activité mentionnant un contrat ou devis, montant absent"
         )
-
     if a5a7 > 0:
         trend_bullets.append(
             f"• {a5a7} {_plur(a5a7, 'deal')} sans montant en Négociation avec un seul interlocuteur"
         )
-
     if a2_late > 0:
         a2_total = by_code.get("A2", 0)
         trend_bullets.append(
@@ -130,29 +151,23 @@ def render(facts):
         trend_bullets.append(
             f"• {a2_total} {_plur(a2_total, 'deal')} sans prochaine tâche planifiée"
         )
-
     if by_code.get("A3", 0) > 0:
         a3_total = by_code["A3"]
-        bullet = (
-            f"• {a3_total} {_plur(a3_total, 'deal')} "
-            f"avec date de clôture dépassée"
-        )
+        bullet = f"• {a3_total} {_plur(a3_total, 'deal')} avec date de clôture dépassée"
         if a3_avg > 0:
             bullet += f" (retard moyen {a3_avg} j)"
         trend_bullets.append(bullet)
-
     if multi > 0:
         trend_bullets.append(
             f"• {multi} {_plur(multi, 'deal')} "
             f"{'cumule' if multi == 1 else 'cumulent'} deux alertes ou plus"
         )
-
     if by_code.get("A1", 0) > 0 and len(trend_bullets) < 3:
         a1_total = by_code["A1"]
         trend_bullets.append(
-            f"• {a1_total} {_plur(a1_total, 'deal')} bloqué{'' if a1_total == 1 else 's'} à la même étape trop longtemps"
+            f"• {a1_total} {_plur(a1_total, 'deal')} "
+            f"bloqué{'' if a1_total == 1 else 's'} à la même étape trop longtemps"
         )
-
     for bullet in trend_bullets[:3]:
         main_lines.append(bullet)
     main_lines.append("")
@@ -173,10 +188,24 @@ def render(facts):
         )
     main_lines.append("")
 
+    # 6. Questions pour vos 1:1
+    main_lines.append("## Questions pour vos 1:1")
+    main_lines.append("")
+    # Concentration note
+    concentrations = patterns.get("concentrations_ae", {})
+    for owner_name, cnt in concentrations.items():
+        main_lines.append(
+            f"_{owner_name} porte {cnt} des 3 priorités._"
+        )
+    if concentrations:
+        main_lines.append("")
+    for item in one_on_one:
+        main_lines.append(f"- {item['question']}")
+    main_lines.append("")
+
     # ── DETAIL SECTION ────────────────────────────────────────────────────────
     detail_lines = []
 
-    # 1. Détail par AE
     detail_lines.append("## Détail par AE")
     detail_lines.append("")
     for owner in facts["by_owner"]:
@@ -186,7 +215,6 @@ def render(facts):
             detail_lines.extend(render_deal_entry(entry, owner["owner_name"]))
             detail_lines.append("")
 
-    # 2. Vus, pas inquiétants
     detail_lines.append("## Vus, pas inquiétants")
     detail_lines.append("")
     for excused in facts.get("excused", []):

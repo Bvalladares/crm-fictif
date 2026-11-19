@@ -111,19 +111,40 @@ def md_to_slack(text):
 
 # ── chunking ──────────────────────────────────────────────────────────────────
 
-def chunk_text(text, max_chars=_CHUNK_MAX):
+def chunk_text(text, max_chars=_CHUNK_MAX, keep_headings_with_next=False):
     """
     Split *text* into a list of strings each ≤ max_chars.
-    Prefers splitting on blank lines (paragraph boundaries), then on
-    newlines.  Never splits mid-word.
+    Prefers splitting on blank lines (paragraph boundaries), then on newlines.
+
+    If keep_headings_with_next is True, any paragraph that is a bare heading
+    (a single *Name* bold line, as produced by md_to_slack for ### headings)
+    is merged with the following paragraph so it is never left isolated at
+    the end of a chunk.
     """
     if len(text) <= max_chars:
         return [text]
 
+    paragraphs = re.split(r'\n{2,}', text)
+
+    if keep_headings_with_next:
+        # Merge standalone heading paragraphs (e.g. *Alice Moreau*) with next
+        merged = []
+        i = 0
+        while i < len(paragraphs):
+            p = paragraphs[i].strip()
+            # Standalone bold: *Name* with no parens, no dashes, no extra content
+            is_heading = bool(re.match(r'^\*[^*()\n\u2014\-]+\*\s*$', p))
+            if is_heading and i + 1 < len(paragraphs):
+                merged.append(paragraphs[i] + "\n\n" + paragraphs[i + 1])
+                i += 2
+            else:
+                merged.append(paragraphs[i])
+                i += 1
+        paragraphs = merged
+
     chunks = []
     buf = ""
 
-    paragraphs = re.split(r'\n{2,}', text)
     for para in paragraphs:
         candidate = (buf + "\n\n" + para).lstrip() if buf else para
         if len(candidate) <= max_chars:
@@ -132,7 +153,6 @@ def chunk_text(text, max_chars=_CHUNK_MAX):
             if buf:
                 chunks.append(buf)
             buf = ""
-            # Para itself may exceed limit — split on lines
             if len(para) <= max_chars:
                 buf = para
             else:
@@ -200,7 +220,8 @@ def _build_score_line(eval_path):
     if recall is not None:
         parts.append(f"rappel {recall:.0%}")
     if inv is not None:
-        parts.append(f"{inv} chiffre(s) inventé(s)")
+        noun = "chiffre inventé" if inv == 1 else "chiffres inventés"
+        parts.append(f"{inv} {noun}")
     if length is not None:
         parts.append(f"{length} mots")
     return "_Score : " + " — ".join(parts) + "_"
@@ -251,7 +272,7 @@ def publish(review_file, dry_run=False, force=False, _post_fn=None):
     score_line = _build_score_line(eval_path)
 
     main_chunks = chunk_text(main_slack)
-    detail_chunks = chunk_text(detail_slack)
+    detail_chunks = chunk_text(detail_slack, keep_headings_with_next=True)
 
     if dry_run:
         print("=== DRY RUN — nothing will be sent ===\n")
