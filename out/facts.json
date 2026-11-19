@@ -3,140 +3,214 @@
   "team": "Atelier Nova",
   "totals": {
     "open_deals": 110,
-    "open_amount": 2593000,
+    "open_amount": 2484500,
     "flagged_deals": 33,
-    "flagged_amount": 797000
+    "flagged_amount": 723500
   },
   "priorities": [
-    "D-0001",
-    "D-0023",
-    "D-0078"
+    "D-0064",
+    "D-0046",
+    "D-0028"
   ],
   "by_owner": [
     {
       "owner_id": "ae1",
       "owner_name": "Alice Moreau",
-      "open_deals": 29,
-      "open_amount": 721500,
+      "open_deals": 38,
+      "open_amount": 930000,
       "flagged": [
         {
-          "deal_id": "D-0068",
-          "deal_name": "Assystem Engineering – Pilote agence",
-          "company": "Assystem Engineering AND Operation Services",
-          "stage": "Découverte",
+          "deal_id": "D-0046",
+          "deal_name": "Fluidexpert – PILOTE AGENCE",
+          "company": "Fluidexpert",
+          "stage": "Démo",
           "amount": 50000,
-          "codes": [
-            "A3"
-          ],
-          "facts": [
-            "Date de clôture dépassée : 2026-09-30 (il y a 49 j)"
-          ],
-          "last_activity": {
-            "date": "2026-10-31",
-            "type": "reunion",
-            "summary": "échange initial sur les enjeux métier. pb de traçabilité mentionné. à creuser."
-          }
-        },
-        {
-          "deal_id": "D-0061",
-          "deal_name": "EE – pilote agence",
-          "company": "ETS Edouard Boffo",
-          "stage": "Qualification",
-          "amount": 30000,
           "codes": [
             "A4"
           ],
           "facts": [
-            "Aucune activité depuis 33 jours (dernière : 2026-10-16, appel)"
+            "Aucune activité depuis 43 jours (dernière : 2026-10-06, reunion)"
           ],
           "last_activity": {
-            "date": "2026-10-16",
-            "type": "appel",
-            "summary": "discussion sur les critères de choix. prix et intégration = critères clés."
-          }
-        },
-        {
-          "deal_id": "D-0096",
-          "deal_name": "Vo2 - deploy multi-sites",
-          "company": "VO2",
-          "stage": "Proposition envoyée",
-          "amount": 19500,
-          "codes": [
-            "A1",
-            "A2"
-          ],
-          "facts": [
-            "En Proposition envoyée depuis 65 jours (durée normale 21 jours)",
-            "Aucune tâche ni réunion à venir"
-          ],
-          "last_activity": {
-            "date": "2026-11-16",
-            "type": "email",
-            "summary": "Voici notre offre commerciale détaillée. Je reste disponible pour en discuter."
-          }
-        },
-        {
-          "deal_id": "D-0075",
-          "deal_name": "Energie Service – PLANIF TERRAIN",
-          "company": "Energie ET Service",
-          "stage": "Qualification",
-          "amount": 18500,
-          "codes": [
-            "A1",
-            "A2"
-          ],
-          "facts": [
-            "En Qualification depuis 43 jours (durée normale 14 jours)",
-            "Aucune tâche ni réunion à venir"
-          ],
-          "last_activity": {
-            "date": "2026-11-16",
-            "type": "email",
-            "summary": "Bonjour, je souhaite faire le point sur votre projet. Une disponibilité cette se"
-          }
-        },
-        {
-          "deal_id": "D-0063",
-          "deal_name": "Brunet – licence nova",
-          "company": "Brunet",
-          "stage": "Qualification",
-          "amount": 31000,
-          "codes": [
-            "A2"
-          ],
-          "facts": [
-            "Aucune tâche ni réunion à venir"
-          ],
-          "last_activity": {
-            "date": "2026-10-28",
+            "date": "2026-10-06",
             "type": "reunion",
-            "summary": "première réunion de découverte. interlocuteur DRH + responsable terrain. besoin "
+            "summary": "démo produit, focus sur le reporting. impact fort pr le responsable exploitation"
           }
         },
         {
-          "deal_id": "D-0015",
-          "deal_name": "Atlantique - pilote agence",
-          "company": "Atlantique Electricite Services",
-          "stage": "Négociation",
-          "amount": 11000,
+          "deal_id": "D-0028",
+          "deal_name": "Monteil… – PILOTE AGENCE",
+          "company": "Monteil ET CIE",
+          "stage": "Découverte",
+          "amount": 45000,
+          "codes": [
+            "A4"
+          ],
+          "facts": [
+            "Aucune activité depuis 26 jours (dernière : 2026-10-23, reunion)"
+          ],
+          "last_activity": {
+            "date": "2026-10-23",
+            "type": "reunion",
+            "summary": "atelier de cadrage initial. processus actuels mappés. plusieurs pb identifiés."
+          }
+        },
+        {
+          "deal_id": "D-0100",
+          "deal_name": "Eiffage Energie… – planif. terrain",
+          "company": "Eiffage Energie Systemes - Transport & Distribution",
+          "stage": "Qualification",
+          "amount": 35000,
+          "codes": [
+            "A2"
+          ],
+          "facts": [
+            "Aucune tâche ni réunion à venir"
+          ],
+          "last_activity": {
+            "date": "2026-11-11",
+            "type": "reunion",
+            "summary": "revue du cahier des charges client. besoin de personnalisation identifié."
+          }
+        },
+        {
+          "deal_id": "D-0010",
+          "deal_name": "Optisol - Déploiement multi-sites",
+          "company": "Optisol",
+          "stage": "Démo",
+          "amount": 12000,
+          "codes": [
+            "A1",
+            "A2"
+          ],
+          "facts": [
+            "En Démo depuis 60 jours (durée normale 21 jours)",
+            "Aucune tâche ni réunion à venir"
+          ],
+          "last_activity": {
+            "date": "2026-11-15",
+            "type": "reunion",
+            "summary": "deuxième démo, focus module mobile. client conquis. à faire avancer."
+          }
+        },
+        {
+          "deal_id": "D-0007",
+          "deal_name": "STA… - pilote agence",
+          "company": "STA Reseaux",
+          "stage": "Découverte",
+          "amount": 19000,
+          "codes": [
+            "A3"
+          ],
+          "facts": [
+            "Date de clôture dépassée : 2026-10-27 (il y a 22 j)"
+          ],
+          "last_activity": {
+            "date": "2026-11-02",
+            "type": "note",
+            "summary": "client réfléchit encore. pas pressé. relancer dans 2 sem."
+          }
+        },
+        {
+          "deal_id": "D-0023",
+          "deal_name": "SD – LIC. NOVA",
+          "company": "SDEL Dauphine Savoie",
+          "stage": "Qualification",
+          "amount": 9500,
+          "codes": [
+            "A1",
+            "A2"
+          ],
+          "facts": [
+            "En Qualification depuis 50 jours (durée normale 14 jours)",
+            "Aucune tâche ni réunion à venir"
+          ],
+          "last_activity": {
+            "date": "2026-11-02",
+            "type": "reunion",
+            "summary": "réunion qualification avec DAF et RSI. budget cadré. go pour démo."
+          }
+        },
+        {
+          "deal_id": "D-0001",
+          "deal_name": "Terti'o – deploy multi-sites",
+          "company": "Terti'o",
+          "stage": "Découverte",
+          "amount": 9000,
+          "codes": [
+            "A1",
+            "A2"
+          ],
+          "facts": [
+            "En Découverte depuis 41 jours (durée normale 14 jours)",
+            "Aucune tâche ni réunion à venir"
+          ],
+          "last_activity": {
+            "date": "2026-10-07",
+            "type": "appel",
+            "summary": "découverte téléphonique. 3 sites, 20 techniciens itinérants. beau potentiel."
+          }
+        },
+        {
+          "deal_id": "D-0030",
+          "deal_name": "Agirenergy – Licence Nova",
+          "company": "Agirenergy",
+          "stage": "Proposition envoyée",
+          "amount": 17000,
           "codes": [
             "A1"
           ],
           "facts": [
-            "En Négociation depuis 88 jours (durée normale 30 jours)"
+            "En Proposition envoyée depuis 70 jours (durée normale 21 jours)"
           ],
           "last_activity": {
-            "date": "2026-11-16",
-            "type": "email",
-            "summary": "Suite à notre échange, voici la grille tarifaire révisée avec la remise convenue"
+            "date": "2026-11-18",
+            "type": "reunion",
+            "summary": "réunion suite à l'envoi de l'offre. client satisfait du fond, négociation sur ti"
           }
         },
         {
-          "deal_id": "D-0106",
-          "deal_name": "Climatec – Déploiement multi-sites",
-          "company": "Climatec",
+          "deal_id": "D-0071",
+          "deal_name": "Irisolaris – Planif terrain",
+          "company": "Irisolaris",
           "stage": "Démo",
-          "amount": 21000,
+          "amount": 17000,
+          "codes": [
+            "A3"
+          ],
+          "facts": [
+            "Date de clôture dépassée : 2026-09-24 (il y a 55 j)"
+          ],
+          "last_activity": {
+            "date": "2026-11-13",
+            "type": "appel",
+            "summary": "relance suite silence post-démo. client occupé, rdv repoussé."
+          }
+        },
+        {
+          "deal_id": "D-0014",
+          "deal_name": "Electricite… - deploy multi-sites",
+          "company": "Electricite Millot",
+          "stage": "Négociation",
+          "amount": 11000,
+          "codes": [
+            "A3"
+          ],
+          "facts": [
+            "Date de clôture dépassée : 2026-11-04 (il y a 14 j)"
+          ],
+          "last_activity": {
+            "date": "2026-11-15",
+            "type": "email",
+            "summary": "Comme convenu, voici la version finale du contrat intégrant vos remarques."
+          }
+        },
+        {
+          "deal_id": "D-0097",
+          "deal_name": "Eiffage… – Déploiement multi-sites",
+          "company": "Eiffage Energie Systemes - EMCS NORD",
+          "stage": "Découverte",
+          "amount": 9500,
           "codes": [
             "A9"
           ],
@@ -144,9 +218,27 @@
             "Doublon : même entreprise, noms quasi identiques"
           ],
           "last_activity": {
-            "date": "2026-10-15",
+            "date": "2026-11-16",
             "type": "email",
-            "summary": "Merci pour le retour positif sur la démo. Je vous propose de fixer une date pour"
+            "summary": "Bonjour, je fais suite à mon message de la semaine dernière. Avez-vous pu consul"
+          }
+        },
+        {
+          "deal_id": "D-0077",
+          "deal_name": "CIDE ELEC - Pilote agences",
+          "company": "CIDE ELEC",
+          "stage": "Négociation",
+          "amount": 0,
+          "codes": [
+            "A5"
+          ],
+          "facts": [
+            "Montant manquant en Négociation"
+          ],
+          "last_activity": {
+            "date": "2026-11-13",
+            "type": "appel",
+            "summary": "relance suite silence. client ok mais juriste en déplacement. relancer la semain"
           }
         }
       ]
@@ -154,49 +246,87 @@
     {
       "owner_id": "ae2",
       "owner_name": "Bruno Petit",
-      "open_deals": 14,
-      "open_amount": 334000,
+      "open_deals": 24,
+      "open_amount": 536000,
       "flagged": [
         {
-          "deal_id": "D-0034",
-          "deal_name": "Societe D – LIC. NOVA",
-          "company": "Societe D Installations DE Plomberie Electricite Chauffage Tuyauteries",
-          "stage": "Qualification",
-          "amount": 30000,
+          "deal_id": "D-0048",
+          "deal_name": "REEL – Déploiement MS",
+          "company": "REEL",
+          "stage": "Découverte",
+          "amount": 52000,
+          "codes": [
+            "A2"
+          ],
+          "facts": [
+            "Aucune tâche ni réunion à venir"
+          ],
+          "last_activity": {
+            "date": "2026-11-13",
+            "type": "appel",
+            "summary": "Point de suivi avec le client."
+          }
+        },
+        {
+          "deal_id": "D-0059",
+          "deal_name": "NGE Ingenierie – licence nova",
+          "company": "NGE Ingenierie",
+          "stage": "Découverte",
+          "amount": 25000,
           "codes": [
             "A4"
           ],
           "facts": [
-            "Aucune activité depuis 30 jours (dernière : 2026-10-19, reunion)"
+            "Aucune activité depuis 42 jours (dernière : 2026-10-07, appel)"
           ],
           "last_activity": {
-            "date": "2026-10-19",
-            "type": "reunion",
-            "summary": "première réunion, présentation mutuelle. client réceptif. rdv suivi à caler."
+            "date": "2026-10-07",
+            "type": "appel",
+            "summary": "bon échange, contexte clair. 15 techniciens à gérer, beau projet."
           }
         },
         {
-          "deal_id": "D-0014",
-          "deal_name": "Archimede – pilote agence",
-          "company": "Archimede",
-          "stage": "Négociation",
-          "amount": 25000,
+          "deal_id": "D-0050",
+          "deal_name": "Dietsmann… - Licence Nova",
+          "company": "Dietsmann Technologies",
+          "stage": "Qualification",
+          "amount": 12500,
           "codes": [
-            "A7"
+            "A1",
+            "A2"
           ],
           "facts": [
-            "Deal 25000 € en Négociation avec 1 seul interlocuteur"
+            "En Qualification depuis 51 jours (durée normale 14 jours)",
+            "Aucune tâche ni réunion à venir"
           ],
           "last_activity": {
             "date": "2026-11-18",
             "type": "appel",
-            "summary": "appel négo finale. accord trouvé sur tous les points. signature jeudi."
+            "summary": "qualification ok. budget estimé autour de 12k. décision au CODIR."
+          }
+        },
+        {
+          "deal_id": "D-0068",
+          "deal_name": "Mathyss – planif. terrain",
+          "company": "Mathyss",
+          "stage": "Qualification",
+          "amount": 12500,
+          "codes": [
+            "A1"
+          ],
+          "facts": [
+            "En Qualification depuis 55 jours (durée normale 14 jours)"
+          ],
+          "last_activity": {
+            "date": "2026-11-18",
+            "type": "email",
+            "summary": "Bonjour, comme convenu voici la documentation technique. Je reste disponible pou"
           }
         },
         {
           "deal_id": "D-0038",
-          "deal_name": "MGL – Pilote agence",
-          "company": "MGL Froid",
+          "deal_name": "Societe – Pilote agence",
+          "company": "Societe DE Plomberie ET DE Chauffage POUR L'immobilier ET L'industrie",
           "stage": "Découverte",
           "amount": 18000,
           "codes": [
@@ -206,139 +336,17 @@
             "Clôture en 2026-11 mais étape Découverte"
           ],
           "last_activity": {
-            "date": "2026-11-13",
-            "type": "email",
-            "summary": "Suite à notre premier appel, je vous transmets les informations demandées. À vot"
-          }
-        },
-        {
-          "deal_id": "D-0043",
-          "deal_name": "TA – Planif terrain",
-          "company": "Tecsol Antilles & Guyane",
-          "stage": "Qualification",
-          "amount": 6000,
-          "codes": [
-            "A3"
-          ],
-          "facts": [
-            "Date de clôture dépassée : 2026-10-24 (il y a 25 j)"
-          ],
-          "last_activity": {
-            "date": "2026-11-12",
-            "type": "note",
-            "summary": "dossier en bonne voie. budget validé. préparer démo adaptée."
-          }
-        }
-      ]
-    },
-    {
-      "owner_id": "ae3",
-      "owner_name": "Claire Durand",
-      "open_deals": 23,
-      "open_amount": 458000,
-      "flagged": [
-        {
-          "deal_id": "D-0001",
-          "deal_name": "Artelia Industrie - Licence nova",
-          "company": "Artelia Industrie",
-          "stage": "Démo",
-          "amount": 40000,
-          "codes": [
-            "A1",
-            "A2"
-          ],
-          "facts": [
-            "En Démo depuis 63 jours (durée normale 21 jours)",
-            "Aucune tâche ni réunion à venir"
-          ],
-          "last_activity": {
-            "date": "2026-11-03",
-            "type": "note",
-            "summary": "PoC en cours. résultats attendus la semaine prochaine."
-          }
-        },
-        {
-          "deal_id": "D-0023",
-          "deal_name": "Tractebel - licence nova",
-          "company": "Tractebel Engineering",
-          "stage": "Découverte",
-          "amount": 36000,
-          "codes": [
-            "A1",
-            "A2"
-          ],
-          "facts": [
-            "En Découverte depuis 45 jours (durée normale 14 jours)",
-            "Aucune tâche ni réunion à venir"
-          ],
-          "last_activity": {
-            "date": "2026-11-16",
-            "type": "reunion",
-            "summary": "rdv de découverte en visio. 4 participants. pb principal : planification tournée"
-          }
-        },
-        {
-          "deal_id": "D-0045",
-          "deal_name": "Graniou – Déploiement multi-sites",
-          "company": "Graniou Caraibes SAS",
-          "stage": "Qualification",
-          "amount": 10500,
-          "codes": [
-            "A1",
-            "A2"
-          ],
-          "facts": [
-            "En Qualification depuis 54 jours (durée normale 14 jours)",
-            "Aucune tâche ni réunion à venir"
-          ],
-          "last_activity": {
-            "date": "2026-10-17",
-            "type": "appel",
-            "summary": "relance suite rdv. délai de décision = 3 sem. à relancer."
-          }
-        },
-        {
-          "deal_id": "D-0006",
-          "deal_name": "CLIMATEC - deploy multi-sites",
-          "company": "Climatec",
-          "stage": "Proposition envoyée",
-          "amount": 36500,
-          "codes": [
-            "A9"
-          ],
-          "facts": [
-            "Doublon : même entreprise, noms quasi identiques"
-          ],
-          "last_activity": {
             "date": "2026-11-17",
-            "type": "appel",
-            "summary": "échange rapide. devis reçu, en cours de lecture. rappeler lundi."
+            "type": "reunion",
+            "summary": "rdv dc réalisé. 3 participants côté client. besoin bien cadré. suite: envoyer do"
           }
         },
         {
-          "deal_id": "D-0065",
-          "deal_name": "Building – Planification terrain",
-          "company": "Building Systems Energies",
+          "deal_id": "D-0074",
+          "deal_name": "Copin - PILOTE AGENCE",
+          "company": "Copin",
           "stage": "Qualification",
-          "amount": 5500,
-          "codes": [
-            "A2"
-          ],
-          "facts": [
-            "Aucune tâche ni réunion à venir"
-          ],
-          "last_activity": {
-            "date": "2026-11-13",
-            "type": "appel",
-            "summary": "besoin initial confirmé. attente d'un rdv de présentation."
-          }
-        },
-        {
-          "deal_id": "D-0022",
-          "deal_name": "Martinon MSE – DEPLOY MULTI-SITES",
-          "company": "Martinon MSE",
-          "stage": "Qualification",
-          "amount": 4000,
+          "amount": 16000,
           "codes": [
             "A6"
           ],
@@ -346,167 +354,113 @@
             "Clôture en 2026-11 mais étape Qualification"
           ],
           "last_activity": {
-            "date": "2026-11-09",
+            "date": "2026-11-15",
             "type": "note",
-            "summary": "qualification avancée. budget probable 15-20k. attendre validation CODIR."
+            "summary": "DAF favorable mais RSI pas encore convaincu. préparer arguments techniques."
           }
         },
         {
-          "deal_id": "D-0005",
-          "deal_name": "Proseco – Planif terrain",
-          "company": "Proseco SN",
+          "deal_id": "D-0103",
+          "deal_name": "Monteil CIE – planif. terrain",
+          "company": "Monteil ET CIE",
           "stage": "Négociation",
-          "amount": 0,
+          "amount": 13500,
           "codes": [
-            "A5"
+            "A8"
           ],
           "facts": [
-            "Montant manquant en Négociation"
+            "En Négociation sans réunion de démo dans l'historique"
           ],
           "last_activity": {
-            "date": "2026-11-10",
-            "type": "email",
-            "summary": "Je vous transmets le contrat finalisé pour signature. Merci de le retourner sign"
+            "date": "2026-11-13",
+            "type": "reunion",
+            "summary": "discussion tarifs et SLA. accord trouvé sur les pénalités. à formaliser."
           }
         }
       ]
     },
     {
-      "owner_id": "ae4",
-      "owner_name": "David Leroy",
-      "open_deals": 17,
-      "open_amount": 382500,
+      "owner_id": "ae3",
+      "owner_name": "Claire Durand",
+      "open_deals": 16,
+      "open_amount": 317500,
       "flagged": [
         {
-          "deal_id": "D-0072",
-          "deal_name": "SPIE Industrie – PILOTE AGENCE",
-          "company": "SPIE Industrie",
-          "stage": "Découverte",
-          "amount": 40000,
-          "codes": [
-            "A4"
-          ],
-          "facts": [
-            "Aucune activité depuis 43 jours (dernière : 2026-10-06, appel)"
-          ],
-          "last_activity": {
-            "date": "2026-10-06",
-            "type": "appel",
-            "summary": "dg pas disponible. secrétaire a pris le msg. rappeler mardi."
-          }
-        },
-        {
-          "deal_id": "D-0049",
-          "deal_name": "Dr House – Déploiement multi-sites",
-          "company": "DR House",
+          "deal_id": "D-0064",
+          "deal_name": "EE – Déploiement multi-sites",
+          "company": "Eiffage Energie Systemes - ILE DE France",
           "stage": "Négociation",
-          "amount": 35000,
+          "amount": 51500,
           "codes": [
             "A7"
           ],
           "facts": [
-            "Deal 35000 € en Négociation avec 1 seul interlocuteur"
-          ],
-          "last_activity": {
-            "date": "2026-11-12",
-            "type": "appel",
-            "summary": "négo finale. accord sur le prix. contrat à envoyer pour signature."
-          }
-        },
-        {
-          "deal_id": "D-0070",
-          "deal_name": "Derichebourg - Pilote agence",
-          "company": "Derichebourg Aeronautics Services France",
-          "stage": "Découverte",
-          "amount": 40000,
-          "codes": [
-            "A3"
-          ],
-          "facts": [
-            "Date de clôture dépassée : 2026-10-13 (il y a 36 j)"
-          ],
-          "last_activity": {
-            "date": "2026-11-13",
-            "type": "note",
-            "summary": "pme familiale, décision = DG seul. à contacter directement."
-          }
-        },
-        {
-          "deal_id": "D-0040",
-          "deal_name": "EF – Pilote agences",
-          "company": "Excent France",
-          "stage": "Qualification",
-          "amount": 30000,
-          "codes": [
-            "A3"
-          ],
-          "facts": [
-            "Date de clôture dépassée : 2026-10-21 (il y a 28 j)"
-          ],
-          "last_activity": {
-            "date": "2026-11-01",
-            "type": "appel",
-            "summary": "pas joignable. msg laissé, rappeler demain matin."
-          }
-        },
-        {
-          "deal_id": "D-0057",
-          "deal_name": "Archimede - Licence Nova",
-          "company": "Archimede",
-          "stage": "Qualification",
-          "amount": 18500,
-          "codes": [
-            "A1"
-          ],
-          "facts": [
-            "En Qualification depuis 53 jours (durée normale 14 jours)"
-          ],
-          "last_activity": {
-            "date": "2026-11-01",
-            "type": "appel",
-            "summary": "échange avec DAF. budget ok autour de 18k. go pr démo."
-          }
-        },
-        {
-          "deal_id": "D-0094",
-          "deal_name": "Hdf – deploy multi-sites",
-          "company": "HDF Chauffage",
-          "stage": "Démo",
-          "amount": 3500,
-          "codes": [
-            "A3"
-          ],
-          "facts": [
-            "Date de clôture dépassée : 2026-11-06 (il y a 12 j)"
-          ],
-          "last_activity": {
-            "date": "2026-10-30",
-            "type": "reunion",
-            "summary": "atelier qualification avec le responsable SI. critères d'achat bien définis."
-          }
-        },
-        {
-          "deal_id": "D-0029",
-          "deal_name": "Excent – Planif terrain",
-          "company": "Excent France",
-          "stage": "Négociation",
-          "amount": 0,
-          "codes": [
-            "A5"
-          ],
-          "facts": [
-            "Montant manquant en Négociation"
+            "Deal 51500 € en Négociation avec 1 seul interlocuteur"
           ],
           "last_activity": {
             "date": "2026-11-17",
             "type": "email",
-            "summary": "Comme convenu, voici la version finale du contrat intégrant vos remarques."
+            "summary": "Je reviens vers vous concernant la signature du contrat. Avez-vous des questions"
           }
         },
         {
-          "deal_id": "D-0046",
-          "deal_name": "VO2 – LIC. NOVA",
-          "company": "VO2",
+          "deal_id": "D-0092",
+          "deal_name": "ETS… – Licence nova",
+          "company": "ETS Leroux",
+          "stage": "Négociation",
+          "amount": 21500,
+          "codes": [
+            "A8"
+          ],
+          "facts": [
+            "En Négociation sans réunion de démo dans l'historique"
+          ],
+          "last_activity": {
+            "date": "2026-11-08",
+            "type": "note",
+            "summary": "deal en closing. client très motivé. risque faible de retournement."
+          }
+        },
+        {
+          "deal_id": "D-0016",
+          "deal_name": "EIFFAGE… - deploy multi-sites",
+          "company": "Eiffage Energie Systemes - EMCS NORD",
+          "stage": "Qualification",
+          "amount": 13000,
+          "codes": [
+            "A9"
+          ],
+          "facts": [
+            "Doublon : même entreprise, noms quasi identiques"
+          ],
+          "last_activity": {
+            "date": "2026-11-18",
+            "type": "reunion",
+            "summary": "réunion avec équipe dirigeante. décision = comité de direction. délai 1 mois."
+          }
+        },
+        {
+          "deal_id": "D-0045",
+          "deal_name": "Christian… – Planif terrain",
+          "company": "SARL Christian Ledru",
+          "stage": "Démo",
+          "amount": 6500,
+          "codes": [
+            "A1"
+          ],
+          "facts": [
+            "En Démo depuis 64 jours (durée normale 21 jours)"
+          ],
+          "last_activity": {
+            "date": "2026-11-05",
+            "type": "appel",
+            "summary": "relance suite silence post-démo. client occupé, rdv repoussé."
+          }
+        },
+        {
+          "deal_id": "D-0102",
+          "deal_name": "MUST – PLANIF TERRAIN",
+          "company": "MUST",
           "stage": "Proposition envoyée",
           "amount": 0,
           "codes": [
@@ -516,79 +470,61 @@
             "Montant manquant en Proposition envoyée"
           ],
           "last_activity": {
-            "date": "2026-11-13",
-            "type": "email",
-            "summary": "Bonjour, je souhaite m'assurer que vous avez bien reçu notre devis. Une question"
+            "date": "2026-11-18",
+            "type": "reunion",
+            "summary": "présentation offre à l'équipe direction. retours positifs. décision prochainemen"
           }
         }
       ]
     },
     {
-      "owner_id": "ae5",
-      "owner_name": "Emma Bernard",
-      "open_deals": 27,
-      "open_amount": 697000,
+      "owner_id": "ae4",
+      "owner_name": "David Leroy",
+      "open_deals": 19,
+      "open_amount": 378000,
       "flagged": [
         {
-          "deal_id": "D-0078",
-          "deal_name": "HT – Déploiement MS",
-          "company": "Herve Thermique",
-          "stage": "Qualification",
-          "amount": 45000,
-          "codes": [
-            "A4"
-          ],
-          "facts": [
-            "Aucune activité depuis 46 jours (dernière : 2026-10-03, reunion)"
-          ],
-          "last_activity": {
-            "date": "2026-10-03",
-            "type": "reunion",
-            "summary": "première réunion, présentation mutuelle. client réceptif. rdv suivi à caler."
-          }
-        },
-        {
-          "deal_id": "D-0055",
-          "deal_name": "Serma - PILOTE AGENCE",
-          "company": "Serma Ingenierie",
-          "stage": "Proposition envoyée",
-          "amount": 38500,
-          "codes": [
-            "A3"
-          ],
-          "facts": [
-            "Date de clôture dépassée : 2026-10-10 (il y a 39 j)"
-          ],
-          "last_activity": {
-            "date": "2026-11-15",
-            "type": "note",
-            "summary": "timeline serrée : décision attendue avant fin de trimestre."
-          }
-        },
-        {
-          "deal_id": "D-0089",
-          "deal_name": "Henon - Licence nova",
-          "company": "SAS Henon",
+          "deal_id": "D-0029",
+          "deal_name": "Tecsol – PLANIF TERRAIN",
+          "company": "Tecsol",
           "stage": "Négociation",
-          "amount": 20000,
+          "amount": 35000,
           "codes": [
             "A7"
           ],
           "facts": [
-            "Deal 20000 € en Négociation avec 1 seul interlocuteur"
+            "Deal 35000 € en Négociation avec 1 seul interlocuteur"
           ],
           "last_activity": {
-            "date": "2026-10-29",
+            "date": "2026-10-31",
             "type": "email",
-            "summary": "Suite à notre dernière discussion, je vous confirme les conditions définitives. "
+            "summary": "Avez-vous eu le temps de regarder notre devis ? Je suis disponible pour en parle"
           }
         },
         {
-          "deal_id": "D-0025",
-          "deal_name": "Herve – licence nova",
-          "company": "Herve Thermique",
+          "deal_id": "D-0044",
+          "deal_name": "Atalian… - PILOTE AGENCE",
+          "company": "Atalian Maintenance & Energy",
+          "stage": "Négociation",
+          "amount": 34000,
+          "codes": [
+            "A7"
+          ],
+          "facts": [
+            "Deal 34000 € en Négociation avec 1 seul interlocuteur"
+          ],
+          "last_activity": {
+            "date": "2026-11-16",
+            "type": "note",
+            "summary": "appel de suivi offre. client satisfait mais délai décision = 3 sem."
+          }
+        },
+        {
+          "deal_id": "D-0022",
+          "deal_name": "Industheo – Déploiement MS",
+          "company": "Industheo",
           "stage": "Qualification",
-          "amount": 51000,
+          "amount": 33500,
           "codes": [
             "A6"
           ],
@@ -596,63 +532,127 @@
             "Clôture en 2026-11 mais étape Qualification"
           ],
           "last_activity": {
-            "date": "2026-11-08",
-            "type": "note",
-            "summary": "qualification avancée. budget probable 15-20k. attendre validation CODIR."
+            "date": "2026-11-18",
+            "type": "appel",
+            "summary": "échange poussé sur les critères d'achat. 3 décideurs impliqués."
           }
         },
         {
-          "deal_id": "D-0087",
-          "deal_name": "SYND Coproprietaires - Pilote agences",
-          "company": "SYND Coproprietaires Residence Elysee 2",
-          "stage": "Négociation",
-          "amount": 39500,
+          "deal_id": "D-0049",
+          "deal_name": "Agirenergy – Planif terrain",
+          "company": "Agirenergy",
+          "stage": "Proposition envoyée",
+          "amount": 15000,
           "codes": [
-            "A8"
+            "A3"
           ],
           "facts": [
-            "En Négociation sans réunion de démo dans l'historique"
+            "Date de clôture dépassée : 2026-10-21 (il y a 28 j)"
           ],
           "last_activity": {
-            "date": "2026-11-07",
+            "date": "2026-11-04",
             "type": "reunion",
-            "summary": "revue finale contrat. 1 clause SLA à ajuster. à renvoyer sous 48h."
+            "summary": "démo 2h, 4 participants. questions pointues sur le PoC. très bon engagement."
+          }
+        }
+      ]
+    },
+    {
+      "owner_id": "ae5",
+      "owner_name": "Emma Bernard",
+      "open_deals": 13,
+      "open_amount": 323000,
+      "flagged": [
+        {
+          "deal_id": "D-0098",
+          "deal_name": "Isola.co – Extension utilisateurs",
+          "company": "Isola.co",
+          "stage": "Proposition envoyée",
+          "amount": 35000,
+          "codes": [
+            "A4"
+          ],
+          "facts": [
+            "Aucune activité depuis 31 jours (dernière : 2026-10-18, appel)"
+          ],
+          "last_activity": {
+            "date": "2026-10-18",
+            "type": "appel",
+            "summary": "qualification ok. budget estimé autour de {budget_k}k. décision au CODIR."
           }
         },
         {
-          "deal_id": "D-0007",
-          "deal_name": "VE – licence nova",
-          "company": "Veodis Electricite",
+          "deal_id": "D-0080",
+          "deal_name": "EGIS RAIL - licence nova",
+          "company": "EGIS RAIL",
           "stage": "Qualification",
-          "amount": 17000,
+          "amount": 45000,
           "codes": [
-            "A1"
+            "A3"
           ],
           "facts": [
-            "En Qualification depuis 41 jours (durée normale 14 jours)"
+            "Date de clôture dépassée : 2026-10-14 (il y a 35 j)"
           ],
           "last_activity": {
-            "date": "2026-11-11",
+            "date": "2026-11-13",
             "type": "email",
-            "summary": "Merci pour notre échange. Je vous confirme que nous pouvons adapter la solution "
+            "summary": "Merci pour vos retours sur nos capacités d'intégration. Je vous confirme la fais"
+          }
+        },
+        {
+          "deal_id": "D-0108",
+          "deal_name": "Fondasol – Pilote agence",
+          "company": "Fondasol",
+          "stage": "Découverte",
+          "amount": 41000,
+          "codes": [
+            "A3"
+          ],
+          "facts": [
+            "Date de clôture dépassée : 2026-09-29 (il y a 50 j)"
+          ],
+          "last_activity": {
+            "date": "2026-11-18",
+            "type": "reunion",
+            "summary": "rdv de découverte en visio. 4 participants. pb principal : planification tournée"
           }
         },
         {
           "deal_id": "D-0110",
-          "deal_name": "EGIR – licence nova",
-          "company": "EGIR",
-          "stage": "Négociation",
-          "amount": 26500,
+          "deal_name": "ME - deploy multi-sites",
+          "company": "MK Energies",
+          "stage": "Découverte",
+          "amount": 9000,
           "codes": [
-            "A8"
+            "A1",
+            "A2"
           ],
           "facts": [
-            "En Négociation sans réunion de démo dans l'historique"
+            "En Découverte depuis 55 jours (durée normale 14 jours)",
+            "Aucune tâche ni réunion à venir"
           ],
           "last_activity": {
-            "date": "2026-11-14",
+            "date": "2026-09-30",
             "type": "appel",
-            "summary": "appel rapide. contrat reçu et relu. signature prévue demain."
+            "summary": "interlocuteur en congés jusque fin mois. rappeler le 2."
+          }
+        },
+        {
+          "deal_id": "D-0034",
+          "deal_name": "Lorraine… – PILOTE AGENCE",
+          "company": "Lorraine Energie Nancy",
+          "stage": "Négociation",
+          "amount": 0,
+          "codes": [
+            "A5"
+          ],
+          "facts": [
+            "Montant manquant en Négociation"
+          ],
+          "last_activity": {
+            "date": "2026-11-16",
+            "type": "reunion",
+            "summary": "revue finale contrat. 1 clause SLA à ajuster. à renvoyer sous 48h."
           }
         }
       ]
@@ -660,56 +660,97 @@
   ],
   "excused": [
     {
-      "deal_id": "D-0004",
-      "deal_name": "Electricite Industrielle - Licence Nova",
-      "company": "Electricite Industrielle J. P. Fauche",
-      "owner_id": "ae1",
-      "owner_name": "Alice Moreau",
+      "deal_id": "D-0057",
+      "deal_name": "Hydrostadium - Licence Nova",
+      "company": "Hydrostadium",
+      "owner_id": "ae4",
+      "owner_name": "David Leroy",
       "codes": [
         "A1"
       ],
-      "why": "En Démo depuis 57 jours, mais note du 2026-11-17 et RDV prévu le 2026-12-07"
+      "why": "En Qualification depuis 40 jours, mais note du 2026-11-15 et RDV prévu le 2026-11-23"
     },
     {
-      "deal_id": "D-0048",
-      "deal_name": "SPIE - DEPLOY MULTI-SITES",
-      "company": "SPIE Turbomachinery",
+      "deal_id": "D-0095",
+      "deal_name": "Merat Etablissements - Licence Nova",
+      "company": "Merat Etablissements",
       "owner_id": "ae3",
       "owner_name": "Claire Durand",
       "codes": [
         "A1"
       ],
-      "why": "En Proposition envoyée depuis 67 jours, mais note du 2026-11-17 et RDV prévu le 2026-11-23"
+      "why": "En Qualification depuis 50 jours, mais note du 2026-11-17 et RDV prévu le 2026-12-07"
     }
   ],
+  "patterns": {
+    "by_code": {
+      "A1": 8,
+      "A2": 7,
+      "A3": 6,
+      "A4": 4,
+      "A5": 3,
+      "A6": 3,
+      "A7": 3,
+      "A8": 2,
+      "A9": 2
+    },
+    "by_owner": {
+      "ae1": {
+        "name": "Alice Moreau",
+        "flagged": 12,
+        "flagged_amount": 234000
+      },
+      "ae2": {
+        "name": "Bruno Petit",
+        "flagged": 7,
+        "flagged_amount": 149500
+      },
+      "ae3": {
+        "name": "Claire Durand",
+        "flagged": 5,
+        "flagged_amount": 92500
+      },
+      "ae4": {
+        "name": "David Leroy",
+        "flagged": 4,
+        "flagged_amount": 117500
+      },
+      "ae5": {
+        "name": "Emma Bernard",
+        "flagged": 5,
+        "flagged_amount": 130000
+      }
+    },
+    "multi_anomaly_deals": 5,
+    "a2_in_late_stages": 0,
+    "a3_overdue_days_avg": 34,
+    "a5_a7_combined": 0,
+    "contract_mention_no_amount": [
+      {
+        "deal_id": "D-0034",
+        "deal_name": "Lorraine… – PILOTE AGENCE",
+        "stage": "Négociation",
+        "amount": 0
+      }
+    ]
+  },
   "allowed_numbers": [
     "0",
-    "01/11/2026",
-    "03/10/2026",
-    "03/11/2026",
+    "0 j",
+    "0 jours",
+    "02/11/2026",
+    "04/11/2026",
+    "05/11/2026",
     "06/10/2026",
-    "06/11/2026",
-    "07/11/2026",
+    "07/10/2026",
     "07/12/2026",
     "08/11/2026",
-    "09/11/2026",
     "1",
     "1 j",
     "1 jours",
-    "1 novembre",
-    "1/11",
     "10",
-    "10 500",
-    "10 500 €",
     "10 j",
     "10 jours",
-    "10 novembre",
-    "10 octobre",
-    "10/10",
-    "10/10/2026",
-    "10/11",
-    "10/11/2026",
-    "10500",
     "11",
     "11 000",
     "11 000 €",
@@ -723,119 +764,124 @@
     "110 j",
     "110 jours",
     "11000",
+    "117 500",
+    "117 500 €",
+    "117500",
     "12",
+    "12 000",
+    "12 000 €",
+    "12 500",
+    "12 500 €",
     "12 j",
     "12 jours",
-    "12 novembre",
-    "12/11",
-    "12/11/2026",
+    "12 k€",
+    "12000",
+    "12500",
     "13",
+    "13 000",
+    "13 000 €",
+    "13 500",
+    "13 500 €",
     "13 j",
     "13 jours",
+    "13 k€",
     "13 novembre",
-    "13 octobre",
-    "13/10",
-    "13/10/2026",
     "13/11",
     "13/11/2026",
+    "130 000",
+    "130 000 €",
+    "130 k€",
+    "13000",
+    "130000",
+    "13500",
     "14",
     "14 j",
     "14 jours",
-    "14 novembre",
-    "14/11",
-    "14/11/2026",
+    "14 octobre",
+    "14/10",
+    "14/10/2026",
+    "149 500",
+    "149 500 €",
+    "149500",
     "15",
+    "15 000",
+    "15 000 €",
     "15 j",
     "15 jours",
+    "15 k€",
     "15 novembre",
-    "15 octobre",
-    "15/10",
-    "15/10/2026",
     "15/11",
     "15/11/2026",
+    "15000",
     "16",
+    "16 000",
+    "16 000 €",
     "16 j",
     "16 jours",
+    "16 k€",
     "16 novembre",
-    "16 octobre",
-    "16/10",
-    "16/10/2026",
     "16/11",
     "16/11/2026",
-    "17",
+    "16000",
     "17 000",
     "17 000 €",
-    "17 j",
-    "17 jours",
     "17 k€",
     "17 novembre",
-    "17 octobre",
-    "17/10",
-    "17/10/2026",
     "17/11",
     "17/11/2026",
     "17000",
+    "18",
     "18 000",
     "18 000 €",
-    "18 500",
-    "18 500 €",
+    "18 j",
+    "18 jours",
     "18 k€",
     "18 novembre",
+    "18 octobre",
+    "18/10",
+    "18/10/2026",
     "18/11",
     "18/11/2026",
     "18000",
-    "18500",
     "19",
-    "19 500",
-    "19 500 €",
+    "19 000",
+    "19 000 €",
     "19 j",
     "19 jours",
-    "19 octobre",
-    "19/10",
-    "19/10/2026",
-    "19500",
+    "19 k€",
+    "19000",
     "2",
     "2 026",
     "2 026 €",
-    "2 593 000",
-    "2 593 000 €",
+    "2 484 500",
+    "2 484 500 €",
     "2 j",
     "2 jours",
-    "20 000",
-    "20 000 €",
-    "20 k€",
-    "20000",
-    "20000 j",
-    "20000 jours",
+    "2 novembre",
+    "2/11",
+    "20",
+    "20 j",
+    "20 jours",
     "2026",
     "2026 j",
     "2026 jours",
+    "2026-09-24",
+    "2026-09-29",
     "2026-09-30",
-    "2026-10-03",
     "2026-10-06",
-    "2026-10-10",
-    "2026-10-13",
-    "2026-10-15",
-    "2026-10-16",
-    "2026-10-17",
-    "2026-10-19",
+    "2026-10-07",
+    "2026-10-14",
+    "2026-10-18",
     "2026-10-21",
-    "2026-10-24",
-    "2026-10-28",
-    "2026-10-29",
-    "2026-10-30",
+    "2026-10-23",
+    "2026-10-27",
     "2026-10-31",
-    "2026-11-01",
-    "2026-11-03",
-    "2026-11-06",
-    "2026-11-07",
+    "2026-11-02",
+    "2026-11-04",
+    "2026-11-05",
     "2026-11-08",
-    "2026-11-09",
-    "2026-11-10",
     "2026-11-11",
-    "2026-11-12",
     "2026-11-13",
-    "2026-11-14",
     "2026-11-15",
     "2026-11-16",
     "2026-11-17",
@@ -843,521 +889,515 @@
     "2026-11-23",
     "2026-12-07",
     "21",
-    "21 000",
-    "21 000 €",
+    "21 500",
+    "21 500 €",
     "21 j",
     "21 jours",
-    "21 k€",
     "21 octobre",
     "21/10",
     "21/10/2026",
-    "21000",
+    "21500",
+    "22",
+    "22 j",
+    "22 jours",
     "23",
     "23 j",
     "23 jours",
     "23 novembre",
+    "23 octobre",
+    "23/10",
+    "23/10/2026",
     "23/11",
     "23/11/2026",
+    "234 000",
+    "234 000 €",
+    "234 k€",
+    "234000",
     "24",
     "24 j",
     "24 jours",
-    "24 octobre",
-    "24/10",
-    "24/10/2026",
-    "25",
+    "24 septembre",
+    "24/09/2026",
+    "24/9",
+    "2484500",
     "25 000",
     "25 000 €",
-    "25 j",
-    "25 jours",
     "25 k€",
     "25000",
-    "25000 j",
-    "25000 jours",
-    "2593 k€",
-    "2593000",
-    "26 500",
-    "26 500 €",
-    "26500",
+    "26",
+    "26 j",
+    "26 jours",
     "27",
     "27 j",
     "27 jours",
+    "27 octobre",
+    "27/10",
+    "27/10/2026",
     "28",
     "28 j",
     "28 jours",
-    "28 octobre",
-    "28/10",
-    "28/10/2026",
     "29",
     "29 j",
     "29 jours",
-    "29 octobre",
-    "29/10",
-    "29/10/2026",
+    "29 septembre",
+    "29/09/2026",
+    "29/9",
     "3",
-    "3 500",
-    "3 500 €",
     "3 j",
     "3 jours",
-    "3 novembre",
-    "3 octobre",
-    "3/10",
-    "3/11",
-    "30",
-    "30 000",
-    "30 000 €",
-    "30 j",
-    "30 jours",
-    "30 k€",
-    "30 octobre",
     "30 septembre",
     "30/09/2026",
-    "30/10",
-    "30/10/2026",
     "30/9",
-    "30000",
-    "31 000",
-    "31 000 €",
-    "31 k€",
+    "31",
+    "31 j",
+    "31 jours",
     "31 octobre",
     "31/10",
     "31/10/2026",
-    "31000",
+    "317 500",
+    "317 500 €",
+    "317500",
+    "323 000",
+    "323 000 €",
+    "323 k€",
+    "323000",
     "33",
+    "33 500",
+    "33 500 €",
     "33 j",
     "33 jours",
-    "334 000",
-    "334 000 €",
-    "334 k€",
-    "334000",
+    "33500",
+    "34",
+    "34 000",
+    "34 000 €",
+    "34 j",
+    "34 jours",
+    "34 k€",
+    "34000",
+    "34000 j",
+    "34000 jours",
+    "35",
     "35 000",
     "35 000 €",
+    "35 j",
+    "35 jours",
     "35 k€",
-    "3500",
     "35000",
     "35000 j",
     "35000 jours",
-    "36",
-    "36 000",
-    "36 000 €",
-    "36 500",
-    "36 500 €",
-    "36 j",
-    "36 jours",
-    "36 k€",
-    "36000",
-    "36500",
-    "38 500",
-    "38 500 €",
-    "382 500",
-    "382 500 €",
-    "382500",
-    "38500",
-    "39",
-    "39 500",
-    "39 500 €",
-    "39 j",
-    "39 jours",
-    "39500",
+    "378 000",
+    "378 000 €",
+    "378 k€",
+    "378000",
+    "38",
+    "38 j",
+    "38 jours",
     "4",
-    "4 000",
-    "4 000 €",
     "4 j",
     "4 jours",
-    "4 k€",
-    "40 000",
-    "40 000 €",
-    "40 k€",
-    "4000",
-    "40000",
+    "4 novembre",
+    "4/11",
+    "40",
+    "40 j",
+    "40 jours",
     "41",
+    "41 000",
+    "41 000 €",
     "41 j",
     "41 jours",
+    "41 k€",
+    "41000",
+    "42",
+    "42 j",
+    "42 jours",
     "43",
     "43 j",
     "43 jours",
-    "45",
     "45 000",
     "45 000 €",
-    "45 j",
-    "45 jours",
     "45 k€",
     "45000",
-    "458 000",
-    "458 000 €",
-    "458 k€",
-    "458000",
-    "46",
-    "46 j",
-    "46 jours",
-    "49",
-    "49 j",
-    "49 jours",
-    "5 500",
-    "5 500 €",
+    "5",
+    "5 j",
+    "5 jours",
+    "5 novembre",
+    "5/11",
+    "50",
     "50 000",
     "50 000 €",
+    "50 j",
+    "50 jours",
     "50 k€",
     "50000",
-    "51 000",
-    "51 000 €",
-    "51 k€",
-    "51000",
-    "53",
-    "53 j",
-    "53 jours",
-    "54",
-    "54 j",
-    "54 jours",
-    "5500",
-    "57",
-    "57 j",
-    "57 jours",
+    "51",
+    "51 500",
+    "51 500 €",
+    "51 j",
+    "51 jours",
+    "51500",
+    "51500 j",
+    "51500 jours",
+    "52 000",
+    "52 000 €",
+    "52 k€",
+    "52000",
+    "536 000",
+    "536 000 €",
+    "536 k€",
+    "536000",
+    "55",
+    "55 j",
+    "55 jours",
     "6",
-    "6 000",
-    "6 000 €",
+    "6 500",
+    "6 500 €",
     "6 j",
     "6 jours",
-    "6 k€",
-    "6 novembre",
     "6 octobre",
     "6/10",
-    "6/11",
-    "6000",
-    "63",
-    "63 j",
-    "63 jours",
-    "65",
-    "65 j",
-    "65 jours",
-    "67",
-    "67 j",
-    "67 jours",
-    "697 000",
-    "697 000 €",
-    "697 k€",
-    "697000",
+    "60",
+    "60 j",
+    "60 jours",
+    "64",
+    "64 j",
+    "64 jours",
+    "6500",
+    "7",
     "7 décembre",
-    "7 novembre",
-    "7/11",
+    "7 j",
+    "7 jours",
+    "7 octobre",
+    "7/10",
     "7/12",
-    "721 500",
-    "721 500 €",
-    "721500",
-    "797 000",
-    "797 000 €",
-    "797 k€",
-    "797000",
+    "70",
+    "70 j",
+    "70 jours",
+    "723 500",
+    "723 500 €",
+    "723500",
+    "8",
+    "8 j",
+    "8 jours",
     "8 novembre",
     "8/11",
-    "88",
-    "88 j",
-    "88 jours",
     "9",
+    "9 000",
+    "9 000 €",
+    "9 500",
+    "9 500 €",
     "9 j",
     "9 jours",
-    "9 novembre",
-    "9/11"
+    "9 k€",
+    "9000",
+    "92 500",
+    "92 500 €",
+    "92500",
+    "930 000",
+    "930 000 €",
+    "930 k€",
+    "930000",
+    "9500"
   ],
   "all_deal_names": {
-    "D-0001": "Artelia Industrie - Licence nova",
-    "D-0002": "Montec - LIC. NOVA",
-    "D-0003": "EGIR – Déploiement MS",
-    "D-0004": "Electricite Industrielle - Licence Nova",
-    "D-0005": "Proseco – Planif terrain",
-    "D-0006": "CLIMATEC - deploy multi-sites",
-    "D-0007": "VE – licence nova",
-    "D-0008": "AU - pilote agence",
-    "D-0009": "Montec - PLANIF TERRAIN",
-    "D-0010": "Eiffage – Déploiement MS",
-    "D-0011": "PPD - Déploiement multi-sites",
-    "D-0012": "Sofrisol – planif. terrain",
-    "D-0013": "Assystem Engineering – Licence Nova",
-    "D-0014": "Archimede – pilote agence",
-    "D-0015": "Atlantique - pilote agence",
-    "D-0016": "ERA 94 – Licence nova",
-    "D-0017": "Hallier – DEPLOY MULTI-SITES",
-    "D-0018": "II – deploy multi-sites",
-    "D-0019": "SCE – planif. terrain",
-    "D-0020": "AE – Planification terrain",
-    "D-0021": "Eiffage – Licence nova",
-    "D-0022": "Martinon MSE – DEPLOY MULTI-SITES",
-    "D-0023": "Tractebel - licence nova",
-    "D-0024": "Sani-thermique - Pilote agences",
-    "D-0025": "Herve – licence nova",
-    "D-0026": "Atelier Travaux – planif. terrain",
-    "D-0027": "PL – Licence nova",
-    "D-0028": "Viatec – planif. terrain",
-    "D-0029": "Excent – Planif terrain",
-    "D-0030": "Sedicam – Déploiement multi-sites",
-    "D-0031": "CI – licence nova",
-    "D-0032": "Climehome – Planification terrain",
-    "D-0033": "Engins – PLANIF TERRAIN",
-    "D-0034": "Societe D – LIC. NOVA",
-    "D-0035": "LA – licence nova",
-    "D-0036": "PPD – Déploiement MS",
-    "D-0037": "Sodexo - planif. terrain",
-    "D-0038": "MGL – Pilote agence",
-    "D-0039": "Bee - Licence Nova",
-    "D-0040": "EF – Pilote agences",
-    "D-0041": "Orano Demantelement – PILOTE AGENCE",
-    "D-0042": "IMA – Licence nova",
-    "D-0043": "TA – Planif terrain",
-    "D-0044": "EE - deploy multi-sites",
-    "D-0045": "Graniou – Déploiement multi-sites",
-    "D-0046": "VO2 – LIC. NOVA",
-    "D-0047": "CP – pilote agence",
-    "D-0048": "SPIE - DEPLOY MULTI-SITES",
-    "D-0049": "Dr House – Déploiement multi-sites",
-    "D-0050": "ABB - DEPLOY MULTI-SITES",
-    "D-0051": "Defense - Licence nova",
-    "D-0052": "Entreprise Ventura – pilote agence",
-    "D-0053": "Atol – DEPLOY MULTI-SITES",
-    "D-0054": "Henon – Pilote agence",
-    "D-0055": "Serma - PILOTE AGENCE",
-    "D-0056": "Astem - – PLANIF TERRAIN",
-    "D-0057": "Archimede - Licence Nova",
-    "D-0058": "Nouvergies - Licence Nova",
-    "D-0059": "Elements – licence nova",
-    "D-0060": "Excent - PILOTE AGENCE",
-    "D-0061": "EE – pilote agence",
-    "D-0062": "Johnson – Pilote agences",
-    "D-0063": "Brunet – licence nova",
-    "D-0064": "Sme Confort - PLANIF TERRAIN",
-    "D-0065": "Building – Planification terrain",
-    "D-0066": "Brunet – DEPLOY MULTI-SITES",
-    "D-0067": "Nacelle Assistance - Déploiement multi-sites",
-    "D-0068": "Assystem Engineering – Pilote agence",
-    "D-0069": "OTV – pilote agence",
-    "D-0070": "Derichebourg - Pilote agence",
-    "D-0071": "Orinox – Planif terrain",
-    "D-0072": "SPIE Industrie – PILOTE AGENCE",
-    "D-0073": "AG – PLANIF TERRAIN",
-    "D-0074": "Dupre – Planification terrain",
-    "D-0075": "Energie Service – PLANIF TERRAIN",
-    "D-0076": "Electricite Industrielle – LIC. NOVA",
-    "D-0077": "HG – licence nova",
-    "D-0078": "HT – Déploiement MS",
-    "D-0079": "Sodexo - LIC. NOVA",
-    "D-0080": "Sta Reseaux - PLANIF TERRAIN",
-    "D-0081": "Nouvergies – Déploiement MS",
-    "D-0082": "Cabinets Provinciaux – DEPLOY MULTI-SITES",
-    "D-0083": "PPD – Pilote agence",
-    "D-0084": "Etablissements - Déploiement MS",
-    "D-0085": "SOC - pilote agence",
-    "D-0086": "Cigec – Déploiement multi-sites",
-    "D-0087": "SYND Coproprietaires - Pilote agences",
-    "D-0088": "CT - planif. terrain",
-    "D-0089": "Henon - Licence nova",
-    "D-0090": "AS – Déploiement MS",
-    "D-0091": "TE – Licence Nova",
-    "D-0092": "Dupre – Licence nova",
-    "D-0093": "Electricite Industrielle – deploy multi-sites",
-    "D-0094": "Hdf – deploy multi-sites",
-    "D-0095": "TCP Travaux – planif. terrain",
-    "D-0096": "Vo2 - deploy multi-sites",
-    "D-0097": "EF – Licence Nova",
-    "D-0098": "AR – Planification terrain",
-    "D-0099": "VO2 – Licence nova",
-    "D-0100": "Excent - LIC. NOVA",
-    "D-0101": "Systra France - PLANIF TERRAIN",
-    "D-0102": "Excent France - Licence nova",
-    "D-0103": "JS - pilote agence",
-    "D-0104": "Veodis – planif. terrain",
-    "D-0105": "Proseco Sn – deploy multi-sites",
-    "D-0106": "Climatec – Déploiement multi-sites",
-    "D-0107": "OTV – PILOTE AGENCE",
-    "D-0108": "Groupe Greenolia - Planif terrain",
-    "D-0109": "Vo2 – Licence Nova",
-    "D-0110": "EGIR – licence nova",
-    "D-0111": "Eiffage Energie - Extension utilisateurs",
-    "D-0112": "Presse - Pilote agence",
-    "D-0113": "SME Confort – deploy multi-sites",
-    "D-0114": "Urbanis - PLANIF TERRAIN",
-    "D-0115": "Eiffage – Planification terrain",
-    "D-0116": "RM - pilote agence",
-    "D-0117": "Groupe – pilote agence",
-    "D-0118": "ME – Licence Nova",
-    "D-0119": "Herve – extension utilisateurs",
-    "D-0120": "DH – Planification terrain",
-    "D-0121": "E.h.d. – deploy multi-sites",
-    "D-0122": "IMA France – Déploiement MS",
-    "D-0123": "ABB - Planification terrain",
-    "D-0124": "Neel – PILOTE AGENCE",
-    "D-0125": "Akkodis - EXTENSION USERS",
-    "D-0126": "Pages – Déploiement MS",
-    "D-0127": "Ets – planif. terrain",
-    "D-0128": "E.t.i.c.a. Expertise – LIC. NOVA",
-    "D-0129": "Etablissements – Pilote agences",
-    "D-0130": "Tokheim – pilote agence",
-    "D-0131": "Alqual – PLANIF TERRAIN",
-    "D-0132": "Isolterm - Licence Nova",
-    "D-0133": "Societe – Planification terrain",
-    "D-0134": "Isolterm - Extension utilisateurs",
-    "D-0135": "EGIS - PILOTE AGENCE",
-    "D-0136": "Derichebourg – LIC. NOVA",
-    "D-0137": "Mangeant – Extension utilisateurs",
-    "D-0138": "Bc – pilote agence",
-    "D-0139": "Cegelec Mediterranee - Déploiement MS",
-    "D-0140": "Amenagement – Planification terrain",
-    "D-0141": "Egis - licence nova",
-    "D-0142": "CF – Déploiement multi-sites",
-    "D-0143": "Groupe – Déploiement MS",
-    "D-0144": "GT - Pilote agence",
-    "D-0145": "Ardeche Applications – pilote agence",
-    "D-0146": "MGL – LIC. NOVA",
-    "D-0147": "Moongy - Ext. utilisateurs",
-    "D-0148": "SPIE Nucleaire – Extension utilisateurs",
-    "D-0149": "Saferail - Déploiement multi-sites",
-    "D-0150": "Koov Pays - Licence Nova",
-    "D-0151": "Ogepar Moteur - extension utilisateurs",
-    "D-0152": "NH - Licence Nova",
-    "D-0153": "Eiffage - licence nova",
-    "D-0154": "CI - Planif terrain",
-    "D-0155": "Eiffage – PLANIF TERRAIN",
-    "D-0156": "Citec - pilote agence",
-    "D-0157": "MI – pilote agence",
-    "D-0158": "Frigelec - PILOTE AGENCE",
-    "D-0159": "Defense – Licence nova",
-    "D-0160": "Entreprise Roger – Extension utilisateurs",
-    "D-0161": "VO2 – EXTENSION USERS",
-    "D-0162": "Viatec Eco – LIC. NOVA",
-    "D-0163": "LA – Ext. utilisateurs",
-    "D-0164": "NC - DEPLOY MULTI-SITES",
-    "D-0165": "Egpc – Déploiement multi-sites",
-    "D-0166": "Raynier - Licence nova",
-    "D-0167": "Systra France – extension utilisateurs",
-    "D-0168": "SPIE Building – Licence nova",
-    "D-0169": "Soc Etudes - Licence nova",
-    "D-0170": "AE - Licence nova",
-    "D-0171": "EE – Déploiement MS",
-    "D-0172": "Sodexal – EXTENSION USERS",
-    "D-0173": "Mangeant Energies – EXTENSION USERS",
-    "D-0174": "Eneria – Licence Nova",
-    "D-0175": "La Centrale – Pilote agence",
-    "D-0176": "Tecsol – pilote agence",
-    "D-0177": "Entreprise – PILOTE AGENCE",
-    "D-0178": "Eiffage Energie - Planification terrain",
-    "D-0179": "Segula - Déploiement MS",
-    "D-0180": "Defense - planif. terrain",
-    "D-0181": "Chatti – licence nova",
-    "D-0182": "Dupre Habitat - Pilote agences",
-    "D-0183": "Arcadis – Licence Nova",
-    "D-0184": "AU - planif. terrain",
-    "D-0185": "Atelier - Planif terrain",
-    "D-0186": "TCP Travaux - Licence nova",
-    "D-0187": "INEO Provence - licence nova",
-    "D-0188": "Ogepar - Déploiement multi-sites",
-    "D-0189": "DR – DEPLOY MULTI-SITES",
-    "D-0190": "Nacelle Assistance – PLANIF TERRAIN",
-    "D-0191": "Dupre – Licence nova",
-    "D-0192": "Geotec – PILOTE AGENCE",
-    "D-0193": "INEO – Licence Nova",
-    "D-0194": "Galileo - LIC. NOVA",
-    "D-0195": "DR – LIC. NOVA",
-    "D-0196": "Cabinets Provinciaux - planif. terrain",
-    "D-0197": "Reolian Multitec – Planification terrain",
-    "D-0198": "Bureau – LIC. NOVA",
-    "D-0199": "Le – Licence nova",
-    "D-0200": "GC - Licence nova",
-    "D-0201": "Ardeche – Planification terrain",
-    "D-0202": "Sodexo - Licence Nova",
-    "D-0203": "Cegelec Mediterranee – pilote agence",
-    "D-0204": "Ardeche – PILOTE AGENCE",
-    "D-0205": "Francois - planif. terrain",
-    "D-0206": "Joggin - Pilote agence",
-    "D-0207": "Abylsen – PLANIF TERRAIN",
-    "D-0208": "Energie 2000 – pilote agence",
-    "D-0209": "Volkswind Service – Licence Nova",
-    "D-0210": "SI – pilote agence",
-    "D-0211": "BEE Engineering - Licence Nova",
-    "D-0212": "Building – Déploiement multi-sites",
-    "D-0213": "VS - Licence nova",
-    "D-0214": "MB - Pilote agences",
-    "D-0215": "Eiffage Energie - DEPLOY MULTI-SITES",
-    "D-0216": "Systra France – Pilote agence",
-    "D-0217": "AR - PLANIF TERRAIN",
-    "D-0218": "Prizz – Licence Nova",
-    "D-0219": "Trigo – Planif terrain",
-    "D-0220": "SPIE – Licence Nova",
-    "D-0221": "Afd - PLANIF TERRAIN",
-    "D-0222": "MGL – DEPLOY MULTI-SITES",
-    "D-0223": "Derichebourg Aeronautics – planif. terrain",
-    "D-0224": "SOC - Licence Nova",
-    "D-0225": "Izi By – pilote agence",
-    "D-0226": "Societe Grenobloise – deploy multi-sites",
-    "D-0227": "EE – Déploiement MS",
-    "D-0228": "Reolian – PILOTE AGENCE",
-    "D-0229": "Excent France – LIC. NOVA",
-    "D-0230": "Orinox – PLANIF TERRAIN",
-    "D-0231": "Somath – PILOTE AGENCE",
-    "D-0232": "Tokheim Services - Planif terrain",
-    "D-0233": "Systra - planif. terrain",
-    "D-0234": "Somath - Pilote agence",
-    "D-0235": "Ieny – PILOTE AGENCE",
-    "D-0236": "Alten – PLANIF TERRAIN",
-    "D-0237": "SPIE – Déploiement MS",
-    "D-0238": "SM - Pilote agences",
-    "D-0239": "Chatti Batiment – pilote agence",
-    "D-0240": "ABMI - deploy multi-sites",
-    "D-0241": "Bureau - LIC. NOVA",
-    "D-0242": "Sodexal - Licence Nova",
-    "D-0243": "Abb France – Déploiement MS",
-    "D-0244": "DEPS – Pilote agence",
-    "D-0245": "TS – planif. terrain",
-    "D-0246": "Gaztransport - planif. terrain",
-    "D-0247": "Dupre Habitat – planif. terrain",
-    "D-0248": "Excent – Licence nova",
-    "D-0249": "AU - Planif terrain",
-    "D-0250": "Societe - Planif terrain",
-    "D-0251": "Bureau – Licence Nova",
-    "D-0252": "Squiban – Planification terrain",
-    "D-0253": "Derichebourg Aeronautics – planif. terrain",
-    "D-0254": "Maintenance - Planif terrain",
-    "D-0255": "Ineo - licence nova",
-    "D-0256": "Spie – Déploiement MS",
-    "D-0257": "Agence NAT - Planif terrain",
-    "D-0258": "SPIE – Licence Nova",
-    "D-0259": "Entreprise Besse – LIC. NOVA",
-    "D-0260": "Artelia - Licence nova",
-    "D-0261": "T&S - deploy multi-sites",
-    "D-0262": "ETS – Pilote agences",
-    "D-0263": "Altus Energy – pilote agence",
-    "D-0264": "Trigo France - Licence Nova",
-    "D-0265": "Profluide – LIC. NOVA",
-    "D-0266": "Transformateurs Solutions – PLANIF TERRAIN",
-    "D-0267": "Akkodis – Pilote agence",
-    "D-0268": "Graniou – Pilote agences",
-    "D-0269": "YS – pilote agence",
-    "D-0270": "Orinox - Licence nova",
-    "D-0271": "Energie – Déploiement MS",
-    "D-0272": "Hydro – deploy multi-sites",
-    "D-0273": "Frigelec Grandes – PILOTE AGENCE",
-    "D-0274": "Montec - PILOTE AGENCE",
-    "D-0275": "Sogetha - licence nova",
-    "D-0276": "E.t.i.c.a. Expertise – Pilote agence",
-    "D-0277": "Otv - deploy multi-sites",
-    "D-0278": "Proseco – Licence Nova",
-    "D-0279": "Joggin – PLANIF TERRAIN",
-    "D-0280": "Atol - Déploiement multi-sites",
-    "D-0281": "AU – DEPLOY MULTI-SITES",
-    "D-0282": "Mangeant – Pilote agence",
-    "D-0283": "Dupre - Licence nova",
-    "D-0284": "Eiffage – Planification terrain",
-    "D-0285": "Abb – Planification terrain",
-    "D-0286": "REEL – LIC. NOVA",
-    "D-0287": "FG - Pilote agences",
-    "D-0288": "Eiffage Energie – PLANIF TERRAIN",
-    "D-0289": "Pages - planif. terrain",
-    "D-0290": "SOC – Déploiement MS",
-    "D-0291": "SI - deploy multi-sites",
-    "D-0292": "Sogetha – Planification terrain",
-    "D-0293": "IC - LIC. NOVA",
-    "D-0294": "INEO Centre - Planif terrain",
-    "D-0295": "SPIE - pilote agence",
-    "D-0296": "Satelec - Déploiement multi-sites",
-    "D-0297": "Cabinets – PLANIF TERRAIN",
-    "D-0298": "TM – Déploiement multi-sites",
-    "D-0299": "Hallier – Déploiement multi-sites",
-    "D-0300": "Nacelle Assistance – PILOTE AGENCE"
+    "D-0001": "Terti'o – deploy multi-sites",
+    "D-0002": "Emc – planif. terrain",
+    "D-0003": "Ets… – Déploiement MS",
+    "D-0004": "Extinctium - Licence Nova",
+    "D-0005": "Urbanis – Pilote agences",
+    "D-0006": "Corsica SOLE – PILOTE AGENCE",
+    "D-0007": "STA… - pilote agence",
+    "D-0008": "Societe Des… - PLANIF TERRAIN",
+    "D-0009": "Armando Alves – Licence nova",
+    "D-0010": "Optisol - Déploiement multi-sites",
+    "D-0011": "Levage – planif. terrain",
+    "D-0012": "Artelia – Licence Nova",
+    "D-0013": "Hydrostadium – pilote agence",
+    "D-0014": "Electricite… - deploy multi-sites",
+    "D-0015": "Babcock Wanson – Licence nova",
+    "D-0016": "EIFFAGE… - deploy multi-sites",
+    "D-0017": "Societe DE… - deploy multi-sites",
+    "D-0018": "SDEL – planif. terrain",
+    "D-0019": "NIT… - deploy multi-sites",
+    "D-0020": "IENY - Pilote agences",
+    "D-0021": "IENY - Pilote agence",
+    "D-0022": "Industheo – Déploiement MS",
+    "D-0023": "SD – LIC. NOVA",
+    "D-0024": "Ardeche Applications… - Licence Nova",
+    "D-0025": "CIDE ELEC - PLANIF TERRAIN",
+    "D-0026": "Expleo France – deploy multi-sites",
+    "D-0027": "CE – pilote agence",
+    "D-0028": "Monteil… – PILOTE AGENCE",
+    "D-0029": "Tecsol – PLANIF TERRAIN",
+    "D-0030": "Agirenergy – Licence Nova",
+    "D-0031": "IENY - Déploiement MS",
+    "D-0032": "Energilec – DEPLOY MULTI-SITES",
+    "D-0033": "Fouqueray – pilote agence",
+    "D-0034": "Lorraine… – PILOTE AGENCE",
+    "D-0035": "Thermi… – planif. terrain",
+    "D-0036": "REEL – Déploiement MS",
+    "D-0037": "SDEL… - planif. terrain",
+    "D-0038": "Societe – Pilote agence",
+    "D-0039": "Faceo FM… – planif. terrain",
+    "D-0040": "SVEG – LIC. NOVA",
+    "D-0041": "BJ - planif. terrain",
+    "D-0042": "Erese – deploy multi-sites",
+    "D-0043": "ME – Planif terrain",
+    "D-0044": "Atalian… - PILOTE AGENCE",
+    "D-0045": "Christian… – Planif terrain",
+    "D-0046": "Fluidexpert – PILOTE AGENCE",
+    "D-0047": "Eneria - pilote agence",
+    "D-0048": "REEL – Déploiement MS",
+    "D-0049": "Agirenergy – Planif terrain",
+    "D-0050": "Dietsmann… - Licence Nova",
+    "D-0051": "Akkodis… – Licence nova",
+    "D-0052": "Sce – pilote agence",
+    "D-0053": "Alsymex – PILOTE AGENCE",
+    "D-0054": "Acxes – Planif terrain",
+    "D-0055": "Artelia - PILOTE AGENCE",
+    "D-0056": "Caduceum – PLANIF TERRAIN",
+    "D-0057": "Hydrostadium - Licence Nova",
+    "D-0058": "Agirenergy – Pilote agence",
+    "D-0059": "NGE Ingenierie – licence nova",
+    "D-0060": "Gaztransport - PILOTE AGENCE",
+    "D-0061": "CP – pilote agence",
+    "D-0062": "Monteil CIE - deploy multi-sites",
+    "D-0063": "EGIS… – Planif terrain",
+    "D-0064": "EE – Déploiement multi-sites",
+    "D-0065": "TCMA - Planif terrain",
+    "D-0066": "Adelec – Déploiement MS",
+    "D-0067": "Babcock Wanson – DEPLOY MULTI-SITES",
+    "D-0068": "Mathyss – planif. terrain",
+    "D-0069": "Manosque… – pilote agence",
+    "D-0070": "Derichebourg… - Pilote agence",
+    "D-0071": "Irisolaris – Planif terrain",
+    "D-0072": "Isola.co – PILOTE AGENCE",
+    "D-0073": "Ima France – Licence Nova",
+    "D-0074": "Copin - PILOTE AGENCE",
+    "D-0075": "Fondasol – PLANIF TERRAIN",
+    "D-0076": "Electricite… – DEPLOY MULTI-SITES",
+    "D-0077": "CIDE ELEC - Pilote agences",
+    "D-0078": "Sinbio - PLANIF TERRAIN",
+    "D-0079": "Marraud… - Planif terrain",
+    "D-0080": "EGIS RAIL - licence nova",
+    "D-0081": "SDEL… – Déploiement MS",
+    "D-0082": "Societe Jean… - Licence nova",
+    "D-0083": "TRA-… – Pilote agence",
+    "D-0084": "IENY – PLANIF TERRAIN",
+    "D-0085": "BI – licence nova",
+    "D-0086": "Electricite… – Pilote agence",
+    "D-0087": "Alqual – Licence Nova",
+    "D-0088": "SD – Licence Nova",
+    "D-0089": "Valeo Comfort… – Pilote agence",
+    "D-0090": "SPIE Industrie – Pilote agence",
+    "D-0091": "AH – Licence Nova",
+    "D-0092": "ETS… – Licence nova",
+    "D-0093": "Electricite Industrielle… – Extension utilisateurs",
+    "D-0094": "Segula… – deploy multi-sites",
+    "D-0095": "Merat Etablissements - Licence Nova",
+    "D-0096": "PE - DEPLOY MULTI-SITES",
+    "D-0097": "Eiffage… – Déploiement multi-sites",
+    "D-0098": "Isola.co – Extension utilisateurs",
+    "D-0099": "Societe DE… – Déploiement multi-sites",
+    "D-0100": "Eiffage Energie… – planif. terrain",
+    "D-0101": "Gaztransport Technigaz – licence nova",
+    "D-0102": "MUST – PLANIF TERRAIN",
+    "D-0103": "Monteil CIE – planif. terrain",
+    "D-0104": "Aquitaine Maitrise… - Déploiement MS",
+    "D-0105": "NIT… - Déploiement MS",
+    "D-0106": "Segula… – PILOTE AGENCE",
+    "D-0107": "Ensio – planif. terrain",
+    "D-0108": "Fondasol – Pilote agence",
+    "D-0109": "TRA-… – Planif terrain",
+    "D-0110": "ME - deploy multi-sites",
+    "D-0111": "PPD… – Ext. utilisateurs",
+    "D-0112": "Bertrandt – pilote agence",
+    "D-0113": "C.m.e – Extension utilisateurs",
+    "D-0114": "Fluidexpert – Licence Nova",
+    "D-0115": "DE – Planification terrain",
+    "D-0116": "Electricite… - deploy multi-sites",
+    "D-0117": "ACCU… – Licence Nova",
+    "D-0118": "Sofrisol – Pilote agence",
+    "D-0119": "Akkodis – deploy multi-sites",
+    "D-0120": "Corsica Sole - Planif terrain",
+    "D-0121": "Entreprise… – pilote agence",
+    "D-0122": "NE – deploy multi-sites",
+    "D-0123": "ISO Inter – Déploiement MS",
+    "D-0124": "ABB - Planification terrain",
+    "D-0125": "Utac… – PILOTE AGENCE",
+    "D-0126": "Ingeliance Technologies - LIC. NOVA",
+    "D-0127": "Fluidexpert – Déploiement MS",
+    "D-0128": "Cb… – planif. terrain",
+    "D-0129": "Eiffage Energie… – LIC. NOVA",
+    "D-0130": "Carre… – Pilote agences",
+    "D-0131": "Tokheim… – pilote agence",
+    "D-0132": "AA – Licence nova",
+    "D-0133": "Cb… – Extension utilisateurs",
+    "D-0134": "Entreprise D'electricite… – Licence Nova",
+    "D-0135": "OLEA - Planification terrain",
+    "D-0136": "BW – Pilote agence",
+    "D-0137": "Urbanis - Planification terrain",
+    "D-0138": "Prime Engineering - Planif terrain",
+    "D-0139": "Sinbio - Déploiement MS",
+    "D-0140": "Chubb France – Pilote agences",
+    "D-0141": "Lesens Actea – Pilote agence",
+    "D-0142": "Gaztransport Technigaz - PLANIF TERRAIN",
+    "D-0143": "Calidris – Ext. utilisateurs",
+    "D-0144": "Urbanis – LIC. NOVA",
+    "D-0145": "Industheo - Pilote agences",
+    "D-0146": "Totalenergies Renouvelables… – Licence nova",
+    "D-0147": "Armando Alves – Licence Nova",
+    "D-0148": "Eiffage… – Planif terrain",
+    "D-0149": "Cegelec Ouest… – licence nova",
+    "D-0150": "Fouqueray – extension utilisateurs",
+    "D-0151": "Tractebel… – extension utilisateurs",
+    "D-0152": "Maintenance Industrielle… - deploy multi-sites",
+    "D-0153": "Bertrandt - Licence Nova",
+    "D-0154": "Eiffage… - licence nova",
+    "D-0155": "TC - Planif terrain",
+    "D-0156": "Eiffage… – PLANIF TERRAIN",
+    "D-0157": "Calonne – Pilote agence",
+    "D-0158": "Etablissements… - pilote agence",
+    "D-0159": "Artelia - Déploiement multi-sites",
+    "D-0160": "Carre… – EXTENSION USERS",
+    "D-0161": "Isola.co – LIC. NOVA",
+    "D-0162": "Marraud… - licence nova",
+    "D-0163": "Magrit – DEPLOY MULTI-SITES",
+    "D-0164": "Atalian – Planif terrain",
+    "D-0165": "M… – Pilote agence",
+    "D-0166": "Isodeal – DEPLOY MULTI-SITES",
+    "D-0167": "Lorelec – Planification terrain",
+    "D-0168": "Alqual… - LIC. NOVA",
+    "D-0169": "Caduceum – Déploiement MS",
+    "D-0170": "Chubb France - pilote agence",
+    "D-0171": "Detam – DEPLOY MULTI-SITES",
+    "D-0172": "Aquitaine Maitrise… – planif. terrain",
+    "D-0173": "PE – LIC. NOVA",
+    "D-0174": "Hydrostadium – deploy multi-sites",
+    "D-0175": "BTB… – planif. terrain",
+    "D-0176": "Alqual Conseil… – LIC. NOVA",
+    "D-0177": "Acxes - Licence Nova",
+    "D-0178": "C.m.e – Déploiement multi-sites",
+    "D-0179": "Resitech - PLANIF TERRAIN",
+    "D-0180": "Tokheim Services… – Déploiement multi-sites",
+    "D-0181": "Terti'o – licence nova",
+    "D-0182": "ETS Leroux - Pilote agences",
+    "D-0183": "Acorus – Licence Nova",
+    "D-0184": "SOC - planif. terrain",
+    "D-0185": "Societe… – licence nova",
+    "D-0186": "SC – Planif terrain",
+    "D-0187": "C.m.e - licence nova",
+    "D-0188": "Isodeal - Déploiement multi-sites",
+    "D-0189": "EITE… – DEPLOY MULTI-SITES",
+    "D-0190": "Eiffage Energie… – PLANIF TERRAIN",
+    "D-0191": "Ets… – Licence nova",
+    "D-0192": "Lorelec – Déploiement multi-sites",
+    "D-0193": "Bio-energies Diffusion – planif. terrain",
+    "D-0194": "Bertrandt – Planif terrain",
+    "D-0195": "E.f.i.b – deploy multi-sites",
+    "D-0196": "Toyota – PLANIF TERRAIN",
+    "D-0197": "Societe JEAN… - PLANIF TERRAIN",
+    "D-0198": "Merat… – LIC. NOVA",
+    "D-0199": "IC – PLANIF TERRAIN",
+    "D-0200": "CE - Licence nova",
+    "D-0201": "Ardeche… – Planification terrain",
+    "D-0202": "SDEL… - Déploiement MS",
+    "D-0203": "Manosque… – Licence Nova",
+    "D-0204": "Climehome – Pilote agences",
+    "D-0205": "Totalenergies… - Pilote agence",
+    "D-0206": "Christian Ledru – Planif terrain",
+    "D-0207": "Acxes – Pilote agence",
+    "D-0208": "BTB Genie… – pilote agence",
+    "D-0209": "Gaia – Licence Nova",
+    "D-0210": "Seiri - Pilote agence",
+    "D-0211": "Faceo Fm… – Planification terrain",
+    "D-0212": "Eiffage… – DEPLOY MULTI-SITES",
+    "D-0213": "ETS Leroux – Licence Nova",
+    "D-0214": "Eiffage Energie… – pilote agence",
+    "D-0215": "Systra – Pilote agence",
+    "D-0216": "Akkodis Aeroconseil – PLANIF TERRAIN",
+    "D-0217": "Etude – deploy multi-sites",
+    "D-0218": "Isodeal – Déploiement multi-sites",
+    "D-0219": "EM - Déploiement MS",
+    "D-0220": "Societe… – PILOTE AGENCE",
+    "D-0221": "Derichebourg… – Pilote agence",
+    "D-0222": "Aps – Licence nova",
+    "D-0223": "Fluidexpert - PLANIF TERRAIN",
+    "D-0224": "Eiffage Energie… – DEPLOY MULTI-SITES",
+    "D-0225": "TCMA - Licence nova",
+    "D-0226": "Aquitaine Maitrise… - DEPLOY MULTI-SITES",
+    "D-0227": "Eiffage Energie… – Licence nova",
+    "D-0228": "Merat Etablissements - PILOTE AGENCE",
+    "D-0229": "ISO… – Licence Nova",
+    "D-0230": "Konecranes – LIC. NOVA",
+    "D-0231": "TRVS - pilote agence",
+    "D-0232": "Mtair – Pilote agences",
+    "D-0233": "Ardeche - planif. terrain",
+    "D-0234": "Brunet - Pilote agence",
+    "D-0235": "Cegelec Bourgogne – PILOTE AGENCE",
+    "D-0236": "Ineo… – PLANIF TERRAIN",
+    "D-0237": "Roissy – Déploiement MS",
+    "D-0238": "SI - Pilote agences",
+    "D-0239": "Akkodis High… – Pilote agences",
+    "D-0240": "Cb Performances – DEPLOY MULTI-SITES",
+    "D-0241": "Eiffage Energie… – Planification terrain",
+    "D-0242": "Sogema… - Planification terrain",
+    "D-0243": "Fouqueray – Déploiement MS",
+    "D-0244": "Arcadis ESG – Pilote agence",
+    "D-0245": "Calidris – planif. terrain",
+    "D-0246": "Chubb… - planif. terrain",
+    "D-0247": "ETS – Déploiement MS",
+    "D-0248": "Mathyss - Licence Nova",
+    "D-0249": "Tunzini - Planif terrain",
+    "D-0250": "CF2C - Planif terrain",
+    "D-0251": "SPIE… – Pilote agences",
+    "D-0252": "Eiffage… – Déploiement multi-sites",
+    "D-0253": "Arcadis ESG – planif. terrain",
+    "D-0254": "Maintenance… - Planif terrain",
+    "D-0255": "M J… – Pilote agences",
+    "D-0256": "Ensio – Pilote agence",
+    "D-0257": "Stevenin-niobey – LIC. NOVA",
+    "D-0258": "Isola.co – Pilote agences",
+    "D-0259": "Confort – pilote agence",
+    "D-0260": "PH – licence nova",
+    "D-0261": "Atalian Maintenance… - planif. terrain",
+    "D-0262": "GAIA – LIC. NOVA",
+    "D-0263": "Monnier - deploy multi-sites",
+    "D-0264": "MCI – Déploiement multi-sites",
+    "D-0265": "Merat – Licence nova",
+    "D-0266": "Calonne – Déploiement multi-sites",
+    "D-0267": "Arep – Pilote agences",
+    "D-0268": "Eiffage Energie… – pilote agence",
+    "D-0269": "Societe… – deploy multi-sites",
+    "D-0270": "Balas – DEPLOY MULTI-SITES",
+    "D-0271": "AM – licence nova",
+    "D-0272": "Tokheim Services… – planif. terrain",
+    "D-0273": "Ardeche… – Déploiement MS",
+    "D-0274": "Roissy… - Pilote agences",
+    "D-0275": "Copin - licence nova",
+    "D-0276": "Eiffage… – PILOTE AGENCE",
+    "D-0277": "ES – Pilote agences",
+    "D-0278": "Resitech - Pilote agence",
+    "D-0279": "Isodeal – LIC. NOVA",
+    "D-0280": "MK… - Planif terrain",
+    "D-0281": "Btb… – deploy multi-sites",
+    "D-0282": "Alqual… – PILOTE AGENCE",
+    "D-0283": "Groupe… – Licence nova",
+    "D-0284": "SOC – PLANIF TERRAIN",
+    "D-0285": "La… – DEPLOY MULTI-SITES",
+    "D-0286": "Copin – licence nova",
+    "D-0287": "Erese - Pilote agence",
+    "D-0288": "PF – licence nova",
+    "D-0289": "Copin - pilote agence",
+    "D-0290": "Tunzini… – pilote agence",
+    "D-0291": "Climehome - Pilote agences",
+    "D-0292": "PPD – Pilote agences",
+    "D-0293": "KD – deploy multi-sites",
+    "D-0294": "AREP – pilote agence",
+    "D-0295": "Setec Diades – PLANIF TERRAIN",
+    "D-0296": "Iso… – PLANIF TERRAIN",
+    "D-0297": "TM – Déploiement multi-sites",
+    "D-0298": "Magrit – DEPLOY MULTI-SITES",
+    "D-0299": "Thermi… - PLANIF TERRAIN",
+    "D-0300": "Eiffage… – licence nova"
   }
 }

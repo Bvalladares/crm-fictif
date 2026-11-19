@@ -210,5 +210,135 @@ class TestActivityCoherence(unittest.TestCase):
         self.assertEqual(errors, [], f"{len(errors)} violations:\n" + "\n".join(errors[:10]))
 
 
+class TestNoteBodyNoCompanyDescription(unittest.TestCase):
+    """Note bodies must not describe the company itself."""
+
+    @classmethod
+    def setUpClass(cls):
+        if not os.path.exists(CRM_PATH):
+            cls._skip = True
+            return
+        cls._skip = False
+        cls.crm = _load_crm()
+
+    def setUp(self):
+        if getattr(self, "_skip", False):
+            self.skipTest("crm.json not found — run generate.py first")
+
+    def test_note_bodies_no_company_description(self):
+        """
+        No note body should describe the company itself.
+        Forbidden tokens: familiale, pme, groupe, holding, filiale, cotée,
+        actionnaire, effectif, organisation interne, organigramme.
+        Also forbidden: 'dg seul', 'daf seul', 'rse ' as standalone company policy notes.
+        """
+        FORBIDDEN_TOKENS = [
+            "familiale", "pme", "groupe", "holding", "filiale", "cotée",
+            "actionnaire", "effectif", "organisation interne", "organigramme",
+        ]
+        FORBIDDEN_PHRASES = ["dg seul", "daf seul"]
+
+        errors = []
+        for a in self.crm["activities"]:
+            if a.get("type") != "note":
+                continue
+            body_lower = (a.get("body") or "").lower()
+            for tok in FORBIDDEN_TOKENS:
+                if tok in body_lower:
+                    errors.append(
+                        f"Activity on deal {a['deal_id']} contains forbidden token "
+                        f"'{tok}': {a['body'][:100]}"
+                    )
+                    break
+            else:
+                for phrase in FORBIDDEN_PHRASES:
+                    if phrase in body_lower:
+                        errors.append(
+                            f"Activity on deal {a['deal_id']} contains forbidden phrase "
+                            f"'{phrase}': {a['body'][:100]}"
+                        )
+                        break
+
+        self.assertEqual(errors, [], f"{len(errors)} violations:\n" + "\n".join(errors[:10]))
+
+
+class TestNoteBudgetCoherence(unittest.TestCase):
+    """Note bodies with budget amounts must be consistent with the deal amount."""
+
+    @classmethod
+    def setUpClass(cls):
+        if not os.path.exists(CRM_PATH):
+            cls._skip = True
+            return
+        cls._skip = False
+        cls.crm = _load_crm()
+        cls.deals_by_id = {d["id"]: d for d in cls.crm["deals"]}
+
+    def setUp(self):
+        if getattr(self, "_skip", False):
+            self.skipTest("crm.json not found — run generate.py first")
+
+    def test_note_budget_coherence(self):
+        """
+        For every note on an open or won deal that mentions a budget range like "NNk" or "NN-NNk",
+        the numbers (in k-units × 1000) must be within ±30% of the deal amount.
+        Skip deals with amount=0 or None.
+        """
+        import re as _re
+
+        # Match patterns like "15k", "15-20k", "12k"
+        K_RANGE_PAT = _re.compile(r'\b(\d+)-(\d+)k\b', _re.IGNORECASE)
+        K_SINGLE_PAT = _re.compile(r'\b(\d+)k\b', _re.IGNORECASE)
+
+        errors = []
+
+        for a in self.crm["activities"]:
+            if a.get("type") != "note":
+                continue
+            deal = self.deals_by_id.get(a["deal_id"])
+            if not deal:
+                continue
+            if deal.get("status") not in ("open", "won"):
+                continue
+            amount = deal.get("amount") or 0
+            if amount == 0:
+                continue
+
+            body = a.get("body") or ""
+
+            # Check range patterns first (NN-NNk)
+            for m in K_RANGE_PAT.finditer(body):
+                lo_k = int(m.group(1)) * 1000
+                hi_k = int(m.group(2)) * 1000
+                lower_bound = amount * 0.70
+                upper_bound = amount * 1.30
+                if lo_k < lower_bound or hi_k > upper_bound:
+                    errors.append(
+                        f"Deal {a['deal_id']} (amount={amount}): note budget range "
+                        f"'{m.group(0)}' ({lo_k}-{hi_k}) outside ±30% of {amount}: {body[:100]}"
+                    )
+
+            # Check single k patterns, skipping those already in range patterns
+            range_spans = {m.span() for m in K_RANGE_PAT.finditer(body)}
+            for m in K_SINGLE_PAT.finditer(body):
+                # Skip if this match overlaps with a range pattern match
+                overlaps = any(
+                    m.start() >= rs and m.end() <= re_end
+                    for (rs, re_end) in range_spans
+                )
+                if overlaps:
+                    continue
+                val_k = int(m.group(1)) * 1000
+                lower_bound = amount * 0.70
+                upper_bound = amount * 1.30
+                if val_k < lower_bound or val_k > upper_bound:
+                    errors.append(
+                        f"Deal {a['deal_id']} (amount={amount}): note budget '{m.group(0)}' "
+                        f"({val_k}) outside ±30% of {amount}: {body[:100]}"
+                    )
+
+        self.assertEqual(errors, [], f"{len(errors)} violations:\n" + "\n".join(errors[:10]))
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -1,173 +1,184 @@
 # Revue pipeline — 2026-11-18 — Atelier Nova
 
-110 deals ouverts pour 2593000 € de pipeline. 33 deals signalés (797000 €) nécessitent une attention.
+110 deals ouverts pour 2484500 € de pipeline. 33 deals signalés (723500 €) nécessitent une attention.
 
 ## Priorités
 
-**Artelia Industrie - Licence nova** (Artelia Industrie) — Claire Durand — Démo — 40000 € — [A1, A2]
-- En Démo depuis 63 jours (durée normale 21 jours)
-- Aucune tâche ni réunion à venir
-  _Dernière activité : 2026-11-03 (note) — PoC en cours. résultats attendus la semaine prochaine._
+**EE – Déploiement multi-sites** (Eiffage Energie Systemes - ILE DE France) — Négociation — 51500 € — [A7]
+- Deal 51500 € en Négociation avec 1 seul interlocuteur
 
-**Tractebel - licence nova** (Tractebel Engineering) — Claire Durand — Découverte — 36000 € — [A1, A2]
-- En Découverte depuis 45 jours (durée normale 14 jours)
-- Aucune tâche ni réunion à venir
-  _Dernière activité : 2026-11-16 (reunion) — rdv de découverte en visio. 4 participants. pb principal : planification tournée_
+**Fluidexpert – PILOTE AGENCE** (Fluidexpert) — Démo — 50000 € — [A4]
+- Aucune activité depuis 43 jours (dernière : 2026-10-06, reunion)
 
-**HT – Déploiement MS** (Herve Thermique) — Emma Bernard — Qualification — 45000 € — [A4]
-- Aucune activité depuis 46 jours (dernière : 2026-10-03, reunion)
-  _Dernière activité : 2026-10-03 (reunion) — première réunion, présentation mutuelle. client réceptif. rdv suivi à caler._
+**Monteil… – PILOTE AGENCE** (Monteil ET CIE) — Découverte — 45000 € — [A4]
+- Aucune activité depuis 26 jours (dernière : 2026-10-23, reunion)
 
-## Par AE
+## Tendances
+
+• 7 deal(s) sans tâche planifiée (A2)
+• 6 deal(s) A3 — close_dates dépassées (retard moyen 34 j)
+• 5 deal(s) avec 2+ anomalies simultanées
+
+## Résumé par AE
+
+- Alice Moreau : 12 deal(s) signalé(s) (234000 €)
+- Bruno Petit : 7 deal(s) signalé(s) (149500 €)
+- Claire Durand : 5 deal(s) signalé(s) (92500 €)
+- David Leroy : 4 deal(s) signalé(s) (117500 €)
+- Emma Bernard : 5 deal(s) signalé(s) (130000 €)
+
+---DETAIL---
+
+## Détail par AE
 
 ### Alice Moreau
 
-**Assystem Engineering – Pilote agence** (Assystem Engineering AND Operation Services) — Alice Moreau — Découverte — 50000 € — [A3]
-- Date de clôture dépassée : 2026-09-30 (il y a 49 j)
-  _Dernière activité : 2026-10-31 (reunion) — échange initial sur les enjeux métier. pb de traçabilité mentionné. à creuser._
+**Fluidexpert – PILOTE AGENCE** (Fluidexpert) — Alice Moreau — Démo — 50000 € — [A4]
+- Aucune activité depuis 43 jours (dernière : 2026-10-06, reunion)
+  _Dernière activité : 2026-10-06 (reunion) — démo produit, focus sur le reporting. impact fort pr le responsable exploitation_
 
-**EE – pilote agence** (ETS Edouard Boffo) — Alice Moreau — Qualification — 30000 € — [A4]
-- Aucune activité depuis 33 jours (dernière : 2026-10-16, appel)
-  _Dernière activité : 2026-10-16 (appel) — discussion sur les critères de choix. prix et intégration = critères clés._
+**Monteil… – PILOTE AGENCE** (Monteil ET CIE) — Alice Moreau — Découverte — 45000 € — [A4]
+- Aucune activité depuis 26 jours (dernière : 2026-10-23, reunion)
+  _Dernière activité : 2026-10-23 (reunion) — atelier de cadrage initial. processus actuels mappés. plusieurs pb identifiés._
 
-**Vo2 - deploy multi-sites** (VO2) — Alice Moreau — Proposition envoyée — 19500 € — [A1, A2]
-- En Proposition envoyée depuis 65 jours (durée normale 21 jours)
+**Eiffage Energie… – planif. terrain** (Eiffage Energie Systemes - Transport & Distribution) — Alice Moreau — Qualification — 35000 € — [A2]
 - Aucune tâche ni réunion à venir
-  _Dernière activité : 2026-11-16 (email) — Voici notre offre commerciale détaillée. Je reste disponible pour en discuter._
+  _Dernière activité : 2026-11-11 (reunion) — revue du cahier des charges client. besoin de personnalisation identifié._
 
-**Energie Service – PLANIF TERRAIN** (Energie ET Service) — Alice Moreau — Qualification — 18500 € — [A1, A2]
-- En Qualification depuis 43 jours (durée normale 14 jours)
+**Optisol - Déploiement multi-sites** (Optisol) — Alice Moreau — Démo — 12000 € — [A1, A2]
+- En Démo depuis 60 jours (durée normale 21 jours)
 - Aucune tâche ni réunion à venir
-  _Dernière activité : 2026-11-16 (email) — Bonjour, je souhaite faire le point sur votre projet. Une disponibilité cette se_
+  _Dernière activité : 2026-11-15 (reunion) — deuxième démo, focus module mobile. client conquis. à faire avancer._
 
-**Brunet – licence nova** (Brunet) — Alice Moreau — Qualification — 31000 € — [A2]
+**STA… - pilote agence** (STA Reseaux) — Alice Moreau — Découverte — 19000 € — [A3]
+- Date de clôture dépassée : 2026-10-27 (il y a 22 j)
+  _Dernière activité : 2026-11-02 (note) — client réfléchit encore. pas pressé. relancer dans 2 sem._
+
+**SD – LIC. NOVA** (SDEL Dauphine Savoie) — Alice Moreau — Qualification — 9500 € — [A1, A2]
+- En Qualification depuis 50 jours (durée normale 14 jours)
 - Aucune tâche ni réunion à venir
-  _Dernière activité : 2026-10-28 (reunion) — première réunion de découverte. interlocuteur DRH + responsable terrain. besoin _
+  _Dernière activité : 2026-11-02 (reunion) — réunion qualification avec DAF et RSI. budget cadré. go pour démo._
 
-**Atlantique - pilote agence** (Atlantique Electricite Services) — Alice Moreau — Négociation — 11000 € — [A1]
-- En Négociation depuis 88 jours (durée normale 30 jours)
-  _Dernière activité : 2026-11-16 (email) — Suite à notre échange, voici la grille tarifaire révisée avec la remise convenue_
+**Terti'o – deploy multi-sites** (Terti'o) — Alice Moreau — Découverte — 9000 € — [A1, A2]
+- En Découverte depuis 41 jours (durée normale 14 jours)
+- Aucune tâche ni réunion à venir
+  _Dernière activité : 2026-10-07 (appel) — découverte téléphonique. 3 sites, 20 techniciens itinérants. beau potentiel._
 
-**Climatec – Déploiement multi-sites** (Climatec) — Alice Moreau — Démo — 21000 € — [A9]
+**Agirenergy – Licence Nova** (Agirenergy) — Alice Moreau — Proposition envoyée — 17000 € — [A1]
+- En Proposition envoyée depuis 70 jours (durée normale 21 jours)
+  _Dernière activité : 2026-11-18 (reunion) — réunion suite à l'envoi de l'offre. client satisfait du fond, négociation sur ti_
+
+**Irisolaris – Planif terrain** (Irisolaris) — Alice Moreau — Démo — 17000 € — [A3]
+- Date de clôture dépassée : 2026-09-24 (il y a 55 j)
+  _Dernière activité : 2026-11-13 (appel) — relance suite silence post-démo. client occupé, rdv repoussé._
+
+**Electricite… - deploy multi-sites** (Electricite Millot) — Alice Moreau — Négociation — 11000 € — [A3]
+- Date de clôture dépassée : 2026-11-04 (il y a 14 j)
+  _Dernière activité : 2026-11-15 (email) — Comme convenu, voici la version finale du contrat intégrant vos remarques._
+
+**Eiffage… – Déploiement multi-sites** (Eiffage Energie Systemes - EMCS NORD) — Alice Moreau — Découverte — 9500 € — [A9]
 - Doublon : même entreprise, noms quasi identiques
-  _Dernière activité : 2026-10-15 (email) — Merci pour le retour positif sur la démo. Je vous propose de fixer une date pour_
+  _Dernière activité : 2026-11-16 (email) — Bonjour, je fais suite à mon message de la semaine dernière. Avez-vous pu consul_
+
+**CIDE ELEC - Pilote agences** (CIDE ELEC) — Alice Moreau — Négociation — 0 € — [A5]
+- Montant manquant en Négociation
+  _Dernière activité : 2026-11-13 (appel) — relance suite silence. client ok mais juriste en déplacement. relancer la semain_
 
 ### Bruno Petit
 
-**Societe D – LIC. NOVA** (Societe D Installations DE Plomberie Electricite Chauffage Tuyauteries) — Bruno Petit — Qualification — 30000 € — [A4]
-- Aucune activité depuis 30 jours (dernière : 2026-10-19, reunion)
-  _Dernière activité : 2026-10-19 (reunion) — première réunion, présentation mutuelle. client réceptif. rdv suivi à caler._
+**REEL – Déploiement MS** (REEL) — Bruno Petit — Découverte — 52000 € — [A2]
+- Aucune tâche ni réunion à venir
+  _Dernière activité : 2026-11-13 (appel) — Point de suivi avec le client._
 
-**Archimede – pilote agence** (Archimede) — Bruno Petit — Négociation — 25000 € — [A7]
-- Deal 25000 € en Négociation avec 1 seul interlocuteur
-  _Dernière activité : 2026-11-18 (appel) — appel négo finale. accord trouvé sur tous les points. signature jeudi._
+**NGE Ingenierie – licence nova** (NGE Ingenierie) — Bruno Petit — Découverte — 25000 € — [A4]
+- Aucune activité depuis 42 jours (dernière : 2026-10-07, appel)
+  _Dernière activité : 2026-10-07 (appel) — bon échange, contexte clair. 15 techniciens à gérer, beau projet._
 
-**MGL – Pilote agence** (MGL Froid) — Bruno Petit — Découverte — 18000 € — [A6]
+**Dietsmann… - Licence Nova** (Dietsmann Technologies) — Bruno Petit — Qualification — 12500 € — [A1, A2]
+- En Qualification depuis 51 jours (durée normale 14 jours)
+- Aucune tâche ni réunion à venir
+  _Dernière activité : 2026-11-18 (appel) — qualification ok. budget estimé autour de 12k. décision au CODIR._
+
+**Mathyss – planif. terrain** (Mathyss) — Bruno Petit — Qualification — 12500 € — [A1]
+- En Qualification depuis 55 jours (durée normale 14 jours)
+  _Dernière activité : 2026-11-18 (email) — Bonjour, comme convenu voici la documentation technique. Je reste disponible pou_
+
+**Societe – Pilote agence** (Societe DE Plomberie ET DE Chauffage POUR L'immobilier ET L'industrie) — Bruno Petit — Découverte — 18000 € — [A6]
 - Clôture en 2026-11 mais étape Découverte
-  _Dernière activité : 2026-11-13 (email) — Suite à notre premier appel, je vous transmets les informations demandées. À vot_
+  _Dernière activité : 2026-11-17 (reunion) — rdv dc réalisé. 3 participants côté client. besoin bien cadré. suite: envoyer do_
 
-**TA – Planif terrain** (Tecsol Antilles & Guyane) — Bruno Petit — Qualification — 6000 € — [A3]
-- Date de clôture dépassée : 2026-10-24 (il y a 25 j)
-  _Dernière activité : 2026-11-12 (note) — dossier en bonne voie. budget validé. préparer démo adaptée._
+**Copin - PILOTE AGENCE** (Copin) — Bruno Petit — Qualification — 16000 € — [A6]
+- Clôture en 2026-11 mais étape Qualification
+  _Dernière activité : 2026-11-15 (note) — DAF favorable mais RSI pas encore convaincu. préparer arguments techniques._
+
+**Monteil CIE – planif. terrain** (Monteil ET CIE) — Bruno Petit — Négociation — 13500 € — [A8]
+- En Négociation sans réunion de démo dans l'historique
+  _Dernière activité : 2026-11-13 (reunion) — discussion tarifs et SLA. accord trouvé sur les pénalités. à formaliser._
 
 ### Claire Durand
 
-**Artelia Industrie - Licence nova** (Artelia Industrie) — Claire Durand — Démo — 40000 € — [A1, A2]
-- En Démo depuis 63 jours (durée normale 21 jours)
-- Aucune tâche ni réunion à venir
-  _Dernière activité : 2026-11-03 (note) — PoC en cours. résultats attendus la semaine prochaine._
+**EE – Déploiement multi-sites** (Eiffage Energie Systemes - ILE DE France) — Claire Durand — Négociation — 51500 € — [A7]
+- Deal 51500 € en Négociation avec 1 seul interlocuteur
+  _Dernière activité : 2026-11-17 (email) — Je reviens vers vous concernant la signature du contrat. Avez-vous des questions_
 
-**Tractebel - licence nova** (Tractebel Engineering) — Claire Durand — Découverte — 36000 € — [A1, A2]
-- En Découverte depuis 45 jours (durée normale 14 jours)
-- Aucune tâche ni réunion à venir
-  _Dernière activité : 2026-11-16 (reunion) — rdv de découverte en visio. 4 participants. pb principal : planification tournée_
+**ETS… – Licence nova** (ETS Leroux) — Claire Durand — Négociation — 21500 € — [A8]
+- En Négociation sans réunion de démo dans l'historique
+  _Dernière activité : 2026-11-08 (note) — deal en closing. client très motivé. risque faible de retournement._
 
-**Graniou – Déploiement multi-sites** (Graniou Caraibes SAS) — Claire Durand — Qualification — 10500 € — [A1, A2]
-- En Qualification depuis 54 jours (durée normale 14 jours)
-- Aucune tâche ni réunion à venir
-  _Dernière activité : 2026-10-17 (appel) — relance suite rdv. délai de décision = 3 sem. à relancer._
-
-**CLIMATEC - deploy multi-sites** (Climatec) — Claire Durand — Proposition envoyée — 36500 € — [A9]
+**EIFFAGE… - deploy multi-sites** (Eiffage Energie Systemes - EMCS NORD) — Claire Durand — Qualification — 13000 € — [A9]
 - Doublon : même entreprise, noms quasi identiques
-  _Dernière activité : 2026-11-17 (appel) — échange rapide. devis reçu, en cours de lecture. rappeler lundi._
+  _Dernière activité : 2026-11-18 (reunion) — réunion avec équipe dirigeante. décision = comité de direction. délai 1 mois._
 
-**Building – Planification terrain** (Building Systems Energies) — Claire Durand — Qualification — 5500 € — [A2]
-- Aucune tâche ni réunion à venir
-  _Dernière activité : 2026-11-13 (appel) — besoin initial confirmé. attente d'un rdv de présentation._
+**Christian… – Planif terrain** (SARL Christian Ledru) — Claire Durand — Démo — 6500 € — [A1]
+- En Démo depuis 64 jours (durée normale 21 jours)
+  _Dernière activité : 2026-11-05 (appel) — relance suite silence post-démo. client occupé, rdv repoussé._
 
-**Martinon MSE – DEPLOY MULTI-SITES** (Martinon MSE) — Claire Durand — Qualification — 4000 € — [A6]
-- Clôture en 2026-11 mais étape Qualification
-  _Dernière activité : 2026-11-09 (note) — qualification avancée. budget probable 15-20k. attendre validation CODIR._
-
-**Proseco – Planif terrain** (Proseco SN) — Claire Durand — Négociation — 0 € — [A5]
-- Montant manquant en Négociation
-  _Dernière activité : 2026-11-10 (email) — Je vous transmets le contrat finalisé pour signature. Merci de le retourner sign_
+**MUST – PLANIF TERRAIN** (MUST) — Claire Durand — Proposition envoyée — 0 € — [A5]
+- Montant manquant en Proposition envoyée
+  _Dernière activité : 2026-11-18 (reunion) — présentation offre à l'équipe direction. retours positifs. décision prochainemen_
 
 ### David Leroy
 
-**SPIE Industrie – PILOTE AGENCE** (SPIE Industrie) — David Leroy — Découverte — 40000 € — [A4]
-- Aucune activité depuis 43 jours (dernière : 2026-10-06, appel)
-  _Dernière activité : 2026-10-06 (appel) — dg pas disponible. secrétaire a pris le msg. rappeler mardi._
-
-**Dr House – Déploiement multi-sites** (DR House) — David Leroy — Négociation — 35000 € — [A7]
+**Tecsol – PLANIF TERRAIN** (Tecsol) — David Leroy — Négociation — 35000 € — [A7]
 - Deal 35000 € en Négociation avec 1 seul interlocuteur
-  _Dernière activité : 2026-11-12 (appel) — négo finale. accord sur le prix. contrat à envoyer pour signature._
+  _Dernière activité : 2026-10-31 (email) — Avez-vous eu le temps de regarder notre devis ? Je suis disponible pour en parle_
 
-**Derichebourg - Pilote agence** (Derichebourg Aeronautics Services France) — David Leroy — Découverte — 40000 € — [A3]
-- Date de clôture dépassée : 2026-10-13 (il y a 36 j)
-  _Dernière activité : 2026-11-13 (note) — pme familiale, décision = DG seul. à contacter directement._
+**Atalian… - PILOTE AGENCE** (Atalian Maintenance & Energy) — David Leroy — Négociation — 34000 € — [A7]
+- Deal 34000 € en Négociation avec 1 seul interlocuteur
+  _Dernière activité : 2026-11-16 (note) — appel de suivi offre. client satisfait mais délai décision = 3 sem._
 
-**EF – Pilote agences** (Excent France) — David Leroy — Qualification — 30000 € — [A3]
+**Industheo – Déploiement MS** (Industheo) — David Leroy — Qualification — 33500 € — [A6]
+- Clôture en 2026-11 mais étape Qualification
+  _Dernière activité : 2026-11-18 (appel) — échange poussé sur les critères d'achat. 3 décideurs impliqués._
+
+**Agirenergy – Planif terrain** (Agirenergy) — David Leroy — Proposition envoyée — 15000 € — [A3]
 - Date de clôture dépassée : 2026-10-21 (il y a 28 j)
-  _Dernière activité : 2026-11-01 (appel) — pas joignable. msg laissé, rappeler demain matin._
-
-**Archimede - Licence Nova** (Archimede) — David Leroy — Qualification — 18500 € — [A1]
-- En Qualification depuis 53 jours (durée normale 14 jours)
-  _Dernière activité : 2026-11-01 (appel) — échange avec DAF. budget ok autour de 18k. go pr démo._
-
-**Hdf – deploy multi-sites** (HDF Chauffage) — David Leroy — Démo — 3500 € — [A3]
-- Date de clôture dépassée : 2026-11-06 (il y a 12 j)
-  _Dernière activité : 2026-10-30 (reunion) — atelier qualification avec le responsable SI. critères d'achat bien définis._
-
-**Excent – Planif terrain** (Excent France) — David Leroy — Négociation — 0 € — [A5]
-- Montant manquant en Négociation
-  _Dernière activité : 2026-11-17 (email) — Comme convenu, voici la version finale du contrat intégrant vos remarques._
-
-**VO2 – LIC. NOVA** (VO2) — David Leroy — Proposition envoyée — 0 € — [A5]
-- Montant manquant en Proposition envoyée
-  _Dernière activité : 2026-11-13 (email) — Bonjour, je souhaite m'assurer que vous avez bien reçu notre devis. Une question_
+  _Dernière activité : 2026-11-04 (reunion) — démo 2h, 4 participants. questions pointues sur le PoC. très bon engagement._
 
 ### Emma Bernard
 
-**HT – Déploiement MS** (Herve Thermique) — Emma Bernard — Qualification — 45000 € — [A4]
-- Aucune activité depuis 46 jours (dernière : 2026-10-03, reunion)
-  _Dernière activité : 2026-10-03 (reunion) — première réunion, présentation mutuelle. client réceptif. rdv suivi à caler._
+**Isola.co – Extension utilisateurs** (Isola.co) — Emma Bernard — Proposition envoyée — 35000 € — [A4]
+- Aucune activité depuis 31 jours (dernière : 2026-10-18, appel)
+  _Dernière activité : 2026-10-18 (appel) — qualification ok. budget estimé autour de {budget_k}k. décision au CODIR._
 
-**Serma - PILOTE AGENCE** (Serma Ingenierie) — Emma Bernard — Proposition envoyée — 38500 € — [A3]
-- Date de clôture dépassée : 2026-10-10 (il y a 39 j)
-  _Dernière activité : 2026-11-15 (note) — timeline serrée : décision attendue avant fin de trimestre._
+**EGIS RAIL - licence nova** (EGIS RAIL) — Emma Bernard — Qualification — 45000 € — [A3]
+- Date de clôture dépassée : 2026-10-14 (il y a 35 j)
+  _Dernière activité : 2026-11-13 (email) — Merci pour vos retours sur nos capacités d'intégration. Je vous confirme la fais_
 
-**Henon - Licence nova** (SAS Henon) — Emma Bernard — Négociation — 20000 € — [A7]
-- Deal 20000 € en Négociation avec 1 seul interlocuteur
-  _Dernière activité : 2026-10-29 (email) — Suite à notre dernière discussion, je vous confirme les conditions définitives. _
+**Fondasol – Pilote agence** (Fondasol) — Emma Bernard — Découverte — 41000 € — [A3]
+- Date de clôture dépassée : 2026-09-29 (il y a 50 j)
+  _Dernière activité : 2026-11-18 (reunion) — rdv de découverte en visio. 4 participants. pb principal : planification tournée_
 
-**Herve – licence nova** (Herve Thermique) — Emma Bernard — Qualification — 51000 € — [A6]
-- Clôture en 2026-11 mais étape Qualification
-  _Dernière activité : 2026-11-08 (note) — qualification avancée. budget probable 15-20k. attendre validation CODIR._
+**ME - deploy multi-sites** (MK Energies) — Emma Bernard — Découverte — 9000 € — [A1, A2]
+- En Découverte depuis 55 jours (durée normale 14 jours)
+- Aucune tâche ni réunion à venir
+  _Dernière activité : 2026-09-30 (appel) — interlocuteur en congés jusque fin mois. rappeler le 2._
 
-**SYND Coproprietaires - Pilote agences** (SYND Coproprietaires Residence Elysee 2) — Emma Bernard — Négociation — 39500 € — [A8]
-- En Négociation sans réunion de démo dans l'historique
-  _Dernière activité : 2026-11-07 (reunion) — revue finale contrat. 1 clause SLA à ajuster. à renvoyer sous 48h._
-
-**VE – licence nova** (Veodis Electricite) — Emma Bernard — Qualification — 17000 € — [A1]
-- En Qualification depuis 41 jours (durée normale 14 jours)
-  _Dernière activité : 2026-11-11 (email) — Merci pour notre échange. Je vous confirme que nous pouvons adapter la solution _
-
-**EGIR – licence nova** (EGIR) — Emma Bernard — Négociation — 26500 € — [A8]
-- En Négociation sans réunion de démo dans l'historique
-  _Dernière activité : 2026-11-14 (appel) — appel rapide. contrat reçu et relu. signature prévue demain._
+**Lorraine… – PILOTE AGENCE** (Lorraine Energie Nancy) — Emma Bernard — Négociation — 0 € — [A5]
+- Montant manquant en Négociation
+  _Dernière activité : 2026-11-16 (reunion) — revue finale contrat. 1 clause SLA à ajuster. à renvoyer sous 48h._
 
 ## Vus, pas inquiétants
 
-- Electricite Industrielle - Licence Nova (Electricite Industrielle J. P. Fauche, Alice Moreau) — En Démo depuis 57 jours, mais note du 2026-11-17 et RDV prévu le 2026-12-07
-- SPIE - DEPLOY MULTI-SITES (SPIE Turbomachinery, Claire Durand) — En Proposition envoyée depuis 67 jours, mais note du 2026-11-17 et RDV prévu le 2026-11-23
+- Hydrostadium - Licence Nova (Hydrostadium, David Leroy) — En Qualification depuis 40 jours, mais note du 2026-11-15 et RDV prévu le 2026-11-23
+- Merat Etablissements - Licence Nova (Merat Etablissements, Claire Durand) — En Qualification depuis 50 jours, mais note du 2026-11-17 et RDV prévu le 2026-12-07

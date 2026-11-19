@@ -9,6 +9,24 @@ import datetime
 
 from .texts import pick_subject, pick_body, pick_template, get_stage_at_date
 
+
+def _fill_budget_placeholders(body: str, deal: dict) -> str:
+    """Replace {budget_range} and {budget_k} placeholders with deal-amount-based values."""
+    if "{budget_range}" not in body and "{budget_k}" not in body:
+        return body
+    amount = deal.get("amount") or 0
+    if amount > 0:
+        lo = int(amount * 0.8 / 1000)
+        hi = int(amount * 1.2 / 1000)
+        budget_range = f"{lo}-{hi}k"
+        budget_k = str(int(amount / 1000))
+    else:
+        budget_range = "budget à confirmer"
+        budget_k = "?"
+    body = body.replace("{budget_range}", budget_range)
+    body = body.replace("{budget_k}", budget_k)
+    return body
+
 ACTIVITY_TYPES_PAST = ["appel", "email", "reunion", "note"]
 ACTIVITY_TYPES_ALL = ["appel", "email", "reunion", "note", "tache"]
 
@@ -123,6 +141,7 @@ def gen_activities_for_deal(rng, deal, contacts_by_company, as_of,
 
         subject, body = pick_template(rng, act_type, stage=act_stage,
                                        exclude_bodies=used_bodies)
+        body = _fill_budget_placeholders(body, deal)
         used_bodies.add(body)
 
         activities.append({
@@ -251,6 +270,7 @@ def _gen_activities_for_closed_deal(rng, deal, contacts_by_company, as_of):
         act_stage = get_stage_at_date(stage_history, at_dt.date())
         subject, body = pick_template(rng, act_type, stage=act_stage,
                                        exclude_bodies=used_bodies)
+        body = _fill_budget_placeholders(body, deal)
         used_bodies.add(body)
 
         activities.append({

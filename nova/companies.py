@@ -29,7 +29,7 @@ def _make_display_name(name: str) -> str:
     - Drop parenthetical aliases like "(ORANO DEM)".
     - Words where w.isupper() and len(w) <= 4  → keep uppercase (acronyms: EDF, SNCF, T&S).
     - Words containing digits                  → keep as-is (ERA 94, A2, 3M).
-    - Connector words (de, du, et, …)          → lowercase, except if first word.
+    - Connector words (de, du, et, …)          → always lowercase (even first word if name has >1 word).
     - Everything else                          → capitalize().
     """
     name = _re.sub(r'\s*\([^)]*\)', '', name).strip()
@@ -40,7 +40,7 @@ def _make_display_name(name: str) -> str:
             result.append(w)
         elif w.isupper() and len(w) <= 4:
             result.append(w)
-        elif w.lower() in _LOWER_CONN and i > 0:
+        elif w.lower() in _LOWER_CONN and (i > 0 or len(words) > 1):
             result.append(w.lower())
         else:
             result.append(w.capitalize())
@@ -101,8 +101,11 @@ def select_companies(rng, target=220):
     Returns list of company dicts with added segment/size_band fields.
     """
     all_companies = load_cache()
-    # Filter out individual companies (nature_juridique 1000)
-    all_companies = [c for c in all_companies if str(c.get("nature_juridique", "")) != "1000"]
+    # Keep only commercial companies: nature_juridique starting with "5" or "6"
+    all_companies = [
+        c for c in all_companies
+        if str(c.get("nature_juridique", "")).startswith(("5", "6"))
+    ]
 
     pme_pool = [c for c in all_companies if c.get("tranche_effectif", "") in TRANCHES_PME]
     strat_pool = [c for c in all_companies if c.get("tranche_effectif", "") in TRANCHES_STRAT]

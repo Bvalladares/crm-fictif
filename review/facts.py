@@ -478,6 +478,97 @@ def build_facts(crm_data):
     # (useful for evaluator to identify any deal mentioned in a review)
     all_deal_names = {d["id"]: d["name"] for d in deals}
 
+    # ── patterns (A2) ───────────────────────────────────────────────────────
+    LATE_STAGES = {"proposition", "negociation"}
+
+    # by_code: count of flagged deals per anomaly code
+    by_code = {}
+    for did, codes in flags_by_deal.items():
+        for code in codes:
+            by_code[code] = by_code.get(code, 0) + 1
+
+    # by_owner: per-owner stats for owners with flagged deals
+    patterns_by_owner = {}
+    for ow in by_owner:
+        oid = ow["owner_id"]
+        flagged_amt = sum(e["amount"] for e in ow["flagged"])
+        patterns_by_owner[oid] = {
+            "name": ow["owner_name"],
+            "flagged": len(ow["flagged"]),
+            "flagged_amount": flagged_amt,
+        }
+
+    # multi_anomaly_deals: deals with >= 2 anomaly codes
+    multi_anomaly_deals = sum(1 for codes in flags_by_deal.values() if len(codes) >= 2)
+
+    # a2_in_late_stages: A2 deals in proposition or negociation
+    a2_in_late_stages = sum(
+        1 for did, codes in flags_by_deal.items()
+        if "A2" in codes and deals_by_id[did].get("stage") in LATE_STAGES
+    )
+
+    # a3_overdue_days_avg: average days overdue across all A3 deals
+    a3_days = []
+    for did, codes in flags_by_deal.items():
+        if "A3" in codes:
+            close_date = _parse_date(deals_by_id[did].get("close_date"))
+            if close_date:
+                a3_days.append((as_of_date - close_date).days)
+    a3_overdue_days_avg = int(sum(a3_days) / len(a3_days)) if a3_days else 0
+
+    # a5_a7_combined: deals that have BOTH A5 and A7
+    a5_a7_combined = sum(
+        1 for codes in flags_by_deal.values()
+        if "A5" in codes and "A7" in codes
+    )
+
+    # contract_mention_no_amount: deals in proposition/negociation with amount=0 or None
+    # AND last_activity summary contains "contrat" or "devis"
+    contract_mention_no_amount = []
+    for did, codes in flags_by_deal.items():
+        deal = deals_by_id[did]
+        if deal.get("stage") not in LATE_STAGES:
+            continue
+        amt = deal.get("amount") or 0
+        if amt != 0:
+            continue
+        la = last_activity(did)
+        if la:
+            summary_lower = (la.get("summary") or "").lower()
+            if "contrat" in summary_lower or "devis" in summary_lower:
+                entry = deal_entries.get(did, {})
+                contract_mention_no_amount.append({
+                    "deal_id": did,
+                    "deal_name": deal.get("name", ""),
+                    "stage": STAGE_LABEL.get(deal.get("stage", ""), deal.get("stage", "")),
+                    "amount": amt,
+                })
+
+    patterns = {
+        "by_code": by_code,
+        "by_owner": patterns_by_owner,
+        "multi_anomaly_deals": multi_anomaly_deals,
+        "a2_in_late_stages": a2_in_late_stages,
+        "a3_overdue_days_avg": a3_overdue_days_avg,
+        "a5_a7_combined": a5_a7_combined,
+        "contract_mention_no_amount": contract_mention_no_amount,
+    }
+
+    # Add pattern numbers to allowed_numbers
+    for n in [multi_anomaly_deals, a2_in_late_stages, a3_overdue_days_avg, a5_a7_combined]:
+        for v in _variants_for_days(n):
+            allowed.add(v)
+    for code, cnt in by_code.items():
+        for v in _variants_for_days(cnt):
+            allowed.add(v)
+    for oid, stats in patterns_by_owner.items():
+        for v in _variants_for_days(stats["flagged"]):
+            allowed.add(v)
+        for v in _variants_for_int(stats["flagged_amount"]):
+            allowed.add(v)
+
+    allowed_numbers = sorted(allowed)
+
     result = {
         "as_of": as_of_str,
         "team": "Atelier Nova",
@@ -490,6 +581,7 @@ def build_facts(crm_data):
         "priorities": priorities,
         "by_owner": by_owner,
         "excused": excused,
+        "patterns": patterns,
         "allowed_numbers": allowed_numbers,
         "all_deal_names": all_deal_names,
     }

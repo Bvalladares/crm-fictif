@@ -5,11 +5,16 @@
   "recall_total": 38,
   "false_leurres": 0,
   "invented_numbers": 0,
-  "length_words": 1685,
+  "length_words": 176,
+  "priorities_present": true,
+  "patterns_cited": true,
+  "anticopy_score": null,
   "pass": true,
   "details": {
     "missed_deals": [],
     "false_leurre_deals": [],
-    "invented_number_tokens": []
+    "invented_number_tokens": [],
+    "missing_priorities": [],
+    "anticopy_lines_flagged": []
   }
 }

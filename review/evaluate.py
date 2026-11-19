@@ -11,14 +11,14 @@ import os
 import re
 import sys
 
+SEPARATOR = "---DETAIL---"
+
 
 # ── number extraction ───────────────────────────────────────────────────────
 
 def _normalise_spaces(s):
     """Replace narrow non-breaking space and regular space sequences with single space."""
-    # Replace various space-like chars
     s = s.replace("\u202f", " ").replace("\u00a0", " ")
-    # Collapse multiple spaces
     s = re.sub(r' +', ' ', s)
     return s
 
@@ -46,10 +46,8 @@ def extract_numbers(text):
         if _in_date(m):
             continue
         tok = m.group(0).strip()
-        # Normalise: collapse internal spaces
         norm = re.sub(r' +', ' ', tok)
         found.add(norm)
-        # Also add variant without spaces
         found.add(norm.replace(' ', ''))
 
     # Standalone single digits
@@ -61,139 +59,175 @@ def extract_numbers(text):
     return found
 
 
-# ── section splitter ────────────────────────────────────────────────────────
+# ── two-part split ──────────────────────────────────────────────────────────
 
-def split_sections(text):
+def split_main_detail(text):
     """
-    Split review into sections.
-    Returns dict: section_title -> content (string)
-    Special key '' for content before first heading.
+    Split review into main message and detail section.
+    Returns (main_text, detail_text).
+    If no separator found, the whole text is main and detail is empty.
     """
-    sections = {}
-    current_title = ''
-    current_lines = []
-
-    for line in text.splitlines():
-        m = re.match(r'^(#{1,3})\s+(.*)', line)
-        if m:
-            sections[current_title] = '\n'.join(current_lines)
-            current_title = m.group(2).strip()
-            current_lines = []
-        else:
-            current_lines.append(line)
-    sections[current_title] = '\n'.join(current_lines)
-    return sections
+    sep = SEPARATOR
+    idx = text.find(sep)
+    if idx == -1:
+        return text, ""
+    main_text = text[:idx].rstrip()
+    detail_text = text[idx + len(sep):].lstrip()
+    return main_text, detail_text
 
 
 # ── scoring ─────────────────────────────────────────────────────────────────
 
-def score_review(review_text, facts, truth_rows):
+def score_review(review_text, facts, truth_rows, review_file=None):
     """
     Score a review string.
     Returns dict with all metrics.
     """
-    # Build deal_name -> deal_id lookup from facts
-    # Prefer all_deal_names if present (covers ignorer deals too)
-    deal_name_to_id = {}
+    # Split into main and detail
+    main_text, detail_text = split_main_detail(review_text)
+    full_text = review_text  # for recall (search everywhere)
+
+    # Build deal_id -> deal_name lookup from facts
+    # (all_deal_names is {deal_id: deal_name})
+    id_to_name = {}
     all_deal_names = facts.get("all_deal_names", {})
     if all_deal_names:
-        # Reverse: name -> id
-        for did, name in all_deal_names.items():
-            deal_name_to_id[name] = did
+        id_to_name = dict(all_deal_names)
     else:
         for owner in facts.get("by_owner", []):
             for entry in owner.get("flagged", []):
-                deal_name_to_id[entry["deal_name"]] = entry["deal_id"]
+                id_to_name[entry["deal_id"]] = entry["deal_name"]
         for excused in facts.get("excused", []):
-            deal_name_to_id[excused["deal_name"]] = excused["deal_id"]
+            id_to_name[excused["deal_id"]] = excused["deal_name"]
 
-    # 1. Recall
-    # Find all "signaler" rows in truth
+    # Also build name -> deal_id for other lookups (may have duplicates — keep first)
+    deal_name_to_id = {}
+    for did, name in id_to_name.items():
+        if name not in deal_name_to_id:
+            deal_name_to_id[name] = did
+
+    # 1. Recall — search full file (main + detail)
     signaler_rows = [r for r in truth_rows if r["attendu"] == "signaler"]
     total_signaler = len(signaler_rows)
-
-    # Map deal_id -> deal_name (for signaler deals)
     signaler_deal_ids = set(r["deal_id"] for r in signaler_rows)
-    # Build reverse: deal_id -> deal_name from facts
-    id_to_name = {}
-    for name, did in deal_name_to_id.items():
-        id_to_name[did] = name
 
-    # Check which signaler deals appear in review
     covered_ids = set()
     for did in signaler_deal_ids:
         name = id_to_name.get(did)
-        if name and name in review_text:
+        if name and name in full_text:
             covered_ids.add(did)
 
-    # Count covered rows (multi-anomaly deals: if deal appears, all rows covered)
     covered_rows = sum(1 for r in signaler_rows if r["deal_id"] in covered_ids)
     recall = covered_rows / total_signaler if total_signaler > 0 else 1.0
     missed_deals = sorted(signaler_deal_ids - covered_ids)
 
-    # 2. False leurres
-    # "ignorer" deals whose deal_name appears OUTSIDE "Vus, pas inquiétants" section
-    sections = split_sections(review_text)
-    excused_section = sections.get("Vus, pas inquiétants", "")
-
-    # Get text outside excused section
-    # Remove the excused section content from full text for checking
-    text_without_excused = review_text
-    if excused_section:
-        text_without_excused = review_text.replace(excused_section, "")
-
+    # 2. False leurres — ignorer deal names found in MAIN MESSAGE ONLY
     ignorer_rows = [r for r in truth_rows if r["attendu"] == "ignorer"]
     ignorer_deal_ids = set(r["deal_id"] for r in ignorer_rows)
 
     false_leurre_deals = []
     for did in ignorer_deal_ids:
         name = id_to_name.get(did)
-        if name and name in text_without_excused:
+        if name and name in main_text:
             false_leurre_deals.append(did)
 
     false_leurres_count = len(false_leurre_deals)
 
-    # 3. Invented numbers
+    # 3. Invented numbers — in full file
     allowed = set(facts.get("allowed_numbers", []))
-    # Normalise allowed numbers
     allowed_normalised = set(_normalise_spaces(a) for a in allowed)
 
-    # Extract numbers from review text
-    review_numbers = extract_numbers(review_text)
+    review_numbers = extract_numbers(full_text)
 
     invented = []
     for tok in review_numbers:
         if tok not in allowed_normalised and tok.replace(' ', '') not in allowed_normalised:
-            # Also try with variants
-            # Check if it's a pure number that might just be 0
             if tok == '0':
                 continue
             invented.append(tok)
 
     invented_count = len(invented)
 
-    # 4. Length: words excluding ## Par AE subsections
-    # Remove content under ### headings within Par AE section
-    par_ae_section = sections.get("Par AE", "")
+    # 4. Length — word count of main message only (before ---DETAIL---)
+    length_words = len(main_text.split())
 
-    # Build text to count: everything except Par AE body
-    # We'll count words in the full text minus the par_ae_section text
-    text_for_length = review_text
-    if par_ae_section:
-        text_for_length = review_text.replace(par_ae_section, "")
+    # 5. Priorities present — all 3 priority deal names from facts["priorities"] in main message
+    priorities = facts.get("priorities", [])
+    missing_priorities = []
+    for did in priorities:
+        name = id_to_name.get(did)
+        if not name or name not in main_text:
+            missing_priorities.append(did)
+    priorities_present = len(missing_priorities) == 0
 
-    # Also remove the "### Owner" subsection headers themselves
-    text_for_length = re.sub(r'###[^\n]*\n', '', text_for_length)
+    # 6. Patterns cited — at least 2 numeric values from facts["patterns"] in main message
+    patterns = facts.get("patterns", {})
+    # Collect all numeric values from patterns
+    pattern_numbers = set()
+    by_code = patterns.get("by_code", {})
+    for code, cnt in by_code.items():
+        pattern_numbers.add(str(cnt))
+    for key in ["multi_anomaly_deals", "a2_in_late_stages", "a3_overdue_days_avg", "a5_a7_combined"]:
+        v = patterns.get(key)
+        if v is not None:
+            pattern_numbers.add(str(v))
+    by_owner_pats = patterns.get("by_owner", {})
+    for oid, stats in by_owner_pats.items():
+        pattern_numbers.add(str(stats.get("flagged", 0)))
 
-    words = len(text_for_length.split())
+    # Count how many pattern numbers appear in main message
+    patterns_cited_count = sum(
+        1 for n in pattern_numbers
+        if n != "0" and re.search(r'\b' + re.escape(n) + r'\b', main_text)
+    )
+    patterns_cited = patterns_cited_count >= 2
+
+    # 7. Anti-copy — only checked when input is NOT review_raw.md itself
+    anticopy_score = None
+    anticopy_lines_flagged = []
+
+    # Determine if the file being evaluated is review_raw.md
+    is_review_raw = False
+    if review_file is not None:
+        basename = os.path.basename(str(review_file))
+        is_review_raw = (basename == "review_raw.md")
+
+    if not is_review_raw:
+        # Load review_raw.md if it exists
+        review_raw_path = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+            "out", "review_raw.md"
+        )
+        if os.path.exists(review_raw_path):
+            with open(review_raw_path, encoding="utf-8") as f:
+                raw_lines = set(line.strip() for line in f if line.strip())
+
+            # Check main message lines (non-empty, non-header)
+            main_non_header_lines = [
+                line.strip() for line in main_text.splitlines()
+                if line.strip() and not line.strip().startswith("#")
+            ]
+            flagged_lines = [
+                line for line in main_non_header_lines
+                if line in raw_lines
+            ]
+            total_main_lines = len(main_non_header_lines)
+            if total_main_lines > 0:
+                anticopy_score = len(flagged_lines) / total_main_lines
+            else:
+                anticopy_score = 0.0
+            anticopy_lines_flagged = flagged_lines[:10]
+
+    anticopy_pass = anticopy_score is None or anticopy_score <= 0.30
 
     passed = (
         recall >= 0.90 and
         false_leurres_count <= 1 and
-        invented_count == 0
-        # Note: length is informational, not a hard pass criterion per spec
-        # but let's include it
-        # and words <= 350
+        invented_count == 0 and
+        length_words <= 250 and
+        priorities_present and
+        patterns_cited and
+        anticopy_pass
     )
 
     return {
@@ -202,12 +236,17 @@ def score_review(review_text, facts, truth_rows):
         "recall_total": total_signaler,
         "false_leurres": false_leurres_count,
         "invented_numbers": invented_count,
-        "length_words": words,
+        "length_words": length_words,
+        "priorities_present": priorities_present,
+        "patterns_cited": patterns_cited,
+        "anticopy_score": anticopy_score,
         "pass": passed,
         "details": {
             "missed_deals": missed_deals,
             "false_leurre_deals": sorted(false_leurre_deals),
             "invented_number_tokens": sorted(invented),
+            "missing_priorities": missing_priorities,
+            "anticopy_lines_flagged": anticopy_lines_flagged,
         },
     }
 
@@ -232,7 +271,7 @@ def main():
         for row in reader:
             truth_rows.append(row)
 
-    result = score_review(review_text, facts, truth_rows)
+    result = score_review(review_text, facts, truth_rows, review_file=args.review_file)
 
     stem = os.path.splitext(os.path.basename(args.review_file))[0]
     out_path = os.path.join(args.out_dir, f"eval_{stem}.json")

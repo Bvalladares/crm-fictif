@@ -128,7 +128,11 @@ def gen_deals(rng, companies, contacts_by_company, as_of,
                 break
             if w.upper() not in _LEGAL:
                 words.append(w)
-        return words[:2] if words else company_name.split()[:1]
+        if not words:
+            words = company_name.split()[:1]
+        # Indicate truncation with ellipsis if there are more significant words than we take
+        # (used in make_deal_name which calls this function)
+        return words
 
     def make_deal_name(company_name, stage=None, status=None):
         """
@@ -139,9 +143,10 @@ def gen_deals(rng, companies, contacts_by_company, as_of,
         No "Mission" prefix, no internal IDs.
         """
         # --- Company fragment ---
-        sig = _co_short(company_name)
+        all_sig = _co_short(company_name)
         n_words = rng.choice([1, 1, 2, 2])
-        sig = sig[:min(n_words, len(sig))]
+        sig = all_sig[:min(n_words, len(all_sig))]
+        truncated = len(all_sig) > n_words
 
         style = rng.choice(["orig", "orig", "title", "abbrev"])
         if style == "title":
@@ -150,6 +155,9 @@ def gen_deals(rng, companies, contacts_by_company, as_of,
             short_co = "".join(w[0].upper() for w in sig)
         else:
             short_co = " ".join(sig)   # keep original casing (usually caps for real data)
+
+        if truncated and style != "abbrev":
+            short_co = short_co + "\u2026"
 
         # --- Object theme ---
         OBJECTS = [
