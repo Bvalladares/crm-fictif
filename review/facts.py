@@ -90,7 +90,8 @@ def _build_fact_phrase(code, deal, as_of_date):
         return f"Clôture en {yyyy_mm} mais étape {stage_label}"
 
     if code == "A7":
-        return f"Deal {amount} € en Négociation avec 1 seul interlocuteur"
+        amt_str = f"{amount:,}".replace(",", " ")
+        return f"{amt_str} € en Négociation avec un seul interlocuteur"
 
     if code == "A8":
         return "En Négociation sans réunion de démo dans l'historique"
@@ -423,6 +424,7 @@ def build_facts(crm_data):
     for did, entry in deal_entries.items():
         for phrase in entry["facts"]:
             for tok in re.findall(r'\b\d+\b', phrase):
+                allowed.add(tok)  # always add the raw token (e.g. "000" from "35 000 €")
                 n = int(tok)
                 # day counts
                 for v in _variants_for_days(n):

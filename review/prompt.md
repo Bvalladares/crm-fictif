@@ -28,26 +28,30 @@ Dans cet ordre :
 
 2. **Ouverture** (1–2 phrases) : Résumé du pipeline global — nombre total de deals ouverts, montant total, nombre de deals signalés et montant signalé.
 
-3. **## Priorités** : Les 3 deals prioritaires (IDs dans `facts.priorities`). Pour chacun : nom du deal, entreprise, étape, montant, codes d'anomalie, **1 seul fait** (le plus important).
+3. **## Priorités** : Les 3 deals prioritaires (IDs dans `facts.priorities`). Pour chacun : nom du deal, entreprise, étape, montant, **1 seul fait** (le plus important). Pas de codes.
 
-4. **## Tendances** : 2–3 bullet points dérivés de `facts.patterns`. Exemples de formulation :
-   - `• 5 deals sans tâche planifiée (A2) dont 2 en Négociation`
-   - `• 3 deals A3 — close_dates dépassées (retard moyen 15 j)`
-   - `• 4 deals avec 2+ anomalies simultanées`
+4. **## Tendances** : 2–3 bullet points dérivés de `facts.patterns`. Formule en français courant, sans codes. Privilégie les croisements (ex. deals sans montant mentionnant un contrat) avant les simples comptes. Exemples :
+   - `• 7 deals sans prochaine tâche planifiée`
+   - `• 6 deals avec date de clôture dépassée (retard moyen 34 j)`
+   - `• 5 deals cumulent deux alertes ou plus`
    Cite au minimum **2 valeurs numériques** issues de `facts.patterns`.
 
-5. **## Résumé par AE** : Une ligne par AE ayant des deals signalés :
-   `- {owner_name} : {n} deal(s) signalé(s) ({flagged_amount} €)`
+5. **## Résumé par AE** : Une ligne par AE ayant des deals signalés, montants avec espace des milliers :
+   `- {owner_name} : {n} deal(s) signalé(s) ({flagged_amount formatted} €)`
 
 ### Partie 2 — Détail (après `---DETAIL---`, sans limite de mots)
 
-1. **## Détail par AE** — un sous-titre `### {Nom AE}` par AE ayant des deals signalés. Pour chaque deal signalé : nom, entreprise, AE, étape, montant, codes, tous les faits, dernière activité.
+1. **## Détail par AE** — un sous-titre `### {Nom AE}` par AE ayant des deals signalés. Pour chaque deal signalé : nom, entreprise, AE, étape, montant (avec espace des milliers), tous les faits, dernière activité. Pas de codes.
 
 2. **## Vus, pas inquiétants** : Une ligne par deal excusé, format : `- {deal_name} ({company}, {owner_name}) — {why}`
 
 ## Contraintes absolues
 
 - **Aucun chiffre, date, nom** absent de `facts.json` ne doit apparaître dans ta réponse. Utilise uniquement les valeurs présentes dans `facts.json`, notamment la liste `allowed_numbers`.
+- **Aucun code d'anomalie** (A1, A2, …, A9, L1, …) dans le texte rédigé — les codes sont réservés à `facts.json`. Reformule en français courant.
+- **Aucun nom de champ technique** (`close_date`, `deal_id`, `stage_entered_at`, etc.) — utilise les formulations françaises déjà présentes dans les `facts`.
+- **Pas de "(s)"** comme abréviation de pluriel — fais les accords grammaticaux corrects (« 1 deal signalé », « 7 deals signalés »).
+- **Montants avec espace des milliers** : écrire « 51 500 € » et non « 51500 € ».
 - **Pas de spéculation** sur les intentions du client (ne pas écrire "le client semble hésiter", "probablement un problème de budget", etc.).
 - **Pas de recommandations managériales** (ne pas suggérer "il faudrait faire un point avec l'AE", "envisager une réunion de pipeline", etc.).
 - **Pas de jugement de valeur** sur les AE ou les clients.

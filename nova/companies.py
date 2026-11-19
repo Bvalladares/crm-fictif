@@ -21,12 +21,22 @@ TRANCHES_STRAT = {"41", "42", "51", "52", "53"}
 _LOWER_CONN = {"et", "de", "du", "des", "le", "la", "les", "en", "au",
                "aux", "sur", "par", "pour", "&", "d'", "l'"}
 
+# Words that look like acronyms (short, all-caps) but are actually common words
+# needing proper casing (e.g. French geographical prefixes).
+_WORD_OVERRIDES = {
+    "ILE": "Île",
+    "ILES": "Îles",
+    "COTE": "Côte",
+    "COTES": "Côtes",
+}
+
 
 def _make_display_name(name: str) -> str:
     """
     Convert an uppercase registry name to readable mixed-case.
     Rules:
     - Drop parenthetical aliases like "(ORANO DEM)".
+    - Words in _WORD_OVERRIDES                 → use override (e.g. ILE → Île).
     - Words where w.isupper() and len(w) <= 4  → keep uppercase (acronyms: EDF, SNCF, T&S).
     - Words containing digits                  → keep as-is (ERA 94, A2, 3M).
     - Connector words (de, du, et, …)          → always lowercase (even first word if name has >1 word).
@@ -36,12 +46,15 @@ def _make_display_name(name: str) -> str:
     words = name.split()
     result = []
     for i, w in enumerate(words):
-        if _re.search(r'\d', w):
-            result.append(w)
-        elif w.isupper() and len(w) <= 4:
+        if w.upper() in _WORD_OVERRIDES:
+            result.append(_WORD_OVERRIDES[w.upper()])
+        elif _re.search(r'\d', w):
             result.append(w)
         elif w.lower() in _LOWER_CONN and (i > 0 or len(words) > 1):
+            # Connector check before acronym: "ET", "DE" etc. → lowercase
             result.append(w.lower())
+        elif w.isupper() and len(w) <= 4:
+            result.append(w)
         else:
             result.append(w.capitalize())
     return " ".join(result)

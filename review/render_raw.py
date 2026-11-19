@@ -19,6 +19,20 @@ import os
 SEPARATOR = "---DETAIL---"
 
 
+def fmt_amount(n):
+    """Format an integer amount with space thousands separator: 51 500 €."""
+    if not n:
+        return "—"
+    return f"{n:,}".replace(",", "\u202f") + "\u202f€"
+
+
+def _plur(n, singular, plural=None):
+    """Return singular or plural form based on n."""
+    if plural is None:
+        plural = singular + "s"
+    return singular if n == 1 else plural
+
+
 def render(facts):
     as_of = facts["as_of"]
     team = facts["team"]
@@ -32,12 +46,11 @@ def render(facts):
             deal_lookup[entry["deal_id"]] = (owner["owner_name"], entry)
 
     def render_deal_entry(entry, owner_name):
-        """Render a single flagged deal block."""
+        """Render a single flagged deal block (no anomaly codes)."""
         blk = []
-        codes_str = ", ".join(entry["codes"])
         blk.append(
             f"**{entry['deal_name']}** ({entry['company']}) — {owner_name} — "
-            f"{entry['stage']} — {entry['amount']} € — [{codes_str}]"
+            f"{entry['stage']} — {fmt_amount(entry['amount'])}"
         )
         for fact in entry["facts"]:
             blk.append(f"- {fact}")
@@ -56,29 +69,32 @@ def render(facts):
     main_lines.append("")
 
     # 2. Opening
+    n_open = totals["open_deals"]
+    n_flagged = totals["flagged_deals"]
     main_lines.append(
-        f"{totals['open_deals']} deals ouverts pour {totals['open_amount']} € de pipeline. "
-        f"{totals['flagged_deals']} deals signalés ({totals['flagged_amount']} €) nécessitent une attention."
+        f"{n_open} deals ouverts pour {fmt_amount(totals['open_amount'])} de pipeline. "
+        f"{n_flagged} {_plur(n_flagged, 'deal')} "
+        f"{'signalé' if n_flagged == 1 else 'signalés'} "
+        f"({fmt_amount(totals['flagged_amount'])}) nécessitent une attention."
     )
     main_lines.append("")
 
-    # 3. Priorités — 3 priority deals, one key fact each
+    # 3. Priorités — 3 priority deals, one key fact each (no anomaly codes)
     main_lines.append("## Priorités")
     main_lines.append("")
     for did in facts["priorities"]:
         if did in deal_lookup:
             owner_name, entry = deal_lookup[did]
-            codes_str = ", ".join(entry["codes"])
             key_fact = entry["facts"][0] if entry["facts"] else ""
             main_lines.append(
                 f"**{entry['deal_name']}** ({entry['company']}) — {entry['stage']} — "
-                f"{entry['amount']} € — [{codes_str}]"
+                f"{fmt_amount(entry['amount'])}"
             )
             if key_fact:
                 main_lines.append(f"- {key_fact}")
             main_lines.append("")
 
-    # 4. Tendances — from patterns
+    # 4. Tendances — natural French, no anomaly codes
     main_lines.append("## Tendances")
     main_lines.append("")
     by_code = patterns.get("by_code", {})
@@ -86,29 +102,56 @@ def render(facts):
     a2_late = patterns.get("a2_in_late_stages", 0)
     a3_avg = patterns.get("a3_overdue_days_avg", 0)
     a5a7 = patterns.get("a5_a7_combined", 0)
+    contract_cases = patterns.get("contract_mention_no_amount", [])
+    n_contract = len(contract_cases) if isinstance(contract_cases, list) else 0
 
-    # Build trend bullets
+    # Cross-type patterns first (richer insight), then simple counts
     trend_bullets = []
-    if by_code.get("A2", 0) > 0:
+
+    if n_contract > 0:
+        trend_bullets.append(
+            f"• {n_contract} {_plur(n_contract, 'deal')} en phase avancée : "
+            f"activité mentionnant un contrat ou devis, montant absent"
+        )
+
+    if a5a7 > 0:
+        trend_bullets.append(
+            f"• {a5a7} {_plur(a5a7, 'deal')} sans montant en Négociation avec un seul interlocuteur"
+        )
+
+    if a2_late > 0:
+        a2_total = by_code.get("A2", 0)
+        trend_bullets.append(
+            f"• {a2_total} {_plur(a2_total, 'deal')} sans prochaine tâche planifiée, "
+            f"dont {a2_late} en Proposition ou Négociation"
+        )
+    elif by_code.get("A2", 0) > 0:
         a2_total = by_code["A2"]
-        if a2_late > 0:
-            trend_bullets.append(
-                f"• {a2_total} deal(s) sans tâche planifiée (A2) dont {a2_late} en Proposition/Négociation"
-            )
-        else:
-            trend_bullets.append(f"• {a2_total} deal(s) sans tâche planifiée (A2)")
+        trend_bullets.append(
+            f"• {a2_total} {_plur(a2_total, 'deal')} sans prochaine tâche planifiée"
+        )
+
     if by_code.get("A3", 0) > 0:
         a3_total = by_code["A3"]
-        bullet = f"• {a3_total} deal(s) A3 — close_dates dépassées"
+        bullet = (
+            f"• {a3_total} {_plur(a3_total, 'deal')} "
+            f"avec date de clôture dépassée"
+        )
         if a3_avg > 0:
             bullet += f" (retard moyen {a3_avg} j)"
         trend_bullets.append(bullet)
+
     if multi > 0:
-        trend_bullets.append(f"• {multi} deal(s) avec 2+ anomalies simultanées")
-    if a5a7 > 0:
-        trend_bullets.append(f"• {a5a7} deal(s) avec A5+A7 combinés (montant manquant en négociation)")
-    if by_code.get("A1", 0) > 0:
-        trend_bullets.append(f"• {by_code['A1']} deal(s) stagnants (A1)")
+        trend_bullets.append(
+            f"• {multi} {_plur(multi, 'deal')} "
+            f"{'cumule' if multi == 1 else 'cumulent'} deux alertes ou plus"
+        )
+
+    if by_code.get("A1", 0) > 0 and len(trend_bullets) < 3:
+        a1_total = by_code["A1"]
+        trend_bullets.append(
+            f"• {a1_total} {_plur(a1_total, 'deal')} bloqué{'' if a1_total == 1 else 's'} à la même étape trop longtemps"
+        )
 
     for bullet in trend_bullets[:3]:
         main_lines.append(bullet)
@@ -121,10 +164,12 @@ def render(facts):
     for ow in facts["by_owner"]:
         oid = ow["owner_id"]
         stats = patterns_by_owner.get(oid, {})
-        n_flagged = stats.get("flagged", len(ow["flagged"]))
+        n_flagged_ow = stats.get("flagged", len(ow["flagged"]))
         flagged_amt = stats.get("flagged_amount", sum(e["amount"] for e in ow["flagged"]))
+        adj = "signalé" if n_flagged_ow == 1 else "signalés"
         main_lines.append(
-            f"- {ow['owner_name']} : {n_flagged} deal(s) signalé(s) ({flagged_amt} €)"
+            f"- {ow['owner_name']} : {n_flagged_ow} {_plur(n_flagged_ow, 'deal')} "
+            f"{adj} ({fmt_amount(flagged_amt)})"
         )
     main_lines.append("")
 

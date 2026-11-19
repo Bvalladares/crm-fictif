@@ -98,7 +98,7 @@
     {
       "siren": "302506480",
       "name": "LASA LABORATOIRE D APPLICATIONS DES SCIENCES ACOUSTIQUES (LASA)",
-      "display_name": "LASA Laboratoire D Applications DES Sciences Acoustiques",
+      "display_name": "LASA Laboratoire D Applications des Sciences Acoustiques",
       "naf": "71.12B",
       "size_band": "20-49",
       "city": "PARIS",
@@ -218,7 +218,7 @@
     {
       "siren": "313244105",
       "name": "LA SCETEC (SCETEC)",
-      "display_name": "LA Scetec",
+      "display_name": "la Scetec",
       "naf": "43.22B",
       "size_band": "100-199",
       "city": "LE MANS",
@@ -368,7 +368,7 @@
     {
       "siren": "337621460",
       "name": "SOCIETE DE REALISATIONS INDUSTRIELLES ET DE MECANIQUE (SORIM)",
-      "display_name": "Societe DE Realisations Industrielles ET DE Mecanique",
+      "display_name": "Societe de Realisations Industrielles et de Mecanique",
       "naf": "33.12Z",
       "size_band": "20-49",
       "city": "LE HAVRE",
@@ -408,7 +408,7 @@
     {
       "siren": "339809527",
       "name": "ARDECHE APPLICATIONS TECHNIQUES D'ELECTRICITE ET DE MESURES (ARDATEM) (ARDATEM)",
-      "display_name": "Ardeche Applications Techniques D'electricite ET DE Mesures",
+      "display_name": "Ardeche Applications Techniques D'electricite et de Mesures",
       "naf": "71.12B",
       "size_band": "500-999",
       "city": "BOURG-SAINT-ANDEOL",
@@ -478,7 +478,7 @@
     {
       "siren": "348310061",
       "name": "ENTREPRISE D'ELECTRICITE DE PICARDIE (EEP)",
-      "display_name": "Entreprise D'electricite DE Picardie",
+      "display_name": "Entreprise D'electricite de Picardie",
       "naf": "43.21A",
       "size_band": "50-99",
       "city": "ABBEVILLE",
@@ -508,7 +508,7 @@
     {
       "siren": "349744425",
       "name": "SARL CARRE ET ASSOCIES",
-      "display_name": "SARL Carre ET Associes",
+      "display_name": "SARL Carre et Associes",
       "naf": "43.22B",
       "size_band": "20-49",
       "city": "FONTENAY-LE-COMTE",
@@ -518,7 +518,7 @@
     {
       "siren": "351667852",
       "name": "LA GENERALE DE BUREAUTIQUE",
-      "display_name": "LA Generale DE Bureautique",
+      "display_name": "la Generale de Bureautique",
       "naf": "33.12Z",
       "size_band": "20-49",
       "city": "NANTES",
@@ -538,7 +538,7 @@
     {
       "siren": "353693401",
       "name": "MAINTENANCE INDUSTRIELLE ET MANUTENTION (MIM)",
-      "display_name": "Maintenance Industrielle ET Manutention",
+      "display_name": "Maintenance Industrielle et Manutention",
       "naf": "33.12Z",
       "size_band": "50-99",
       "city": "OS-MARSILLON",
@@ -588,7 +588,7 @@
     {
       "siren": "381626415",
       "name": "SOCIETE DE PLOMBERIE ET DE CHAUFFAGE POUR L'IMMOBILIER ET L'INDUSTRIE (SPC2I)",
-      "display_name": "Societe DE Plomberie ET DE Chauffage POUR L'immobilier ET L'industrie",
+      "display_name": "Societe de Plomberie et de Chauffage pour L'immobilier et L'industrie",
       "naf": "43.22A",
       "size_band": "50-99",
       "city": "PONTCARRE",
@@ -628,7 +628,7 @@
     {
       "siren": "388779407",
       "name": "EIFFAGE ENERGIE SYSTEMES - VAL DE LOIRE (EES - VL)",
-      "display_name": "Eiffage Energie Systemes - VAL DE Loire",
+      "display_name": "Eiffage Energie Systemes - VAL de Loire",
       "naf": "43.21A",
       "size_band": "500-999",
       "city": "JOUE-LES-TOURS",
@@ -828,7 +828,7 @@
     {
       "siren": "411313539",
       "name": "SOCIETE DE TRAVAUX D ISOLATION ET DE MENUISERIE",
-      "display_name": "Societe DE Travaux D Isolation ET DE Menuiserie",
+      "display_name": "Societe de Travaux D Isolation et de Menuiserie",
       "naf": "43.29A",
       "size_band": "100-199",
       "city": "MONTMAGNY",
@@ -888,7 +888,7 @@
     {
       "siren": "415295658",
       "name": "SOCIETE DES ETABLISSEMENTS FERRERO",
-      "display_name": "Societe DES Etablissements Ferrero",
+      "display_name": "Societe des Etablissements Ferrero",
       "naf": "43.22A",
       "size_band": "20-49",
       "city": "MARSEILLE",
@@ -928,7 +928,7 @@
     {
       "siren": "420247736",
       "name": "ALQUAL CONSEIL ET EXPERTISE (ALIMENTAIRE QUALITE CONSEIL ET EXPERTISE)",
-      "display_name": "Alqual Conseil ET Expertise",
+      "display_name": "Alqual Conseil et Expertise",
       "naf": "71.12B",
       "size_band": "20-49",
       "city": "SAINT-QUENTIN",
@@ -938,7 +938,7 @@
     {
       "siren": "420540643",
       "name": "EIFFAGE ENERGIE SYSTEMES - ILE DE FRANCE (EES - IDF)",
-      "display_name": "Eiffage Energie Systemes - ILE DE France",
+      "display_name": "Eiffage Energie Systemes - Île de France",
       "naf": "43.21A",
       "size_band": "1000-1999",
       "city": "SAINT-DENIS",
@@ -1368,7 +1368,7 @@
     {
       "siren": "489626135",
       "name": "INGEROP CONSEIL ET INGENIERIE (ICI)",
-      "display_name": "Ingerop Conseil ET Ingenierie",
+      "display_name": "Ingerop Conseil et Ingenierie",
       "naf": "71.12B",
       "size_band": "1000-1999",
       "city": "RUEIL MALMAISON",
@@ -1398,7 +1398,7 @@
     {
       "siren": "493334429",
       "name": "EGIS VILLES ET TRANSPORTS (EGIS FRANCE                                                 FRANCE)",
-      "display_name": "EGIS Villes ET Transports",
+      "display_name": "EGIS Villes et Transports",
       "naf": "71.12B",
       "size_band": "500-999",
       "city": "LYON",
@@ -1408,7 +1408,7 @@
     {
       "siren": "493389670",
       "name": "EGIS STRUCTURES ET ENVIRONNEMENT (: EGIS ENVIRONNEMENT-EGIS TUNNELS-EGIS GEOTECHNIQUE-EGIS JMI-ODZ CONSULT)",
-      "display_name": "EGIS Structures ET Environnement",
+      "display_name": "EGIS Structures et Environnement",
       "naf": "71.12B",
       "size_band": "500-999",
       "city": "GUYANCOURT",
@@ -1518,7 +1518,7 @@
     {
       "siren": "518137773",
       "name": "EIFFAGE ENERGIE SYSTEMES - GENIE CLIMATIQUE ET ENERGETIQUE AQUITAINE (EES - GCEA)",
-      "display_name": "Eiffage Energie Systemes - Genie Climatique ET Energetique Aquitaine",
+      "display_name": "Eiffage Energie Systemes - Genie Climatique et Energetique Aquitaine",
       "naf": "43.22B",
       "size_band": "50-99",
       "city": "PESSAC",
@@ -1688,7 +1688,7 @@
     {
       "siren": "642018923",
       "name": "MONTEIL ET CIE",
-      "display_name": "Monteil ET CIE",
+      "display_name": "Monteil et CIE",
       "naf": "43.22A",
       "size_band": "20-49",
       "city": "PARIS",
@@ -1708,7 +1708,7 @@
     {
       "siren": "662001403",
       "name": "GAZTRANSPORT ET TECHNIGAZ (GTT)",
-      "display_name": "Gaztransport ET Technigaz",
+      "display_name": "Gaztransport et Technigaz",
       "naf": "71.12B",
       "size_band": "500-999",
       "city": "SAINT-REMY-LES-CHEVREUSE",
@@ -1818,7 +1818,7 @@
     {
       "siren": "792774473",
       "name": "GROUPE FRANCAIS DES ENERGIES (G F E)",
-      "display_name": "Groupe Francais DES Energies",
+      "display_name": "Groupe Francais des Energies",
       "naf": "43.22B",
       "size_band": "20-49",
       "city": "AUBAGNE",
@@ -6253,7 +6253,7 @@
         "P-0418"
       ],
       "owner_id": "ae2",
-      "name": "Ets… – Déploiement MS",
+      "name": "Ets – Déploiement MS",
       "amount": 8500,
       "stage": "proposition",
       "stage_entered_at": "2026-10-18",
@@ -6375,7 +6375,7 @@
         "P-0416"
       ],
       "owner_id": "ae1",
-      "name": "STA… - pilote agence",
+      "name": "STA - pilote agence",
       "amount": 19000,
       "stage": "decouverte",
       "stage_entered_at": "2026-10-28",
@@ -6398,7 +6398,7 @@
         "P-0168"
       ],
       "owner_id": "ae1",
-      "name": "Societe Des… - PLANIF TERRAIN",
+      "name": "Societe Des - PLANIF TERRAIN",
       "amount": 15500,
       "stage": "demo",
       "stage_entered_at": "2026-11-07",
@@ -6558,7 +6558,7 @@
         "P-0195"
       ],
       "owner_id": "ae1",
-      "name": "Electricite… - deploy multi-sites",
+      "name": "Electricite - deploy multi-sites",
       "amount": 11000,
       "stage": "negociation",
       "stage_entered_at": "2026-09-29",
@@ -6622,7 +6622,7 @@
         "P-0046"
       ],
       "owner_id": "ae3",
-      "name": "EIFFAGE… - deploy multi-sites",
+      "name": "EIFFAGE - deploy multi-sites",
       "amount": 13000,
       "stage": "qualification",
       "stage_entered_at": "2026-11-16",
@@ -6648,7 +6648,7 @@
         "P-0155"
       ],
       "owner_id": "ae5",
-      "name": "Societe DE… - deploy multi-sites",
+      "name": "Societe de - deploy multi-sites",
       "amount": 14000,
       "stage": "negociation",
       "stage_entered_at": "2026-10-13",
@@ -6712,7 +6712,7 @@
         "P-0283"
       ],
       "owner_id": "ae3",
-      "name": "NIT… - deploy multi-sites",
+      "name": "NIT - deploy multi-sites",
       "amount": 21500,
       "stage": "qualification",
       "stage_entered_at": "2026-11-07",
@@ -6852,7 +6852,7 @@
         "P-0067"
       ],
       "owner_id": "ae4",
-      "name": "Ardeche Applications… - Licence Nova",
+      "name": "Ardeche Applications - Licence Nova",
       "amount": 25000,
       "stage": "qualification",
       "stage_entered_at": "2026-11-16",
@@ -6965,7 +6965,7 @@
         "P-0325"
       ],
       "owner_id": "ae1",
-      "name": "Monteil… – PILOTE AGENCE",
+      "name": "Monteil – PILOTE AGENCE",
       "amount": 45000,
       "stage": "decouverte",
       "stage_entered_at": "2026-11-04",
@@ -7149,7 +7149,7 @@
         "P-0372"
       ],
       "owner_id": "ae5",
-      "name": "Lorraine… – PILOTE AGENCE",
+      "name": "Lorraine – PILOTE AGENCE",
       "amount": null,
       "stage": "negociation",
       "stage_entered_at": "2026-09-26",
@@ -7188,7 +7188,7 @@
         "P-0154"
       ],
       "owner_id": "ae3",
-      "name": "Thermi… – planif. terrain",
+      "name": "Thermi – planif. terrain",
       "amount": 7000,
       "stage": "decouverte",
       "stage_entered_at": "2026-11-10",
@@ -7246,7 +7246,7 @@
         "P-0162"
       ],
       "owner_id": "ae2",
-      "name": "SDEL… - planif. terrain",
+      "name": "SDEL - planif. terrain",
       "amount": 18000,
       "stage": "demo",
       "stage_entered_at": "2026-11-07",
@@ -7299,7 +7299,7 @@
         "P-0303"
       ],
       "owner_id": "ae2",
-      "name": "Faceo FM… – planif. terrain",
+      "name": "Faceo FM – planif. terrain",
       "amount": 14500,
       "stage": "qualification",
       "stage_entered_at": "2026-11-04",
@@ -7426,7 +7426,7 @@
         "P-0141"
       ],
       "owner_id": "ae4",
-      "name": "Atalian… - PILOTE AGENCE",
+      "name": "Atalian - PILOTE AGENCE",
       "amount": 34000,
       "stage": "negociation",
       "stage_entered_at": "2026-11-17",
@@ -7464,7 +7464,7 @@
         "P-0199"
       ],
       "owner_id": "ae3",
-      "name": "Christian… – Planif terrain",
+      "name": "Christian – Planif terrain",
       "amount": 6500,
       "stage": "demo",
       "stage_entered_at": "2026-09-15",
@@ -7608,7 +7608,7 @@
         "P-0015"
       ],
       "owner_id": "ae2",
-      "name": "Dietsmann… - Licence Nova",
+      "name": "Dietsmann - Licence Nova",
       "amount": 12500,
       "stage": "qualification",
       "stage_entered_at": "2026-09-28",
@@ -7635,7 +7635,7 @@
         "P-0179"
       ],
       "owner_id": "ae3",
-      "name": "Akkodis… – Licence nova",
+      "name": "Akkodis – Licence nova",
       "amount": 36500,
       "stage": "demo",
       "stage_entered_at": "2026-11-08",
@@ -8001,7 +8001,7 @@
         "P-0432"
       ],
       "owner_id": "ae1",
-      "name": "EGIS… – Planif terrain",
+      "name": "EGIS – Planif terrain",
       "amount": 41000,
       "stage": "decouverte",
       "stage_entered_at": "2026-11-14",
@@ -8186,7 +8186,7 @@
         "P-0116"
       ],
       "owner_id": "ae3",
-      "name": "Manosque… – pilote agence",
+      "name": "Manosque – pilote agence",
       "amount": 8500,
       "stage": "demo",
       "stage_entered_at": "2026-11-14",
@@ -8217,7 +8217,7 @@
         "P-0068"
       ],
       "owner_id": "ae4",
-      "name": "Derichebourg… - Pilote agence",
+      "name": "Derichebourg - Pilote agence",
       "amount": 40000,
       "stage": "decouverte",
       "stage_entered_at": "2026-11-01",
@@ -8372,7 +8372,7 @@
         "P-0019"
       ],
       "owner_id": "ae5",
-      "name": "Electricite… – DEPLOY MULTI-SITES",
+      "name": "Electricite – DEPLOY MULTI-SITES",
       "amount": 42500,
       "stage": "decouverte",
       "stage_entered_at": "2026-11-05",
@@ -8463,7 +8463,7 @@
         "P-0108"
       ],
       "owner_id": "ae1",
-      "name": "Marraud… - Planif terrain",
+      "name": "Marraud - Planif terrain",
       "amount": 20000,
       "stage": "proposition",
       "stage_entered_at": "2026-11-06",
@@ -8526,7 +8526,7 @@
         "P-0160"
       ],
       "owner_id": "ae1",
-      "name": "SDEL… – Déploiement MS",
+      "name": "SDEL – Déploiement MS",
       "amount": 24000,
       "stage": "decouverte",
       "stage_entered_at": "2026-11-10",
@@ -8549,7 +8549,7 @@
         "P-0029"
       ],
       "owner_id": "ae1",
-      "name": "Societe Jean… - Licence nova",
+      "name": "Societe Jean - Licence nova",
       "amount": 29500,
       "stage": "demo",
       "stage_entered_at": "2026-10-21",
@@ -8579,7 +8579,7 @@
         "P-0224"
       ],
       "owner_id": "ae4",
-      "name": "TRA-… – Pilote agence",
+      "name": "TRA- – Pilote agence",
       "amount": 15000,
       "stage": "negociation",
       "stage_entered_at": "2026-09-23",
@@ -8674,7 +8674,7 @@
         "P-0195"
       ],
       "owner_id": "ae2",
-      "name": "Electricite… – Pilote agence",
+      "name": "Electricite – Pilote agence",
       "amount": 13000,
       "stage": "qualification",
       "stage_entered_at": "2026-10-28",
@@ -8748,7 +8748,7 @@
         "P-0001"
       ],
       "owner_id": "ae2",
-      "name": "Valeo Comfort… – Pilote agence",
+      "name": "Valeo Comfort – Pilote agence",
       "amount": 32000,
       "stage": "decouverte",
       "stage_entered_at": "2026-11-11",
@@ -8819,7 +8819,7 @@
         "P-0419"
       ],
       "owner_id": "ae3",
-      "name": "ETS… – Licence nova",
+      "name": "ETS – Licence nova",
       "amount": 21500,
       "stage": "negociation",
       "stage_entered_at": "2026-10-09",
@@ -8858,7 +8858,7 @@
         "P-0020"
       ],
       "owner_id": "ae2",
-      "name": "Electricite Industrielle… – Extension utilisateurs",
+      "name": "Electricite Industrielle – Extension utilisateurs",
       "amount": 56500,
       "stage": "negociation",
       "stage_entered_at": "2026-10-28",
@@ -8897,7 +8897,7 @@
         "P-0404"
       ],
       "owner_id": "ae4",
-      "name": "Segula… – deploy multi-sites",
+      "name": "Segula – deploy multi-sites",
       "amount": 33000,
       "stage": "demo",
       "stage_entered_at": "2026-11-13",
@@ -8988,7 +8988,7 @@
         "P-0214"
       ],
       "owner_id": "ae1",
-      "name": "Eiffage… – Déploiement multi-sites",
+      "name": "Eiffage – Déploiement multi-sites",
       "amount": 9500,
       "stage": "decouverte",
       "stage_entered_at": "2027-04-01",
@@ -9046,7 +9046,7 @@
         "P-0058"
       ],
       "owner_id": "ae4",
-      "name": "Societe DE… – Déploiement multi-sites",
+      "name": "Societe de – Déploiement multi-sites",
       "amount": 28500,
       "stage": "decouverte",
       "stage_entered_at": "2026-10-29",
@@ -9068,7 +9068,7 @@
         "P-0024"
       ],
       "owner_id": "ae1",
-      "name": "Eiffage Energie… – planif. terrain",
+      "name": "Eiffage Energie – planif. terrain",
       "amount": 35000,
       "stage": "qualification",
       "stage_entered_at": "2026-10-28",
@@ -9203,7 +9203,7 @@
         "P-0131"
       ],
       "owner_id": "ae5",
-      "name": "Aquitaine Maitrise… - Déploiement MS",
+      "name": "Aquitaine Maitrise - Déploiement MS",
       "amount": 7000,
       "stage": "qualification",
       "stage_entered_at": "2026-11-04",
@@ -9229,7 +9229,7 @@
         "P-0283"
       ],
       "owner_id": "ae1",
-      "name": "NIT… - Déploiement MS",
+      "name": "NIT - Déploiement MS",
       "amount": 7000,
       "stage": "decouverte",
       "stage_entered_at": "2026-11-09",
@@ -9252,7 +9252,7 @@
         "P-0158"
       ],
       "owner_id": "ae2",
-      "name": "Segula… – PILOTE AGENCE",
+      "name": "Segula – PILOTE AGENCE",
       "amount": 54000,
       "stage": "proposition",
       "stage_entered_at": "2026-11-03",
@@ -9331,7 +9331,7 @@
         "P-0225"
       ],
       "owner_id": "ae3",
-      "name": "TRA-… – Planif terrain",
+      "name": "TRA- – Planif terrain",
       "amount": 21000,
       "stage": "qualification",
       "stage_entered_at": "2026-11-17",
@@ -9379,7 +9379,7 @@
         "P-0066"
       ],
       "owner_id": "ae2",
-      "name": "PPD… – Ext. utilisateurs",
+      "name": "PPD – Ext. utilisateurs",
       "amount": 59500,
       "stage": "gagne",
       "stage_entered_at": "2026-06-12",
@@ -9590,7 +9590,7 @@
         "P-0019"
       ],
       "owner_id": "ae5",
-      "name": "Electricite… - deploy multi-sites",
+      "name": "Electricite - deploy multi-sites",
       "amount": 47500,
       "stage": "gagne",
       "stage_entered_at": "2025-12-25",
@@ -9633,7 +9633,7 @@
         "P-0135"
       ],
       "owner_id": "ae1",
-      "name": "ACCU… – Licence Nova",
+      "name": "ACCU – Licence Nova",
       "amount": 9000,
       "stage": "gagne",
       "stage_entered_at": "2026-07-07",
@@ -9802,7 +9802,7 @@
         "P-0326"
       ],
       "owner_id": "ae2",
-      "name": "Entreprise… – pilote agence",
+      "name": "Entreprise – pilote agence",
       "amount": 12000,
       "stage": "gagne",
       "stage_entered_at": "2026-11-18",
@@ -9971,7 +9971,7 @@
         "P-0223"
       ],
       "owner_id": "ae5",
-      "name": "Utac… – PILOTE AGENCE",
+      "name": "Utac – PILOTE AGENCE",
       "amount": 6500,
       "stage": "gagne",
       "stage_entered_at": "2026-03-26",
@@ -10098,7 +10098,7 @@
         "P-0348"
       ],
       "owner_id": "ae1",
-      "name": "Cb… – planif. terrain",
+      "name": "Cb – planif. terrain",
       "amount": 7500,
       "stage": "gagne",
       "stage_entered_at": "2026-07-27",
@@ -10140,7 +10140,7 @@
         "P-0214"
       ],
       "owner_id": "ae5",
-      "name": "Eiffage Energie… – LIC. NOVA",
+      "name": "Eiffage Energie – LIC. NOVA",
       "amount": 17500,
       "stage": "gagne",
       "stage_entered_at": "2026-07-03",
@@ -10183,7 +10183,7 @@
         "P-0089"
       ],
       "owner_id": "ae1",
-      "name": "Carre… – Pilote agences",
+      "name": "Carre – Pilote agences",
       "amount": 25500,
       "stage": "gagne",
       "stage_entered_at": "2026-09-26",
@@ -10226,7 +10226,7 @@
         "P-0075"
       ],
       "owner_id": "ae5",
-      "name": "Tokheim… – pilote agence",
+      "name": "Tokheim – pilote agence",
       "amount": 58000,
       "stage": "gagne",
       "stage_entered_at": "2026-02-12",
@@ -10312,7 +10312,7 @@
         "P-0348"
       ],
       "owner_id": "ae5",
-      "name": "Cb… – Extension utilisateurs",
+      "name": "Cb – Extension utilisateurs",
       "amount": 49000,
       "stage": "gagne",
       "stage_entered_at": "2026-10-26",
@@ -10355,7 +10355,7 @@
         "P-0084"
       ],
       "owner_id": "ae5",
-      "name": "Entreprise D'electricite… – Licence Nova",
+      "name": "Entreprise D'electricite – Licence Nova",
       "amount": 9500,
       "stage": "gagne",
       "stage_entered_at": "2026-03-24",
@@ -10866,7 +10866,7 @@
         "P-0207"
       ],
       "owner_id": "ae2",
-      "name": "Totalenergies Renouvelables… – Licence nova",
+      "name": "Totalenergies Renouvelables – Licence nova",
       "amount": 31500,
       "stage": "gagne",
       "stage_entered_at": "2026-04-17",
@@ -10951,7 +10951,7 @@
         "P-0291"
       ],
       "owner_id": "ae1",
-      "name": "Eiffage… – Planif terrain",
+      "name": "Eiffage – Planif terrain",
       "amount": 6000,
       "stage": "gagne",
       "stage_entered_at": "2026-03-20",
@@ -10994,7 +10994,7 @@
         "P-0306"
       ],
       "owner_id": "ae5",
-      "name": "Cegelec Ouest… – licence nova",
+      "name": "Cegelec Ouest – licence nova",
       "amount": 9000,
       "stage": "gagne",
       "stage_entered_at": "2026-09-29",
@@ -11080,7 +11080,7 @@
         "P-0021"
       ],
       "owner_id": "ae4",
-      "name": "Tractebel… – extension utilisateurs",
+      "name": "Tractebel – extension utilisateurs",
       "amount": 56500,
       "stage": "gagne",
       "stage_entered_at": "2026-04-17",
@@ -11123,7 +11123,7 @@
         "P-0097"
       ],
       "owner_id": "ae1",
-      "name": "Maintenance Industrielle… - deploy multi-sites",
+      "name": "Maintenance Industrielle - deploy multi-sites",
       "amount": 25000,
       "stage": "gagne",
       "stage_entered_at": "2026-11-18",
@@ -11209,7 +11209,7 @@
         "P-0115"
       ],
       "owner_id": "ae2",
-      "name": "Eiffage… - licence nova",
+      "name": "Eiffage - licence nova",
       "amount": 39500,
       "stage": "gagne",
       "stage_entered_at": "2026-10-10",
@@ -11294,7 +11294,7 @@
         "P-0412"
       ],
       "owner_id": "ae1",
-      "name": "Eiffage… – PLANIF TERRAIN",
+      "name": "Eiffage – PLANIF TERRAIN",
       "amount": 35500,
       "stage": "gagne",
       "stage_entered_at": "2026-03-06",
@@ -11380,7 +11380,7 @@
         "P-0087"
       ],
       "owner_id": "ae1",
-      "name": "Etablissements… - pilote agence",
+      "name": "Etablissements - pilote agence",
       "amount": 10000,
       "stage": "gagne",
       "stage_entered_at": "2026-11-18",
@@ -11466,7 +11466,7 @@
         "P-0089"
       ],
       "owner_id": "ae2",
-      "name": "Carre… – EXTENSION USERS",
+      "name": "Carre – EXTENSION USERS",
       "amount": 13000,
       "stage": "gagne",
       "stage_entered_at": "2026-03-03",
@@ -11553,7 +11553,7 @@
         "P-0110"
       ],
       "owner_id": "ae1",
-      "name": "Marraud… - licence nova",
+      "name": "Marraud - licence nova",
       "amount": 7000,
       "stage": "gagne",
       "stage_entered_at": "2026-03-31",
@@ -11680,7 +11680,7 @@
         "P-0257"
       ],
       "owner_id": "ae1",
-      "name": "M… – Pilote agence",
+      "name": "M – Pilote agence",
       "amount": 26000,
       "stage": "gagne",
       "stage_entered_at": "2026-02-19",
@@ -11806,7 +11806,7 @@
         "P-0174"
       ],
       "owner_id": "ae1",
-      "name": "Alqual… - LIC. NOVA",
+      "name": "Alqual - LIC. NOVA",
       "amount": 17500,
       "stage": "gagne",
       "stage_entered_at": "2026-08-08",
@@ -11976,7 +11976,7 @@
         "P-0132"
       ],
       "owner_id": "ae1",
-      "name": "Aquitaine Maitrise… – planif. terrain",
+      "name": "Aquitaine Maitrise – planif. terrain",
       "amount": 15500,
       "stage": "gagne",
       "stage_entered_at": "2026-04-13",
@@ -12102,7 +12102,7 @@
         "P-0166"
       ],
       "owner_id": "ae1",
-      "name": "BTB… – planif. terrain",
+      "name": "BTB – planif. terrain",
       "amount": 29500,
       "stage": "gagne",
       "stage_entered_at": "2026-03-12",
@@ -12144,7 +12144,7 @@
         "P-0174"
       ],
       "owner_id": "ae2",
-      "name": "Alqual Conseil… – LIC. NOVA",
+      "name": "Alqual Conseil – LIC. NOVA",
       "amount": 5000,
       "stage": "gagne",
       "stage_entered_at": "2026-04-02",
@@ -12314,7 +12314,7 @@
         "P-0076"
       ],
       "owner_id": "ae4",
-      "name": "Tokheim Services… – Déploiement multi-sites",
+      "name": "Tokheim Services – Déploiement multi-sites",
       "amount": 48500,
       "stage": "gagne",
       "stage_entered_at": "2026-10-30",
@@ -12503,7 +12503,7 @@
         "P-0030"
       ],
       "owner_id": "ae2",
-      "name": "Societe… – licence nova",
+      "name": "Societe – licence nova",
       "amount": 17500,
       "stage": "perdu",
       "stage_entered_at": "2026-04-29",
@@ -12647,7 +12647,7 @@
         "P-0420"
       ],
       "owner_id": "ae1",
-      "name": "EITE… – DEPLOY MULTI-SITES",
+      "name": "EITE – DEPLOY MULTI-SITES",
       "amount": 10500,
       "stage": "perdu",
       "stage_entered_at": "2026-03-15",
@@ -12689,7 +12689,7 @@
         "P-0291"
       ],
       "owner_id": "ae2",
-      "name": "Eiffage Energie… – PLANIF TERRAIN",
+      "name": "Eiffage Energie – PLANIF TERRAIN",
       "amount": 9500,
       "stage": "perdu",
       "stage_entered_at": "2026-10-19",
@@ -12723,7 +12723,7 @@
         "P-0419"
       ],
       "owner_id": "ae2",
-      "name": "Ets… – Licence nova",
+      "name": "Ets – Licence nova",
       "amount": 3000,
       "stage": "perdu",
       "stage_entered_at": "2026-09-26",
@@ -12916,7 +12916,7 @@
         "P-0030"
       ],
       "owner_id": "ae1",
-      "name": "Societe JEAN… - PLANIF TERRAIN",
+      "name": "Societe JEAN - PLANIF TERRAIN",
       "amount": 8500,
       "stage": "perdu",
       "stage_entered_at": "2025-12-29",
@@ -12950,7 +12950,7 @@
         "P-0198"
       ],
       "owner_id": "ae1",
-      "name": "Merat… – LIC. NOVA",
+      "name": "Merat – LIC. NOVA",
       "amount": 3500,
       "stage": "perdu",
       "stage_entered_at": "2025-11-01",
@@ -13036,7 +13036,7 @@
         "P-0067"
       ],
       "owner_id": "ae3",
-      "name": "Ardeche… – Planification terrain",
+      "name": "Ardeche – Planification terrain",
       "amount": 60000,
       "stage": "perdu",
       "stage_entered_at": "2026-08-05",
@@ -13067,7 +13067,7 @@
         "P-0162"
       ],
       "owner_id": "ae4",
-      "name": "SDEL… - Déploiement MS",
+      "name": "SDEL - Déploiement MS",
       "amount": 20000,
       "stage": "perdu",
       "stage_entered_at": "2026-11-17",
@@ -13101,7 +13101,7 @@
         "P-0116"
       ],
       "owner_id": "ae4",
-      "name": "Manosque… – Licence Nova",
+      "name": "Manosque – Licence Nova",
       "amount": 8000,
       "stage": "perdu",
       "stage_entered_at": "2026-11-17",
@@ -13169,7 +13169,7 @@
         "P-0209"
       ],
       "owner_id": "ae4",
-      "name": "Totalenergies… - Pilote agence",
+      "name": "Totalenergies - Pilote agence",
       "amount": 32500,
       "stage": "perdu",
       "stage_entered_at": "2026-05-26",
@@ -13259,7 +13259,7 @@
         "P-0166"
       ],
       "owner_id": "ae4",
-      "name": "BTB Genie… – pilote agence",
+      "name": "BTB Genie – pilote agence",
       "amount": 6500,
       "stage": "perdu",
       "stage_entered_at": "2026-07-31",
@@ -13353,7 +13353,7 @@
         "P-0302"
       ],
       "owner_id": "ae1",
-      "name": "Faceo Fm… – Planification terrain",
+      "name": "Faceo Fm – Planification terrain",
       "amount": 22500,
       "stage": "perdu",
       "stage_entered_at": "2026-08-03",
@@ -13395,7 +13395,7 @@
         "P-0214"
       ],
       "owner_id": "ae4",
-      "name": "Eiffage… – DEPLOY MULTI-SITES",
+      "name": "Eiffage – DEPLOY MULTI-SITES",
       "amount": 8500,
       "stage": "perdu",
       "stage_entered_at": "2026-09-14",
@@ -13464,7 +13464,7 @@
         "P-0291"
       ],
       "owner_id": "ae4",
-      "name": "Eiffage Energie… – pilote agence",
+      "name": "Eiffage Energie – pilote agence",
       "amount": 4500,
       "stage": "perdu",
       "stage_entered_at": "2026-11-17",
@@ -13675,7 +13675,7 @@
         "P-0155"
       ],
       "owner_id": "ae1",
-      "name": "Societe… – PILOTE AGENCE",
+      "name": "Societe – PILOTE AGENCE",
       "amount": 17500,
       "stage": "perdu",
       "stage_entered_at": "2026-10-24",
@@ -13706,7 +13706,7 @@
         "P-0068"
       ],
       "owner_id": "ae4",
-      "name": "Derichebourg… – Pilote agence",
+      "name": "Derichebourg – Pilote agence",
       "amount": 30000,
       "stage": "perdu",
       "stage_entered_at": "2026-02-09",
@@ -13806,7 +13806,7 @@
         "P-0173"
       ],
       "owner_id": "ae4",
-      "name": "Eiffage Energie… – DEPLOY MULTI-SITES",
+      "name": "Eiffage Energie – DEPLOY MULTI-SITES",
       "amount": 18000,
       "stage": "perdu",
       "stage_entered_at": "2026-11-18",
@@ -13883,7 +13883,7 @@
         "P-0130"
       ],
       "owner_id": "ae5",
-      "name": "Aquitaine Maitrise… - DEPLOY MULTI-SITES",
+      "name": "Aquitaine Maitrise - DEPLOY MULTI-SITES",
       "amount": 41500,
       "stage": "perdu",
       "stage_entered_at": "2025-12-15",
@@ -13917,7 +13917,7 @@
         "P-0293"
       ],
       "owner_id": "ae4",
-      "name": "Eiffage Energie… – Licence nova",
+      "name": "Eiffage Energie – Licence nova",
       "amount": 43500,
       "stage": "perdu",
       "stage_entered_at": "2025-10-30",
@@ -13985,7 +13985,7 @@
         "P-0045"
       ],
       "owner_id": "ae4",
-      "name": "ISO… – Licence Nova",
+      "name": "ISO – Licence Nova",
       "amount": 6500,
       "stage": "perdu",
       "stage_entered_at": "2026-04-15",
@@ -14251,7 +14251,7 @@
         "P-0148"
       ],
       "owner_id": "ae1",
-      "name": "Ineo… – PLANIF TERRAIN",
+      "name": "Ineo – PLANIF TERRAIN",
       "amount": 45000,
       "stage": "perdu",
       "stage_entered_at": "2026-02-12",
@@ -14345,7 +14345,7 @@
         "P-0226"
       ],
       "owner_id": "ae4",
-      "name": "Akkodis High… – Pilote agences",
+      "name": "Akkodis High – Pilote agences",
       "amount": 33500,
       "stage": "perdu",
       "stage_entered_at": "2026-01-30",
@@ -14422,7 +14422,7 @@
         "P-0412"
       ],
       "owner_id": "ae1",
-      "name": "Eiffage Energie… – Planification terrain",
+      "name": "Eiffage Energie – Planification terrain",
       "amount": 48000,
       "stage": "perdu",
       "stage_entered_at": "2026-06-13",
@@ -14461,7 +14461,7 @@
         "P-0213"
       ],
       "owner_id": "ae4",
-      "name": "Sogema… - Planification terrain",
+      "name": "Sogema - Planification terrain",
       "amount": 59500,
       "stage": "perdu",
       "stage_entered_at": "2026-04-12",
@@ -14591,7 +14591,7 @@
         "P-0336"
       ],
       "owner_id": "ae3",
-      "name": "Chubb… - planif. terrain",
+      "name": "Chubb - planif. terrain",
       "amount": 42000,
       "stage": "perdu",
       "stage_entered_at": "2026-01-05",
@@ -14764,7 +14764,7 @@
         "P-0332"
       ],
       "owner_id": "ae4",
-      "name": "SPIE… – Pilote agences",
+      "name": "SPIE – Pilote agences",
       "amount": 53500,
       "stage": "perdu",
       "stage_entered_at": "2026-11-06",
@@ -14798,7 +14798,7 @@
         "P-0412"
       ],
       "owner_id": "ae1",
-      "name": "Eiffage… – Déploiement multi-sites",
+      "name": "Eiffage – Déploiement multi-sites",
       "amount": 53500,
       "stage": "perdu",
       "stage_entered_at": "2026-01-15",
@@ -14870,7 +14870,7 @@
         "P-0002"
       ],
       "owner_id": "ae1",
-      "name": "Maintenance… - Planif terrain",
+      "name": "Maintenance - Planif terrain",
       "amount": 6000,
       "stage": "perdu",
       "stage_entered_at": "2026-01-16",
@@ -14912,7 +14912,7 @@
         "P-0256"
       ],
       "owner_id": "ae4",
-      "name": "M J… – Pilote agences",
+      "name": "M J – Pilote agences",
       "amount": 3000,
       "stage": "perdu",
       "stage_entered_at": "2026-06-25",
@@ -15112,7 +15112,7 @@
         "P-0141"
       ],
       "owner_id": "ae1",
-      "name": "Atalian Maintenance… - planif. terrain",
+      "name": "Atalian Maintenance - planif. terrain",
       "amount": 56500,
       "stage": "perdu",
       "stage_entered_at": "2026-07-11",
@@ -15354,7 +15354,7 @@
         "P-0177"
       ],
       "owner_id": "ae2",
-      "name": "Eiffage Energie… – pilote agence",
+      "name": "Eiffage Energie – pilote agence",
       "amount": 47000,
       "stage": "perdu",
       "stage_entered_at": "2026-10-28",
@@ -15388,7 +15388,7 @@
         "P-0155"
       ],
       "owner_id": "ae3",
-      "name": "Societe… – deploy multi-sites",
+      "name": "Societe – deploy multi-sites",
       "amount": 9500,
       "stage": "perdu",
       "stage_entered_at": "2026-06-13",
@@ -15483,7 +15483,7 @@
         "P-0075"
       ],
       "owner_id": "ae1",
-      "name": "Tokheim Services… – planif. terrain",
+      "name": "Tokheim Services – planif. terrain",
       "amount": 52000,
       "stage": "perdu",
       "stage_entered_at": "2026-03-19",
@@ -15517,7 +15517,7 @@
         "P-0067"
       ],
       "owner_id": "ae4",
-      "name": "Ardeche… – Déploiement MS",
+      "name": "Ardeche – Déploiement MS",
       "amount": 37500,
       "stage": "perdu",
       "stage_entered_at": "2026-11-18",
@@ -15555,7 +15555,7 @@
         "P-0037"
       ],
       "owner_id": "ae3",
-      "name": "Roissy… - Pilote agences",
+      "name": "Roissy - Pilote agences",
       "amount": 6000,
       "stage": "perdu",
       "stage_entered_at": "2025-11-27",
@@ -15616,7 +15616,7 @@
         "P-0214"
       ],
       "owner_id": "ae1",
-      "name": "Eiffage… – PILOTE AGENCE",
+      "name": "Eiffage – PILOTE AGENCE",
       "amount": 58500,
       "stage": "perdu",
       "stage_entered_at": "2026-09-25",
@@ -15750,7 +15750,7 @@
         "P-0356"
       ],
       "owner_id": "ae4",
-      "name": "MK… - Planif terrain",
+      "name": "MK - Planif terrain",
       "amount": 6000,
       "stage": "perdu",
       "stage_entered_at": "2026-07-14",
@@ -15784,7 +15784,7 @@
         "P-0166"
       ],
       "owner_id": "ae5",
-      "name": "Btb… – deploy multi-sites",
+      "name": "Btb – deploy multi-sites",
       "amount": 16500,
       "stage": "perdu",
       "stage_entered_at": "2025-12-13",
@@ -15818,7 +15818,7 @@
         "P-0174"
       ],
       "owner_id": "ae4",
-      "name": "Alqual… – PILOTE AGENCE",
+      "name": "Alqual – PILOTE AGENCE",
       "amount": 26500,
       "stage": "perdu",
       "stage_entered_at": "2026-07-23",
@@ -15848,7 +15848,7 @@
         "P-0352"
       ],
       "owner_id": "ae2",
-      "name": "Groupe… – Licence nova",
+      "name": "Groupe – Licence nova",
       "amount": 7500,
       "stage": "perdu",
       "stage_entered_at": "2026-02-22",
@@ -15917,7 +15917,7 @@
         "P-0031"
       ],
       "owner_id": "ae4",
-      "name": "La… – DEPLOY MULTI-SITES",
+      "name": "La – DEPLOY MULTI-SITES",
       "amount": 5500,
       "stage": "perdu",
       "stage_entered_at": "2026-09-20",
@@ -16091,7 +16091,7 @@
         "P-0298"
       ],
       "owner_id": "ae5",
-      "name": "Tunzini… – pilote agence",
+      "name": "Tunzini – pilote agence",
       "amount": 24000,
       "stage": "perdu",
       "stage_entered_at": "2026-08-06",
@@ -16299,7 +16299,7 @@
         "P-0044"
       ],
       "owner_id": "ae2",
-      "name": "Iso… – PLANIF TERRAIN",
+      "name": "Iso – PLANIF TERRAIN",
       "amount": 7000,
       "stage": "perdu",
       "stage_entered_at": "2026-04-24",
@@ -16414,7 +16414,7 @@
         "P-0153"
       ],
       "owner_id": "ae5",
-      "name": "Thermi… - PLANIF TERRAIN",
+      "name": "Thermi - PLANIF TERRAIN",
       "amount": 6000,
       "stage": "perdu",
       "stage_entered_at": "2026-09-20",
@@ -16456,7 +16456,7 @@
         "P-0412"
       ],
       "owner_id": "ae2",
-      "name": "Eiffage… – licence nova",
+      "name": "Eiffage – licence nova",
       "amount": 48000,
       "stage": "perdu",
       "stage_entered_at": "2026-06-07",

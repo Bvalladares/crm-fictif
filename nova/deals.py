@@ -121,7 +121,7 @@ def gen_deals(rng, companies, contacts_by_company, as_of,
               "&", "ET", "AND"}
 
     def _co_short(company_name):
-        """Return 1-2 significant words from company_name, stripped of legal forms."""
+        """Return significant words from company_name, stripped of legal forms."""
         words = []
         for w in company_name.split():
             if w.startswith("("):
@@ -130,8 +130,6 @@ def gen_deals(rng, companies, contacts_by_company, as_of,
                 words.append(w)
         if not words:
             words = company_name.split()[:1]
-        # Indicate truncation with ellipsis if there are more significant words than we take
-        # (used in make_deal_name which calls this function)
         return words
 
     def make_deal_name(company_name, stage=None, status=None):
@@ -146,7 +144,6 @@ def gen_deals(rng, companies, contacts_by_company, as_of,
         all_sig = _co_short(company_name)
         n_words = rng.choice([1, 1, 2, 2])
         sig = all_sig[:min(n_words, len(all_sig))]
-        truncated = len(all_sig) > n_words
 
         style = rng.choice(["orig", "orig", "title", "abbrev"])
         if style == "title":
@@ -156,8 +153,6 @@ def gen_deals(rng, companies, contacts_by_company, as_of,
         else:
             short_co = " ".join(sig)   # keep original casing (usually caps for real data)
 
-        if truncated and style != "abbrev":
-            short_co = short_co + "\u2026"
 
         # --- Object theme ---
         OBJECTS = [
