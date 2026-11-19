@@ -3,7 +3,7 @@
 from collections import Counter, defaultdict
 from contextlib import redirect_stdout
 import csv
-from datetime import date, timedelta
+from datetime import date
 import io
 import json
 import os
@@ -97,8 +97,10 @@ class TickTests(unittest.TestCase):
                         self.assertTrue(any(t == "reunion" and at > as_of for t, at in dates))
                     elif r["code"] in ("L3", "L4"):
                         self.assertGreaterEqual(d["amount"], 25000)
-                        self.assertEqual(max(at for _, at in dates if at <= as_of),
-                                         as_of - timedelta(days=20))
+                        last_day = max(at for _, at in dates if at <= as_of)
+                        age = (as_of - last_day).days
+                        self.assertLessEqual(age, 21)
+                        self.assertIn(f"{last_day}, il y a {age} j", r["preuve"])
                     elif r["code"] == "L5":
                         self.assertEqual((d["stage"], d["amount"], len(d["contact_ids"])),
                                          ("negociation", 15000, 1))
@@ -164,6 +166,15 @@ class TickTests(unittest.TestCase):
             for aid, a in previous_acts.items():
                 if prior[a["deal_id"]]["status"] != "open":
                     self.assertEqual(activities[aid], a, aid)
+
+    def test_already_logged_activities_are_preserved(self):
+        for old, new in zip(self.states, self.states[1:]):
+            before, after = (read_json(state / "crm.json") for state in (old, new))
+            start = tick.day(before["meta"]["as_of"])
+            activities = {a["id"]: a for a in after["activities"]}
+            for a in before["activities"]:
+                if tick.day(a["at"]) <= start:
+                    self.assertEqual(activities.get(a["id"]), a, a["id"])
 
     def test_volumes_and_journal_each_week(self):
         all_planted = set()

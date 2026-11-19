@@ -287,38 +287,30 @@ class Week:
             self.decoy(code, deal, f"Long en {STAGE_META[deal['stage']]['label']}, note du {self.end} et RDV le {when}")
 
         for code in ("L3", "L4"):
-            cutoff = self.end - timedelta(days=20)
             current = flags(self.crm)
             candidates = []
             for deal in available():
                 latest = self.last_activity(deal)
-                if latest is None or day(latest["at"]) > cutoff:
+                if latest is None:
                     continue
-                if any(did == deal["id"] and flag not in {"A2", "A3", "A4", "A6"}
-                       for did, flag in current):
+                last_day = day(latest["at"])
+                age = (self.end - last_day).days
+                if age > 21 or not compatible(current, deal, {"A2", "A3", "A6"}):
                     continue
                 if deal["stage"] == "negociation" and len(deal["contact_ids"]) == 1:
                     continue
-                if get_stage_at_date(deal["stage_history"], cutoff) != get_stage_at_date(
-                        deal["stage_history"], latest["at"]):
-                    continue
-                candidates.append((deal, latest))
-            deal, latest = min(candidates, key=lambda pair: (
-                (cutoff - day(pair[1]["at"])).days, not preferred(pair[0], code)
+                candidates.append((deal, last_day, age))
+            # Prefer the brief's exact age. If the history has too few such
+            # entries, use the nearest real date on the clean side of A4.
+            deal, last_day, age = min(candidates, key=lambda item: (
+                abs(item[2] - 20), not preferred(item[0], code)
             ))
-            if day(latest["at"]) != cutoff:
-                # Correct the date of an existing entry in the same stage.
-                # The exact 20-day boundary can precede the simulated week.
-                self.events["Dates de journal rectifiées pour les leurres"].append(
-                    f"{deal['id']} / {latest['id']} — {day(latest['at'])} → {cutoff}"
-                )
-                latest["at"] = cutoff.isoformat() + latest["at"][10:]
             if (deal["id"], "A2") in current:
                 self.schedule(deal)
             if any((deal["id"], flag) in current for flag in ("A3", "A6")):
                 self.push_close_date(deal)
             deal["amount"] = max(deal["amount"] or 0, 25000)
-            self.decoy(code, deal, f"Deal de {deal['amount']} € ; dernière activité le {cutoff}, il y a 20 j")
+            self.decoy(code, deal, f"Deal de {deal['amount']} € ; dernière activité le {last_day}, il y a {age} j")
 
         current = flags(self.crm)
         deal = min(
@@ -473,7 +465,8 @@ class Week:
     def postpone_due_step(self, deal):
         due = [entry for entry in self.activities_for(deal)
                if entry["type"] in ("tache", "reunion")
-               and self.start < day(entry["at"]) <= self.end]
+               and self.start < day(entry["at"]) <= self.end
+               and int(entry["id"].split("-")[1]) < self.first_new_activity]
         if not due:
             return False
         entry = max(due, key=lambda a: (a["type"] == "reunion", a["at"]))
