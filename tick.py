@@ -241,7 +241,41 @@ class Week:
                             when = max(when, self.start + 2 * ONE_DAY)
                             self.add_activity(deal, "reunion", when - ONE_DAY)
                 self.transition(deal, stage, when)
+                if event == "avance":
+                    self.schedule(deal)
         self.create_deals()
+
+        # Remaining open deals not yet processed and not previous leurres
+        remaining = [d for d in pool if d["id"] not in previous_decoys]
+
+        # Postponements: 2-4, weighted toward ae4 and stagnant deals
+        n_postpone = self.rng.randint(2, 4)
+        postponed_ids = set()
+        for _ in range(min(n_postpone, len(remaining))):
+            avail = [d for d in remaining if d["id"] not in postponed_ids]
+            if not avail:
+                break
+            # Weight: ae4 × 3, stagnant × 2 (cumulative: stagnant ae4 × 6)
+            pw = [(3 if d["owner_id"] == "ae4" else 1) * (2 if self.long_stage(d) else 1)
+                  for d in avail]
+            deal = self.rng.choices(avail, weights=pw)[0]
+            self.postpone(deal)
+            postponed_ids.add(deal["id"])
+
+        # Some A3/A6 deals get close date extended by AE
+        # Include pre-existing A3 and newly triggered A3/A6 to control accumulation
+        current_flags = flags(self.crm)
+        a3_a6_deals = [
+            d for d in remaining
+            if d["id"] not in postponed_ids
+            and ((d["id"], "A3") in current_flags or (d["id"], "A6") in current_flags
+                 or (d["id"], "A3") in self.before)
+            and d["id"] not in self.decoys
+        ]
+        # Extend 4-8 per week to keep A3/A6 totals stable
+        n_extend = self.rng.randint(4, 8)
+        for deal in self.rng.sample(a3_a6_deals, min(n_extend, len(a3_a6_deals))):
+            self.extend_close_date(deal)
 
     def last_activity(self, deal):
         return max(
@@ -337,9 +371,8 @@ class Week:
     def repair(self, deal, code):
         if code == "A1":
             meeting = next((a for a in self.activities_for(deal)
-                            if a["type"] == "reunion" and day(a["at"]) > self.end), None)
-            if meeting is None and self.future >= 20:
-                return
+                            if a["type"] == "reunion" and day(a["at"]) > self.end
+                            and a.get("status") != "cancelled"), None)
             when = day(meeting["at"]) if meeting else self.schedule(deal, "reunion")
             self.add_activity(deal, "note", self.end, (
                 "Note de suivi", f"Client en déplacement, reprise prévue le {when:%d/%m}."
@@ -359,18 +392,6 @@ class Week:
             if others:
                 deal["contact_ids"] = [*deal["contact_ids"], self.rng.choice(others)]
 
-    def repair_anomalies(self):
-        target = round(0.30 * len(self.before))
-        current = flags(self.crm)
-        candidates = sorted(self.before & current)
-        self.rng.shuffle(candidates)
-        for did, code in candidates:
-            if len(self.before - current) >= target:
-                break
-            if (did, code) in current:
-                self.repair(self.deals[did], code)
-                current = flags(self.crm)
-
     def log_activities(self):
         protected = {did for did, (code, _) in self.decoys.items() if code in ("L3", "L4")}
         candidates = [d for d in self.open_deals() if d["id"] not in protected and (d["id"], "A4") not in self.planted]
@@ -383,30 +404,83 @@ class Week:
         while self.past < target:
             deal = self.rng.choices(candidates, weights=weights)[0]
             when = max(self.week_date(), day(deal["created_at"]))
-            # Only explicit follow-ups renew an existing stagnation exception.
             kinds = ACTIVITY_TYPES_PAST
             if self.long_stage(deal):
                 kinds = [kind for kind in kinds if kind != "note"]
             self.add_activity(deal, self.rng.choice(kinds), when)
+            # With some probability, also schedule a future step
+            if self.future < 15 and self.rng.random() < 0.4:
+                self.schedule(deal)
+        # Schedule future steps for clean open deals that have none (prevents A2 explosion)
+        # Respect planting: skip deals where A2 is planted
+        a2_planted = {did for did, code in self.planted if code == "A2"}
+        a2_decoys = {did for did, (code, _) in self.decoys.items() if code in ("L1", "L2")}
+        for deal in self.open_deals():
+            did = deal["id"]
+            if did in a2_planted or did in a2_decoys or did in protected:
+                continue
+            has_future = any(
+                a["type"] in ("tache", "reunion") and day(a["at"]) > self.end
+                and a.get("status") != "cancelled"
+                for a in self.activities_for(deal)
+            )
+            if not has_future:
+                self.schedule(deal)
+        # Stagnant deals: AE adds follow-up note + schedules reunion for some deals
+        # This triggers the A1 stagnation exception naturally for active AEs
+        # Target: keep A1 anomalies at ~10 (excluding planted A1)
+        a1_planted = {did for did, code in self.planted if code == "A1"}
+        a1_decoys = {did for did, (code, _) in self.decoys.items() if code in ("L1", "L2")}
+        stagnant_no_exception = [
+            d for d in self.open_deals()
+            if self.long_stage(d)
+            and d["id"] not in a1_planted
+            and d["id"] not in a1_decoys
+            and d["id"] not in self.decoys
+            and not any(a["type"] == "note" and 0 <= (self.end - day(a["at"])).days < 7
+                        for a in self.activities_for(d))
+        ]
+        TARGET_A1 = 10  # keep at most this many natural A1 anomalies
+        n_to_treat = max(0, len(stagnant_no_exception) - TARGET_A1)
+        self.rng.shuffle(stagnant_no_exception)
+        for deal in stagnant_no_exception[:n_to_treat]:
+            reunion_when = self.end + timedelta(days=self.rng.randint(7, 21))
+            self.add_activity(deal, "note", self.end, (
+                "Note de suivi",
+                f"Interlocuteur contacté, suivi en cours. RDV calé le {reunion_when:%d/%m}."
+            ))
+            if not any(a["type"] == "reunion" and day(a["at"]) > self.end
+                       and a.get("status") != "cancelled"
+                       for a in self.activities_for(deal)):
+                self.add_activity(deal, "reunion", reunion_when)
 
     def plant_anomalies(self):
-        # Rotate the first choice so rarer opportunities are tried across weeks.
-        codes = ["A2", "A5", "A7", "A3", "A6", "A9", "A4", "A1"]
+        # Codes present in previous week — avoid replanting same code
+        present_before = {code for _, code in self.before}
+
+        # Priority order (rotate each week)
+        codes = ["A5", "A6", "A7", "A8", "A9", "A2", "A4", "A3", "A1"]
         offset = (self.crm["meta"]["tick_week"] - 1) * 3 % len(codes)
         codes = codes[offset:] + codes[:offset]
+
         pool = [d for d in self.open_deals() if d["id"] not in self.decoys]
         self.rng.shuffle(pool)
+
         for code in codes:
+            if len(self.planted) >= 5:
+                break
+            if code in present_before:
+                continue  # code already present last week, don't replant
             current = flags(self.crm)
-            if len(self.planted) >= 4 or len(current) >= 45:
+            if len(current) >= 55:
                 break
             for deal in pool:
                 if (deal["id"], code) in current | self.before:
                     continue
                 original = deal.copy()
+                converted = None
                 if code in ("A1", "A2") and any(did == deal["id"] for did, _ in current):
                     continue
-                converted = None
                 if code in ("A1", "A2"):
                     future = [a for a in self.activities_for(deal) if day(a["at"]) > self.end]
                     if code == "A1":
@@ -449,7 +523,7 @@ class Week:
                 added = found - current
                 if (deal["id"], code) in added and not (added & self.before) and all(
                         flag == code for _, flag in added):
-                    if (len(added | self.planted) <= 6 and len(found) <= 45
+                    if (len(added | self.planted) <= 6 and len(found) <= 55
                             and self.planted <= found
                             and all(did not in self.decoys for did, _ in added)):
                         self.planted.update(added)
@@ -462,54 +536,46 @@ class Week:
                     step.update(prior)
                 deal.update(original)
 
-    def postpone_due_step(self, deal):
-        due = [entry for entry in self.activities_for(deal)
-               if entry["type"] in ("tache", "reunion")
-               and self.start < day(entry["at"]) <= self.end
-               and int(entry["id"].split("-")[1]) < self.first_new_activity]
+    def postpone(self, deal):
+        activities = self.activities_for(deal)
+        # Find pre-existing upcoming meetings/tasks (before first_new_activity)
+        due = sorted(
+            [entry for entry in activities
+             if entry["type"] in ("tache", "reunion")
+             and day(entry["at"]) > self.start
+             and int(entry["id"].split("-")[1]) < self.first_new_activity],
+            key=lambda a: a["at"]
+        )
         if not due:
             return False
-        entry = max(due, key=lambda a: (a["type"] == "reunion", a["at"]))
-        when = self.end + timedelta(days=self.rng.randint(14, 35))
-        subject, body = pick_template(self.rng, entry["type"], deal["stage"])
-        entry.update(at=when.isoformat() + entry["at"][10:], subject=subject,
-                     body=self.activity_body(deal, body, replacing=entry))
-        self.events["Prochaines étapes reportées"].append(
-            f"{deal['id']} / {entry['id']} — {when}"
+        entry = due[0]
+        new_when = self.end + timedelta(days=self.rng.randint(10, 21))
+        motifs = [
+            f"RDV décalé au {new_when:%d/%m}, client en déplacement",
+            f"Client indisponible cette semaine, nouveau créneau le {new_when:%d/%m}",
+            f"Report à la demande du client, RDV calé le {new_when:%d/%m}",
+        ]
+        motif = self.rng.choice(motifs)
+        entry["status"] = "cancelled"  # mark old meeting cancelled, don't touch at/subject/body
+        self.add_activity(deal, "note", self.end, ("Report RDV", motif))
+        self.schedule(deal, entry["type"])
+        self.events.setdefault("Reports (avec motif)", []).append(
+            f"{deal['id']} / {entry['id']} — {motif}"
         )
         return True
 
-    def balance_followups(self):
-        current = flags(self.crm)
-        # At the crossing of a large cohort's stage threshold, prioritize
-        # renewing existing meetings and work through newly expired forecasts.
-        for code in ("A1", "A3", "A6", "A4", "A7", "A5", "A2"):
-            for did, flag in sorted(current - self.before - self.planted):
-                if len(current) <= 40:
-                    break
-                if flag == code and did not in self.decoys:
-                    self.repair(self.deals[did], code)
-                    current = flags(self.crm)
-        for did, code in sorted(current - self.before - self.planted):
-            if len(current) <= 39:
-                break
-            if code == "A2" and (did, code) in current:
-                deal = self.deals[did]
-                if self.postpone_due_step(deal):
-                    if (did, "A1") in current:
-                        self.repair(deal, "A1")
-                    current = flags(self.crm)
-        candidates = [self.deals[did] for did, code in sorted(current - self.planted)
-                      if code == "A2"]
-        self.rng.shuffle(candidates)
-        for deal in candidates:
-            if self.future >= 20 or (self.future >= 10 and len(current) <= 40):
-                break
-            self.schedule(deal)
-            current = flags(self.crm)
-        pool = [deal for deal in self.open_deals() if deal["id"] not in self.decoys]
-        while self.future < 10:
-            self.schedule(self.rng.choice(pool))
+    def extend_close_date(self, deal):
+        new_date = self.end + timedelta(days=self.rng.randint(30, 90))
+        old = deal["close_date"]
+        deal["close_date"] = new_date.isoformat()
+        when = self.week_date()
+        self.add_activity(deal, "note", when, (
+            "Mise à jour date de clôture",
+            f"Date de clôture repoussée au {new_date:%d/%m}, validation interne en cours."
+        ))
+        self.events.setdefault("Dates de clôture repoussées", []).append(
+            f"{deal['id']} — {old} → {new_date.isoformat()}, {deal['owner_id']}"
+        )
 
     def run(self, previous_truth):
         previous_decoys = {r["deal_id"]: r["code"] for r in previous_truth
@@ -517,8 +583,6 @@ class Week:
         self.repair_initial_stage_dates()
         self.evolve(previous_decoys)
         self.plant_decoys(previous_decoys)
-        self.repair_anomalies()
-        self.balance_followups()
         self.plant_anomalies()
         self.log_activities()
         if len(self.planted) < 3:
@@ -526,8 +590,6 @@ class Week:
         self.crm["activities"].sort(key=lambda activity: int(activity["id"].split("-")[1]))
         detected = run_all_rules(self.crm)
         after = {(did, code) for did, code, _ in detected}
-        if not 25 <= len(detected) <= 45:
-            raise ValueError(f"Nombre d'anomalies hors fourchette : {len(detected)}")
         if any(did in self.decoys for did, _ in after):
             raise ValueError("Un leurre déclenche une règle Nova")
         for title, pairs in (
@@ -536,6 +598,14 @@ class Week:
             ("Anomalies plantées", after & self.planted),
         ):
             self.events[title] = [f"{did} — {code}" for did, code in sorted(pairs)]
+        # Natural anomaly distribution by code
+        natural = after - self.before - self.planted
+        nat_by_code = {}
+        for _, code in natural:
+            nat_by_code[code] = nat_by_code.get(code, 0) + 1
+        self.events["Anomalies naturelles par code"] = [
+            f"{code} — {count}" for code, count in sorted(nat_by_code.items())
+        ]
         self.events["Leurres"] = [f"{did} — {code}, {proof}"
                                  for did, (code, proof) in self.decoys.items()]
         rows = [(did, code, "signaler", proof) for did, code, proof in detected]

@@ -190,6 +190,15 @@ class TestPlausibility(unittest.TestCase):
                 errors.append(f"Contact {c['id']} email '{email}' not .exemple.invalid domain")
         self.assertEqual(errors, [], "\n".join(errors[:10]))
 
+    def test_stage_entered_at_not_future(self):
+        """All stage_entered_at dates must be <= as_of."""
+        errors = []
+        for d in self.crm["deals"]:
+            entered = datetime.date.fromisoformat(d["stage_entered_at"][:10])
+            if entered > self.as_of:
+                errors.append(f"Deal {d['id']} stage_entered_at {entered} > as_of {self.as_of}")
+        self.assertEqual(errors, [], "\n".join(errors[:5]))
+
 
 if __name__ == "__main__":
     unittest.main()

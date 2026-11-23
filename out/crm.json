@@ -1,8 +1,9 @@
 {
   "meta": {
-    "as_of": "2026-11-18",
+    "as_of": "2026-12-02",
     "seed": 42,
-    "public": false
+    "public": false,
+    "tick_week": 2
   },
   "owners": [
     {
@@ -6315,7 +6316,7 @@
       "stage": "negociation",
       "stage_entered_at": "2026-10-28",
       "created_at": "2026-02-09",
-      "close_date": "2026-11-18",
+      "close_date": "2026-12-02",
       "lost_reason": null,
       "stage_history": [
         {
@@ -6351,8 +6352,8 @@
       "owner_id": "ae2",
       "name": "Corsica SOLE – PILOTE AGENCE",
       "amount": 5000,
-      "stage": "qualification",
-      "stage_entered_at": "2026-11-17",
+      "stage": "demo",
+      "stage_entered_at": "2026-12-02",
       "created_at": "2026-06-11",
       "close_date": "2027-02-21",
       "lost_reason": null,
@@ -6364,6 +6365,10 @@
         {
           "stage": "qualification",
           "entered_at": "2026-11-17"
+        },
+        {
+          "stage": "demo",
+          "entered_at": "2026-12-02"
         }
       ],
       "status": "open",
@@ -6377,15 +6382,19 @@
       "owner_id": "ae1",
       "name": "STA - pilote agence",
       "amount": 19000,
-      "stage": "decouverte",
-      "stage_entered_at": "2026-10-28",
+      "stage": "qualification",
+      "stage_entered_at": "2026-11-23",
       "created_at": "2026-03-19",
-      "close_date": "2026-10-27",
+      "close_date": "2027-02-22",
       "lost_reason": null,
       "stage_history": [
         {
           "stage": "decouverte",
           "entered_at": "2026-10-28"
+        },
+        {
+          "stage": "qualification",
+          "entered_at": "2026-11-23"
         }
       ],
       "status": "open",
@@ -6431,18 +6440,22 @@
       "owner_id": "ae4",
       "name": "Armando Alves – Licence nova",
       "amount": 5000,
-      "stage": "decouverte",
-      "stage_entered_at": "2026-11-03",
+      "stage": "perdu",
+      "stage_entered_at": "2026-12-02",
       "created_at": "2026-09-09",
-      "close_date": "2027-02-20",
-      "lost_reason": null,
+      "close_date": "2026-12-02",
+      "lost_reason": "concurrent",
       "stage_history": [
         {
           "stage": "decouverte",
           "entered_at": "2026-11-03"
+        },
+        {
+          "stage": "perdu",
+          "entered_at": "2026-12-02"
         }
       ],
-      "status": "open",
+      "status": "lost",
       "id": "D-0009"
     },
     {
@@ -6484,8 +6497,8 @@
       "owner_id": "ae1",
       "name": "Levage – planif. terrain",
       "amount": 18000,
-      "stage": "qualification",
-      "stage_entered_at": "2026-10-30",
+      "stage": "proposition",
+      "stage_entered_at": "2026-11-29",
       "created_at": "2026-02-21",
       "close_date": "2027-02-26",
       "lost_reason": null,
@@ -6497,6 +6510,14 @@
         {
           "stage": "qualification",
           "entered_at": "2026-10-30"
+        },
+        {
+          "stage": "demo",
+          "entered_at": "2026-11-23"
+        },
+        {
+          "stage": "proposition",
+          "entered_at": "2026-11-29"
         }
       ],
       "status": "open",
@@ -6511,11 +6532,11 @@
       "owner_id": "ae1",
       "name": "Artelia – Licence Nova",
       "amount": 41500,
-      "stage": "qualification",
-      "stage_entered_at": "2026-10-31",
+      "stage": "perdu",
+      "stage_entered_at": "2026-12-02",
       "created_at": "2026-01-22",
-      "close_date": "2027-01-20",
-      "lost_reason": null,
+      "close_date": "2026-12-02",
+      "lost_reason": "produit_inadapte",
       "stage_history": [
         {
           "stage": "decouverte",
@@ -6524,9 +6545,13 @@
         {
           "stage": "qualification",
           "entered_at": "2026-10-31"
+        },
+        {
+          "stage": "perdu",
+          "entered_at": "2026-12-02"
         }
       ],
-      "status": "open",
+      "status": "lost",
       "id": "D-0012"
     },
     {
@@ -6538,8 +6563,8 @@
       "owner_id": "ae2",
       "name": "Hydrostadium – pilote agence",
       "amount": 10500,
-      "stage": "decouverte",
-      "stage_entered_at": "2026-11-15",
+      "stage": "qualification",
+      "stage_entered_at": "2026-11-26",
       "created_at": "2026-10-09",
       "close_date": "2026-12-18",
       "lost_reason": null,
@@ -6547,6 +6572,10 @@
         {
           "stage": "decouverte",
           "entered_at": "2026-11-15"
+        },
+        {
+          "stage": "qualification",
+          "entered_at": "2026-11-26"
         }
       ],
       "status": "open",
@@ -6563,7 +6592,7 @@
       "stage": "negociation",
       "stage_entered_at": "2026-09-29",
       "created_at": "2026-08-03",
-      "close_date": "2026-11-04",
+      "close_date": "2027-01-22",
       "lost_reason": null,
       "stage_history": [
         {
@@ -6598,8 +6627,8 @@
       "owner_id": "ae3",
       "name": "Babcock Wanson – Licence nova",
       "amount": 10000,
-      "stage": "qualification",
-      "stage_entered_at": "2026-11-03",
+      "stage": "demo",
+      "stage_entered_at": "2026-12-01",
       "created_at": "2026-07-12",
       "close_date": "2026-12-05",
       "lost_reason": null,
@@ -6611,6 +6640,10 @@
         {
           "stage": "qualification",
           "entered_at": "2026-11-03"
+        },
+        {
+          "stage": "demo",
+          "entered_at": "2026-12-01"
         }
       ],
       "status": "open",
@@ -6741,8 +6774,8 @@
       "owner_id": "ae3",
       "name": "IENY - Pilote agences",
       "amount": 21500,
-      "stage": "proposition",
-      "stage_entered_at": "2026-11-11",
+      "stage": "negociation",
+      "stage_entered_at": "2026-11-27",
       "created_at": "2026-07-16",
       "close_date": "2026-12-16",
       "lost_reason": null,
@@ -6762,6 +6795,10 @@
         {
           "stage": "proposition",
           "entered_at": "2026-11-11"
+        },
+        {
+          "stage": "negociation",
+          "entered_at": "2026-11-27"
         }
       ],
       "status": "open",
@@ -6857,7 +6894,7 @@
       "stage": "qualification",
       "stage_entered_at": "2026-11-16",
       "created_at": "2026-02-02",
-      "close_date": "2026-12-01",
+      "close_date": "2027-02-19",
       "lost_reason": null,
       "stage_history": [
         {
@@ -6884,7 +6921,7 @@
       "stage": "qualification",
       "stage_entered_at": "2026-10-29",
       "created_at": "2026-04-29",
-      "close_date": "2026-12-01",
+      "close_date": "2027-01-12",
       "lost_reason": null,
       "stage_history": [
         {
@@ -6970,7 +7007,7 @@
       "stage": "decouverte",
       "stage_entered_at": "2026-11-04",
       "created_at": "2026-02-26",
-      "close_date": "2026-12-06",
+      "close_date": "2027-01-10",
       "lost_reason": null,
       "stage_history": [
         {
@@ -6989,10 +7026,10 @@
       "owner_id": "ae4",
       "name": "Tecsol – PLANIF TERRAIN",
       "amount": 35000,
-      "stage": "negociation",
-      "stage_entered_at": "2026-11-10",
+      "stage": "gagne",
+      "stage_entered_at": "2026-11-30",
       "created_at": "2026-02-03",
-      "close_date": "2026-12-27",
+      "close_date": "2026-11-30",
       "lost_reason": null,
       "stage_history": [
         {
@@ -7014,9 +7051,13 @@
         {
           "stage": "negociation",
           "entered_at": "2026-11-10"
+        },
+        {
+          "stage": "gagne",
+          "entered_at": "2026-11-30"
         }
       ],
-      "status": "open",
+      "status": "won",
       "id": "D-0029"
     },
     {
@@ -7031,7 +7072,7 @@
       "stage": "proposition",
       "stage_entered_at": "2026-09-09",
       "created_at": "2026-04-04",
-      "close_date": "2026-11-25",
+      "close_date": "2027-02-27",
       "lost_reason": null,
       "stage_history": [
         {
@@ -7062,7 +7103,7 @@
       ],
       "owner_id": "ae4",
       "name": "IENY - Déploiement MS",
-      "amount": 4000,
+      "amount": 25000,
       "stage": "negociation",
       "stage_entered_at": "2026-10-17",
       "created_at": "2026-03-21",
@@ -7190,8 +7231,8 @@
       "owner_id": "ae3",
       "name": "Thermi – planif. terrain",
       "amount": 7000,
-      "stage": "decouverte",
-      "stage_entered_at": "2026-11-10",
+      "stage": "qualification",
+      "stage_entered_at": "2026-11-19",
       "created_at": "2026-07-03",
       "close_date": "2026-12-14",
       "lost_reason": null,
@@ -7199,6 +7240,10 @@
         {
           "stage": "decouverte",
           "entered_at": "2026-11-10"
+        },
+        {
+          "stage": "qualification",
+          "entered_at": "2026-11-19"
         }
       ],
       "status": "open",
@@ -7213,8 +7258,8 @@
       "owner_id": "ae3",
       "name": "REEL – Déploiement MS",
       "amount": 53000,
-      "stage": "proposition",
-      "stage_entered_at": "2026-10-22",
+      "stage": "negociation",
+      "stage_entered_at": "2026-11-26",
       "created_at": "2026-05-05",
       "close_date": "2026-12-30",
       "lost_reason": null,
@@ -7234,6 +7279,10 @@
         {
           "stage": "proposition",
           "entered_at": "2026-10-22"
+        },
+        {
+          "stage": "negociation",
+          "entered_at": "2026-11-26"
         }
       ],
       "status": "open",
@@ -7281,7 +7330,7 @@
       "stage": "decouverte",
       "stage_entered_at": "2026-11-12",
       "created_at": "2026-10-04",
-      "close_date": "2026-11-22",
+      "close_date": "2027-01-15",
       "lost_reason": null,
       "stage_history": [
         {
@@ -7327,7 +7376,7 @@
       ],
       "owner_id": "ae2",
       "name": "SVEG – LIC. NOVA",
-      "amount": 5500,
+      "amount": 25000,
       "stage": "decouverte",
       "stage_entered_at": "2026-11-10",
       "created_at": "2026-06-29",
@@ -7376,18 +7425,22 @@
       "owner_id": "ae2",
       "name": "Erese – deploy multi-sites",
       "amount": 4000,
-      "stage": "decouverte",
-      "stage_entered_at": "2026-11-14",
+      "stage": "perdu",
+      "stage_entered_at": "2026-11-19",
       "created_at": "2026-10-17",
-      "close_date": "2027-01-01",
-      "lost_reason": null,
+      "close_date": "2026-11-19",
+      "lost_reason": "prix",
       "stage_history": [
         {
           "stage": "decouverte",
           "entered_at": "2026-11-14"
+        },
+        {
+          "stage": "perdu",
+          "entered_at": "2026-11-19"
         }
       ],
-      "status": "open",
+      "status": "lost",
       "id": "D-0042"
     },
     {
@@ -7526,11 +7579,11 @@
       "owner_id": "ae2",
       "name": "Eneria - pilote agence",
       "amount": 42000,
-      "stage": "qualification",
-      "stage_entered_at": "2026-11-17",
+      "stage": "perdu",
+      "stage_entered_at": "2026-11-22",
       "created_at": "2026-10-10",
-      "close_date": "2027-02-10",
-      "lost_reason": null,
+      "close_date": "2026-11-22",
+      "lost_reason": "produit_inadapte",
       "stage_history": [
         {
           "stage": "decouverte",
@@ -7539,9 +7592,13 @@
         {
           "stage": "qualification",
           "entered_at": "2026-11-17"
+        },
+        {
+          "stage": "perdu",
+          "entered_at": "2026-11-22"
         }
       ],
-      "status": "open",
+      "status": "lost",
       "id": "D-0047"
     },
     {
@@ -7578,7 +7635,7 @@
       "stage": "proposition",
       "stage_entered_at": "2026-11-09",
       "created_at": "2026-02-01",
-      "close_date": "2026-10-21",
+      "close_date": "2027-01-04",
       "lost_reason": null,
       "stage_history": [
         {
@@ -7610,8 +7667,8 @@
       "owner_id": "ae2",
       "name": "Dietsmann - Licence Nova",
       "amount": 12500,
-      "stage": "qualification",
-      "stage_entered_at": "2026-09-28",
+      "stage": "demo",
+      "stage_entered_at": "2026-11-29",
       "created_at": "2026-09-23",
       "close_date": "2026-12-22",
       "lost_reason": null,
@@ -7623,6 +7680,10 @@
         {
           "stage": "qualification",
           "entered_at": "2026-09-28"
+        },
+        {
+          "stage": "demo",
+          "entered_at": "2026-11-29"
         }
       ],
       "status": "open",
@@ -7702,11 +7763,11 @@
       "owner_id": "ae1",
       "name": "Alsymex – PILOTE AGENCE",
       "amount": 54000,
-      "stage": "proposition",
-      "stage_entered_at": "2026-10-26",
+      "stage": "perdu",
+      "stage_entered_at": "2026-11-23",
       "created_at": "2026-09-03",
-      "close_date": "2026-12-16",
-      "lost_reason": null,
+      "close_date": "2026-11-23",
+      "lost_reason": "concurrent",
       "stage_history": [
         {
           "stage": "decouverte",
@@ -7723,9 +7784,13 @@
         {
           "stage": "proposition",
           "entered_at": "2026-10-26"
+        },
+        {
+          "stage": "perdu",
+          "entered_at": "2026-11-23"
         }
       ],
-      "status": "open",
+      "status": "lost",
       "id": "D-0053"
     },
     {
@@ -7832,7 +7897,7 @@
       "stage": "qualification",
       "stage_entered_at": "2026-10-09",
       "created_at": "2026-07-12",
-      "close_date": "2026-12-18",
+      "close_date": "2027-01-16",
       "lost_reason": null,
       "stage_history": [
         {
@@ -7887,8 +7952,8 @@
       "owner_id": "ae2",
       "name": "NGE Ingenierie – licence nova",
       "amount": 25000,
-      "stage": "decouverte",
-      "stage_entered_at": "2026-10-28",
+      "stage": "qualification",
+      "stage_entered_at": "2026-11-25",
       "created_at": "2026-06-20",
       "close_date": "2027-02-23",
       "lost_reason": null,
@@ -7896,6 +7961,10 @@
         {
           "stage": "decouverte",
           "entered_at": "2026-10-28"
+        },
+        {
+          "stage": "qualification",
+          "entered_at": "2026-11-25"
         }
       ],
       "status": "open",
@@ -8003,8 +8072,8 @@
       "owner_id": "ae1",
       "name": "EGIS – Planif terrain",
       "amount": 41000,
-      "stage": "decouverte",
-      "stage_entered_at": "2026-11-14",
+      "stage": "qualification",
+      "stage_entered_at": "2026-11-24",
       "created_at": "2026-03-31",
       "close_date": "2026-12-16",
       "lost_reason": null,
@@ -8012,6 +8081,10 @@
         {
           "stage": "decouverte",
           "entered_at": "2026-11-14"
+        },
+        {
+          "stage": "qualification",
+          "entered_at": "2026-11-24"
         }
       ],
       "status": "open",
@@ -8028,7 +8101,7 @@
       "stage": "negociation",
       "stage_entered_at": "2026-10-27",
       "created_at": "2026-06-10",
-      "close_date": "2026-11-22",
+      "close_date": "2027-01-13",
       "lost_reason": null,
       "stage_history": [
         {
@@ -8063,8 +8136,8 @@
       "owner_id": "ae5",
       "name": "TCMA - Planif terrain",
       "amount": 35000,
-      "stage": "demo",
-      "stage_entered_at": "2026-11-06",
+      "stage": "proposition",
+      "stage_entered_at": "2026-12-02",
       "created_at": "2026-02-18",
       "close_date": "2026-12-09",
       "lost_reason": null,
@@ -8080,6 +8153,10 @@
         {
           "stage": "demo",
           "entered_at": "2026-11-06"
+        },
+        {
+          "stage": "proposition",
+          "entered_at": "2026-12-02"
         }
       ],
       "status": "open",
@@ -8093,8 +8170,8 @@
       "owner_id": "ae1",
       "name": "Adelec – Déploiement MS",
       "amount": 28500,
-      "stage": "proposition",
-      "stage_entered_at": "2026-11-17",
+      "stage": "negociation",
+      "stage_entered_at": "2026-11-20",
       "created_at": "2026-10-14",
       "close_date": "2027-01-28",
       "lost_reason": null,
@@ -8114,6 +8191,10 @@
         {
           "stage": "proposition",
           "entered_at": "2026-11-17"
+        },
+        {
+          "stage": "negociation",
+          "entered_at": "2026-11-20"
         }
       ],
       "status": "open",
@@ -8219,8 +8300,8 @@
       "owner_id": "ae4",
       "name": "Derichebourg - Pilote agence",
       "amount": 40000,
-      "stage": "decouverte",
-      "stage_entered_at": "2026-11-01",
+      "stage": "qualification",
+      "stage_entered_at": "2026-11-23",
       "created_at": "2026-07-13",
       "close_date": "2027-02-13",
       "lost_reason": null,
@@ -8228,6 +8309,10 @@
         {
           "stage": "decouverte",
           "entered_at": "2026-11-01"
+        },
+        {
+          "stage": "qualification",
+          "entered_at": "2026-11-23"
         }
       ],
       "status": "open",
@@ -8245,7 +8330,7 @@
       "stage": "demo",
       "stage_entered_at": "2026-11-09",
       "created_at": "2026-08-25",
-      "close_date": "2026-09-24",
+      "close_date": "2027-01-06",
       "lost_reason": null,
       "stage_history": [
         {
@@ -8295,8 +8380,8 @@
       "owner_id": "ae1",
       "name": "Ima France – Licence Nova",
       "amount": 8500,
-      "stage": "demo",
-      "stage_entered_at": "2026-11-01",
+      "stage": "proposition",
+      "stage_entered_at": "2026-11-29",
       "created_at": "2026-10-10",
       "close_date": "2027-02-13",
       "lost_reason": null,
@@ -8312,6 +8397,10 @@
         {
           "stage": "demo",
           "entered_at": "2026-11-01"
+        },
+        {
+          "stage": "proposition",
+          "entered_at": "2026-11-29"
         }
       ],
       "status": "open",
@@ -8328,7 +8417,7 @@
       "stage": "qualification",
       "stage_entered_at": "2026-10-26",
       "created_at": "2026-06-25",
-      "close_date": "2026-11-21",
+      "close_date": "2027-02-14",
       "lost_reason": null,
       "stage_history": [
         {
@@ -8351,8 +8440,8 @@
       "owner_id": "ae5",
       "name": "Fondasol – PLANIF TERRAIN",
       "amount": 30500,
-      "stage": "decouverte",
-      "stage_entered_at": "2026-11-15",
+      "stage": "qualification",
+      "stage_entered_at": "2026-11-30",
       "created_at": "2026-06-29",
       "close_date": "2027-02-21",
       "lost_reason": null,
@@ -8360,6 +8449,10 @@
         {
           "stage": "decouverte",
           "entered_at": "2026-11-15"
+        },
+        {
+          "stage": "qualification",
+          "entered_at": "2026-11-30"
         }
       ],
       "status": "open",
@@ -8395,11 +8488,11 @@
       ],
       "owner_id": "ae1",
       "name": "CIDE ELEC - Pilote agences",
-      "amount": null,
-      "stage": "negociation",
-      "stage_entered_at": "2026-10-04",
+      "amount": 14500,
+      "stage": "gagne",
+      "stage_entered_at": "2026-11-26",
       "created_at": "2026-06-27",
-      "close_date": "2026-12-24",
+      "close_date": "2026-11-26",
       "lost_reason": null,
       "stage_history": [
         {
@@ -8421,9 +8514,13 @@
         {
           "stage": "negociation",
           "entered_at": "2026-10-04"
+        },
+        {
+          "stage": "gagne",
+          "entered_at": "2026-11-26"
         }
       ],
-      "status": "open",
+      "status": "won",
       "id": "D-0077"
     },
     {
@@ -8465,11 +8562,11 @@
       "owner_id": "ae1",
       "name": "Marraud - Planif terrain",
       "amount": 20000,
-      "stage": "proposition",
-      "stage_entered_at": "2026-11-06",
+      "stage": "perdu",
+      "stage_entered_at": "2026-11-29",
       "created_at": "2026-05-30",
-      "close_date": "2026-12-20",
-      "lost_reason": null,
+      "close_date": "2026-11-29",
+      "lost_reason": "produit_inadapte",
       "stage_history": [
         {
           "stage": "decouverte",
@@ -8486,9 +8583,17 @@
         {
           "stage": "proposition",
           "entered_at": "2026-11-06"
+        },
+        {
+          "stage": "negociation",
+          "entered_at": "2026-11-19"
+        },
+        {
+          "stage": "perdu",
+          "entered_at": "2026-11-29"
         }
       ],
-      "status": "open",
+      "status": "lost",
       "id": "D-0079"
     },
     {
@@ -8504,7 +8609,7 @@
       "stage": "qualification",
       "stage_entered_at": "2026-11-10",
       "created_at": "2026-08-10",
-      "close_date": "2026-10-14",
+      "close_date": "2027-02-01",
       "lost_reason": null,
       "stage_history": [
         {
@@ -8750,18 +8855,26 @@
       "owner_id": "ae2",
       "name": "Valeo Comfort – Pilote agence",
       "amount": 32000,
-      "stage": "decouverte",
-      "stage_entered_at": "2026-11-11",
+      "stage": "perdu",
+      "stage_entered_at": "2026-12-01",
       "created_at": "2026-03-08",
-      "close_date": "2027-02-20",
-      "lost_reason": null,
+      "close_date": "2026-12-01",
+      "lost_reason": "concurrent",
       "stage_history": [
         {
           "stage": "decouverte",
           "entered_at": "2026-11-11"
+        },
+        {
+          "stage": "qualification",
+          "entered_at": "2026-11-19"
+        },
+        {
+          "stage": "perdu",
+          "entered_at": "2026-12-01"
         }
       ],
-      "status": "open",
+      "status": "lost",
       "id": "D-0089"
     },
     {
@@ -8932,7 +9045,7 @@
       "stage": "qualification",
       "stage_entered_at": "2026-09-29",
       "created_at": "2026-03-09",
-      "close_date": "2026-12-05",
+      "close_date": "2027-01-16",
       "lost_reason": null,
       "stage_history": [
         {
@@ -8991,14 +9104,14 @@
       "name": "Eiffage – Déploiement multi-sites",
       "amount": 9500,
       "stage": "decouverte",
-      "stage_entered_at": "2027-04-01",
+      "stage_entered_at": "2026-10-29",
       "created_at": "2026-08-15",
       "close_date": "2026-12-08",
       "lost_reason": null,
       "stage_history": [
         {
           "stage": "decouverte",
-          "entered_at": "2027-04-01"
+          "entered_at": "2026-10-29"
         }
       ],
       "status": "open",
@@ -9167,10 +9280,10 @@
       "owner_id": "ae2",
       "name": "Monteil CIE – planif. terrain",
       "amount": 13500,
-      "stage": "negociation",
-      "stage_entered_at": "2026-11-07",
+      "stage": "gagne",
+      "stage_entered_at": "2026-11-21",
       "created_at": "2026-06-09",
-      "close_date": "2027-01-21",
+      "close_date": "2026-11-21",
       "lost_reason": null,
       "stage_history": [
         {
@@ -9192,9 +9305,13 @@
         {
           "stage": "negociation",
           "entered_at": "2026-11-07"
+        },
+        {
+          "stage": "gagne",
+          "entered_at": "2026-11-21"
         }
       ],
-      "status": "open",
+      "status": "won",
       "id": "D-0103"
     },
     {
@@ -9205,8 +9322,8 @@
       "owner_id": "ae5",
       "name": "Aquitaine Maitrise - Déploiement MS",
       "amount": 7000,
-      "stage": "qualification",
-      "stage_entered_at": "2026-11-04",
+      "stage": "demo",
+      "stage_entered_at": "2026-11-30",
       "created_at": "2026-10-19",
       "close_date": "2026-12-29",
       "lost_reason": null,
@@ -9218,6 +9335,10 @@
         {
           "stage": "qualification",
           "entered_at": "2026-11-04"
+        },
+        {
+          "stage": "demo",
+          "entered_at": "2026-11-30"
         }
       ],
       "status": "open",
@@ -9254,8 +9375,8 @@
       "owner_id": "ae2",
       "name": "Segula – PILOTE AGENCE",
       "amount": 54000,
-      "stage": "proposition",
-      "stage_entered_at": "2026-11-03",
+      "stage": "negociation",
+      "stage_entered_at": "2026-12-02",
       "created_at": "2026-04-13",
       "close_date": "2027-01-18",
       "lost_reason": null,
@@ -9275,6 +9396,10 @@
         {
           "stage": "proposition",
           "entered_at": "2026-11-03"
+        },
+        {
+          "stage": "negociation",
+          "entered_at": "2026-12-02"
         }
       ],
       "status": "open",
@@ -9313,7 +9438,7 @@
       "stage": "decouverte",
       "stage_entered_at": "2026-11-17",
       "created_at": "2026-10-10",
-      "close_date": "2026-09-29",
+      "close_date": "2027-01-02",
       "lost_reason": null,
       "stage_history": [
         {
@@ -9332,7 +9457,7 @@
       ],
       "owner_id": "ae3",
       "name": "TRA- – Planif terrain",
-      "amount": 21000,
+      "amount": 25000,
       "stage": "qualification",
       "stage_entered_at": "2026-11-17",
       "created_at": "2026-03-07",
@@ -16479,6 +16604,248 @@
       ],
       "status": "lost",
       "id": "D-0300"
+    },
+    {
+      "id": "D-0301",
+      "company_id": "C-0169",
+      "contact_ids": [
+        "P-0338"
+      ],
+      "owner_id": "sdr2",
+      "name": "Cca-perrot — Planification des interventions (D-0301)",
+      "status": "open",
+      "stage": "decouverte",
+      "created_at": "2026-11-19",
+      "stage_entered_at": "2026-11-19",
+      "stage_history": [
+        {
+          "stage": "decouverte",
+          "entered_at": "2026-11-19"
+        }
+      ],
+      "close_date": "2027-02-09",
+      "lost_reason": null,
+      "amount": 60000
+    },
+    {
+      "id": "D-0302",
+      "company_id": "C-0040",
+      "contact_ids": [
+        "P-0076"
+      ],
+      "owner_id": "sdr2",
+      "name": "Tokheim Services France — Planification des interventions (D-0302)",
+      "status": "open",
+      "stage": "decouverte",
+      "created_at": "2026-11-21",
+      "stage_entered_at": "2026-11-21",
+      "stage_history": [
+        {
+          "stage": "decouverte",
+          "entered_at": "2026-11-21"
+        }
+      ],
+      "close_date": "2027-01-29",
+      "lost_reason": null,
+      "amount": 32000
+    },
+    {
+      "id": "D-0303",
+      "company_id": "C-0148",
+      "contact_ids": [
+        "P-0293"
+      ],
+      "owner_id": "sdr2",
+      "name": "Eiffage Energie Systemes - Clevia Centre EST — Planification des interventions (D-0303)",
+      "status": "open",
+      "stage": "decouverte",
+      "created_at": "2026-11-23",
+      "stage_entered_at": "2026-11-23",
+      "stage_history": [
+        {
+          "stage": "decouverte",
+          "entered_at": "2026-11-23"
+        }
+      ],
+      "close_date": "2027-02-01",
+      "lost_reason": null,
+      "amount": 38000
+    },
+    {
+      "id": "D-0304",
+      "company_id": "C-0052",
+      "contact_ids": [
+        "P-0100"
+      ],
+      "owner_id": "sdr1",
+      "name": "Seiri — Planification des interventions (D-0304)",
+      "status": "open",
+      "stage": "decouverte",
+      "created_at": "2026-11-20",
+      "stage_entered_at": "2026-11-20",
+      "stage_history": [
+        {
+          "stage": "decouverte",
+          "entered_at": "2026-11-20"
+        }
+      ],
+      "close_date": "2027-01-17",
+      "lost_reason": null,
+      "amount": 13000
+    },
+    {
+      "id": "D-0305",
+      "company_id": "C-0042",
+      "contact_ids": [
+        "P-0080"
+      ],
+      "owner_id": "sdr1",
+      "name": "Assystem Project Management — Planification des interventions (D-0305)",
+      "status": "open",
+      "stage": "decouverte",
+      "created_at": "2026-11-19",
+      "stage_entered_at": "2026-11-19",
+      "stage_history": [
+        {
+          "stage": "decouverte",
+          "entered_at": "2026-11-19"
+        }
+      ],
+      "close_date": "2027-02-09",
+      "lost_reason": null,
+      "amount": 38000
+    },
+    {
+      "id": "D-0306",
+      "company_id": "C-0062",
+      "contact_ids": [
+        "P-0120"
+      ],
+      "owner_id": "sdr1",
+      "name": "SARL Monnier — Planification des interventions (D-0306)",
+      "status": "open",
+      "stage": "decouverte",
+      "created_at": "2026-11-19",
+      "stage_entered_at": "2026-11-19",
+      "stage_history": [
+        {
+          "stage": "decouverte",
+          "entered_at": "2026-11-19"
+        }
+      ],
+      "close_date": "2027-02-08",
+      "lost_reason": null,
+      "amount": 15000
+    },
+    {
+      "id": "D-0307",
+      "company_id": "C-0130",
+      "contact_ids": [
+        "P-0261"
+      ],
+      "owner_id": "sdr1",
+      "name": "IKOS Consulting — Planification des interventions (D-0307)",
+      "status": "open",
+      "stage": "decouverte",
+      "created_at": "2026-11-21",
+      "stage_entered_at": "2026-11-21",
+      "stage_history": [
+        {
+          "stage": "decouverte",
+          "entered_at": "2026-11-21"
+        }
+      ],
+      "close_date": "2027-02-08",
+      "lost_reason": null,
+      "amount": 44500
+    },
+    {
+      "id": "D-0308",
+      "company_id": "C-0212",
+      "contact_ids": [
+        "P-0422"
+      ],
+      "owner_id": "sdr2",
+      "name": "Morellec Habitat — Planification des interventions (D-0308)",
+      "status": "open",
+      "stage": "decouverte",
+      "created_at": "2026-11-28",
+      "stage_entered_at": "2026-11-28",
+      "stage_history": [
+        {
+          "stage": "decouverte",
+          "entered_at": "2026-11-28"
+        }
+      ],
+      "close_date": "2027-02-06",
+      "lost_reason": null,
+      "amount": 5000
+    },
+    {
+      "id": "D-0309",
+      "company_id": "C-0138",
+      "contact_ids": [
+        "P-0277"
+      ],
+      "owner_id": "sdr2",
+      "name": "Extia — Planification des interventions (D-0309)",
+      "status": "open",
+      "stage": "decouverte",
+      "created_at": "2026-11-26",
+      "stage_entered_at": "2026-11-26",
+      "stage_history": [
+        {
+          "stage": "decouverte",
+          "entered_at": "2026-11-26"
+        }
+      ],
+      "close_date": "2027-02-20",
+      "lost_reason": null,
+      "amount": 38000
+    },
+    {
+      "id": "D-0310",
+      "company_id": "C-0198",
+      "contact_ids": [
+        "P-0394"
+      ],
+      "owner_id": "sdr1",
+      "name": "ABC2E — Planification des interventions (D-0310)",
+      "status": "open",
+      "stage": "decouverte",
+      "created_at": "2026-11-27",
+      "stage_entered_at": "2026-11-27",
+      "stage_history": [
+        {
+          "stage": "decouverte",
+          "entered_at": "2026-11-27"
+        }
+      ],
+      "close_date": "2027-02-15",
+      "lost_reason": null,
+      "amount": 5000
+    },
+    {
+      "id": "D-0311",
+      "company_id": "C-0025",
+      "contact_ids": [
+        "P-0045"
+      ],
+      "owner_id": "sdr1",
+      "name": "ISO Inter — Planification des interventions (D-0311)",
+      "status": "open",
+      "stage": "decouverte",
+      "created_at": "2026-11-30",
+      "stage_entered_at": "2026-11-30",
+      "stage_history": [
+        {
+          "stage": "decouverte",
+          "entered_at": "2026-11-30"
+        }
+      ],
+      "close_date": "2027-02-03",
+      "lost_reason": null,
+      "amount": 14000
     }
   ],
   "activities": [
@@ -19013,16 +19380,6 @@
       "id": "A-0253"
     },
     {
-      "deal_id": "D-0012",
-      "contact_id": "P-0235",
-      "owner_id": "ae1",
-      "type": "tache",
-      "at": "2026-12-07T09:00:00",
-      "subject": "Rappeler le contact",
-      "body": "Rappeler si pas de nouvelles sous 1 semaine.",
-      "id": "A-0254"
-    },
-    {
       "deal_id": "D-0013",
       "contact_id": "P-0218",
       "owner_id": "ae2",
@@ -19970,7 +20327,8 @@
       "at": "2026-12-05T10:00:00",
       "subject": "Réunion de suivi",
       "body": "RDV calé le 2026-12-05.",
-      "id": "A-0349"
+      "id": "A-0349",
+      "status": "cancelled"
     },
     {
       "deal_id": "D-0017",
@@ -20900,7 +21258,8 @@
       "at": "2026-11-29T09:00:00",
       "subject": "Préparer la démo",
       "body": "Préparer la démo personnalisée pour ce client avant vendredi.",
-      "id": "A-0442"
+      "id": "A-0442",
+      "status": "cancelled"
     },
     {
       "deal_id": "D-0022",
@@ -23600,7 +23959,8 @@
       "at": "2026-12-10T10:00:00",
       "subject": "Réunion de suivi",
       "body": "RDV calé le 2026-12-10.",
-      "id": "A-0712"
+      "id": "A-0712",
+      "status": "cancelled"
     },
     {
       "deal_id": "D-0035",
@@ -25181,16 +25541,6 @@
       "subject": "Prise de contact",
       "body": "interlocuteur en congés jusque fin mois. rappeler le 2.",
       "id": "A-0870"
-    },
-    {
-      "deal_id": "D-0042",
-      "contact_id": "P-0358",
-      "owner_id": "ae2",
-      "type": "reunion",
-      "at": "2026-12-15T10:00:00",
-      "subject": "Réunion de suivi",
-      "body": "RDV calé le 2026-12-15.",
-      "id": "A-0871"
     },
     {
       "deal_id": "D-0043",
@@ -27921,16 +28271,6 @@
       "subject": "Point projet",
       "body": "réunion avec DAF. devis validé. calendrier de mise en place discuté.",
       "id": "A-1144"
-    },
-    {
-      "deal_id": "D-0053",
-      "contact_id": "P-0294",
-      "owner_id": "ae1",
-      "type": "reunion",
-      "at": "2026-11-24T10:00:00",
-      "subject": "Réunion de suivi",
-      "body": "RDV calé le 2026-11-24.",
-      "id": "A-1145"
     },
     {
       "deal_id": "D-0054",
@@ -31560,7 +31900,8 @@
       "at": "2026-12-01T10:00:00",
       "subject": "Réunion de suivi",
       "body": "RDV calé le 2026-12-01.",
-      "id": "A-1508"
+      "id": "A-1508",
+      "status": "cancelled"
     },
     {
       "deal_id": "D-0073",
@@ -32401,16 +32742,6 @@
       "subject": "Relance téléphonique",
       "body": "relance suite silence. client ok mais juriste en déplacement. relancer la semaine pro.",
       "id": "A-1592"
-    },
-    {
-      "deal_id": "D-0077",
-      "contact_id": "P-0073",
-      "owner_id": "ae1",
-      "type": "reunion",
-      "at": "2026-12-09T10:00:00",
-      "subject": "Réunion de suivi",
-      "body": "RDV calé le 2026-12-09.",
-      "id": "A-1593"
     },
     {
       "deal_id": "D-0078",
@@ -37891,16 +38222,6 @@
       "subject": "Réunion de négociation",
       "body": "discussion tarifs et SLA. accord trouvé sur les pénalités. à formaliser.",
       "id": "A-2141"
-    },
-    {
-      "deal_id": "D-0103",
-      "contact_id": "P-0325",
-      "owner_id": "ae2",
-      "type": "reunion",
-      "at": "2026-12-18T10:00:00",
-      "subject": "Réunion de suivi",
-      "body": "RDV calé le 2026-12-18.",
-      "id": "A-2142"
     },
     {
       "deal_id": "D-0104",
@@ -65561,6 +65882,2568 @@
       "subject": "Deal perdu",
       "body": "Perdu – produit inadapté au besoin final.",
       "id": "A-4908"
+    },
+    {
+      "id": "A-4909",
+      "deal_id": "D-0103",
+      "contact_id": "P-0325",
+      "owner_id": "ae2",
+      "type": "note",
+      "at": "2026-11-21T18:00:00",
+      "subject": "Deal gagné",
+      "body": "Contrat signé."
+    },
+    {
+      "id": "A-4910",
+      "deal_id": "D-0047",
+      "contact_id": "P-0094",
+      "owner_id": "ae2",
+      "type": "note",
+      "at": "2026-11-22T18:00:00",
+      "subject": "Deal perdu",
+      "body": "Perdu – produit inadapté au besoin final."
+    },
+    {
+      "id": "A-4911",
+      "deal_id": "D-0053",
+      "contact_id": "P-0294",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-11-23T18:00:00",
+      "subject": "Deal perdu",
+      "body": "Perdu – concurrent retenu."
+    },
+    {
+      "id": "A-4912",
+      "deal_id": "D-0042",
+      "contact_id": "P-0358",
+      "owner_id": "ae2",
+      "type": "note",
+      "at": "2026-11-19T18:00:00",
+      "subject": "Deal perdu",
+      "body": "Perdu – pb prix, concurrent moins cher retenu."
+    },
+    {
+      "id": "A-4913",
+      "deal_id": "D-0066",
+      "contact_id": "P-0263",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-16T15:00:00",
+      "subject": "Relancer par email",
+      "body": "Relancer par email si pas de retour sur le contrat d'ici lundi."
+    },
+    {
+      "id": "A-4914",
+      "deal_id": "D-0070",
+      "contact_id": "P-0069",
+      "owner_id": "ae4",
+      "type": "tache",
+      "at": "2026-12-08T15:00:00",
+      "subject": "Préparer la démo",
+      "body": "Préparer la présentation pour le CODIR."
+    },
+    {
+      "id": "A-4915",
+      "deal_id": "D-0007",
+      "contact_id": "P-0416",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-01T11:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler le contact pour confirmer le budget et les décideurs."
+    },
+    {
+      "id": "A-4916",
+      "deal_id": "D-0035",
+      "contact_id": "P-0153",
+      "owner_id": "ae3",
+      "type": "tache",
+      "at": "2026-12-16T09:00:00",
+      "subject": "Préparer la démo",
+      "body": "Préparer la présentation pour le CODIR."
+    },
+    {
+      "id": "A-4917",
+      "deal_id": "D-0011",
+      "contact_id": "P-0052",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-14T14:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler pour faire le point sur les retours de la démo."
+    },
+    {
+      "id": "A-4918",
+      "deal_id": "D-0063",
+      "contact_id": "P-0430",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-14T10:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler le contact pour confirmer le budget et les décideurs."
+    },
+    {
+      "id": "A-4921",
+      "deal_id": "D-0059",
+      "contact_id": "P-0221",
+      "owner_id": "ae2",
+      "type": "tache",
+      "at": "2026-12-11T09:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler si pas de nouvelles sous 1 semaine."
+    },
+    {
+      "id": "A-4922",
+      "deal_id": "D-0301",
+      "contact_id": "P-0338",
+      "owner_id": "sdr2",
+      "type": "appel",
+      "at": "2026-11-19T11:00:00",
+      "subject": "Point rapide",
+      "body": "client a reçu la brochure. intéressé. rdv à caler."
+    },
+    {
+      "id": "A-4923",
+      "deal_id": "D-0301",
+      "contact_id": "P-0338",
+      "owner_id": "sdr2",
+      "type": "tache",
+      "at": "2026-11-30T16:00:00",
+      "subject": "Envoyer le recap",
+      "body": "Envoyer le résumé de notre premier échange avec les prochaines étapes."
+    },
+    {
+      "id": "A-4924",
+      "deal_id": "D-0302",
+      "contact_id": "P-0076",
+      "owner_id": "sdr2",
+      "type": "appel",
+      "at": "2026-11-21T12:00:00",
+      "subject": "Prise de contact",
+      "body": "premier échange ok, besoin général cerné. rappel la semaine pro."
+    },
+    {
+      "id": "A-4925",
+      "deal_id": "D-0302",
+      "contact_id": "P-0076",
+      "owner_id": "sdr2",
+      "type": "tache",
+      "at": "2026-12-12T13:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler le contact pour confirmer son intérêt et caler un RDV démo.",
+      "status": "cancelled"
+    },
+    {
+      "id": "A-4926",
+      "deal_id": "D-0303",
+      "contact_id": "P-0293",
+      "owner_id": "sdr2",
+      "type": "appel",
+      "at": "2026-11-23T12:00:00",
+      "subject": "Appel découverte",
+      "body": "pas joignable. msg laissé, rappeler demain matin."
+    },
+    {
+      "id": "A-4927",
+      "deal_id": "D-0303",
+      "contact_id": "P-0293",
+      "owner_id": "sdr2",
+      "type": "tache",
+      "at": "2026-12-01T13:00:00",
+      "subject": "Envoyer le recap",
+      "body": "Envoyer la brochure de présentation demandée."
+    },
+    {
+      "id": "A-4928",
+      "deal_id": "D-0304",
+      "contact_id": "P-0100",
+      "owner_id": "sdr1",
+      "type": "appel",
+      "at": "2026-11-20T09:00:00",
+      "subject": "Appel de suivi",
+      "body": "besoin initial confirmé. attente d'un rdv de présentation."
+    },
+    {
+      "id": "A-4929",
+      "deal_id": "D-0304",
+      "contact_id": "P-0100",
+      "owner_id": "sdr1",
+      "type": "tache",
+      "at": "2026-12-14T10:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler si pas de retour sous 5 jours."
+    },
+    {
+      "id": "A-4930",
+      "deal_id": "D-0305",
+      "contact_id": "P-0080",
+      "owner_id": "sdr1",
+      "type": "appel",
+      "at": "2026-11-19T16:00:00",
+      "subject": "Prise de contact",
+      "body": "interlocuteur en congés jusque fin mois. rappeler le 2."
+    },
+    {
+      "id": "A-4931",
+      "deal_id": "D-0305",
+      "contact_id": "P-0080",
+      "owner_id": "sdr1",
+      "type": "tache",
+      "at": "2026-12-12T09:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler le contact pour confirmer son intérêt et caler un RDV démo."
+    },
+    {
+      "id": "A-4932",
+      "deal_id": "D-0306",
+      "contact_id": "P-0120",
+      "owner_id": "sdr1",
+      "type": "appel",
+      "at": "2026-11-19T09:00:00",
+      "subject": "Appel de suivi",
+      "body": "besoin initial confirmé. attente d'un rdv de présentation."
+    },
+    {
+      "id": "A-4933",
+      "deal_id": "D-0306",
+      "contact_id": "P-0120",
+      "owner_id": "sdr1",
+      "type": "tache",
+      "at": "2026-12-05T14:00:00",
+      "subject": "Vérifier les specs",
+      "body": "Vérifier les besoins spécifiques mentionnés lors du premier appel."
+    },
+    {
+      "id": "A-4934",
+      "deal_id": "D-0307",
+      "contact_id": "P-0261",
+      "owner_id": "sdr1",
+      "type": "appel",
+      "at": "2026-11-21T12:00:00",
+      "subject": "Appel de suivi",
+      "body": "client revient de congés. ok pour rdv la semaine prochaine."
+    },
+    {
+      "id": "A-4935",
+      "deal_id": "D-0307",
+      "contact_id": "P-0261",
+      "owner_id": "sdr1",
+      "type": "tache",
+      "at": "2026-12-07T13:00:00",
+      "subject": "Préparer les slides",
+      "body": "Préparer la présentation générale pour ce client avant vendredi."
+    },
+    {
+      "id": "A-4936",
+      "deal_id": "D-0072",
+      "contact_id": "P-0399",
+      "owner_id": "ae4",
+      "type": "note",
+      "at": "2026-11-25T16:00:00",
+      "subject": "Report RDV",
+      "body": "Report à la demande du client, RDV calé le 09/12"
+    },
+    {
+      "id": "A-4937",
+      "deal_id": "D-0072",
+      "contact_id": "P-0399",
+      "owner_id": "ae4",
+      "type": "reunion",
+      "at": "2026-12-10T12:00:00",
+      "subject": "RDV découverte",
+      "body": "découverte terrain. équipe de 12 techniciens. processus actuel = excel. gros potentiel."
+    },
+    {
+      "id": "A-4938",
+      "deal_id": "D-0021",
+      "contact_id": "P-0304",
+      "owner_id": "ae4",
+      "type": "note",
+      "at": "2026-11-25T16:00:00",
+      "subject": "Report RDV",
+      "body": "RDV décalé au 15/12, client en déplacement"
+    },
+    {
+      "id": "A-4940",
+      "deal_id": "D-0080",
+      "contact_id": "P-0432",
+      "owner_id": "ae5",
+      "type": "note",
+      "at": "2026-11-24T10:00:00",
+      "subject": "Mise à jour date de clôture",
+      "body": "Date de clôture repoussée au 01/02, validation interne en cours."
+    },
+    {
+      "id": "A-4941",
+      "deal_id": "D-0074",
+      "contact_id": "P-0435",
+      "owner_id": "ae2",
+      "type": "note",
+      "at": "2026-11-24T12:00:00",
+      "subject": "Mise à jour date de clôture",
+      "body": "Date de clôture repoussée au 14/02, validation interne en cours."
+    },
+    {
+      "id": "A-4942",
+      "deal_id": "D-0071",
+      "contact_id": "P-0290",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-11-20T13:00:00",
+      "subject": "Mise à jour date de clôture",
+      "body": "Date de clôture repoussée au 06/01, validation interne en cours."
+    },
+    {
+      "id": "A-4943",
+      "deal_id": "D-0049",
+      "contact_id": "P-0288",
+      "owner_id": "ae4",
+      "type": "note",
+      "at": "2026-11-22T15:00:00",
+      "subject": "Mise à jour date de clôture",
+      "body": "Date de clôture repoussée au 04/01, validation interne en cours."
+    },
+    {
+      "id": "A-4944",
+      "deal_id": "D-0064",
+      "contact_id": "P-0175",
+      "owner_id": "ae3",
+      "type": "note",
+      "at": "2026-11-19T16:00:00",
+      "subject": "Mise à jour date de clôture",
+      "body": "Date de clôture repoussée au 13/01, validation interne en cours."
+    },
+    {
+      "id": "A-4945",
+      "deal_id": "D-0014",
+      "contact_id": "P-0195",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-11-24T16:00:00",
+      "subject": "Mise à jour date de clôture",
+      "body": "Date de clôture repoussée au 22/01, validation interne en cours."
+    },
+    {
+      "id": "A-4946",
+      "deal_id": "D-0108",
+      "contact_id": "P-0318",
+      "owner_id": "ae5",
+      "type": "note",
+      "at": "2026-11-19T14:00:00",
+      "subject": "Mise à jour date de clôture",
+      "body": "Date de clôture repoussée au 02/01, validation interne en cours."
+    },
+    {
+      "id": "A-4947",
+      "deal_id": "D-0038",
+      "contact_id": "P-0103",
+      "owner_id": "ae2",
+      "type": "note",
+      "at": "2026-11-21T15:00:00",
+      "subject": "Mise à jour date de clôture",
+      "body": "Date de clôture repoussée au 15/01, validation interne en cours."
+    },
+    {
+      "id": "A-4948",
+      "deal_id": "D-0057",
+      "contact_id": "P-0219",
+      "owner_id": "ae4",
+      "type": "reunion",
+      "at": "2026-12-09T12:00:00",
+      "subject": "Réunion de qualification",
+      "body": "réunion qualification avec DAF et RSI. budget cadré. go pour démo."
+    },
+    {
+      "id": "A-4949",
+      "deal_id": "D-0057",
+      "contact_id": "P-0220",
+      "owner_id": "ae4",
+      "type": "note",
+      "at": "2026-11-25T13:00:00",
+      "subject": "Note de suivi",
+      "body": "Interlocuteur indisponible cette semaine, RDV calé le 09/12."
+    },
+    {
+      "id": "A-4950",
+      "deal_id": "D-0095",
+      "contact_id": "P-0198",
+      "owner_id": "ae3",
+      "type": "reunion",
+      "at": "2026-12-12T11:00:00",
+      "subject": "Point projet",
+      "body": "revue du cahier des charges client. besoin de personnalisation identifié."
+    },
+    {
+      "id": "A-4951",
+      "deal_id": "D-0095",
+      "contact_id": "P-0198",
+      "owner_id": "ae3",
+      "type": "note",
+      "at": "2026-11-25T16:00:00",
+      "subject": "Note de suivi",
+      "body": "Interlocuteur indisponible cette semaine, RDV calé le 12/12."
+    },
+    {
+      "id": "A-4952",
+      "deal_id": "D-0083",
+      "contact_id": "P-0224",
+      "owner_id": "ae4",
+      "type": "reunion",
+      "at": "2026-12-18T14:00:00",
+      "subject": "RDV technique",
+      "body": "rdv technique de validation. intégration confirmée. go pr signature."
+    },
+    {
+      "id": "A-4953",
+      "deal_id": "D-0083",
+      "contact_id": "P-0224",
+      "owner_id": "ae4",
+      "type": "note",
+      "at": "2026-11-25T14:00:00",
+      "subject": "Note de suivi",
+      "body": "Client en déplacement, reprise prévue le 18/12."
+    },
+    {
+      "id": "A-4954",
+      "deal_id": "D-0019",
+      "contact_id": "P-0283",
+      "owner_id": "ae3",
+      "type": "reunion",
+      "at": "2026-11-24T15:00:00",
+      "subject": "Présentation équipe",
+      "body": "présentation Nova aux parties prenantes. retours positifs. budget en discussion."
+    },
+    {
+      "id": "A-4955",
+      "deal_id": "D-0011",
+      "contact_id": "P-0053",
+      "owner_id": "ae1",
+      "type": "reunion",
+      "at": "2026-11-21T16:00:00",
+      "subject": "Présentation équipe",
+      "body": "présentation Nova aux parties prenantes. retours positifs. budget en discussion."
+    },
+    {
+      "id": "A-4956",
+      "deal_id": "D-0084",
+      "contact_id": "P-0304",
+      "owner_id": "ae2",
+      "type": "reunion",
+      "at": "2026-11-22T09:00:00",
+      "subject": "Présentation solution",
+      "body": "présentation offre finale au comité. décision attendue d'ici 2 semaines."
+    },
+    {
+      "id": "A-4957",
+      "deal_id": "D-0003",
+      "contact_id": "P-0418",
+      "owner_id": "ae2",
+      "type": "appel",
+      "at": "2026-11-25T12:00:00",
+      "subject": "Relance offre",
+      "body": "relance proposition. client toujours intéressé, attend validation DAF."
+    },
+    {
+      "id": "A-4958",
+      "deal_id": "D-0083",
+      "contact_id": "P-0224",
+      "owner_id": "ae4",
+      "type": "reunion",
+      "at": "2026-11-25T11:00:00",
+      "subject": "Point projet",
+      "body": "revue finale contrat. 1 clause SLA à ajuster. à renvoyer sous 48h."
+    },
+    {
+      "id": "A-4959",
+      "deal_id": "D-0059",
+      "contact_id": "P-0222",
+      "owner_id": "ae2",
+      "type": "note",
+      "at": "2026-11-23T13:00:00",
+      "subject": "Observation",
+      "body": "dossier chaud : réorg interne en cours, décision accélérée possible."
+    },
+    {
+      "id": "A-4960",
+      "deal_id": "D-0101",
+      "contact_id": "P-0329",
+      "owner_id": "ae1",
+      "type": "reunion",
+      "at": "2026-11-20T09:00:00",
+      "subject": "Réunion de suivi proposition",
+      "body": "atelier de revue de l'offre. client demande ajustements sur le périmètre."
+    },
+    {
+      "id": "A-4961",
+      "deal_id": "D-0064",
+      "contact_id": "P-0175",
+      "owner_id": "ae3",
+      "type": "email",
+      "at": "2026-11-23T11:00:00",
+      "subject": "Envoi contrat pour signature",
+      "body": "Ci-joint le contrat pour signature électronique. N'hésitez pas si des questions."
+    },
+    {
+      "id": "A-4962",
+      "deal_id": "D-0100",
+      "contact_id": "P-0024",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-11-19T13:00:00",
+      "subject": "Note de suivi",
+      "body": "dossier en bonne voie. budget validé. préparer démo adaptée."
+    },
+    {
+      "id": "A-4963",
+      "deal_id": "D-0016",
+      "contact_id": "P-0046",
+      "owner_id": "ae3",
+      "type": "appel",
+      "at": "2026-11-20T13:00:00",
+      "subject": "Appel de qualification",
+      "body": "qualification avancée. besoin technique = intégration ERP sage."
+    },
+    {
+      "id": "A-4964",
+      "deal_id": "D-0029",
+      "contact_id": "P-0034",
+      "owner_id": "ae4",
+      "type": "note",
+      "at": "2026-11-23T11:00:00",
+      "subject": "Point situation",
+      "body": "signature prévue cette semaine. tous les points réglés. deal fait."
+    },
+    {
+      "id": "A-4965",
+      "deal_id": "D-0010",
+      "contact_id": "P-0247",
+      "owner_id": "ae1",
+      "type": "reunion",
+      "at": "2026-11-21T10:00:00",
+      "subject": "Présentation solution",
+      "body": "présentation complète. questions sur l'API et l'intégration. rdv suivi fixé."
+    },
+    {
+      "id": "A-4966",
+      "deal_id": "D-0043",
+      "contact_id": "P-0116",
+      "owner_id": "ae4",
+      "type": "reunion",
+      "at": "2026-11-22T10:00:00",
+      "subject": "Démo plateforme Nova",
+      "body": "démo produit, focus sur le reporting. impact fort pr le responsable exploitation."
+    },
+    {
+      "id": "A-4967",
+      "deal_id": "D-0084",
+      "contact_id": "P-0304",
+      "owner_id": "ae2",
+      "type": "email",
+      "at": "2026-11-20T13:00:00",
+      "subject": "Suivi demande",
+      "body": "Avez-vous eu le temps de regarder notre devis ? Je suis disponible pour en parler."
+    },
+    {
+      "id": "A-4968",
+      "deal_id": "D-0039",
+      "contact_id": "P-0303",
+      "owner_id": "ae2",
+      "type": "note",
+      "at": "2026-11-19T14:00:00",
+      "subject": "Contexte deal",
+      "body": "deal stratégique pr cette région. à suivre en priorité."
+    },
+    {
+      "id": "A-4969",
+      "deal_id": "D-0035",
+      "contact_id": "P-0153",
+      "owner_id": "ae3",
+      "type": "appel",
+      "at": "2026-11-24T11:00:00",
+      "subject": "Appel de qualification",
+      "body": "échange poussé sur les critères d'achat. 3 décideurs impliqués."
+    },
+    {
+      "id": "A-4970",
+      "deal_id": "D-0100",
+      "contact_id": "P-0024",
+      "owner_id": "ae1",
+      "type": "appel",
+      "at": "2026-11-21T09:00:00",
+      "subject": "Point rapide",
+      "body": "appel rapide. client valide le besoin. go pr démo la semaine pro."
+    },
+    {
+      "id": "A-4971",
+      "deal_id": "D-0044",
+      "contact_id": "P-0141",
+      "owner_id": "ae4",
+      "type": "email",
+      "at": "2026-11-21T15:00:00",
+      "subject": "Suivi demande",
+      "body": "Je reviens vers vous concernant la signature du contrat. Avez-vous des questions ?"
+    },
+    {
+      "id": "A-4972",
+      "deal_id": "D-0062",
+      "contact_id": "P-0325",
+      "owner_id": "ae3",
+      "type": "note",
+      "at": "2026-11-23T12:00:00",
+      "subject": "Observation",
+      "body": "concurrence : Praxedo et Synchroteam identifiés. notre PoC = avantage clé."
+    },
+    {
+      "id": "A-4973",
+      "deal_id": "D-0070",
+      "contact_id": "P-0069",
+      "owner_id": "ae4",
+      "type": "email",
+      "at": "2026-11-21T13:00:00",
+      "subject": "Suivi demande",
+      "body": "Bonjour, je fais suite à mon message de la semaine dernière. Avez-vous pu consulter nos informations ?"
+    },
+    {
+      "id": "A-4974",
+      "deal_id": "D-0036",
+      "contact_id": "P-0429",
+      "owner_id": "ae3",
+      "type": "note",
+      "at": "2026-11-19T10:00:00",
+      "subject": "Point situation",
+      "body": "offre finale envoyée. client en dernière phase de décision. suivi actif."
+    },
+    {
+      "id": "A-4975",
+      "deal_id": "D-0044",
+      "contact_id": "P-0141",
+      "owner_id": "ae4",
+      "type": "reunion",
+      "at": "2026-11-19T13:00:00",
+      "subject": "Réunion de closing",
+      "body": "closing meeting. client prêt à signer. contrat à envoyer demain."
+    },
+    {
+      "id": "A-4976",
+      "deal_id": "D-0002",
+      "contact_id": "P-0124",
+      "owner_id": "ae1",
+      "type": "appel",
+      "at": "2026-11-23T09:00:00",
+      "subject": "Point rapide",
+      "body": "client a reçu la brochure. intéressé. rdv à caler."
+    },
+    {
+      "id": "A-4977",
+      "deal_id": "D-0004",
+      "contact_id": "P-0311",
+      "owner_id": "ae4",
+      "type": "appel",
+      "at": "2026-11-22T09:00:00",
+      "subject": "Point rapide",
+      "body": "échange rapide, confirme son intérêt. envoyer docu ce soir."
+    },
+    {
+      "id": "A-4978",
+      "deal_id": "D-0105",
+      "contact_id": "P-0283",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-11-24T12:00:00",
+      "subject": "Observation",
+      "body": "dossier chaud : réorg interne en cours, décision accélérée possible."
+    },
+    {
+      "id": "A-4979",
+      "deal_id": "D-0013",
+      "contact_id": "P-0219",
+      "owner_id": "ae2",
+      "type": "appel",
+      "at": "2026-11-21T12:00:00",
+      "subject": "Point rapide",
+      "body": "échange de 10 min. projet cadré côté client. besoin réel."
+    },
+    {
+      "id": "A-4980",
+      "deal_id": "D-0036",
+      "contact_id": "P-0429",
+      "owner_id": "ae3",
+      "type": "note",
+      "at": "2026-11-25T14:00:00",
+      "subject": "CR appel",
+      "body": "suivi proposition. client compare 2 offres. notre tarif favorable."
+    },
+    {
+      "id": "A-4981",
+      "deal_id": "D-0073",
+      "contact_id": "P-0042",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-11-19T14:00:00",
+      "subject": "Note de suivi",
+      "body": "PoC en cours. résultats attendus la semaine prochaine."
+    },
+    {
+      "id": "A-4982",
+      "deal_id": "D-0069",
+      "contact_id": "P-0116",
+      "owner_id": "ae3",
+      "type": "appel",
+      "at": "2026-11-22T12:00:00",
+      "subject": "Point avancement",
+      "body": "appel de suivi. démo bien reçue. prochaine étape = offre."
+    },
+    {
+      "id": "A-4983",
+      "deal_id": "D-0010",
+      "contact_id": "P-0247",
+      "owner_id": "ae1",
+      "type": "appel",
+      "at": "2026-11-21T11:00:00",
+      "subject": "Relance téléphonique",
+      "body": "relance post-démo. client toujours motivé. attend décision direction."
+    },
+    {
+      "id": "A-4984",
+      "deal_id": "D-0083",
+      "contact_id": "P-0224",
+      "owner_id": "ae4",
+      "type": "reunion",
+      "at": "2026-11-24T14:00:00",
+      "subject": "Réunion de closing",
+      "body": "closing meeting. client prêt à signer. contrat à envoyer demain."
+    },
+    {
+      "id": "A-4985",
+      "deal_id": "D-0106",
+      "contact_id": "P-0156",
+      "owner_id": "ae2",
+      "type": "appel",
+      "at": "2026-11-20T09:00:00",
+      "subject": "Point avancement",
+      "body": "appel de suivi offre. client ok globalement. quelques points à clarifier."
+    },
+    {
+      "id": "A-4986",
+      "deal_id": "D-0063",
+      "contact_id": "P-0431",
+      "owner_id": "ae1",
+      "type": "reunion",
+      "at": "2026-11-22T15:00:00",
+      "subject": "Point projet",
+      "body": "échange initial sur les enjeux métier. pb de traçabilité mentionné. à creuser."
+    },
+    {
+      "id": "A-4987",
+      "deal_id": "D-0020",
+      "contact_id": "P-0304",
+      "owner_id": "ae3",
+      "type": "appel",
+      "at": "2026-11-23T09:00:00",
+      "subject": "Appel de suivi",
+      "body": "retour sur le devis. client ok sur le fond, négocie les délais."
+    },
+    {
+      "id": "A-4988",
+      "deal_id": "D-0048",
+      "contact_id": "P-0429",
+      "owner_id": "ae2",
+      "type": "reunion",
+      "at": "2026-11-24T11:00:00",
+      "subject": "RDV découverte",
+      "body": "première réunion de découverte. interlocuteur DRH + responsable terrain. besoin clair."
+    },
+    {
+      "id": "A-4989",
+      "deal_id": "D-0090",
+      "contact_id": "P-0401",
+      "owner_id": "ae2",
+      "type": "email",
+      "at": "2026-11-21T14:00:00",
+      "subject": "Suite à notre échange",
+      "body": "Merci pour notre échange. Je vous confirme que nous pouvons adapter la solution à vos contraintes."
+    },
+    {
+      "id": "A-4990",
+      "deal_id": "D-0081",
+      "contact_id": "P-0160",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-11-23T13:00:00",
+      "subject": "Note interne",
+      "body": "interlocuteur sympa mais pas décideur. identifier le bon contact."
+    },
+    {
+      "id": "A-4991",
+      "deal_id": "D-0107",
+      "contact_id": "P-0026",
+      "owner_id": "ae5",
+      "type": "email",
+      "at": "2026-11-21T16:00:00",
+      "subject": "Confirmation RDV",
+      "body": "Je confirme notre rendez-vous de découverte. Merci de me faire signe si besoin de décaler."
+    },
+    {
+      "id": "A-4992",
+      "deal_id": "D-0058",
+      "contact_id": "P-0288",
+      "owner_id": "ae1",
+      "type": "appel",
+      "at": "2026-11-25T09:00:00",
+      "subject": "Appel de suivi",
+      "body": "suivi démo. pas de décision avant le CODIR. délai 2 sem."
+    },
+    {
+      "id": "A-4993",
+      "deal_id": "D-0062",
+      "contact_id": "P-0325",
+      "owner_id": "ae3",
+      "type": "appel",
+      "at": "2026-11-19T10:00:00",
+      "subject": "Appel de suivi",
+      "body": "suivi démo. pas de décision avant le CODIR. délai 2 sem."
+    },
+    {
+      "id": "A-4994",
+      "deal_id": "D-0077",
+      "contact_id": "P-0073",
+      "owner_id": "ae1",
+      "type": "appel",
+      "at": "2026-11-23T15:00:00",
+      "subject": "Point rapide",
+      "body": "échange rapide. client ok, attend version finale du contrat."
+    },
+    {
+      "id": "A-4995",
+      "deal_id": "D-0052",
+      "contact_id": "P-0071",
+      "owner_id": "ae4",
+      "type": "email",
+      "at": "2026-11-20T10:00:00",
+      "subject": "Suivi demande",
+      "body": "Avez-vous eu le temps de regarder notre devis ? Je suis disponible pour en parler."
+    },
+    {
+      "id": "A-4996",
+      "deal_id": "D-0019",
+      "contact_id": "P-0283",
+      "owner_id": "ae3",
+      "type": "reunion",
+      "at": "2026-11-23T11:00:00",
+      "subject": "Réunion de qualification",
+      "body": "réunion qualification avec DAF et RSI. budget cadré. go pour démo."
+    },
+    {
+      "id": "A-4997",
+      "deal_id": "D-0092",
+      "contact_id": "P-0419",
+      "owner_id": "ae3",
+      "type": "reunion",
+      "at": "2026-11-21T13:00:00",
+      "subject": "Réunion de closing",
+      "body": "dernière réunion avant signature. tous les points contractuels validés."
+    },
+    {
+      "id": "A-4998",
+      "deal_id": "D-0059",
+      "contact_id": "P-0221",
+      "owner_id": "ae2",
+      "type": "reunion",
+      "at": "2026-11-22T10:00:00",
+      "subject": "RDV découverte",
+      "body": "rdv dc réalisé. 3 participants côté client. besoin bien cadré. suite: envoyer docu."
+    },
+    {
+      "id": "A-4999",
+      "deal_id": "D-0092",
+      "contact_id": "P-0418",
+      "owner_id": "ae3",
+      "type": "reunion",
+      "at": "2026-11-19T13:00:00",
+      "subject": "Réunion de négociation",
+      "body": "négo avancée. client demande remise de 10%. on peut aller à 7%."
+    },
+    {
+      "id": "A-5000",
+      "deal_id": "D-0066",
+      "contact_id": "P-0263",
+      "owner_id": "ae1",
+      "type": "reunion",
+      "at": "2026-11-24T09:00:00",
+      "subject": "Point projet",
+      "body": "revue finale contrat. 1 clause SLA à ajuster. à renvoyer sous 48h."
+    },
+    {
+      "id": "A-5001",
+      "deal_id": "D-0013",
+      "contact_id": "P-0219",
+      "owner_id": "ae2",
+      "type": "reunion",
+      "at": "2026-11-20T13:00:00",
+      "subject": "Point projet",
+      "body": "échange initial sur les enjeux métier. pb de traçabilité mentionné. à creuser."
+    },
+    {
+      "id": "A-5002",
+      "deal_id": "D-0092",
+      "contact_id": "P-0419",
+      "owner_id": "ae3",
+      "type": "reunion",
+      "at": "2026-11-19T09:00:00",
+      "subject": "Réunion de closing",
+      "body": "réunion de closing, derniers points contractuels réglés. signature imminente."
+    },
+    {
+      "id": "A-5003",
+      "deal_id": "D-0028",
+      "contact_id": "P-0325",
+      "owner_id": "ae1",
+      "type": "email",
+      "at": "2026-11-21T15:00:00",
+      "subject": "Envoi documentation",
+      "body": "Bonjour, comme promis je vous fais parvenir notre plaquette commerciale. Bonne réception."
+    },
+    {
+      "id": "A-5004",
+      "deal_id": "D-0082",
+      "contact_id": "P-0029",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-11-23T16:00:00",
+      "subject": "CR démo",
+      "body": "démo bien passée. client convaincu sur la planif, moins sur le mobile. à approfondir."
+    },
+    {
+      "id": "A-5005",
+      "deal_id": "D-0001",
+      "contact_id": "P-0362",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-08T10:00:00",
+      "subject": "Vérifier les specs",
+      "body": "Vérifier les besoins spécifiques mentionnés lors du premier appel."
+    },
+    {
+      "id": "A-5006",
+      "deal_id": "D-0002",
+      "contact_id": "P-0124",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-01T14:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler si pas de retour sous 5 jours."
+    },
+    {
+      "id": "A-5007",
+      "deal_id": "D-0010",
+      "contact_id": "P-0247",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-06T15:00:00",
+      "subject": "Vérifier les specs",
+      "body": "Contacter le service technique pour validation de l'intégration ERP."
+    },
+    {
+      "id": "A-5008",
+      "deal_id": "D-0018",
+      "contact_id": "P-0163",
+      "owner_id": "ae4",
+      "type": "tache",
+      "at": "2026-12-03T14:00:00",
+      "subject": "Préparer la démo",
+      "body": "Préparer la présentation pour le CODIR."
+    },
+    {
+      "id": "A-5009",
+      "deal_id": "D-0023",
+      "contact_id": "P-0169",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-12T09:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler le contact pour confirmer le budget et les décideurs."
+    },
+    {
+      "id": "A-5011",
+      "deal_id": "D-0037",
+      "contact_id": "P-0163",
+      "owner_id": "ae2",
+      "type": "tache",
+      "at": "2026-12-01T16:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler pour faire le point sur les retours de la démo."
+    },
+    {
+      "id": "A-5012",
+      "deal_id": "D-0048",
+      "contact_id": "P-0429",
+      "owner_id": "ae2",
+      "type": "tache",
+      "at": "2026-12-11T12:00:00",
+      "subject": "Envoyer le recap",
+      "body": "Envoyer la brochure de présentation demandée."
+    },
+    {
+      "id": "A-5013",
+      "deal_id": "D-0050",
+      "contact_id": "P-0015",
+      "owner_id": "ae2",
+      "type": "tache",
+      "at": "2026-12-09T09:00:00",
+      "subject": "Préparer la démo",
+      "body": "Préparer la démo personnalisée pour ce client avant vendredi."
+    },
+    {
+      "id": "A-5014",
+      "deal_id": "D-0061",
+      "contact_id": "P-0348",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-01T14:00:00",
+      "subject": "Envoyer le recap",
+      "body": "Envoyer les références clients demandées lors de notre échange."
+    },
+    {
+      "id": "A-5015",
+      "deal_id": "D-0068",
+      "contact_id": "P-0281",
+      "owner_id": "ae2",
+      "type": "tache",
+      "at": "2026-12-07T12:00:00",
+      "subject": "Vérifier les specs",
+      "body": "Préparer le dossier technique pour l'appel d'offres."
+    },
+    {
+      "id": "A-5016",
+      "deal_id": "D-0071",
+      "contact_id": "P-0290",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-14T13:00:00",
+      "subject": "Préparer la démo",
+      "body": "Préparer la démo technique personnalisée pour ce profil client."
+    },
+    {
+      "id": "A-5017",
+      "deal_id": "D-0078",
+      "contact_id": "P-0410",
+      "owner_id": "ae3",
+      "type": "tache",
+      "at": "2026-12-15T14:00:00",
+      "subject": "Préparer la démo",
+      "body": "Préparer la démo technique personnalisée pour ce profil client.",
+      "status": "cancelled"
+    },
+    {
+      "id": "A-5018",
+      "deal_id": "D-0082",
+      "contact_id": "P-0030",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-06T16:00:00",
+      "subject": "Préparer la démo",
+      "body": "Organiser le PoC et préparer l'environnement de démonstration."
+    },
+    {
+      "id": "A-5019",
+      "deal_id": "D-0094",
+      "contact_id": "P-0403",
+      "owner_id": "ae4",
+      "type": "tache",
+      "at": "2026-12-10T09:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler pour faire le point sur les retours de la démo."
+    },
+    {
+      "id": "A-5020",
+      "deal_id": "D-0098",
+      "contact_id": "P-0398",
+      "owner_id": "ae5",
+      "type": "tache",
+      "at": "2026-12-16T15:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler pour faire le point sur la réception de l'offre."
+    },
+    {
+      "id": "A-5021",
+      "deal_id": "D-0099",
+      "contact_id": "P-0059",
+      "owner_id": "ae4",
+      "type": "tache",
+      "at": "2026-12-15T13:00:00",
+      "subject": "Vérifier les specs",
+      "body": "Vérifier les besoins spécifiques mentionnés lors du premier appel."
+    },
+    {
+      "id": "A-5022",
+      "deal_id": "D-0100",
+      "contact_id": "P-0024",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-04T14:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler le contact pour confirmer le budget et les décideurs."
+    },
+    {
+      "id": "A-5023",
+      "deal_id": "D-0105",
+      "contact_id": "P-0283",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-15T09:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler si pas de retour sous 5 jours."
+    },
+    {
+      "id": "A-5024",
+      "deal_id": "D-0106",
+      "contact_id": "P-0156",
+      "owner_id": "ae2",
+      "type": "tache",
+      "at": "2026-12-14T16:00:00",
+      "subject": "Envoyer la proposition",
+      "body": "Envoyer la proposition commerciale révisée avant vendredi."
+    },
+    {
+      "id": "A-5025",
+      "deal_id": "D-0108",
+      "contact_id": "P-0318",
+      "owner_id": "ae5",
+      "type": "tache",
+      "at": "2026-12-14T15:00:00",
+      "subject": "Vérifier les specs",
+      "body": "Vérifier les besoins spécifiques mentionnés lors du premier appel."
+    },
+    {
+      "id": "A-5026",
+      "deal_id": "D-0110",
+      "contact_id": "P-0355",
+      "owner_id": "ae5",
+      "type": "tache",
+      "at": "2026-12-13T13:00:00",
+      "subject": "Envoyer le recap",
+      "body": "Envoyer la brochure de présentation demandée."
+    },
+    {
+      "id": "A-5027",
+      "deal_id": "D-0077",
+      "contact_id": "P-0073",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-11-26T18:00:00",
+      "subject": "Deal gagné",
+      "body": "Contrat signé."
+    },
+    {
+      "id": "A-5028",
+      "deal_id": "D-0029",
+      "contact_id": "P-0034",
+      "owner_id": "ae4",
+      "type": "note",
+      "at": "2026-11-30T18:00:00",
+      "subject": "Deal gagné",
+      "body": "Contrat signé."
+    },
+    {
+      "id": "A-5029",
+      "deal_id": "D-0012",
+      "contact_id": "P-0235",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-12-02T18:00:00",
+      "subject": "Deal perdu",
+      "body": "Perdu – produit inadapté au besoin final."
+    },
+    {
+      "id": "A-5030",
+      "deal_id": "D-0079",
+      "contact_id": "P-0108",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-11-29T18:00:00",
+      "subject": "Deal perdu",
+      "body": "Perdu – produit inadapté au besoin final."
+    },
+    {
+      "id": "A-5031",
+      "deal_id": "D-0089",
+      "contact_id": "P-0001",
+      "owner_id": "ae2",
+      "type": "note",
+      "at": "2026-12-01T18:00:00",
+      "subject": "Deal perdu",
+      "body": "Perdu – concurrent retenu."
+    },
+    {
+      "id": "A-5032",
+      "deal_id": "D-0009",
+      "contact_id": "P-0186",
+      "owner_id": "ae4",
+      "type": "note",
+      "at": "2026-12-02T18:00:00",
+      "subject": "Deal perdu",
+      "body": "Perdu – concurrent retenu."
+    },
+    {
+      "id": "A-5033",
+      "deal_id": "D-0013",
+      "contact_id": "P-0218",
+      "owner_id": "ae2",
+      "type": "tache",
+      "at": "2026-12-25T14:00:00",
+      "subject": "Préparer la démo",
+      "body": "Préparer la démo personnalisée pour ce client avant vendredi."
+    },
+    {
+      "id": "A-5034",
+      "deal_id": "D-0015",
+      "contact_id": "P-0369",
+      "owner_id": "ae3",
+      "type": "tache",
+      "at": "2026-12-16T15:00:00",
+      "subject": "Préparer la démo",
+      "body": "Préparer la démo technique personnalisée pour ce profil client."
+    },
+    {
+      "id": "A-5035",
+      "deal_id": "D-0011",
+      "contact_id": "P-0053",
+      "owner_id": "ae1",
+      "type": "reunion",
+      "at": "2026-11-28T11:00:00",
+      "subject": "Présentation solution",
+      "body": "présentation complète. questions sur l'API et l'intégration. rdv suivi fixé."
+    },
+    {
+      "id": "A-5036",
+      "deal_id": "D-0011",
+      "contact_id": "P-0053",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-15T09:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler le contact pour retour sur le devis avant fin de semaine."
+    },
+    {
+      "id": "A-5037",
+      "deal_id": "D-0006",
+      "contact_id": "P-0427",
+      "owner_id": "ae2",
+      "type": "tache",
+      "at": "2026-12-20T14:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler pour faire le point sur les retours de la démo."
+    },
+    {
+      "id": "A-5038",
+      "deal_id": "D-0050",
+      "contact_id": "P-0016",
+      "owner_id": "ae2",
+      "type": "tache",
+      "at": "2026-12-21T12:00:00",
+      "subject": "Préparer la démo",
+      "body": "Organiser le PoC et préparer l'environnement de démonstration."
+    },
+    {
+      "id": "A-5039",
+      "deal_id": "D-0065",
+      "contact_id": "P-0366",
+      "owner_id": "ae5",
+      "type": "reunion",
+      "at": "2026-12-01T13:00:00",
+      "subject": "Point projet",
+      "body": "atelier technique post-démo. besoin de personnalisation confirmé. PoC validé."
+    },
+    {
+      "id": "A-5040",
+      "deal_id": "D-0065",
+      "contact_id": "P-0366",
+      "owner_id": "ae5",
+      "type": "tache",
+      "at": "2026-12-12T09:00:00",
+      "subject": "Envoyer la proposition",
+      "body": "Envoyer la proposition commerciale révisée avant vendredi."
+    },
+    {
+      "id": "A-5041",
+      "deal_id": "D-0075",
+      "contact_id": "P-0318",
+      "owner_id": "ae5",
+      "type": "tache",
+      "at": "2026-12-24T14:00:00",
+      "subject": "Préparer la démo",
+      "body": "Préparer la présentation pour le CODIR."
+    },
+    {
+      "id": "A-5042",
+      "deal_id": "D-0073",
+      "contact_id": "P-0041",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-10T10:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler pour faire le point sur la réception de l'offre."
+    },
+    {
+      "id": "A-5043",
+      "deal_id": "D-0104",
+      "contact_id": "P-0131",
+      "owner_id": "ae5",
+      "type": "tache",
+      "at": "2026-12-08T16:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler le contact pour retour sur la démo et prochaines étapes."
+    },
+    {
+      "id": "A-5044",
+      "deal_id": "D-0020",
+      "contact_id": "P-0304",
+      "owner_id": "ae3",
+      "type": "tache",
+      "at": "2026-12-07T10:00:00",
+      "subject": "Faire signer",
+      "body": "Envoyer le contrat final pour signature électronique."
+    },
+    {
+      "id": "A-5045",
+      "deal_id": "D-0036",
+      "contact_id": "P-0428",
+      "owner_id": "ae3",
+      "type": "tache",
+      "at": "2026-12-20T12:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler le contact pour confirmer la date de signature."
+    },
+    {
+      "id": "A-5046",
+      "deal_id": "D-0106",
+      "contact_id": "P-0158",
+      "owner_id": "ae2",
+      "type": "tache",
+      "at": "2026-12-08T13:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler le contact pour confirmer la date de signature."
+    },
+    {
+      "id": "A-5047",
+      "deal_id": "D-0308",
+      "contact_id": "P-0422",
+      "owner_id": "sdr2",
+      "type": "appel",
+      "at": "2026-11-28T14:00:00",
+      "subject": "Point rapide",
+      "body": "client ok pr avancer. pas dispo avant le 10."
+    },
+    {
+      "id": "A-5048",
+      "deal_id": "D-0308",
+      "contact_id": "P-0422",
+      "owner_id": "sdr2",
+      "type": "tache",
+      "at": "2026-12-15T11:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler le contact pour confirmer son intérêt et caler un RDV démo."
+    },
+    {
+      "id": "A-5049",
+      "deal_id": "D-0309",
+      "contact_id": "P-0277",
+      "owner_id": "sdr2",
+      "type": "appel",
+      "at": "2026-11-26T13:00:00",
+      "subject": "Point rapide",
+      "body": "client ok pr avancer. pas dispo avant le 10."
+    },
+    {
+      "id": "A-5050",
+      "deal_id": "D-0309",
+      "contact_id": "P-0277",
+      "owner_id": "sdr2",
+      "type": "tache",
+      "at": "2026-12-25T14:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler le contact pour confirmer son intérêt et caler un RDV démo."
+    },
+    {
+      "id": "A-5051",
+      "deal_id": "D-0310",
+      "contact_id": "P-0394",
+      "owner_id": "sdr1",
+      "type": "appel",
+      "at": "2026-11-27T11:00:00",
+      "subject": "Prise de contact",
+      "body": "premier échange froid. à réchauffer. relancer dans 2 sem."
+    },
+    {
+      "id": "A-5052",
+      "deal_id": "D-0310",
+      "contact_id": "P-0394",
+      "owner_id": "sdr1",
+      "type": "tache",
+      "at": "2026-12-21T12:00:00",
+      "subject": "Envoyer le recap",
+      "body": "Envoyer le résumé de notre premier échange avec les prochaines étapes."
+    },
+    {
+      "id": "A-5053",
+      "deal_id": "D-0311",
+      "contact_id": "P-0045",
+      "owner_id": "sdr1",
+      "type": "appel",
+      "at": "2026-11-30T10:00:00",
+      "subject": "Appel découverte",
+      "body": "pas joignable. msg laissé, rappeler demain matin."
+    },
+    {
+      "id": "A-5054",
+      "deal_id": "D-0311",
+      "contact_id": "P-0045",
+      "owner_id": "sdr1",
+      "type": "tache",
+      "at": "2026-12-19T15:00:00",
+      "subject": "Envoyer le recap",
+      "body": "Envoyer la brochure de présentation demandée."
+    },
+    {
+      "id": "A-5055",
+      "deal_id": "D-0302",
+      "contact_id": "P-0076",
+      "owner_id": "sdr2",
+      "type": "note",
+      "at": "2026-12-02T12:00:00",
+      "subject": "Report RDV",
+      "body": "Report à la demande du client, RDV calé le 23/12"
+    },
+    {
+      "id": "A-5056",
+      "deal_id": "D-0302",
+      "contact_id": "P-0076",
+      "owner_id": "sdr2",
+      "type": "tache",
+      "at": "2026-12-14T09:00:00",
+      "subject": "Envoyer le recap",
+      "body": "Envoyer le résumé de notre premier échange avec les prochaines étapes."
+    },
+    {
+      "id": "A-5057",
+      "deal_id": "D-0034",
+      "contact_id": "P-0371",
+      "owner_id": "ae5",
+      "type": "note",
+      "at": "2026-12-02T11:00:00",
+      "subject": "Report RDV",
+      "body": "Report à la demande du client, RDV calé le 12/12"
+    },
+    {
+      "id": "A-5058",
+      "deal_id": "D-0034",
+      "contact_id": "P-0371",
+      "owner_id": "ae5",
+      "type": "reunion",
+      "at": "2026-12-12T10:00:00",
+      "subject": "RDV technique",
+      "body": "rdv de suivi, deal toujours chaud. concurrence mentionnée (SFR Business)."
+    },
+    {
+      "id": "A-5059",
+      "deal_id": "D-0016",
+      "contact_id": "P-0046",
+      "owner_id": "ae3",
+      "type": "note",
+      "at": "2026-12-02T13:00:00",
+      "subject": "Report RDV",
+      "body": "Report à la demande du client, RDV calé le 18/12"
+    },
+    {
+      "id": "A-5060",
+      "deal_id": "D-0016",
+      "contact_id": "P-0046",
+      "owner_id": "ae3",
+      "type": "reunion",
+      "at": "2026-12-19T11:00:00",
+      "subject": "Point projet",
+      "body": "mapping des intervenants réalisé. 4 personnes impliquées. processus clair."
+    },
+    {
+      "id": "A-5061",
+      "deal_id": "D-0078",
+      "contact_id": "P-0411",
+      "owner_id": "ae3",
+      "type": "note",
+      "at": "2026-12-02T14:00:00",
+      "subject": "Report RDV",
+      "body": "RDV décalé au 23/12, client en déplacement"
+    },
+    {
+      "id": "A-5062",
+      "deal_id": "D-0078",
+      "contact_id": "P-0410",
+      "owner_id": "ae3",
+      "type": "tache",
+      "at": "2026-12-26T09:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler le contact pour retour sur la démo et prochaines étapes."
+    },
+    {
+      "id": "A-5063",
+      "deal_id": "D-0025",
+      "contact_id": "P-0074",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-11-30T11:00:00",
+      "subject": "Mise à jour date de clôture",
+      "body": "Date de clôture repoussée au 12/01, validation interne en cours."
+    },
+    {
+      "id": "A-5064",
+      "deal_id": "D-0030",
+      "contact_id": "P-0288",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-11-29T15:00:00",
+      "subject": "Mise à jour date de clôture",
+      "body": "Date de clôture repoussée au 27/02, validation interne en cours."
+    },
+    {
+      "id": "A-5065",
+      "deal_id": "D-0007",
+      "contact_id": "P-0416",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-11-28T13:00:00",
+      "subject": "Mise à jour date de clôture",
+      "body": "Date de clôture repoussée au 22/02, validation interne en cours."
+    },
+    {
+      "id": "A-5066",
+      "deal_id": "D-0028",
+      "contact_id": "P-0325",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-11-28T15:00:00",
+      "subject": "Mise à jour date de clôture",
+      "body": "Date de clôture repoussée au 10/01, validation interne en cours."
+    },
+    {
+      "id": "A-5067",
+      "deal_id": "D-0024",
+      "contact_id": "P-0067",
+      "owner_id": "ae4",
+      "type": "note",
+      "at": "2026-12-02T11:00:00",
+      "subject": "Mise à jour date de clôture",
+      "body": "Date de clôture repoussée au 19/02, validation interne en cours."
+    },
+    {
+      "id": "A-5068",
+      "deal_id": "D-0057",
+      "contact_id": "P-0220",
+      "owner_id": "ae4",
+      "type": "reunion",
+      "at": "2026-12-26T09:00:00",
+      "subject": "Présentation équipe",
+      "body": "réunion avec équipe dirigeante. décision = comité de direction. délai 1 mois."
+    },
+    {
+      "id": "A-5069",
+      "deal_id": "D-0057",
+      "contact_id": "P-0220",
+      "owner_id": "ae4",
+      "type": "note",
+      "at": "2026-12-02T16:00:00",
+      "subject": "Note de suivi",
+      "body": "Interlocuteur indisponible cette semaine, RDV calé le 26/12."
+    },
+    {
+      "id": "A-5070",
+      "deal_id": "D-0095",
+      "contact_id": "P-0198",
+      "owner_id": "ae3",
+      "type": "reunion",
+      "at": "2026-12-25T10:00:00",
+      "subject": "Présentation équipe",
+      "body": "réunion avec équipe dirigeante. décision = comité de direction. délai 1 mois."
+    },
+    {
+      "id": "A-5071",
+      "deal_id": "D-0095",
+      "contact_id": "P-0198",
+      "owner_id": "ae3",
+      "type": "note",
+      "at": "2026-12-02T10:00:00",
+      "subject": "Note de suivi",
+      "body": "Interlocuteur indisponible cette semaine, RDV calé le 25/12."
+    },
+    {
+      "id": "A-5072",
+      "deal_id": "D-0083",
+      "contact_id": "P-0224",
+      "owner_id": "ae4",
+      "type": "note",
+      "at": "2026-12-02T12:00:00",
+      "subject": "Note de suivi",
+      "body": "Client en déplacement, reprise prévue le 18/12. (cf. suivi 1)"
+    },
+    {
+      "id": "A-5073",
+      "deal_id": "D-0003",
+      "contact_id": "P-0418",
+      "owner_id": "ae2",
+      "type": "reunion",
+      "at": "2026-11-29T11:00:00",
+      "subject": "Point projet",
+      "body": "réunion de validation offre. sponsor interne très positif. go pr avancer."
+    },
+    {
+      "id": "A-5074",
+      "deal_id": "D-0002",
+      "contact_id": "P-0124",
+      "owner_id": "ae1",
+      "type": "reunion",
+      "at": "2026-11-27T09:00:00",
+      "subject": "RDV découverte",
+      "body": "première réunion de découverte. interlocuteur DRH + responsable terrain. besoin clair."
+    },
+    {
+      "id": "A-5075",
+      "deal_id": "D-0093",
+      "contact_id": "P-0020",
+      "owner_id": "ae2",
+      "type": "appel",
+      "at": "2026-11-30T15:00:00",
+      "subject": "Appel de négociation",
+      "body": "négo prix. client demande 10% de remise. ok pr 7%, final."
+    },
+    {
+      "id": "A-5076",
+      "deal_id": "D-0304",
+      "contact_id": "P-0100",
+      "owner_id": "sdr1",
+      "type": "reunion",
+      "at": "2026-12-01T10:00:00",
+      "subject": "RDV découverte",
+      "body": "rdv dc réalisé. 3 participants côté client. besoin bien cadré. suite: envoyer docu."
+    },
+    {
+      "id": "A-5077",
+      "deal_id": "D-0073",
+      "contact_id": "P-0041",
+      "owner_id": "ae1",
+      "type": "reunion",
+      "at": "2026-11-29T09:00:00",
+      "subject": "RDV technique",
+      "body": "rdv technique post-offre. validation des specs. client prêt à avancer."
+    },
+    {
+      "id": "A-5078",
+      "deal_id": "D-0004",
+      "contact_id": "P-0311",
+      "owner_id": "ae4",
+      "type": "email",
+      "at": "2026-11-27T13:00:00",
+      "subject": "Suivi demande",
+      "body": "Je reviens vers vous suite à notre échange du début de semaine. Des questions sur nos offres ?"
+    },
+    {
+      "id": "A-5079",
+      "deal_id": "D-0051",
+      "contact_id": "P-0179",
+      "owner_id": "ae3",
+      "type": "reunion",
+      "at": "2026-11-26T12:00:00",
+      "subject": "Réunion de démo",
+      "body": "démo réalisée. client très intéressé par le module planification. suite : envoyer offre."
+    },
+    {
+      "id": "A-5080",
+      "deal_id": "D-0014",
+      "contact_id": "P-0195",
+      "owner_id": "ae1",
+      "type": "email",
+      "at": "2026-12-01T12:00:00",
+      "subject": "Mise à jour tarifs",
+      "body": "Voici la grille tarifaire définitive intégrant la remise accordée. Bon pour accord ?"
+    },
+    {
+      "id": "A-5081",
+      "deal_id": "D-0022",
+      "contact_id": "P-0244",
+      "owner_id": "ae4",
+      "type": "reunion",
+      "at": "2026-12-01T11:00:00",
+      "subject": "Point projet",
+      "body": "revue du cahier des charges client. besoin de personnalisation identifié."
+    },
+    {
+      "id": "A-5082",
+      "deal_id": "D-0038",
+      "contact_id": "P-0103",
+      "owner_id": "ae2",
+      "type": "note",
+      "at": "2026-11-30T09:00:00",
+      "subject": "Observation",
+      "body": "dossier chaud : réorg interne en cours, décision accélérée possible."
+    },
+    {
+      "id": "A-5083",
+      "deal_id": "D-0066",
+      "contact_id": "P-0263",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-11-27T15:00:00",
+      "subject": "Note interne",
+      "body": "client ok sur tout. attente bon de commande. deal sûr."
+    },
+    {
+      "id": "A-5084",
+      "deal_id": "D-0011",
+      "contact_id": "P-0052",
+      "owner_id": "ae1",
+      "type": "email",
+      "at": "2026-12-02T10:00:00",
+      "subject": "Relance devis",
+      "body": "Bonjour, je souhaite m'assurer que vous avez bien reçu notre devis. Une question ?"
+    },
+    {
+      "id": "A-5085",
+      "deal_id": "D-0078",
+      "contact_id": "P-0410",
+      "owner_id": "ae3",
+      "type": "appel",
+      "at": "2026-11-28T11:00:00",
+      "subject": "Point avancement",
+      "body": "appel technique post-démo. questions sur les APIs. réponse envoyée."
+    },
+    {
+      "id": "A-5086",
+      "deal_id": "D-0069",
+      "contact_id": "P-0116",
+      "owner_id": "ae3",
+      "type": "appel",
+      "at": "2026-11-26T11:00:00",
+      "subject": "Appel post-démo",
+      "body": "retour sur la démo. client impressionné par le module planif. questions sur le PoC."
+    },
+    {
+      "id": "A-5087",
+      "deal_id": "D-0015",
+      "contact_id": "P-0369",
+      "owner_id": "ae3",
+      "type": "appel",
+      "at": "2026-12-01T09:00:00",
+      "subject": "Appel post-démo",
+      "body": "appel de synthèse post-démo. client très positif. PoC demandé."
+    },
+    {
+      "id": "A-5088",
+      "deal_id": "D-0084",
+      "contact_id": "P-0304",
+      "owner_id": "ae2",
+      "type": "reunion",
+      "at": "2026-11-27T15:00:00",
+      "subject": "Réunion de suivi proposition",
+      "body": "revue proposition avec client. questions sur les conditions d'intégration. à clarifier."
+    },
+    {
+      "id": "A-5089",
+      "deal_id": "D-0105",
+      "contact_id": "P-0283",
+      "owner_id": "ae1",
+      "type": "email",
+      "at": "2026-11-26T14:00:00",
+      "subject": "Suite à notre échange",
+      "body": "Bonjour, suite à notre appel je vous transmets notre documentation de présentation. Bonne lecture."
+    },
+    {
+      "id": "A-5090",
+      "deal_id": "D-0055",
+      "contact_id": "P-0235",
+      "owner_id": "ae1",
+      "type": "email",
+      "at": "2026-11-30T11:00:00",
+      "subject": "Suite à notre échange",
+      "body": "Suite à notre dernière discussion, je vous confirme les conditions définitives. Contrat joint."
+    },
+    {
+      "id": "A-5091",
+      "deal_id": "D-0101",
+      "contact_id": "P-0330",
+      "owner_id": "ae1",
+      "type": "appel",
+      "at": "2026-12-02T09:00:00",
+      "subject": "Point avancement",
+      "body": "appel de suivi offre. client ok globalement. quelques points à clarifier."
+    },
+    {
+      "id": "A-5092",
+      "deal_id": "D-0048",
+      "contact_id": "P-0429",
+      "owner_id": "ae2",
+      "type": "reunion",
+      "at": "2026-12-02T15:00:00",
+      "subject": "Présentation équipe",
+      "body": "rdv initial sur site. visite des locaux et échange avec équipe terrain. très instructif."
+    },
+    {
+      "id": "A-5093",
+      "deal_id": "D-0043",
+      "contact_id": "P-0116",
+      "owner_id": "ae4",
+      "type": "note",
+      "at": "2026-12-02T09:00:00",
+      "subject": "Point situation",
+      "body": "PoC terminé avec succès. client valide le principe. à formaliser."
+    },
+    {
+      "id": "A-5094",
+      "deal_id": "D-0088",
+      "contact_id": "P-0169",
+      "owner_id": "ae1",
+      "type": "email",
+      "at": "2026-11-27T11:00:00",
+      "subject": "Suivi demande",
+      "body": "Bonjour, je fais suite à mon message de la semaine dernière. Avez-vous pu consulter nos informations ?"
+    },
+    {
+      "id": "A-5095",
+      "deal_id": "D-0040",
+      "contact_id": "P-0407",
+      "owner_id": "ae2",
+      "type": "appel",
+      "at": "2026-11-28T09:00:00",
+      "subject": "Prise de contact",
+      "body": "interlocuteur en congés jusque fin mois. rappeler le 2."
+    },
+    {
+      "id": "A-5096",
+      "deal_id": "D-0074",
+      "contact_id": "P-0435",
+      "owner_id": "ae2",
+      "type": "email",
+      "at": "2026-11-29T15:00:00",
+      "subject": "Envoi documentation",
+      "body": "Je vous transmets notre grille tarifaire indicative. Pas d'engagement à ce stade, juste pour cadrage."
+    },
+    {
+      "id": "A-5097",
+      "deal_id": "D-0310",
+      "contact_id": "P-0394",
+      "owner_id": "sdr1",
+      "type": "email",
+      "at": "2026-11-29T12:00:00",
+      "subject": "Envoi documentation",
+      "body": "Comme convenu, voici la brochure de présentation Nova. Je reste disponible pour tout échange."
+    },
+    {
+      "id": "A-5098",
+      "deal_id": "D-0301",
+      "contact_id": "P-0338",
+      "owner_id": "sdr2",
+      "type": "appel",
+      "at": "2026-11-26T12:00:00",
+      "subject": "Appel de suivi",
+      "body": "client revient de congés. ok pour rdv la semaine prochaine."
+    },
+    {
+      "id": "A-5099",
+      "deal_id": "D-0045",
+      "contact_id": "P-0199",
+      "owner_id": "ae3",
+      "type": "reunion",
+      "at": "2026-11-30T09:00:00",
+      "subject": "Réunion de démo",
+      "body": "démo réalisée. client très intéressé par le module planification. suite : envoyer offre."
+    },
+    {
+      "id": "A-5100",
+      "deal_id": "D-0074",
+      "contact_id": "P-0435",
+      "owner_id": "ae2",
+      "type": "appel",
+      "at": "2026-12-01T13:00:00",
+      "subject": "Point avancement",
+      "body": "échange avec DAF. budget ok autour de 16k. go pr démo."
+    },
+    {
+      "id": "A-5101",
+      "deal_id": "D-0310",
+      "contact_id": "P-0394",
+      "owner_id": "sdr1",
+      "type": "email",
+      "at": "2026-11-27T10:00:00",
+      "subject": "Envoi documentation",
+      "body": "Bonjour, comme promis je vous fais parvenir notre plaquette commerciale. Bonne réception."
+    },
+    {
+      "id": "A-5102",
+      "deal_id": "D-0018",
+      "contact_id": "P-0163",
+      "owner_id": "ae4",
+      "type": "reunion",
+      "at": "2026-12-01T12:00:00",
+      "subject": "RDV découverte",
+      "body": "rdv de qualification avancé. besoin confirmé sur toute la ligne."
+    },
+    {
+      "id": "A-5103",
+      "deal_id": "D-0016",
+      "contact_id": "P-0046",
+      "owner_id": "ae3",
+      "type": "note",
+      "at": "2026-11-26T15:00:00",
+      "subject": "Note interne",
+      "body": "concurrent Praxedo également sur le dossier. préparer argumentaire différenciant."
+    },
+    {
+      "id": "A-5104",
+      "deal_id": "D-0013",
+      "contact_id": "P-0219",
+      "owner_id": "ae2",
+      "type": "email",
+      "at": "2026-11-28T12:00:00",
+      "subject": "Suivi demande",
+      "body": "Bonjour, je souhaite faire le point sur votre projet. Une disponibilité cette semaine ?"
+    },
+    {
+      "id": "A-5105",
+      "deal_id": "D-0006",
+      "contact_id": "P-0426",
+      "owner_id": "ae2",
+      "type": "note",
+      "at": "2026-11-28T12:00:00",
+      "subject": "Note de suivi",
+      "body": "dossier en bonne voie. budget validé. préparer démo adaptée."
+    },
+    {
+      "id": "A-5106",
+      "deal_id": "D-0027",
+      "contact_id": "P-0191",
+      "owner_id": "ae5",
+      "type": "reunion",
+      "at": "2026-11-27T11:00:00",
+      "subject": "Réunion de qualification",
+      "body": "réunion qualification avec DAF et RSI. budget cadré. go pour démo."
+    },
+    {
+      "id": "A-5107",
+      "deal_id": "D-0050",
+      "contact_id": "P-0016",
+      "owner_id": "ae2",
+      "type": "note",
+      "at": "2026-12-01T14:00:00",
+      "subject": "Observation",
+      "body": "concurrence : Praxedo et Synchroteam identifiés. notre PoC = avantage clé."
+    },
+    {
+      "id": "A-5108",
+      "deal_id": "D-0016",
+      "contact_id": "P-0046",
+      "owner_id": "ae3",
+      "type": "email",
+      "at": "2026-12-02T13:00:00",
+      "subject": "Suite à notre échange",
+      "body": "Bonjour, comme convenu voici la documentation technique. Je reste disponible pour vos questions."
+    },
+    {
+      "id": "A-5109",
+      "deal_id": "D-0067",
+      "contact_id": "P-0369",
+      "owner_id": "ae2",
+      "type": "note",
+      "at": "2026-11-26T15:00:00",
+      "subject": "Note de suivi",
+      "body": "revue offre ok. client valide le périmètre. attente bon de commande."
+    },
+    {
+      "id": "A-5110",
+      "deal_id": "D-0066",
+      "contact_id": "P-0263",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-11-29T09:00:00",
+      "subject": "Note de suivi",
+      "body": "négo terminée. accord sur toutes les conditions. contrat à envoyer."
+    },
+    {
+      "id": "A-5111",
+      "deal_id": "D-0307",
+      "contact_id": "P-0261",
+      "owner_id": "sdr1",
+      "type": "note",
+      "at": "2026-11-26T15:00:00",
+      "subject": "Note interne",
+      "body": "client réfléchit encore. pas pressé. relancer dans 2 sem."
+    },
+    {
+      "id": "A-5112",
+      "deal_id": "D-0049",
+      "contact_id": "P-0287",
+      "owner_id": "ae4",
+      "type": "email",
+      "at": "2026-11-29T16:00:00",
+      "subject": "Suite à notre échange",
+      "body": "Suite à votre retour, je vous transmets notre offre révisée intégrant vos remarques."
+    },
+    {
+      "id": "A-5113",
+      "deal_id": "D-0109",
+      "contact_id": "P-0224",
+      "owner_id": "ae3",
+      "type": "email",
+      "at": "2026-12-02T11:00:00",
+      "subject": "Résumé appel",
+      "body": "Voici le résumé de notre appel et les points abordés. Prochaine étape : validation budget."
+    },
+    {
+      "id": "A-5114",
+      "deal_id": "D-0061",
+      "contact_id": "P-0348",
+      "owner_id": "ae1",
+      "type": "reunion",
+      "at": "2026-11-29T09:00:00",
+      "subject": "Point projet",
+      "body": "mapping des intervenants réalisé. 4 personnes impliquées. processus clair."
+    },
+    {
+      "id": "A-5115",
+      "deal_id": "D-0071",
+      "contact_id": "P-0289",
+      "owner_id": "ae1",
+      "type": "reunion",
+      "at": "2026-12-02T15:00:00",
+      "subject": "Présentation solution",
+      "body": "présentation PoC. résultats au-delà des attentes. décision attendue sous 1 sem."
+    },
+    {
+      "id": "A-5116",
+      "deal_id": "D-0094",
+      "contact_id": "P-0403",
+      "owner_id": "ae4",
+      "type": "email",
+      "at": "2026-11-28T11:00:00",
+      "subject": "Résumé appel",
+      "body": "Comme discuté, je vous transmets la documentation technique PoC. À vous lire."
+    },
+    {
+      "id": "A-5117",
+      "deal_id": "D-0069",
+      "contact_id": "P-0116",
+      "owner_id": "ae3",
+      "type": "note",
+      "at": "2026-12-02T11:00:00",
+      "subject": "Observation",
+      "body": "concurrent sur le dossier (Synchroteam). surveiller de près."
+    },
+    {
+      "id": "A-5118",
+      "deal_id": "D-0057",
+      "contact_id": "P-0219",
+      "owner_id": "ae4",
+      "type": "appel",
+      "at": "2026-11-26T11:00:00",
+      "subject": "Point rapide",
+      "body": "appel rapide. client valide le besoin. go pr démo la semaine pro."
+    },
+    {
+      "id": "A-5119",
+      "deal_id": "D-0093",
+      "contact_id": "P-0020",
+      "owner_id": "ae2",
+      "type": "reunion",
+      "at": "2026-12-02T13:00:00",
+      "subject": "Point projet",
+      "body": "revue finale contrat. 1 clause SLA à ajuster. à renvoyer sous 48h."
+    },
+    {
+      "id": "A-5120",
+      "deal_id": "D-0022",
+      "contact_id": "P-0244",
+      "owner_id": "ae4",
+      "type": "appel",
+      "at": "2026-11-27T15:00:00",
+      "subject": "Point rapide",
+      "body": "pas de décision avant le prochain CODIR, dans 3 semaines."
+    },
+    {
+      "id": "A-5121",
+      "deal_id": "D-0050",
+      "contact_id": "P-0015",
+      "owner_id": "ae2",
+      "type": "appel",
+      "at": "2026-11-28T11:00:00",
+      "subject": "Point avancement",
+      "body": "échange avec DAF. budget ok autour de 12k. go pr démo. (cf. suivi 1)"
+    },
+    {
+      "id": "A-5122",
+      "deal_id": "D-0055",
+      "contact_id": "P-0237",
+      "owner_id": "ae1",
+      "type": "email",
+      "at": "2026-11-27T10:00:00",
+      "subject": "Mise à jour tarifs",
+      "body": "Voici la grille tarifaire définitive intégrant la remise accordée. Bon pour accord ?"
+    },
+    {
+      "id": "A-5123",
+      "deal_id": "D-0056",
+      "contact_id": "P-0359",
+      "owner_id": "ae4",
+      "type": "note",
+      "at": "2026-11-27T16:00:00",
+      "subject": "Observation",
+      "body": "client a des doutes sur la migration des données. prévoir PoC."
+    },
+    {
+      "id": "A-5124",
+      "deal_id": "D-0072",
+      "contact_id": "P-0399",
+      "owner_id": "ae4",
+      "type": "email",
+      "at": "2026-12-01T14:00:00",
+      "subject": "Suite à notre échange",
+      "body": "Suite à notre premier appel, je vous transmets les informations demandées. À votre disposition."
+    },
+    {
+      "id": "A-5125",
+      "deal_id": "D-0002",
+      "contact_id": "P-0124",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-12T14:00:00",
+      "subject": "Envoyer le recap",
+      "body": "Envoyer le résumé de notre premier échange avec les prochaines étapes."
+    },
+    {
+      "id": "A-5126",
+      "deal_id": "D-0008",
+      "contact_id": "P-0168",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-13T15:00:00",
+      "subject": "Vérifier les specs",
+      "body": "Contacter le service technique pour validation de l'intégration ERP."
+    },
+    {
+      "id": "A-5127",
+      "deal_id": "D-0024",
+      "contact_id": "P-0067",
+      "owner_id": "ae4",
+      "type": "tache",
+      "at": "2026-12-08T11:00:00",
+      "subject": "Envoyer le recap",
+      "body": "Envoyer les références clients demandées lors de notre échange."
+    },
+    {
+      "id": "A-5128",
+      "deal_id": "D-0030",
+      "contact_id": "P-0287",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-20T10:00:00",
+      "subject": "Envoyer la proposition",
+      "body": "Finaliser et envoyer le devis révisé avec les nouveaux éléments."
+    },
+    {
+      "id": "A-5129",
+      "deal_id": "D-0037",
+      "contact_id": "P-0162",
+      "owner_id": "ae2",
+      "type": "tache",
+      "at": "2026-12-21T14:00:00",
+      "subject": "Préparer la démo",
+      "body": "Préparer la démo technique personnalisée pour ce profil client."
+    },
+    {
+      "id": "A-5130",
+      "deal_id": "D-0038",
+      "contact_id": "P-0103",
+      "owner_id": "ae2",
+      "type": "tache",
+      "at": "2026-12-23T11:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler si pas de retour sous 5 jours."
+    },
+    {
+      "id": "A-5131",
+      "deal_id": "D-0043",
+      "contact_id": "P-0116",
+      "owner_id": "ae4",
+      "type": "tache",
+      "at": "2026-12-14T11:00:00",
+      "subject": "Préparer les slides",
+      "body": "Préparer la présentation PoC pour la prochaine réunion."
+    },
+    {
+      "id": "A-5132",
+      "deal_id": "D-0054",
+      "contact_id": "P-0423",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-09T12:00:00",
+      "subject": "Préparer la démo",
+      "body": "Préparer la présentation pour le CODIR."
+    },
+    {
+      "id": "A-5133",
+      "deal_id": "D-0055",
+      "contact_id": "P-0236",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-24T14:00:00",
+      "subject": "Relancer par email",
+      "body": "Relancer par email si pas de retour sur le contrat d'ici lundi."
+    },
+    {
+      "id": "A-5134",
+      "deal_id": "D-0060",
+      "contact_id": "P-0329",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-07T09:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler le contact pour retour sur le devis avant fin de semaine."
+    },
+    {
+      "id": "A-5135",
+      "deal_id": "D-0061",
+      "contact_id": "P-0348",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-13T16:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler si pas de nouvelles sous 1 semaine."
+    },
+    {
+      "id": "A-5136",
+      "deal_id": "D-0062",
+      "contact_id": "P-0325",
+      "owner_id": "ae3",
+      "type": "tache",
+      "at": "2026-12-24T14:00:00",
+      "subject": "Préparer les slides",
+      "body": "Préparer la présentation PoC pour la prochaine réunion."
+    },
+    {
+      "id": "A-5137",
+      "deal_id": "D-0064",
+      "contact_id": "P-0175",
+      "owner_id": "ae3",
+      "type": "tache",
+      "at": "2026-12-26T09:00:00",
+      "subject": "Faire signer",
+      "body": "Envoyer le contrat final pour signature électronique."
+    },
+    {
+      "id": "A-5138",
+      "deal_id": "D-0081",
+      "contact_id": "P-0160",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-18T11:00:00",
+      "subject": "Préparer les slides",
+      "body": "Préparer la présentation générale pour ce client avant vendredi."
+    },
+    {
+      "id": "A-5139",
+      "deal_id": "D-0085",
+      "contact_id": "P-0004",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-16T09:00:00",
+      "subject": "Préparer les slides",
+      "body": "Préparer la présentation générale pour ce client avant vendredi."
+    },
+    {
+      "id": "A-5140",
+      "deal_id": "D-0087",
+      "contact_id": "P-0174",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-10T09:00:00",
+      "subject": "Envoyer le recap",
+      "body": "Envoyer les références clients demandées lors de notre échange."
+    },
+    {
+      "id": "A-5141",
+      "deal_id": "D-0090",
+      "contact_id": "P-0401",
+      "owner_id": "ae2",
+      "type": "tache",
+      "at": "2026-12-24T15:00:00",
+      "subject": "Vérifier les specs",
+      "body": "Préparer le dossier technique pour l'appel d'offres."
+    },
+    {
+      "id": "A-5142",
+      "deal_id": "D-0092",
+      "contact_id": "P-0419",
+      "owner_id": "ae3",
+      "type": "tache",
+      "at": "2026-12-26T16:00:00",
+      "subject": "Faire signer",
+      "body": "Finaliser la signature électronique du contrat avant vendredi."
+    },
+    {
+      "id": "A-5143",
+      "deal_id": "D-0093",
+      "contact_id": "P-0020",
+      "owner_id": "ae2",
+      "type": "tache",
+      "at": "2026-12-23T14:00:00",
+      "subject": "Finaliser le contrat",
+      "body": "Finaliser les clauses du contrat avec le service juridique."
+    },
+    {
+      "id": "A-5144",
+      "deal_id": "D-0097",
+      "contact_id": "P-0214",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-13T12:00:00",
+      "subject": "Vérifier les specs",
+      "body": "Vérifier les besoins spécifiques mentionnés lors du premier appel."
+    },
+    {
+      "id": "A-5145",
+      "deal_id": "D-0101",
+      "contact_id": "P-0331",
+      "owner_id": "ae1",
+      "type": "tache",
+      "at": "2026-12-26T16:00:00",
+      "subject": "Vérifier les specs",
+      "body": "Vérifier la faisabilité de la remise demandée avec le management."
+    },
+    {
+      "id": "A-5146",
+      "deal_id": "D-0107",
+      "contact_id": "P-0026",
+      "owner_id": "ae5",
+      "type": "tache",
+      "at": "2026-12-12T13:00:00",
+      "subject": "Vérifier les specs",
+      "body": "Vérifier les besoins spécifiques mentionnés lors du premier appel."
+    },
+    {
+      "id": "A-5147",
+      "deal_id": "D-0109",
+      "contact_id": "P-0225",
+      "owner_id": "ae3",
+      "type": "tache",
+      "at": "2026-12-12T09:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler le contact pour confirmer le budget et les décideurs."
+    },
+    {
+      "id": "A-5148",
+      "deal_id": "D-0301",
+      "contact_id": "P-0338",
+      "owner_id": "sdr2",
+      "type": "tache",
+      "at": "2026-12-22T15:00:00",
+      "subject": "Préparer les slides",
+      "body": "Préparer la présentation générale pour ce client avant vendredi."
+    },
+    {
+      "id": "A-5149",
+      "deal_id": "D-0303",
+      "contact_id": "P-0293",
+      "owner_id": "sdr2",
+      "type": "tache",
+      "at": "2026-12-09T14:00:00",
+      "subject": "Rappeler le contact",
+      "body": "Rappeler si pas de retour sous 5 jours."
+    },
+    {
+      "id": "A-5150",
+      "deal_id": "D-0010",
+      "contact_id": "P-0247",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-12-02T09:00:00",
+      "subject": "Note de suivi",
+      "body": "Interlocuteur contacté, suivi en cours. RDV calé le 18/12."
+    },
+    {
+      "id": "A-5151",
+      "deal_id": "D-0010",
+      "contact_id": "P-0247",
+      "owner_id": "ae1",
+      "type": "reunion",
+      "at": "2026-12-18T10:00:00",
+      "subject": "RDV technique",
+      "body": "rdv technique avec DSI. validation architecture. go pour la suite."
+    },
+    {
+      "id": "A-5152",
+      "deal_id": "D-0088",
+      "contact_id": "P-0169",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-12-02T13:00:00",
+      "subject": "Note de suivi",
+      "body": "Interlocuteur contacté, suivi en cours. RDV calé le 10/12."
+    },
+    {
+      "id": "A-5153",
+      "deal_id": "D-0054",
+      "contact_id": "P-0423",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-12-02T10:00:00",
+      "subject": "Note de suivi",
+      "body": "Interlocuteur contacté, suivi en cours. RDV calé le 19/12."
+    },
+    {
+      "id": "A-5154",
+      "deal_id": "D-0054",
+      "contact_id": "P-0423",
+      "owner_id": "ae1",
+      "type": "reunion",
+      "at": "2026-12-19T09:00:00",
+      "subject": "Présentation équipe",
+      "body": "présentation Nova aux parties prenantes. retours positifs. budget en discussion."
+    },
+    {
+      "id": "A-5155",
+      "deal_id": "D-0004",
+      "contact_id": "P-0311",
+      "owner_id": "ae4",
+      "type": "note",
+      "at": "2026-12-02T12:00:00",
+      "subject": "Note de suivi",
+      "body": "Interlocuteur contacté, suivi en cours. RDV calé le 17/12."
+    },
+    {
+      "id": "A-5156",
+      "deal_id": "D-0110",
+      "contact_id": "P-0355",
+      "owner_id": "ae5",
+      "type": "note",
+      "at": "2026-12-02T11:00:00",
+      "subject": "Note de suivi",
+      "body": "Interlocuteur contacté, suivi en cours. RDV calé le 16/12."
+    },
+    {
+      "id": "A-5157",
+      "deal_id": "D-0110",
+      "contact_id": "P-0355",
+      "owner_id": "ae5",
+      "type": "reunion",
+      "at": "2026-12-16T11:00:00",
+      "subject": "Présentation équipe",
+      "body": "première réunion, présentation mutuelle. client réceptif. rdv suivi à caler."
+    },
+    {
+      "id": "A-5158",
+      "deal_id": "D-0097",
+      "contact_id": "P-0214",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-12-02T16:00:00",
+      "subject": "Note de suivi",
+      "body": "Interlocuteur contacté, suivi en cours. RDV calé le 18/12."
+    },
+    {
+      "id": "A-5159",
+      "deal_id": "D-0097",
+      "contact_id": "P-0214",
+      "owner_id": "ae1",
+      "type": "reunion",
+      "at": "2026-12-18T15:00:00",
+      "subject": "Présentation équipe",
+      "body": "première réunion, présentation mutuelle. client réceptif. rdv suivi à caler."
+    },
+    {
+      "id": "A-5160",
+      "deal_id": "D-0033",
+      "contact_id": "P-0063",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-12-02T09:00:00",
+      "subject": "Note de suivi",
+      "body": "Interlocuteur contacté, suivi en cours. RDV calé le 22/12."
+    },
+    {
+      "id": "A-5161",
+      "deal_id": "D-0068",
+      "contact_id": "P-0281",
+      "owner_id": "ae2",
+      "type": "note",
+      "at": "2026-12-02T16:00:00",
+      "subject": "Note de suivi",
+      "body": "Interlocuteur contacté, suivi en cours. RDV calé le 10/12."
+    },
+    {
+      "id": "A-5162",
+      "deal_id": "D-0068",
+      "contact_id": "P-0282",
+      "owner_id": "ae2",
+      "type": "reunion",
+      "at": "2026-12-10T14:00:00",
+      "subject": "Point projet",
+      "body": "revue du cahier des charges client. besoin de personnalisation identifié."
+    },
+    {
+      "id": "A-5163",
+      "deal_id": "D-0001",
+      "contact_id": "P-0362",
+      "owner_id": "ae1",
+      "type": "note",
+      "at": "2026-12-02T13:00:00",
+      "subject": "Note de suivi",
+      "body": "Interlocuteur contacté, suivi en cours. RDV calé le 17/12."
+    },
+    {
+      "id": "A-5164",
+      "deal_id": "D-0001",
+      "contact_id": "P-0362",
+      "owner_id": "ae1",
+      "type": "reunion",
+      "at": "2026-12-17T12:00:00",
+      "subject": "RDV découverte",
+      "body": "rdv dc réalisé. 3 participants côté client. besoin bien cadré. suite: envoyer docu."
+    },
+    {
+      "id": "A-5165",
+      "deal_id": "D-0090",
+      "contact_id": "P-0401",
+      "owner_id": "ae2",
+      "type": "note",
+      "at": "2026-12-02T16:00:00",
+      "subject": "Note de suivi",
+      "body": "Interlocuteur contacté, suivi en cours. RDV calé le 23/12."
+    },
+    {
+      "id": "A-5166",
+      "deal_id": "D-0090",
+      "contact_id": "P-0401",
+      "owner_id": "ae2",
+      "type": "reunion",
+      "at": "2026-12-23T10:00:00",
+      "subject": "Présentation équipe",
+      "body": "réunion avec équipe dirigeante. décision = comité de direction. délai 1 mois."
+    },
+    {
+      "id": "A-5167",
+      "deal_id": "D-0003",
+      "contact_id": "P-0419",
+      "owner_id": "ae2",
+      "type": "note",
+      "at": "2026-12-02T09:00:00",
+      "subject": "Note de suivi",
+      "body": "Interlocuteur contacté, suivi en cours. RDV calé le 13/12."
+    },
+    {
+      "id": "A-5168",
+      "deal_id": "D-0003",
+      "contact_id": "P-0419",
+      "owner_id": "ae2",
+      "type": "reunion",
+      "at": "2026-12-13T15:00:00",
+      "subject": "RDV technique",
+      "body": "rdv technique post-offre. validation des specs. client prêt à avancer."
     }
   ]
 }

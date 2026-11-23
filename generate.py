@@ -511,6 +511,18 @@ def cleanup_accidental_anomalies(deals, activities_by_deal, anomaly_flags, as_of
                     "body": "Relance à faire avant fin de semaine.",
                 })
 
+    # Clamp future stage_entered_at to as_of (defensive, should not be needed after A9 fix)
+    for deal in deals:
+        if deal["status"] != "open":
+            continue
+        if datetime.date.fromisoformat(deal["stage_entered_at"]) > as_of_date:
+            deal["stage_entered_at"] = as_of_date.isoformat()
+            for sh in deal["stage_history"]:
+                if sh["stage"] == deal["stage"]:
+                    if datetime.date.fromisoformat(sh["entered_at"]) > as_of_date:
+                        sh["entered_at"] = as_of_date.isoformat()
+                    break
+
     # === A9 prevention (second pass, cross-deal) ===
     # Ensure no two clean open deals for the same company share ≥ 3 stems.
     from nova.rules import _names_similar as _ns

@@ -20,7 +20,7 @@ Tu reçois un fichier `facts.json` qui contient toutes les données nécessaires
 
 Le fichier de sortie doit contenir EXACTEMENT deux parties séparées par la ligne `---DETAIL---` :
 
-### Partie 1 — Message principal (≤250 mots)
+### Partie 1 — Message principal (objectif 250 mots, max 300)
 
 Dans cet ordre :
 
@@ -63,5 +63,5 @@ Dans cet ordre :
 - Reproduire fidèlement les `facts` tels quels dans les bullets (ce sont des phrases déjà rédigées).
 - Ne pas inventer de faits, de dates ou de montants.
 - Les noms de deals, d'entreprises et d'AE doivent être copiés exactement depuis `facts.json`.
-- Le message principal doit faire **≤300 mots** (compter les mots avant `---DETAIL---`).
+- Le message principal doit faire **environ 250 mots, 300 mots maximum** (compter les mots avant `---DETAIL---`).
 - Citer **au moins 2 valeurs numériques** de `facts.patterns` dans le message principal.

@@ -67,6 +67,8 @@ def rule_A1_stagnant(deals, activities_by_deal, as_of):
         has_recent_note = False
         has_future_meeting = False
         for a in deal_acts:
+            if a.get("status") == "cancelled":
+                continue
             at_dt = _parse_datetime(a.get("at"))
             if at_dt is None:
                 continue
@@ -104,6 +106,8 @@ def rule_A2_no_next_step(deals, activities_by_deal, as_of):
 
         has_next_step = False
         for a in deal_acts:
+            if a.get("status") == "cancelled":
+                continue
             if a["type"] not in ("tache", "reunion"):
                 continue
             at_dt = _parse_datetime(a.get("at"))

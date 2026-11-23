@@ -337,11 +337,15 @@ def plant_anomalies(rng, deals, contacts_by_company, as_of):
         old_created = datetime.date.fromisoformat(a9_d1["created_at"])
         delta = old_created - d1_created  # positive if old_created > d1_created
         a9_d1["created_at"] = d1_created.isoformat()
+        if datetime.date.fromisoformat(a9_d1["created_at"]) > as_of:
+            a9_d1["created_at"] = as_of.isoformat()
         for sh in a9_d1["stage_history"]:
             sh_date = datetime.date.fromisoformat(sh["entered_at"])
             new_date = sh_date - delta
             if new_date < start_floor:
                 new_date = start_floor
+            if new_date > as_of:
+                new_date = as_of
             sh["entered_at"] = new_date.isoformat()
         if a9_d1["stage_history"]:
             a9_d1["stage_entered_at"] = a9_d1["stage_history"][-1]["entered_at"]
