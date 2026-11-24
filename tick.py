@@ -199,7 +199,9 @@ class Week:
 
     def evolve(self, previous_decoys):
         pool = self.open_deals()
-        plant_a8 = self.crm["meta"]["tick_week"] % 3 == 1
+        absent_since = self.crm["meta"].get("code_absent_since", {})
+        current_tick = self.crm["meta"]["tick_week"]
+        plant_a8 = "A8" in absent_since and current_tick - absent_since["A8"] >= 2
         # A deal moves at most once per week. Prefer the existing pipeline for
         # transitions so new deals start the next week in Découverte.
         for event, count in (("gagne", self.rng.randint(1, 3)),
@@ -455,12 +457,13 @@ class Week:
                 self.add_activity(deal, "reunion", reunion_when)
 
     def plant_anomalies(self):
-        # Codes present in previous week — avoid replanting same code
-        present_before = {code for _, code in self.before}
+        # Only A5–A9 are planted; A1–A4 appear naturally over time.
+        # Plant a code only if absent for >= 2 consecutive ticks.
+        absent_since = self.crm["meta"].get("code_absent_since", {})
+        current_tick = self.crm["meta"]["tick_week"]
 
-        # Priority order (rotate each week)
-        codes = ["A5", "A6", "A7", "A8", "A9", "A2", "A4", "A3", "A1"]
-        offset = (self.crm["meta"]["tick_week"] - 1) * 3 % len(codes)
+        codes = ["A5", "A6", "A7", "A9"]  # A8 handled in evolve
+        offset = (current_tick - 1) * 2 % len(codes)
         codes = codes[offset:] + codes[:offset]
 
         pool = [d for d in self.open_deals() if d["id"] not in self.decoys]
@@ -469,8 +472,9 @@ class Week:
         for code in codes:
             if len(self.planted) >= 5:
                 break
-            if code in present_before:
-                continue  # code already present last week, don't replant
+            # 2-week rule: skip if code not yet tracked absent, or absent < 2 ticks
+            if code not in absent_since or current_tick - absent_since[code] < 2:
+                continue
             current = flags(self.crm)
             if len(current) >= 55:
                 break
@@ -478,35 +482,7 @@ class Week:
                 if (deal["id"], code) in current | self.before:
                     continue
                 original = deal.copy()
-                converted = None
-                if code in ("A1", "A2") and any(did == deal["id"] for did, _ in current):
-                    continue
-                if code in ("A1", "A2"):
-                    future = [a for a in self.activities_for(deal) if day(a["at"]) > self.end]
-                    if code == "A1":
-                        if not self.long_stage(deal):
-                            continue
-                        has_task = any(a["type"] == "tache" for a in future)
-                        future = [a for a in future if a["type"] == "reunion"]
-                    elif self.long_stage(deal):
-                        continue
-                    if not future or any(int(a["id"].split("-")[1]) >= self.first_new_activity
-                                         for a in future):
-                        continue
-                    if code == "A1" and not has_task:
-                        step = future.pop()
-                        converted = (step, step.copy())
-                        subject, body = pick_template(self.rng, "tache", deal["stage"])
-                        step.update(type="tache", subject=subject,
-                                    body=self.activity_body(deal, body, replacing=step))
-                    self.cancel_activities(deal, {a["id"] for a in future})
-                elif code == "A3":
-                    if day(deal["created_at"]) >= self.end:
-                        continue
-                    deal["close_date"] = max(self.start + ONE_DAY, day(deal["created_at"])).isoformat()
-                elif code == "A4":
-                    deal["amount"] = max(deal["amount"] or 0, 25000)
-                elif code == "A5":
+                if code == "A5":
                     deal["amount"] = None
                 elif code == "A6":
                     deal["close_date"] = self.end.isoformat()
@@ -528,12 +504,6 @@ class Week:
                             and all(did not in self.decoys for did, _ in added)):
                         self.planted.update(added)
                         break
-                if code in ("A1", "A2"):
-                    self.activities_for(deal).extend(future)
-                    self.crm["activities"].extend(future)
-                if converted:
-                    step, prior = converted
-                    step.update(prior)
                 deal.update(original)
 
     def postpone(self, deal):
@@ -590,6 +560,17 @@ class Week:
         self.crm["activities"].sort(key=lambda activity: int(activity["id"].split("-")[1]))
         detected = run_all_rules(self.crm)
         after = {(did, code) for did, code, _ in detected}
+        # Update 2-week absence tracker in meta
+        absent_since = dict(self.crm["meta"].get("code_absent_since", {}))
+        present_now = {code for _, code in after}
+        tick_num = self.crm["meta"]["tick_week"]
+        for code in (f"A{i}" for i in range(1, 10)):
+            if code not in present_now:
+                if code not in absent_since:
+                    absent_since[code] = tick_num  # first tick absent
+            else:
+                absent_since.pop(code, None)  # reappeared, reset
+        self.crm["meta"]["code_absent_since"] = absent_since
         if any(did in self.decoys for did, _ in after):
             raise ValueError("Un leurre déclenche une règle Nova")
         for title, pairs in (
