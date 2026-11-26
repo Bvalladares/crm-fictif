@@ -102,6 +102,49 @@ class TestVolumes(unittest.TestCase):
         for code in ["L1", "L2", "L3", "L4", "L5", "L6"]:
             self.assertEqual(counts[code], 1, f"Leurre {code}: expected 1, got {counts[code]}")
 
+    def test_deal_names_skip_generic_company_prefixes(self):
+        crm = load_crm()
+        _GENERIC_STARTS = {"societe", "société", "ets", "etablissements", "établissements", "groupe", "groupes", "sarl", "sas"}
+        for d in crm["deals"]:
+            name = d.get("name", "")
+            # Find the company fragment (before " – " or " - ")
+            sep = " – " if " – " in name else (" - " if " - " in name else None)
+            if sep is None:
+                continue
+            co_frag = name.split(sep, 1)[0].strip()
+            # The fragment must not be a single generic/legal word
+            self.assertFalse(
+                co_frag.lower() in _GENERIC_STARTS,
+                f"Deal {d['id']} name uses generic prefix as fragment: {name!r}"
+            )
+
+    def test_ae_anomaly_profile(self):
+        """Star AE (ae1) should have fewer flagged deals per open deal than struggling AE (ae4)."""
+        from nova.rules import run_all_rules
+        crm = load_crm()
+        flags = [(did, code) for did, code, _ in run_all_rules(crm)]
+        deals_by_id = {d["id"]: d for d in crm["deals"]}
+        flagged_per_ae = {}
+        for did, _ in flags:
+            oid = deals_by_id[did]["owner_id"]
+            flagged_per_ae[oid] = flagged_per_ae.get(oid, 0) + 1  # Note: counts rows not unique deals
+        # Count unique flagged deals per AE
+        unique_flagged = {}
+        seen = set()
+        for did, _ in flags:
+            if did not in seen:
+                seen.add(did)
+                oid = deals_by_id[did]["owner_id"]
+                unique_flagged[oid] = unique_flagged.get(oid, 0) + 1
+        open_per_ae = {}
+        for d in crm["deals"]:
+            if d["status"] == "open":
+                open_per_ae[d["owner_id"]] = open_per_ae.get(d["owner_id"], 0) + 1
+        ae1_rate = unique_flagged.get("ae1", 0) / max(open_per_ae.get("ae1", 1), 1)
+        ae4_rate = unique_flagged.get("ae4", 0) / max(open_per_ae.get("ae4", 1), 1)
+        self.assertGreater(ae4_rate, ae1_rate,
+                           f"ae4 flagged rate {ae4_rate:.2f} should exceed ae1 rate {ae1_rate:.2f}")
+
 
 if __name__ == "__main__":
     unittest.main()

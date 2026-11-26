@@ -603,6 +603,8 @@ def _fix_stage_coherence(activities_by_deal, deals, rng):
                 current_bodies = {x.get("body") for x in acts if x is not a}
                 new_subject, new_body = pick_template(rng, act_type, stage=act_stage,
                                                         exclude_bodies=current_bodies)
+                from nova.activities import _fill_budget_placeholders
+                new_body = _fill_budget_placeholders(new_body, deal)
                 # If the new template still violates (all templates exhausted),
                 # use a generic safe fallback
                 new_body_lower = new_body.lower()

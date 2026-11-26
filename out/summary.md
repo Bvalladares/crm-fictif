@@ -14,17 +14,17 @@
 | Deals ouverts | 110 |
 | Deals gagnés | 70 |
 | Deals perdus | 120 |
-| Activités | 4908 |
+| Activités | 4958 |
 
 ## Répartition par étape (deals ouverts)
 
 | Étape | Nombre |
 | --- | --- |
-| decouverte | 30 |
-| qualification | 32 |
-| demo | 16 |
-| proposition | 18 |
-| negociation | 14 |
+| decouverte | 31 |
+| qualification | 24 |
+| demo | 18 |
+| proposition | 22 |
+| negociation | 15 |
 
 ## Répartition par AE
 
@@ -32,63 +32,63 @@
 | --- | --- | --- | --- |
 | ae1 | 38 | 34 | 33 |
 | ae2 | 24 | 12 | 22 |
-| ae3 | 16 | 8 | 16 |
-| ae4 | 19 | 5 | 40 |
+| ae3 | 18 | 8 | 16 |
+| ae4 | 17 | 5 | 40 |
 | ae5 | 13 | 11 | 9 |
 
 ## Anomalies plantées (38 signaler)
 
 | Deal | Code | Preuve |
 | --- | --- | --- |
-| D-0001 | A1 | En Découverte depuis 41 j (normale 14 j) |
-| D-0010 | A1 | En Démo depuis 60 j (normale 21 j) |
-| D-0023 | A1 | En Qualification depuis 50 j (normale 14 j) |
-| D-0030 | A1 | En Proposition envoyée depuis 70 j (normale 21 j) |
-| D-0045 | A1 | En Démo depuis 64 j (normale 21 j) |
-| D-0050 | A1 | En Qualification depuis 51 j (normale 14 j) |
-| D-0068 | A1 | En Qualification depuis 55 j (normale 14 j) |
-| D-0110 | A1 | En Découverte depuis 55 j (normale 14 j) |
-| D-0001 | A2 | Aucune tâche ni réunion à venir |
-| D-0010 | A2 | Aucune tâche ni réunion à venir |
-| D-0023 | A2 | Aucune tâche ni réunion à venir |
-| D-0048 | A2 | Aucune tâche ni réunion à venir |
-| D-0050 | A2 | Aucune tâche ni réunion à venir |
-| D-0100 | A2 | Aucune tâche ni réunion à venir |
-| D-0110 | A2 | Aucune tâche ni réunion à venir |
-| D-0007 | A3 | Date de clôture dépassée : 2026-10-27 (il y a 22 j) |
-| D-0014 | A3 | Date de clôture dépassée : 2026-11-04 (il y a 14 j) |
-| D-0049 | A3 | Date de clôture dépassée : 2026-10-21 (il y a 28 j) |
-| D-0071 | A3 | Date de clôture dépassée : 2026-09-24 (il y a 55 j) |
-| D-0080 | A3 | Date de clôture dépassée : 2026-10-14 (il y a 35 j) |
-| D-0108 | A3 | Date de clôture dépassée : 2026-09-29 (il y a 50 j) |
-| D-0028 | A4 | Deal de 45000€ sans activité depuis 23 j |
-| D-0046 | A4 | Deal de 50000€ sans activité depuis 43 j |
-| D-0059 | A4 | Deal de 25000€ sans activité depuis 42 j |
-| D-0098 | A4 | Deal de 35000€ sans activité depuis 31 j |
-| D-0034 | A5 | Montant manquant en Négociation |
-| D-0077 | A5 | Montant manquant en Négociation |
-| D-0102 | A5 | Montant manquant en Proposition envoyée |
-| D-0022 | A6 | Clôture en 2026-11 mais étape Qualification |
-| D-0038 | A6 | Clôture en 2026-11 mais étape Découverte |
-| D-0074 | A6 | Clôture en 2026-11 mais étape Qualification |
-| D-0029 | A7 | Deal 35000€ en Négociation avec 1 seul interlocuteur |
-| D-0044 | A7 | Deal 34000€ en Négociation avec 1 seul interlocuteur |
-| D-0064 | A7 | Deal 51500€ en Négociation avec 1 seul interlocuteur |
-| D-0092 | A8 | En Négociation sans réunion de démo dans l'historique |
-| D-0103 | A8 | En Négociation sans réunion de démo dans l'historique |
-| D-0016 | A9 | Doublon : même entreprise C-0107, noms quasi identiques |
-| D-0097 | A9 | Doublon : même entreprise C-0107, noms quasi identiques |
+| D-0029 | A1 | En Découverte depuis 48 j (normale 14 j) |
+| D-0030 | A1 | En Proposition envoyée depuis 59 j (normale 21 j) |
+| D-0039 | A1 | En Qualification depuis 40 j (normale 14 j) |
+| D-0044 | A1 | En Proposition envoyée depuis 64 j (normale 21 j) |
+| D-0047 | A1 | En Qualification depuis 52 j (normale 14 j) |
+| D-0051 | A1 | En Démo depuis 66 j (normale 21 j) |
+| D-0083 | A1 | En Négociation depuis 94 j (normale 30 j) |
+| D-0098 | A1 | En Proposition envoyée depuis 69 j (normale 21 j) |
+| D-0039 | A2 | Aucune tâche ni réunion à venir |
+| D-0044 | A2 | Aucune tâche ni réunion à venir |
+| D-0047 | A2 | Aucune tâche ni réunion à venir |
+| D-0068 | A2 | Aucune tâche ni réunion à venir |
+| D-0078 | A2 | Aucune tâche ni réunion à venir |
+| D-0083 | A2 | Aucune tâche ni réunion à venir |
+| D-0098 | A2 | Aucune tâche ni réunion à venir |
+| D-0004 | A3 | Date de clôture dépassée : 2026-09-26 (il y a 53 j) |
+| D-0024 | A3 | Date de clôture dépassée : 2026-10-25 (il y a 24 j) |
+| D-0049 | A3 | Date de clôture dépassée : 2026-09-19 (il y a 60 j) |
+| D-0062 | A3 | Date de clôture dépassée : 2026-10-29 (il y a 20 j) |
+| D-0086 | A3 | Date de clôture dépassée : 2026-09-22 (il y a 57 j) |
+| D-0101 | A3 | Date de clôture dépassée : 2026-10-31 (il y a 18 j) |
+| D-0011 | A4 | Deal de 30000€ sans activité depuis 36 j |
+| D-0027 | A4 | Deal de 50000€ sans activité depuis 35 j |
+| D-0092 | A4 | Deal de 50000€ sans activité depuis 32 j |
+| D-0094 | A4 | Deal de 25000€ sans activité depuis 30 j |
+| D-0018 | A5 | Montant manquant en Proposition envoyée |
+| D-0056 | A5 | Montant manquant en Négociation |
+| D-0104 | A5 | Montant manquant en Proposition envoyée |
+| D-0037 | A6 | Clôture en 2026-11 mais étape Découverte |
+| D-0059 | A6 | Clôture en 2026-11 mais étape Qualification |
+| D-0080 | A6 | Clôture en 2026-11 mais étape Qualification |
+| D-0038 | A7 | Deal 20000€ en Négociation avec 1 seul interlocuteur |
+| D-0089 | A7 | Deal 32000€ en Négociation avec 1 seul interlocuteur |
+| D-0090 | A7 | Deal 43500€ en Négociation avec 1 seul interlocuteur |
+| D-0050 | A8 | En Négociation sans réunion de démo dans l'historique |
+| D-0095 | A8 | En Négociation sans réunion de démo dans l'historique |
+| D-0021 | A9 | Doublon : même entreprise C-0155, noms quasi identiques |
+| D-0043 | A9 | Doublon : même entreprise C-0155, noms quasi identiques |
 
 ## Leurres (6 ignorer)
 
 | Deal | Code | Preuve |
 | --- | --- | --- |
-| D-0057 | L1 | Long en Qualification mais RDV calé le 2026-11-28 |
-| D-0095 | L2 | Long en Qualification mais RDV calé le 2026-12-07 |
-| D-0054 | L3 | Deal 35000€ mais dernière activité il y a 20 j (seuil 21 j) |
-| D-0024 | L4 | Deal 25000€ mais dernière activité il y a 20 j (seuil 21 j) |
-| D-0083 | L5 | Négociation 1 contact mais montant 15 000€ (seuil A7 = 20 000€) |
-| D-0005 | L6 | Date de clôture = as_of (2026-11-18), pas encore dépassée |
+| D-0025 | L1 | Long en Qualification mais RDV calé le 2026-11-28 |
+| D-0110 | L2 | Long en Découverte mais RDV calé le 2026-12-05 |
+| D-0099 | L3 | Deal 35000€ mais dernière activité il y a 20 j (seuil 21 j) |
+| D-0035 | L4 | Deal 25000€ mais dernière activité il y a 20 j (seuil 21 j) |
+| D-0012 | L5 | Négociation 1 contact mais montant 15 000€ (seuil A7 = 20 000€) |
+| D-0070 | L6 | Date de clôture = as_of (2026-11-18), pas encore dépassée |
 
 ## TODOs
 

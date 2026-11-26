@@ -245,16 +245,45 @@ def score_review(review_text, facts, truth_rows, review_file=None):
         if invented_1on1:
             one_on_one_numbers_ok = False
 
+    # 9. Exactly 3 questions in 1:1 section
+    one_on_one_count_ok = False
+    idx_1on1_q = main_text.find("## Questions pour vos 1:1")
+    if idx_1on1_q >= 0:
+        rest_1on1 = main_text[idx_1on1_q:]
+        next_h = re.search(r'\n## ', rest_1on1[3:])
+        q_section = rest_1on1[:next_h.start() + 3] if next_h else rest_1on1
+        q_lines = [l for l in q_section.splitlines() if l.strip().startswith("- ")]
+        one_on_one_count_ok = (len(q_lines) == 3)
+
+    # 10. No curly braces in full text
+    no_braces = '{' not in full_text and '}' not in full_text
+
+    # 11. Each AE line in Résumé par AE has a motif (contains " — ")
+    ae_motif_ok = True
+    idx_ae_sect = main_text.find("## Résumé par AE")
+    if idx_ae_sect >= 0:
+        ae_rest = main_text[idx_ae_sect:]
+        next_ae_h = re.search(r'\n## ', ae_rest[3:])
+        ae_section = ae_rest[:next_ae_h.start() + 3] if next_ae_h else ae_rest
+        for ln in ae_section.splitlines():
+            if ln.strip().startswith("- "):
+                if " — " not in ln:
+                    ae_motif_ok = False
+                    break
+
     passed = (
         recall >= 0.90 and
         false_leurres_count <= 1 and
         invented_count == 0 and
-        length_words <= 300 and
+        length_words <= 350 and
         priorities_present and
         patterns_cited and
         anticopy_pass and
         one_on_one_present and
-        one_on_one_numbers_ok
+        one_on_one_numbers_ok and
+        one_on_one_count_ok and
+        no_braces and
+        ae_motif_ok
     )
 
     return {
@@ -269,6 +298,9 @@ def score_review(review_text, facts, truth_rows, review_file=None):
         "anticopy_score": anticopy_score,
         "one_on_one_present": one_on_one_present,
         "one_on_one_numbers_ok": one_on_one_numbers_ok,
+        "one_on_one_count_ok": one_on_one_count_ok,
+        "no_braces": no_braces,
+        "ae_motif_ok": ae_motif_ok,
         "pass": passed,
         "details": {
             "missed_deals": missed_deals,

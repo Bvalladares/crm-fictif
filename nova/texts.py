@@ -143,7 +143,7 @@ STAGE_TEMPLATES = {
     "qualification": {
         "appel": [
             {"subject": "Appel de qualification",
-             "body": "qualification ok. budget estimé autour de {budget_k}k. décision au CODIR."},
+             "body": "qualification ok. budget cerné. décision au CODIR."},
             {"subject": "Point rapide",
              "body": "interlocuteur confirme le besoin. budget à valider en interne."},
             {"subject": "Appel de qualification",
@@ -161,7 +161,7 @@ STAGE_TEMPLATES = {
             {"subject": "Relance téléphonique",
              "body": "relance qualification. client prêt à avancer. rdv calé."},
             {"subject": "Point avancement",
-             "body": "échange avec DAF. budget ok autour de {budget_k}k. go pr démo."},
+             "body": "échange avec DAF. budget validé. go pr démo."},
             {"subject": "Appel de qualification",
              "body": "qualification avancée. besoin technique = intégration ERP sage."},
             {"subject": "Point rapide",
@@ -215,7 +215,7 @@ STAGE_TEMPLATES = {
         ],
         "note": [
             {"subject": "Note de suivi",
-             "body": "qualification avancée. budget probable {budget_range}. attendre validation CODIR."},
+             "body": "qualification avancée. budget à valider en CODIR."},
             {"subject": "CR appel",
              "body": "DAF favorable mais RSI pas encore convaincu. préparer arguments techniques."},
             {"subject": "Contexte deal",

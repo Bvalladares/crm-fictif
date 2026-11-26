@@ -41,10 +41,10 @@ def _plur(n, singular, plural=None):
 
 
 def _truncate(text, max_len=72):
-    """Truncate text to max_len characters, appending '…' if cut."""
+    """Truncate text to max_len characters at word boundary, appending '…' if cut."""
     if len(text) <= max_len:
         return text
-    return text[:max_len].rstrip() + "…"
+    return text[:max_len].rsplit(' ', 1)[0] + '…'
 
 
 def render(facts):
@@ -131,12 +131,12 @@ def render(facts):
     n_contract = len(contract_cases) if isinstance(contract_cases, list) else 0
 
     trend_bullets = []
-    if n_contract > 0:
+    if n_contract >= 2:
         trend_bullets.append(
             f"• {n_contract} {_plur(n_contract, 'deal')} en phase avancée : "
             "activité mentionnant un contrat ou devis, montant absent"
         )
-    if a5a7 > 0:
+    if a5a7 >= 2:
         trend_bullets.append(
             f"• {a5a7} {_plur(a5a7, 'deal')} sans montant en Négociation avec un seul interlocuteur"
         )
@@ -146,23 +146,23 @@ def render(facts):
             f"• {a2_total} {_plur(a2_total, 'deal')} sans prochaine tâche planifiée, "
             f"dont {a2_late} en Proposition ou Négociation"
         )
-    elif by_code.get("A2", 0) > 0:
+    elif by_code.get("A2", 0) >= 2:
         a2_total = by_code["A2"]
         trend_bullets.append(
             f"• {a2_total} {_plur(a2_total, 'deal')} sans prochaine tâche planifiée"
         )
-    if by_code.get("A3", 0) > 0:
+    if by_code.get("A3", 0) >= 2:
         a3_total = by_code["A3"]
         bullet = f"• {a3_total} {_plur(a3_total, 'deal')} avec date de clôture dépassée"
         if a3_avg > 0:
             bullet += f" (retard moyen {a3_avg} j)"
         trend_bullets.append(bullet)
-    if multi > 0:
+    if multi >= 2:
         trend_bullets.append(
             f"• {multi} {_plur(multi, 'deal')} "
             f"{'cumule' if multi == 1 else 'cumulent'} deux alertes ou plus"
         )
-    if by_code.get("A1", 0) > 0 and len(trend_bullets) < 3:
+    if by_code.get("A1", 0) >= 2 and len(trend_bullets) < 3:
         a1_total = by_code["A1"]
         trend_bullets.append(
             f"• {a1_total} {_plur(a1_total, 'deal')} "
@@ -182,23 +182,17 @@ def render(facts):
         n_flagged_ow = stats.get("flagged", len(ow["flagged"]))
         flagged_amt = stats.get("flagged_amount", sum(e["amount"] for e in ow["flagged"]))
         adj = "signalé" if n_flagged_ow == 1 else "signalés"
-        main_lines.append(
-            f"- {ow['owner_name']} : {n_flagged_ow} {_plur(n_flagged_ow, 'deal')} "
-            f"{adj} ({fmt_amount(flagged_amt)})"
-        )
+        dominant_fact = stats.get("dominant_fact")
+        line = (f"- {ow['owner_name']} : {n_flagged_ow} {_plur(n_flagged_ow, 'deal')} "
+                f"{adj} ({fmt_amount(flagged_amt)})")
+        if dominant_fact:
+            line += f" — {dominant_fact}"
+        main_lines.append(line)
     main_lines.append("")
 
     # 6. Questions pour vos 1:1
     main_lines.append("## Questions pour vos 1:1")
     main_lines.append("")
-    # Concentration note
-    concentrations = patterns.get("concentrations_ae", {})
-    for owner_name, cnt in concentrations.items():
-        main_lines.append(
-            f"_{owner_name} porte {cnt} des 3 priorités._"
-        )
-    if concentrations:
-        main_lines.append("")
     for item in one_on_one:
         main_lines.append(f"- {item['question']}")
     main_lines.append("")

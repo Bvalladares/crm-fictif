@@ -1,45 +1,45 @@
 deal_id,code,attendu,preuve,owner
-D-0001,A1,signaler,En Découverte depuis 41 j (normale 14 j),ae1
-D-0001,A2,signaler,Aucune tâche ni réunion à venir,ae1
-D-0005,L6,ignorer,"Date de clôture = as_of (2026-11-18), pas encore dépassée",ae2
-D-0007,A3,signaler,Date de clôture dépassée : 2026-10-27 (il y a 22 j),ae1
-D-0010,A1,signaler,En Démo depuis 60 j (normale 21 j),ae1
-D-0010,A2,signaler,Aucune tâche ni réunion à venir,ae1
-D-0014,A3,signaler,Date de clôture dépassée : 2026-11-04 (il y a 14 j),ae1
-D-0016,A9,signaler,"Doublon : même entreprise C-0107, noms quasi identiques",ae3
-D-0022,A6,signaler,Clôture en 2026-11 mais étape Qualification,ae4
-D-0023,A1,signaler,En Qualification depuis 50 j (normale 14 j),ae1
-D-0023,A2,signaler,Aucune tâche ni réunion à venir,ae1
-D-0024,L4,ignorer,Deal 25000€ mais dernière activité il y a 20 j (seuil 21 j),ae4
-D-0028,A4,signaler,Deal de 45000€ sans activité depuis 23 j,ae1
-D-0029,A7,signaler,Deal 35000€ en Négociation avec 1 seul interlocuteur,ae4
-D-0030,A1,signaler,En Proposition envoyée depuis 70 j (normale 21 j),ae1
-D-0034,A5,signaler,Montant manquant en Négociation,ae5
-D-0038,A6,signaler,Clôture en 2026-11 mais étape Découverte,ae2
-D-0044,A7,signaler,Deal 34000€ en Négociation avec 1 seul interlocuteur,ae4
-D-0045,A1,signaler,En Démo depuis 64 j (normale 21 j),ae3
-D-0046,A4,signaler,Deal de 50000€ sans activité depuis 43 j,ae1
-D-0048,A2,signaler,Aucune tâche ni réunion à venir,ae2
-D-0049,A3,signaler,Date de clôture dépassée : 2026-10-21 (il y a 28 j),ae4
-D-0050,A1,signaler,En Qualification depuis 51 j (normale 14 j),ae2
-D-0050,A2,signaler,Aucune tâche ni réunion à venir,ae2
-D-0054,L3,ignorer,Deal 35000€ mais dernière activité il y a 20 j (seuil 21 j),ae1
-D-0057,L1,ignorer,Long en Qualification mais RDV calé le 2026-11-28,ae4
-D-0059,A4,signaler,Deal de 25000€ sans activité depuis 42 j,ae2
-D-0064,A7,signaler,Deal 51500€ en Négociation avec 1 seul interlocuteur,ae3
-D-0068,A1,signaler,En Qualification depuis 55 j (normale 14 j),ae2
-D-0071,A3,signaler,Date de clôture dépassée : 2026-09-24 (il y a 55 j),ae1
-D-0074,A6,signaler,Clôture en 2026-11 mais étape Qualification,ae2
-D-0077,A5,signaler,Montant manquant en Négociation,ae1
-D-0080,A3,signaler,Date de clôture dépassée : 2026-10-14 (il y a 35 j),ae5
-D-0083,L5,ignorer,Négociation 1 contact mais montant 15 000€ (seuil A7 = 20 000€),ae4
-D-0092,A8,signaler,En Négociation sans réunion de démo dans l'historique,ae3
-D-0095,L2,ignorer,Long en Qualification mais RDV calé le 2026-12-07,ae3
-D-0097,A9,signaler,"Doublon : même entreprise C-0107, noms quasi identiques",ae1
-D-0098,A4,signaler,Deal de 35000€ sans activité depuis 31 j,ae5
-D-0100,A2,signaler,Aucune tâche ni réunion à venir,ae1
-D-0102,A5,signaler,Montant manquant en Proposition envoyée,ae3
-D-0103,A8,signaler,En Négociation sans réunion de démo dans l'historique,ae2
-D-0108,A3,signaler,Date de clôture dépassée : 2026-09-29 (il y a 50 j),ae5
-D-0110,A1,signaler,En Découverte depuis 55 j (normale 14 j),ae5
-D-0110,A2,signaler,Aucune tâche ni réunion à venir,ae5
+D-0004,A3,signaler,Date de clôture dépassée : 2026-09-26 (il y a 53 j),ae4
+D-0011,A4,signaler,Deal de 30000€ sans activité depuis 36 j,ae1
+D-0012,L5,ignorer,Négociation 1 contact mais montant 15 000€ (seuil A7 = 20 000€),ae1
+D-0018,A5,signaler,Montant manquant en Proposition envoyée,ae4
+D-0021,A9,signaler,"Doublon : même entreprise C-0155, noms quasi identiques",ae1
+D-0024,A3,signaler,Date de clôture dépassée : 2026-10-25 (il y a 24 j),ae4
+D-0025,L1,ignorer,Long en Qualification mais RDV calé le 2026-11-28,ae1
+D-0027,A4,signaler,Deal de 50000€ sans activité depuis 35 j,ae5
+D-0029,A1,signaler,En Découverte depuis 48 j (normale 14 j),ae4
+D-0030,A1,signaler,En Proposition envoyée depuis 59 j (normale 21 j),ae1
+D-0035,L4,ignorer,Deal 25000€ mais dernière activité il y a 20 j (seuil 21 j),ae3
+D-0037,A6,signaler,Clôture en 2026-11 mais étape Découverte,ae2
+D-0038,A7,signaler,Deal 20000€ en Négociation avec 1 seul interlocuteur,ae2
+D-0039,A1,signaler,En Qualification depuis 40 j (normale 14 j),ae2
+D-0039,A2,signaler,Aucune tâche ni réunion à venir,ae2
+D-0043,A9,signaler,"Doublon : même entreprise C-0155, noms quasi identiques",ae3
+D-0044,A1,signaler,En Proposition envoyée depuis 64 j (normale 21 j),ae4
+D-0044,A2,signaler,Aucune tâche ni réunion à venir,ae4
+D-0047,A1,signaler,En Qualification depuis 52 j (normale 14 j),ae2
+D-0047,A2,signaler,Aucune tâche ni réunion à venir,ae2
+D-0049,A3,signaler,Date de clôture dépassée : 2026-09-19 (il y a 60 j),ae4
+D-0050,A8,signaler,En Négociation sans réunion de démo dans l'historique,ae2
+D-0051,A1,signaler,En Démo depuis 66 j (normale 21 j),ae3
+D-0056,A5,signaler,Montant manquant en Négociation,ae4
+D-0059,A6,signaler,Clôture en 2026-11 mais étape Qualification,ae2
+D-0062,A3,signaler,Date de clôture dépassée : 2026-10-29 (il y a 20 j),ae3
+D-0068,A2,signaler,Aucune tâche ni réunion à venir,ae2
+D-0070,L6,ignorer,"Date de clôture = as_of (2026-11-18), pas encore dépassée",ae4
+D-0078,A2,signaler,Aucune tâche ni réunion à venir,ae3
+D-0080,A6,signaler,Clôture en 2026-11 mais étape Qualification,ae5
+D-0083,A1,signaler,En Négociation depuis 94 j (normale 30 j),ae4
+D-0083,A2,signaler,Aucune tâche ni réunion à venir,ae4
+D-0086,A3,signaler,Date de clôture dépassée : 2026-09-22 (il y a 57 j),ae2
+D-0089,A7,signaler,Deal 32000€ en Négociation avec 1 seul interlocuteur,ae2
+D-0090,A7,signaler,Deal 43500€ en Négociation avec 1 seul interlocuteur,ae2
+D-0092,A4,signaler,Deal de 50000€ sans activité depuis 32 j,ae3
+D-0094,A4,signaler,Deal de 25000€ sans activité depuis 30 j,ae4
+D-0095,A8,signaler,En Négociation sans réunion de démo dans l'historique,ae3
+D-0098,A1,signaler,En Proposition envoyée depuis 69 j (normale 21 j),ae5
+D-0098,A2,signaler,Aucune tâche ni réunion à venir,ae5
+D-0099,L3,ignorer,Deal 35000€ mais dernière activité il y a 20 j (seuil 21 j),ae4
+D-0101,A3,signaler,Date de clôture dépassée : 2026-10-31 (il y a 18 j),ae1
+D-0104,A5,signaler,Montant manquant en Proposition envoyée,ae5
+D-0110,L2,ignorer,Long en Découverte mais RDV calé le 2026-12-05,ae5

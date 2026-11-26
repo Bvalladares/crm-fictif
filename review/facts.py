@@ -92,8 +92,7 @@ def _build_fact_phrase(code, deal, as_of_date):
         return f"Clôture prévue en {yyyy_mm} mais étape {stage_label}"
 
     if code == "A7":
-        amt_str = f"{amount:,}".replace(",", " ")
-        return f"{amt_str} € en Négociation avec un seul interlocuteur"
+        return "En Négociation avec un seul interlocuteur"
 
     if code == "A8":
         return "En Négociation sans réunion de démo dans l'historique"
@@ -232,10 +231,13 @@ def build_facts(crm_data):
         if best is None:
             return None
         body = (best.get("body") or "").replace("\n", " ").replace("\r", " ")
+        if len(body) > 80:
+            cut = body[:80].rsplit(' ', 1)[0]
+            body = cut + '…'
         return {
             "date": best["at"][:10],
             "type": best.get("type", ""),
-            "summary": body[:80],
+            "summary": body,
         }
 
     # Build flagged deal entries
@@ -517,10 +519,43 @@ def build_facts(crm_data):
     for ow in by_owner:
         oid = ow["owner_id"]
         flagged_amt = sum(e["amount"] for e in ow["flagged"])
+
+        # dominant anomaly code
+        ae_codes = []
+        for did in owner_flagged.get(oid, []):
+            ae_codes.extend(flags_by_deal.get(did, []))
+        code_counts = {}
+        for c in ae_codes:
+            code_counts[c] = code_counts.get(c, 0) + 1
+        dominant_code = max(code_counts, key=lambda c: code_counts[c]) if code_counts else None
+        dominant_count = code_counts.get(dominant_code, 0) if dominant_code else 0
+
+        _DOMINANT_LABEL = {
+            "A1": ("stagnant", "stagnants"),
+            "A2": ("sans prochaine étape", "sans prochaine étape"),
+            "A3": ("clôture dépassée", "clôtures dépassées"),
+            "A4": ("grand deal silencieux", "grands deals silencieux"),
+            "A5": ("montant manquant", "montants manquants"),
+            "A6": ("prévision irréaliste", "prévisions irréalistes"),
+            "A7": ("seul contact en négo", "seuls contacts en négo"),
+            "A8": ("sans réunion de démo", "sans réunion de démo"),
+            "A9": ("doublon", "doublons"),
+        }
+        if dominant_code and dominant_code in _DOMINANT_LABEL:
+            sing, plur = _DOMINANT_LABEL[dominant_code]
+            label = sing if dominant_count == 1 else plur
+            n_flagged_this_ae = len(owner_flagged.get(oid, []))
+            dominant_fact = f"{dominant_count} {label} sur {n_flagged_this_ae} signalés"
+        else:
+            dominant_fact = None
+
         patterns_by_owner[oid] = {
             "name": ow["owner_name"],
             "flagged": len(ow["flagged"]),
             "flagged_amount": flagged_amt,
+            "dominant_code": dominant_code,
+            "dominant_count": dominant_count,
+            "dominant_fact": dominant_fact,
         }
 
     # multi_anomaly_deals: deals with >= 2 anomaly codes
@@ -570,66 +605,53 @@ def build_facts(crm_data):
                 })
 
     # ── 1:1 questions ───────────────────────────────────────────────────────
-    # Build factual questions for each AE, one per unique owner, in priority order.
-    # Questions use only facts already in allowed_numbers.
+    # One question per priority deal (exactly 3), coach tone, next dated step.
     one_on_one = []
-    seen_1on1_owners = set()
-    for did in all_flagged_sorted:
-        if len(one_on_one) >= 3:
-            break
+    for did in priorities[:3]:
         deal = deals_by_id[did]
         oid = deal.get("owner_id")
-        if oid in seen_1on1_owners:
-            continue
         owner_name = owners_by_id.get(oid, {}).get("name", oid)
         codes = flags_by_deal[did]
         entry = deal_entries[did]
-        amount = deal.get("amount") or 0
         stage_label = STAGE_LABEL.get(deal.get("stage", ""), deal.get("stage", ""))
-        amt_str = f"{amount:,}".replace(",", "\u202f") + "\u202f€" if amount else "montant manquant"
+        amount = deal.get("amount") or 0
 
         q = None
         if "A4" in codes:
             _, days_silent, _, _ = a4_phrase(deal)
             if days_silent:
                 q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
-                     f"aucune activité depuis {days_silent} j. Quel est l'état d'avancement ?")
+                     f"aucune activité depuis {days_silent} j. Ce deal est-il encore actif, "
+                     f"et quelle est la prochaine étape planifiée ?")
         elif "A7" in codes:
             q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
-                 f"{amt_str} avec un seul interlocuteur. D'autres contacts ont-ils été approchés ?")
+                 f"un seul interlocuteur en Négociation. D'autres contacts ont-ils été approchés, "
+                 f"et quelle est la prochaine étape convenue ?")
         elif "A3" in codes:
             close_date = _parse_date(deal.get("close_date"))
             if close_date:
                 days_over = (as_of_date - close_date).days
                 q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
-                     f"date de clôture dépassée depuis {days_over} j. La date est-elle encore réaliste ?")
+                     f"date de clôture dépassée depuis {days_over} j. "
+                     f"Quelle est la nouvelle échéance réaliste ?")
         elif "A2" in codes:
             q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
-                 f"aucune tâche planifiée. Quelle est la prochaine étape prévue ?")
+                 f"aucune tâche planifiée. Quelle est la prochaine étape datée ?")
         elif "A1" in codes:
             stage_entered = _parse_date(deal.get("stage_entered_at"))
             days_in = (as_of_date - stage_entered).days if stage_entered else 0
             normal = STAGE_NORMAL_DAYS.get(deal.get("stage"), 0)
             q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
-                 f"en {stage_label} depuis {days_in} j (norme : {normal} j). Ce dossier avance-t-il ?")
+                 f"en {stage_label} depuis {days_in} j (norme : {normal} j). "
+                 f"Quelle est la prochaine étape convenue avec le client ?")
         else:
             q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
-                 f"signalement à {amt_str}. Quel est le statut actuel ?")
+                 f"Ce deal est-il encore actif, et quelle est la prochaine étape datée ?")
 
         if q:
             one_on_one.append({"owner_name": owner_name, "question": q, "deal_id": did})
-            seen_1on1_owners.add(oid)
 
-    # concentrations_ae: AEs with more than one of the top-3 priority deals
-    priority_owner_counts = {}
-    for did in priorities:
-        oid = deals_by_id[did].get("owner_id")
-        priority_owner_counts[oid] = priority_owner_counts.get(oid, 0) + 1
-    concentrations_ae = {
-        owners_by_id.get(oid, {}).get("name", oid): cnt
-        for oid, cnt in priority_owner_counts.items()
-        if cnt > 1
-    }
+    concentrations_ae = {}
 
     patterns = {
         "by_code": by_code,
@@ -654,6 +676,9 @@ def build_facts(crm_data):
             allowed.add(v)
         for v in _variants_for_int(stats["flagged_amount"]):
             allowed.add(v)
+        if stats.get("dominant_count"):
+            for v in _variants_for_days(stats["dominant_count"]):
+                allowed.add(v)
 
     # Scan 1:1 questions for any numbers they introduce
     import re as _re2

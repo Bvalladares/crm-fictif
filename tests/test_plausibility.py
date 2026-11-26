@@ -199,6 +199,15 @@ class TestPlausibility(unittest.TestCase):
                 errors.append(f"Deal {d['id']} stage_entered_at {entered} > as_of {self.as_of}")
         self.assertEqual(errors, [], "\n".join(errors[:5]))
 
+    def test_no_template_braces_in_activities(self):
+        """No activity body or subject should contain unresolved template placeholders."""
+        crm = load_crm()
+        for a in crm["activities"]:
+            for field in ("body", "subject"):
+                val = a.get(field, "") or ""
+                self.assertNotIn("{", val, f"Activity {a.get('id','?')} {field} contains {{: {val!r}")
+                self.assertNotIn("}", val, f"Activity {a.get('id','?')} {field} contains }}: {val!r}")
+
 
 if __name__ == "__main__":
     unittest.main()

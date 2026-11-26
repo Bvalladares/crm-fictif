@@ -35,8 +35,10 @@ def plant_anomalies(rng, deals, contacts_by_company, as_of):
     if len(open_deals_sorted) < 36:
         raise ValueError(f"Not enough open deals: {len(open_deals_sorted)}")
 
+    _AE_ANOMALY_WEIGHT = {"ae1": 0.4, "ae2": 1.0, "ae3": 1.0, "ae4": 2.5, "ae5": 1.5}
     pool = list(open_deals_sorted)
-    rng.shuffle(pool)
+    priorities = [rng.expovariate(_AE_ANOMALY_WEIGHT.get(d.get("owner_id", ""), 1.0)) for d in pool]
+    pool = [d for _, d in sorted(zip(priorities, pool), key=lambda x: x[0])]
 
     anomaly_flags = {}  # deal_id -> set of codes
     truth_rows = []

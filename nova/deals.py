@@ -118,7 +118,9 @@ def gen_deals(rng, companies, contacts_by_company, as_of,
     # Legal-form tokens to strip from company names
     _LEGAL = {"SAS", "SARL", "SA", "SNC", "SCI", "EURL", "SASU", "GIE",
               "SE", "SCOP", "SCP", "SELARL", "LTD", "GMBH", "NV", "BV",
-              "&", "ET", "AND"}
+              "&", "ET", "AND",
+              "SOCIETE", "SOCIÉTÉ", "ETS", "ETABLISSEMENTS", "ÉTABLISSEMENTS",
+              "GROUPE", "GROUPES"}
 
     def _co_short(company_name):
         """Return significant words from company_name, stripped of legal forms."""
