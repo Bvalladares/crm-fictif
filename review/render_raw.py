@@ -96,11 +96,10 @@ def render(facts):
     # 2. Opening
     n_open = totals["open_deals"]
     n_flagged = totals["flagged_deals"]
+    adj = "signalé" if n_flagged == 1 else "signalés"
     main_lines.append(
         f"{n_open} deals ouverts pour {fmt_amount(totals['open_amount'])} de pipeline. "
-        f"{n_flagged} {_plur(n_flagged, 'deal')} "
-        f"{'signalé' if n_flagged == 1 else 'signalés'} "
-        f"({fmt_amount(totals['flagged_amount'])}) nécessitent une attention."
+        f"{n_flagged} {_plur(n_flagged, 'deal')} {adj} ({fmt_amount(totals['flagged_amount'])})."
     )
     main_lines.append("")
 
@@ -168,7 +167,7 @@ def render(facts):
             f"• {a1_total} {_plur(a1_total, 'deal')} "
             f"bloqué{'' if a1_total == 1 else 's'} à la même étape trop longtemps"
         )
-    for bullet in trend_bullets[:3]:
+    for bullet in trend_bullets[:2]:
         main_lines.append(bullet)
     main_lines.append("")
 

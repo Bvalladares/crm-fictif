@@ -20,7 +20,7 @@ Tu reçois un fichier `facts.json` qui contient toutes les données nécessaires
 
 Le fichier de sortie doit contenir EXACTEMENT deux parties séparées par la ligne `---DETAIL---` :
 
-### Partie 1 — Message principal (objectif 300 mots, max 350)
+### Partie 1 — Message principal (objectif 250 mots, max 300)
 
 Dans cet ordre :
 
@@ -37,12 +37,13 @@ Dans cet ordre :
    Cite au minimum **2 valeurs numériques** issues de `facts.patterns`.
    Uniquement des constats portant sur plusieurs deals (au moins 2).
 
-5. **## Résumé par AE** : Une ligne par AE ayant des deals signalés, avec l'anomalie dominante, montants avec espace des milliers :
+5. **## Résumé par AE** : Une ligne par AE ayant des deals signalés, avec l'anomalie dominante en formulation naturelle, montants avec espace des milliers :
    `- {owner_name} : {n} deal(s) signalé(s) ({flagged_amount formatted} €) — {dominant_fact}`
-   Exemple : `- Marc Dupont : 4 deals signalés (95 000 €) — 3 clôtures dépassées sur 4 signalés`
+   Exemples : `- Marc Dupont : 4 deals signalés (95 000 €) — 3 deals en Négociation avec un seul interlocuteur`
+   Si aucune anomalie ne revient au moins 2 fois : `- Marie Martin : 3 deals signalés (60 000 €) — alertes variées — Nom du plus gros deal`
 
-6. **## Questions pour vos 1:1** : exactement 3 questions, une par priorité, sur un ton de coach orienté vers la prochaine étape datée. Exemple : « Ce deal est-il encore actif, et quelle est la prochaine étape datée ? ». Format :
-   `- {owner_name} — {deal_name} ({company}, {stage}) : {fait factuel}. {question ouverte} ?`
+6. **## Questions pour vos 1:1** : exactement 3 questions, une par priorité, sur un ton de coach orienté vers la prochaine étape datée. Format :
+   `- {owner_name} — {deal_name} ({company}, {stage}) : {fait factuel}. Quelle est la prochaine étape planifiée ?`
    Questions uniquement sur : inactivité, dates de clôture, nombre d'interlocuteurs, stagnation. Aucune critique de la personne, aucune supposition sur le client. Pas de ligne « X porte N priorités ».
 
 ### Partie 2 — Détail (après `---DETAIL---`, sans limite de mots)
@@ -66,5 +67,5 @@ Dans cet ordre :
 - Ne pas inventer de faits, de dates ou de montants.
 - Ne pas répéter le montant dans le motif (il est déjà affiché sur la ligne du deal).
 - Les noms de deals, d'entreprises et d'AE doivent être copiés exactement depuis `facts.json`.
-- Le message principal doit faire **environ 300 mots, 350 mots maximum** (compter les mots avant `---DETAIL---`).
+- Le message principal doit faire **environ 250 mots, 300 mots maximum** (compter les mots avant `---DETAIL---`).
 - Citer **au moins 2 valeurs numériques** de `facts.patterns` dans le message principal.

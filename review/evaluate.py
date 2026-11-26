@@ -275,7 +275,7 @@ def score_review(review_text, facts, truth_rows, review_file=None):
         recall >= 0.90 and
         false_leurres_count <= 1 and
         invented_count == 0 and
-        length_words <= 350 and
+        length_words <= 300 and
         priorities_present and
         patterns_cited and
         anticopy_pass and

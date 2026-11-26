@@ -47,11 +47,20 @@ RULE_WEIGHTS = {
     "A1": 2, "A2": 2, "A3": 2,
 }
 
+STAGE_PRIORITY_WEIGHT = {
+    "decouverte":    0.5,
+    "qualification": 0.7,
+    "demo":          1.0,
+    "proposition":   1.5,
+    "negociation":   2.0,
+}
+
 def _weight(code):
     return RULE_WEIGHTS.get(code, 1)
 
-def _score(amount, codes):
-    return (amount or 0) * sum(_weight(c) for c in codes)
+def _score(amount, codes, stage=None):
+    stage_w = STAGE_PRIORITY_WEIGHT.get(stage, 1.0)
+    return (amount or 0) * sum(_weight(c) for c in codes) * stage_w
 
 
 # ── facts phrase builders ───────────────────────────────────────────────────
@@ -319,7 +328,8 @@ def build_facts(crm_data):
     def deal_score(did):
         codes = flags_by_deal[did]
         amount = deals_by_id[did].get("amount") or 0
-        return _score(amount, codes)
+        stage = deals_by_id[did].get("stage", "")
+        return _score(amount, codes, stage)
 
     all_flagged_sorted = sorted(
         flagged_deal_ids,
@@ -530,24 +540,31 @@ def build_facts(crm_data):
         dominant_code = max(code_counts, key=lambda c: code_counts[c]) if code_counts else None
         dominant_count = code_counts.get(dominant_code, 0) if dominant_code else 0
 
-        _DOMINANT_LABEL = {
-            "A1": ("stagnant", "stagnants"),
-            "A2": ("sans prochaine étape", "sans prochaine étape"),
-            "A3": ("clôture dépassée", "clôtures dépassées"),
+        _DOMINANT_PHRASE = {
+            "A1": ("deal bloqué à la même étape", "deals bloqués à la même étape"),
+            "A2": ("deal sans prochaine étape", "deals sans prochaine étape"),
+            "A3": ("deal avec clôture dépassée", "deals avec clôture dépassée"),
             "A4": ("grand deal silencieux", "grands deals silencieux"),
-            "A5": ("montant manquant", "montants manquants"),
-            "A6": ("prévision irréaliste", "prévisions irréalistes"),
-            "A7": ("seul contact en négo", "seuls contacts en négo"),
-            "A8": ("sans réunion de démo", "sans réunion de démo"),
+            "A5": ("deal sans montant saisi", "deals sans montant saisi"),
+            "A6": ("prévision de clôture irréaliste", "prévisions de clôture irréalistes"),
+            "A7": ("deal en Négociation avec un seul interlocuteur",
+                   "deals en Négociation avec un seul interlocuteur"),
+            "A8": ("deal en Négociation sans réunion de démo",
+                   "deals en Négociation sans réunion de démo"),
             "A9": ("doublon", "doublons"),
         }
-        if dominant_code and dominant_code in _DOMINANT_LABEL:
-            sing, plur = _DOMINANT_LABEL[dominant_code]
+        if dominant_count >= 2 and dominant_code and dominant_code in _DOMINANT_PHRASE:
+            sing, plur = _DOMINANT_PHRASE[dominant_code]
             label = sing if dominant_count == 1 else plur
-            n_flagged_this_ae = len(owner_flagged.get(oid, []))
-            dominant_fact = f"{dominant_count} {label} sur {n_flagged_this_ae} signalés"
+            dominant_fact = f"{dominant_count} {label}"
         else:
-            dominant_fact = None
+            # No code repeated ≥2 times: cite biggest flagged deal
+            ae_flagged_entries = ow["flagged"]
+            biggest = max(ae_flagged_entries, key=lambda e: e["amount"] or 0) if ae_flagged_entries else None
+            if biggest:
+                dominant_fact = f"alertes variées — {biggest['deal_name']}"
+            else:
+                dominant_fact = "alertes variées"
 
         patterns_by_owner[oid] = {
             "name": ow["owner_name"],
@@ -618,35 +635,23 @@ def build_facts(crm_data):
 
         q = None
         if "A4" in codes:
-            _, days_silent, _, _ = a4_phrase(deal)
-            if days_silent:
-                q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
-                     f"aucune activité depuis {days_silent} j. Ce deal est-il encore actif, "
-                     f"et quelle est la prochaine étape planifiée ?")
+            q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
+                 f"quelle est la prochaine étape convenue avec le client ?")
         elif "A7" in codes:
             q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
-                 f"un seul interlocuteur en Négociation. D'autres contacts ont-ils été approchés, "
-                 f"et quelle est la prochaine étape convenue ?")
+                 f"d'autres contacts ont-ils été approchés depuis ?")
         elif "A3" in codes:
-            close_date = _parse_date(deal.get("close_date"))
-            if close_date:
-                days_over = (as_of_date - close_date).days
-                q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
-                     f"date de clôture dépassée depuis {days_over} j. "
-                     f"Quelle est la nouvelle échéance réaliste ?")
+            q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
+                 f"quelle est la nouvelle échéance réaliste pour ce deal ?")
         elif "A2" in codes:
             q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
-                 f"aucune tâche planifiée. Quelle est la prochaine étape datée ?")
+                 f"quelle est la prochaine étape planifiée ?")
         elif "A1" in codes:
-            stage_entered = _parse_date(deal.get("stage_entered_at"))
-            days_in = (as_of_date - stage_entered).days if stage_entered else 0
-            normal = STAGE_NORMAL_DAYS.get(deal.get("stage"), 0)
             q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
-                 f"en {stage_label} depuis {days_in} j (norme : {normal} j). "
-                 f"Quelle est la prochaine étape convenue avec le client ?")
+                 f"ce deal avance-t-il, et quelle est la prochaine étape convenue ?")
         else:
             q = (f"{owner_name} — {entry['deal_name']} ({entry['company']}, {stage_label}) : "
-                 f"Ce deal est-il encore actif, et quelle est la prochaine étape datée ?")
+                 f"ce deal est-il encore actif, et quelle est la prochaine étape planifiée ?")
 
         if q:
             one_on_one.append({"owner_name": owner_name, "question": q, "deal_id": did})

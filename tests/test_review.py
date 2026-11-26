@@ -48,13 +48,28 @@ RULE_WEIGHTS = {
     "A1": 2, "A2": 2, "A3": 2,
 }
 
+STAGE_PRIORITY_WEIGHT = {
+    "decouverte": 0.5, "qualification": 0.7, "demo": 1.0,
+    "proposition": 1.5, "negociation": 2.0,
+}
+
+# Maps French labels (stored in facts.json entries) back to STAGE_PRIORITY_WEIGHT keys
+STAGE_LABEL_TO_KEY = {
+    "Découverte": "decouverte",
+    "Qualification": "qualification",
+    "Démo": "demo",
+    "Proposition envoyée": "proposition",
+    "Négociation": "negociation",
+}
+
 
 def _weight(code):
     return RULE_WEIGHTS.get(code, 1)
 
 
-def _score(amount, codes):
-    return (amount or 0) * sum(_weight(c) for c in codes)
+def _score(amount, codes, stage=None):
+    stage_w = STAGE_PRIORITY_WEIGHT.get(stage, 1.0)
+    return (amount or 0) * sum(_weight(c) for c in codes) * stage_w
 
 
 class TestFactsFlaggedMatchesTruth(unittest.TestCase):
@@ -119,17 +134,19 @@ class TestPrioritiesFormula(unittest.TestCase):
     def test_priorities_formula(self):
         facts = _load_facts()
 
-        # Build all flagged deals with amounts
-        all_flagged = {}  # deal_id -> (amount, codes)
+        # Build all flagged deals with amounts and stage
+        all_flagged = {}  # deal_id -> (amount, codes, stage_key)
         for owner in facts["by_owner"]:
             for entry in owner["flagged"]:
-                all_flagged[entry["deal_id"]] = (entry["amount"], entry["codes"])
+                stage_label = entry.get("stage", "")
+                stage_key = STAGE_LABEL_TO_KEY.get(stage_label, stage_label.lower())
+                all_flagged[entry["deal_id"]] = (entry["amount"], entry["codes"], stage_key)
 
         # Sort by score desc, then amount desc, then deal_id asc
         sorted_deals = sorted(
             all_flagged.keys(),
             key=lambda did: (
-                -_score(all_flagged[did][0], all_flagged[did][1]),
+                -_score(all_flagged[did][0], all_flagged[did][1], all_flagged[did][2]),
                 -all_flagged[did][0],
                 did
             )
@@ -244,7 +261,7 @@ class TestEvaluateDetectsErrors(unittest.TestCase):
             if removed >= 5:
                 break
             if name in poisoned:
-                poisoned = poisoned.replace(name, "DEAL_REMOVED_" + str(removed), 1)
+                poisoned = poisoned.replace(name, "DEAL_REMOVED_" + str(removed))
                 removed += 1
 
         # 2. Add one ignorer deal name in a non-excused section (Priorités)

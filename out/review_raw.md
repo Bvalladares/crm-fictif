@@ -1,37 +1,36 @@
 # Revue pipeline — 2026-11-18 — Atelier Nova
 
-110 deals ouverts pour 2 462 000 € de pipeline. 33 deals signalés (728 500 €) nécessitent une attention.
+110 deals ouverts pour 2 462 000 € de pipeline. 33 deals signalés (728 500 €).
 
 ## Priorités
 
-**Eneria - pilote agence** (Eneria) — Qualification — 42 000 €
-- En Qualification depuis 52 jours (durée normale 14 jours)
-
-**CE – pilote agence** (Confort Energies) — Qualification — 50 000 €
-- Aucune activité depuis 35 jours (dernière : 14 oct., reunion)
-
 **Leroux – Licence nova** (ETS Leroux) — Négociation — 50 000 €
 - Aucune activité depuis 32 jours (dernière : 17 oct., email)
+
+**SPIE Industrie – Pilote agence** (SPIE Industrie) — Négociation — 43 500 €
+- En Négociation avec un seul interlocuteur
+
+**Atalian - PILOTE AGENCE** (Atalian Maintenance & Energy) — Proposition envoyée — 34 000 €
+- En Proposition envoyée depuis 64 jours (durée normale 21 jours)
 
 ## Tendances
 
 • 7 deals sans prochaine tâche planifiée, dont 3 en Proposition ou Négociation
 • 6 deals avec date de clôture dépassée (retard moyen 38 j)
-• 5 deals cumulent deux alertes ou plus
 
 ## Résumé par AE
 
-- Alice Moreau : 4 deals signalés (114 000 €) — 1 stagnant sur 4 signalés
-- Bruno Petit : 10 deals signalés (211 000 €) — 3 seuls contacts en négo sur 10 signalés
-- Claire Durand : 6 deals signalés (134 500 €) — 1 clôture dépassée sur 6 signalés
-- David Leroy : 9 deals signalés (162 000 €) — 3 clôtures dépassées sur 9 signalés
-- Emma Bernard : 4 deals signalés (107 000 €) — 1 stagnant sur 4 signalés
+- Alice Moreau : 4 deals signalés (114 000 €) — alertes variées — Gaztransport Technigaz – licence nova
+- Bruno Petit : 10 deals signalés (211 000 €) — 3 deals en Négociation avec un seul interlocuteur
+- Claire Durand : 6 deals signalés (134 500 €) — alertes variées — Leroux – Licence nova
+- David Leroy : 9 deals signalés (162 000 €) — 3 deals avec clôture dépassée
+- Emma Bernard : 4 deals signalés (107 000 €) — alertes variées — CE – pilote agence
 
 ## Questions pour vos 1:1
 
-- Bruno Petit — Eneria - pilote agence (Eneria, Qualification) : aucune tâche planifiée. Quelle est la prochaine étape datée ?
-- Emma Bernard — CE – pilote agence (Confort Energies, Qualification) : aucune activité depuis 35 j. Ce deal est-il encore actif, et quelle est la prochaine étape planifiée ?
-- Claire Durand — Leroux – Licence nova (ETS Leroux, Négociation) : aucune activité depuis 32 j. Ce deal est-il encore actif, et quelle est la prochaine étape planifiée ?
+- Claire Durand — Leroux – Licence nova (ETS Leroux, Négociation) : quelle est la prochaine étape convenue avec le client ?
+- Bruno Petit — SPIE Industrie – Pilote agence (SPIE Industrie, Négociation) : d'autres contacts ont-ils été approchés depuis ?
+- David Leroy — Atalian - PILOTE AGENCE (Atalian Maintenance & Energy, Proposition envoyée) : quelle est la prochaine étape planifiée ?
 
 ---DETAIL---
 
@@ -56,11 +55,6 @@
 
 ### Bruno Petit
 
-**Eneria - pilote agence** (Eneria) — Bruno Petit — Qualification — 42 000 €
-- En Qualification depuis 52 jours (durée normale 14 jours)
-- Aucune tâche ni réunion à venir
-  _11 nov. (appel) — point de situation. projet toujours d'actualité. CODIR le 20._
-
 **SPIE Industrie – Pilote agence** (SPIE Industrie) — Bruno Petit — Négociation — 43 500 €
 - En Négociation avec un seul interlocuteur
   _18 nov. (email) — Avez-vous pu faire relire le contrat par votre service juridique ? Une…_
@@ -73,10 +67,19 @@
 - En Négociation avec un seul interlocuteur
   _17 nov. (note) — suivi négo. encore 1 point sur les SLA. à régler avec le service…_
 
+**Eneria - pilote agence** (Eneria) — Bruno Petit — Qualification — 42 000 €
+- En Qualification depuis 52 jours (durée normale 14 jours)
+- Aucune tâche ni réunion à venir
+  _11 nov. (appel) — point de situation. projet toujours d'actualité. CODIR le 20._
+
 **Faceo FM – planif. terrain** (Faceo FM SUD EST) — Bruno Petit — Qualification — 14 500 €
 - En Qualification depuis 40 jours (durée normale 14 jours)
 - Aucune tâche ni réunion à venir
   _12 nov. (appel) — relance qualification. client prêt à avancer. rdv calé._
+
+**Dietsmann - Licence Nova** (Dietsmann Technologies) — Bruno Petit — Négociation — 12 500 €
+- En Négociation sans réunion de démo dans l'historique
+  _13 nov. (email) — Comme discuté, voici la version révisée de la proposition avec la…_
 
 **Electricite Millot – Pilote agence** (Electricite Millot) — Bruno Petit — Qualification — 13 000 €
 - Date de clôture dépassée : 22 sept. (il y a 57 j)
@@ -89,10 +92,6 @@
 **SDEL - planif. terrain** (SDEL Alsace) — Bruno Petit — Découverte — 18 000 €
 - Clôture prévue en nov. 2026 mais étape Découverte
   _26 oct. (reunion) — rdv de découverte en visio. 4 participants. pb principal :…_
-
-**Dietsmann - Licence Nova** (Dietsmann Technologies) — Bruno Petit — Négociation — 12 500 €
-- En Négociation sans réunion de démo dans l'historique
-  _13 nov. (email) — Comme discuté, voici la version révisée de la proposition avec la…_
 
 **NGE Ingenierie – licence nova** (NGE Ingenierie) — Bruno Petit — Qualification — 3 000 €
 - Clôture prévue en nov. 2026 mais étape Qualification
@@ -130,25 +129,25 @@
 - Aucune tâche ni réunion à venir
   _16 nov. (email) — Je reviens vers vous concernant notre offre envoyée la semaine passée.…_
 
-**Ardeche Applications - Licence Nova** (Ardeche Applications Techniques D'electricite et de Mesures) — David Leroy — Qualification — 43 000 €
-- Date de clôture dépassée : 25 oct. (il y a 24 j)
-  _18 nov. (appel) — qualification ok. budget cerné. décision au CODIR._
-
-**Segula – deploy multi-sites** (Segula Matra Automotive) — David Leroy — Démo — 25 000 €
-- Aucune activité depuis 30 jours (dernière : 19 oct., email)
-
 **TRA- – Pilote agence** (TRA- C Industrie) — David Leroy — Négociation — 15 500 €
 - En Négociation depuis 94 jours (durée normale 30 jours)
 - Aucune tâche ni réunion à venir
   _13 nov. (email) — Suite à notre dernière discussion, je vous confirme les conditions…_
 
-**Tecsol – PLANIF TERRAIN** (Tecsol) — David Leroy — Découverte — 16 000 €
-- En Découverte depuis 48 jours (durée normale 14 jours)
-  _3 nov. (appel) — premier contact positif. rdv dc calé la semaine pro._
+**Segula – deploy multi-sites** (Segula Matra Automotive) — David Leroy — Démo — 25 000 €
+- Aucune activité depuis 30 jours (dernière : 19 oct., email)
+
+**Ardeche Applications - Licence Nova** (Ardeche Applications Techniques D'electricite et de Mesures) — David Leroy — Qualification — 43 000 €
+- Date de clôture dépassée : 25 oct. (il y a 24 j)
+  _18 nov. (appel) — qualification ok. budget cerné. décision au CODIR._
 
 **Agirenergy – Planif terrain** (Agirenergy) — David Leroy — Proposition envoyée — 15 000 €
 - Date de clôture dépassée : 19 sept. (il y a 60 j)
   _4 nov. (email) — Comme convenu, voici la documentation technique et les cas d'usage…_
+
+**Tecsol – PLANIF TERRAIN** (Tecsol) — David Leroy — Découverte — 16 000 €
+- En Découverte depuis 48 jours (durée normale 14 jours)
+  _3 nov. (appel) — premier contact positif. rdv dc calé la semaine pro._
 
 **Extinctium - Licence Nova** (Extinctium) — David Leroy — Découverte — 13 500 €
 - Date de clôture dépassée : 26 sept. (il y a 53 j)

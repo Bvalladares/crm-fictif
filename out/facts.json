@@ -8,25 +8,25 @@
     "flagged_amount": 728500
   },
   "priorities": [
-    "D-0047",
-    "D-0027",
-    "D-0092"
+    "D-0092",
+    "D-0090",
+    "D-0044"
   ],
   "one_on_one": [
     {
-      "owner_name": "Bruno Petit",
-      "question": "Bruno Petit — Eneria - pilote agence (Eneria, Qualification) : aucune tâche planifiée. Quelle est la prochaine étape datée ?",
-      "deal_id": "D-0047"
-    },
-    {
-      "owner_name": "Emma Bernard",
-      "question": "Emma Bernard — CE – pilote agence (Confort Energies, Qualification) : aucune activité depuis 35 j. Ce deal est-il encore actif, et quelle est la prochaine étape planifiée ?",
-      "deal_id": "D-0027"
-    },
-    {
       "owner_name": "Claire Durand",
-      "question": "Claire Durand — Leroux – Licence nova (ETS Leroux, Négociation) : aucune activité depuis 32 j. Ce deal est-il encore actif, et quelle est la prochaine étape planifiée ?",
+      "question": "Claire Durand — Leroux – Licence nova (ETS Leroux, Négociation) : quelle est la prochaine étape convenue avec le client ?",
       "deal_id": "D-0092"
+    },
+    {
+      "owner_name": "Bruno Petit",
+      "question": "Bruno Petit — SPIE Industrie – Pilote agence (SPIE Industrie, Négociation) : d'autres contacts ont-ils été approchés depuis ?",
+      "deal_id": "D-0090"
+    },
+    {
+      "owner_name": "David Leroy",
+      "question": "David Leroy — Atalian - PILOTE AGENCE (Atalian Maintenance & Energy, Proposition envoyée) : quelle est la prochaine étape planifiée ?",
+      "deal_id": "D-0044"
     }
   ],
   "by_owner": [
@@ -117,26 +117,6 @@
       "open_amount": 516000,
       "flagged": [
         {
-          "deal_id": "D-0047",
-          "deal_name": "Eneria - pilote agence",
-          "company": "Eneria",
-          "stage": "Qualification",
-          "amount": 42000,
-          "codes": [
-            "A1",
-            "A2"
-          ],
-          "facts": [
-            "En Qualification depuis 52 jours (durée normale 14 jours)",
-            "Aucune tâche ni réunion à venir"
-          ],
-          "last_activity": {
-            "date": "2026-11-11",
-            "type": "appel",
-            "summary": "point de situation. projet toujours d'actualité. CODIR le 20."
-          }
-        },
-        {
           "deal_id": "D-0090",
           "deal_name": "SPIE Industrie – Pilote agence",
           "company": "SPIE Industrie",
@@ -191,6 +171,26 @@
           }
         },
         {
+          "deal_id": "D-0047",
+          "deal_name": "Eneria - pilote agence",
+          "company": "Eneria",
+          "stage": "Qualification",
+          "amount": 42000,
+          "codes": [
+            "A1",
+            "A2"
+          ],
+          "facts": [
+            "En Qualification depuis 52 jours (durée normale 14 jours)",
+            "Aucune tâche ni réunion à venir"
+          ],
+          "last_activity": {
+            "date": "2026-11-11",
+            "type": "appel",
+            "summary": "point de situation. projet toujours d'actualité. CODIR le 20."
+          }
+        },
+        {
           "deal_id": "D-0039",
           "deal_name": "Faceo FM – planif. terrain",
           "company": "Faceo FM SUD EST",
@@ -208,6 +208,24 @@
             "date": "2026-11-12",
             "type": "appel",
             "summary": "relance qualification. client prêt à avancer. rdv calé."
+          }
+        },
+        {
+          "deal_id": "D-0050",
+          "deal_name": "Dietsmann - Licence Nova",
+          "company": "Dietsmann Technologies",
+          "stage": "Négociation",
+          "amount": 12500,
+          "codes": [
+            "A8"
+          ],
+          "facts": [
+            "En Négociation sans réunion de démo dans l'historique"
+          ],
+          "last_activity": {
+            "date": "2026-11-13",
+            "type": "email",
+            "summary": "Comme discuté, voici la version révisée de la proposition avec la remise…"
           }
         },
         {
@@ -262,24 +280,6 @@
             "date": "2026-10-26",
             "type": "reunion",
             "summary": "rdv de découverte en visio. 4 participants. pb principal : planification…"
-          }
-        },
-        {
-          "deal_id": "D-0050",
-          "deal_name": "Dietsmann - Licence Nova",
-          "company": "Dietsmann Technologies",
-          "stage": "Négociation",
-          "amount": 12500,
-          "codes": [
-            "A8"
-          ],
-          "facts": [
-            "En Négociation sans réunion de démo dans l'historique"
-          ],
-          "last_activity": {
-            "date": "2026-11-13",
-            "type": "email",
-            "summary": "Comme discuté, voici la version révisée de la proposition avec la remise…"
           }
         },
         {
@@ -445,21 +445,23 @@
           }
         },
         {
-          "deal_id": "D-0024",
-          "deal_name": "Ardeche Applications - Licence Nova",
-          "company": "Ardeche Applications Techniques D'electricite et de Mesures",
-          "stage": "Qualification",
-          "amount": 43000,
+          "deal_id": "D-0083",
+          "deal_name": "TRA- – Pilote agence",
+          "company": "TRA- C Industrie",
+          "stage": "Négociation",
+          "amount": 15500,
           "codes": [
-            "A3"
+            "A1",
+            "A2"
           ],
           "facts": [
-            "Date de clôture dépassée : 25 oct. (il y a 24 j)"
+            "En Négociation depuis 94 jours (durée normale 30 jours)",
+            "Aucune tâche ni réunion à venir"
           ],
           "last_activity": {
-            "date": "2026-11-18",
-            "type": "appel",
-            "summary": "qualification ok. budget cerné. décision au CODIR."
+            "date": "2026-11-13",
+            "type": "email",
+            "summary": "Suite à notre dernière discussion, je vous confirme les conditions définitives.…"
           }
         },
         {
@@ -481,41 +483,21 @@
           }
         },
         {
-          "deal_id": "D-0083",
-          "deal_name": "TRA- – Pilote agence",
-          "company": "TRA- C Industrie",
-          "stage": "Négociation",
-          "amount": 15500,
+          "deal_id": "D-0024",
+          "deal_name": "Ardeche Applications - Licence Nova",
+          "company": "Ardeche Applications Techniques D'electricite et de Mesures",
+          "stage": "Qualification",
+          "amount": 43000,
           "codes": [
-            "A1",
-            "A2"
+            "A3"
           ],
           "facts": [
-            "En Négociation depuis 94 jours (durée normale 30 jours)",
-            "Aucune tâche ni réunion à venir"
+            "Date de clôture dépassée : 25 oct. (il y a 24 j)"
           ],
           "last_activity": {
-            "date": "2026-11-13",
-            "type": "email",
-            "summary": "Suite à notre dernière discussion, je vous confirme les conditions définitives.…"
-          }
-        },
-        {
-          "deal_id": "D-0029",
-          "deal_name": "Tecsol – PLANIF TERRAIN",
-          "company": "Tecsol",
-          "stage": "Découverte",
-          "amount": 16000,
-          "codes": [
-            "A1"
-          ],
-          "facts": [
-            "En Découverte depuis 48 jours (durée normale 14 jours)"
-          ],
-          "last_activity": {
-            "date": "2026-11-03",
+            "date": "2026-11-18",
             "type": "appel",
-            "summary": "premier contact positif. rdv dc calé la semaine pro."
+            "summary": "qualification ok. budget cerné. décision au CODIR."
           }
         },
         {
@@ -534,6 +516,24 @@
             "date": "2026-11-04",
             "type": "email",
             "summary": "Comme convenu, voici la documentation technique et les cas d'usage…"
+          }
+        },
+        {
+          "deal_id": "D-0029",
+          "deal_name": "Tecsol – PLANIF TERRAIN",
+          "company": "Tecsol",
+          "stage": "Découverte",
+          "amount": 16000,
+          "codes": [
+            "A1"
+          ],
+          "facts": [
+            "En Découverte depuis 48 jours (durée normale 14 jours)"
+          ],
+          "last_activity": {
+            "date": "2026-11-03",
+            "type": "appel",
+            "summary": "premier contact positif. rdv dc calé la semaine pro."
           }
         },
         {
@@ -716,9 +716,9 @@
         "name": "Alice Moreau",
         "flagged": 4,
         "flagged_amount": 114000,
-        "dominant_code": "A1",
+        "dominant_code": "A4",
         "dominant_count": 1,
-        "dominant_fact": "1 stagnant sur 4 signalés"
+        "dominant_fact": "alertes variées — Gaztransport Technigaz – licence nova"
       },
       "ae2": {
         "name": "Bruno Petit",
@@ -726,15 +726,15 @@
         "flagged_amount": 211000,
         "dominant_code": "A7",
         "dominant_count": 3,
-        "dominant_fact": "3 seuls contacts en négo sur 10 signalés"
+        "dominant_fact": "3 deals en Négociation avec un seul interlocuteur"
       },
       "ae3": {
         "name": "Claire Durand",
         "flagged": 6,
         "flagged_amount": 134500,
-        "dominant_code": "A3",
+        "dominant_code": "A2",
         "dominant_count": 1,
-        "dominant_fact": "1 clôture dépassée sur 6 signalés"
+        "dominant_fact": "alertes variées — Leroux – Licence nova"
       },
       "ae4": {
         "name": "David Leroy",
@@ -742,15 +742,15 @@
         "flagged_amount": 162000,
         "dominant_code": "A3",
         "dominant_count": 3,
-        "dominant_fact": "3 clôtures dépassées sur 9 signalés"
+        "dominant_fact": "3 deals avec clôture dépassée"
       },
       "ae5": {
         "name": "Emma Bernard",
         "flagged": 4,
         "flagged_amount": 107000,
-        "dominant_code": "A1",
+        "dominant_code": "A5",
         "dominant_count": 1,
-        "dominant_fact": "1 stagnant sur 4 signalés"
+        "dominant_fact": "alertes variées — CE – pilote agence"
       }
     },
     "multi_anomaly_deals": 5,
